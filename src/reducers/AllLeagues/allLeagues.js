@@ -1,4 +1,4 @@
-import {GET_ALL_LEAGUES_LOADING, GET_ALL_LEAGUES_SUCCESS, GET_ALL_LEAGUES_FAIL} from "../../actions/index";
+// import {GET_ALL_LEAGUES_LOADING, GET_ALL_LEAGUES_SUCCESS, GET_ALL_LEAGUES_FAIL} from "../../actions/index";
 
 const DefaultState = {
     loading: false,
@@ -8,20 +8,20 @@ const DefaultState = {
 
 const allLeagues = (state = DefaultState, action) => {
     switch (action.type){
-        case GET_ALL_LEAGUES_LOADING:
+        case "GET_ALL_LEAGUES_LOADING":
             return {
                 ...state,
                 loading: true,
                 errorMsg: ""
             };
-            case GET_ALL_LEAGUES_SUCCESS:
+            case "GET_ALL_LEAGUES_SUCCESS":
             return {
                 ...state,
                 loading: false,
                 data: action.payload,
                 errorMsg: ""
             };
-            case GET_ALL_LEAGUES_FAIL:
+            case "GET_ALL_LEAGUES_FAIL":
             return {
                 ...state,
                 loading: false,
