@@ -1,12 +1,10 @@
 import React from 'react';
 import {Switch, Route, NavLink, Redirect} from "react-router-dom";
-import SignedIn from '../../containers/SignedIn';
-import SignedOut from '../../containers/SignedOut';
+import SignedIn from '../../containers/signedIn';
+import SignedOut from '../../containers/signedOut';
 
-//All Components
-import AllLeagues from '../AllLeagues/AllLeagues';
-
-
+//Components
+import mainLandingPage from "../mainLandingPage/mainLandingPage";
 
 const App = () => {
   return (
@@ -15,7 +13,7 @@ const App = () => {
         <NavLink to={"/"}>SEARCH</NavLink>
       </nav>
       <Switch>
-        <Route path={"/"} exact component={AllLeagues} />
+        <Route path={"/"} exact component={mainLandingPage} />
         <Route path={"/signedin"} exact component={SignedIn} />
         <Route path={"/signedout"} exact component={SignedOut} />
         <Redirect to={"/"} />

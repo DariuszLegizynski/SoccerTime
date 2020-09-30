@@ -1,9 +1,13 @@
 import { combineReducers } from 'redux';
 
-import allLeagues from "./AllLeagues/allLeagues";
+import allLeaguesReducer from "./allLeagues/allLeagues/allLeaguesReducer";
+import englishLeagueReducer from "./allLeagues/englishLeague/englishLeagueReducer";
+import germanLeagueReducer from './allLeagues/germanLeague/germanLeagueReducer';
 
 const rootReducer = combineReducers({
-    getAllLeagues: allLeagues
+    allLeagues: allLeaguesReducer,
+    englishLeague: englishLeagueReducer,
+    germanLeague: germanLeagueReducer
 });
 
 export default rootReducer;
