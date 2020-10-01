@@ -4,7 +4,7 @@ import SignedIn from '../../containers/signedIn';
 import SignedOut from '../../containers/signedOut';
 
 //Components
-import mainLandingPage from "../mainLandingPage/mainLandingPage";
+import mainLandingPage from "../../containers/mainLandingPage/mainLandingPage";
 
 const App = () => {
   return (
