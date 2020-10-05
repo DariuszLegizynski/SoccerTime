@@ -27,16 +27,67 @@ const AllLeagues = () => {
 
     allCountriesArr = (Object.values(selectAllLeagues.data));
 
-    if(allCountriesArr.length > 254){
+    if(allCountriesArr.length > 254) {
         allLeaguesFiltered = allCountriesArr.flat().filter(el => el !== null);
         getAllLeagues = allLeaguesFiltered.flat();
     }
 
+    let getAllZeroDivisionLeagues = [];
+    let getAllFirstDivisionLeagues = [];
+    let getAllSecondDivisionLeagues = [];
+    let getAllThirdDivisionLeagues = [];
+    if(!_.isEmpty(getAllLeagues)) {
+        getAllZeroDivisionLeagues = getAllLeagues.filter(el => el.strDivision === "0");
+        getAllFirstDivisionLeagues = getAllLeagues.filter(el => el.strDivision === "1");
+        getAllSecondDivisionLeagues = getAllLeagues.filter(el => el.strDivision === "2");
+        getAllThirdDivisionLeagues = getAllLeagues.filter(el => el.strDivision === "3");
+    }
+
+    
+    if(!_.isEmpty(getAllLeagues)) {
+        
+    }
+
     const showData = () => {
-        if(!_.isEmpty(getAllLeagues)) {
+        if(!_.isEmpty(selectAllLeagues.data)) {
             return(
                 <div>
-                {getAllLeagues.map(el => {
+                Mostly Favorited Leagues:
+                <br/>
+                {getAllZeroDivisionLeagues.map(el => {
+                    return (
+                        <div key={shortid.generate()}>
+                            {el.strLeague}
+                        </div>
+                    )}
+                )}
+                <br/>
+                <br/>
+                First Leagues:
+                <br/>
+                {getAllFirstDivisionLeagues.map(el => {
+                    return (
+                        <div key={shortid.generate()}>
+                            {el.strLeague}
+                        </div>
+                    )}
+                )}
+                <br/>
+                <br/>
+                Second Leagues:
+                <br/>
+                {getAllSecondDivisionLeagues.map(el => {
+                    return (
+                        <div key={shortid.generate()}>
+                            {el.strLeague}
+                        </div>
+                    )}
+                )}
+                <br/>
+                <br/>
+                Third Leagues:
+                <br/>
+                {getAllThirdDivisionLeagues.map(el => {
                     return (
                         <div key={shortid.generate()}>
                             {el.strLeague}
@@ -60,11 +111,12 @@ const AllLeagues = () => {
 
 return (
     <div>
+        <br/>
+        <br/>
+        All Leagues:
         <br />
         <br />
-            allLeagues: {showData()}
-        <br />
-        <br />
+        {showData()}
     </div>
 )
 }
