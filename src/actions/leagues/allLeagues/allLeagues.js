@@ -11,7 +11,7 @@ export const allLeagues = (country) => async (dispatch) => {
         
         dispatch ({
             type: GET_ALL_LEAGUES_SUCCESS,
-            payload: response.data.countrys,
+            payload: response.data,
             countryName: country
         })
     } catch (e) {
@@ -20,4 +20,3 @@ export const allLeagues = (country) => async (dispatch) => {
         })
     }    
 }
-
