@@ -8,15 +8,9 @@ const GermanLeague = () => {
     const dispatch = useDispatch();
     const selectGermanLeague = useSelector(state => state.germanLeague);
     
-    console.log(selectGermanLeague);
-
-    const fetchData = () => {
-        dispatch(germanLeague());
-    }
-
     useEffect(() => {
-        fetchData();
-    }, [])
+        dispatch(germanLeague());
+    }, [dispatch]);
 
     const showData = () => {
         if(!_.isEmpty(selectGermanLeague.data)) {

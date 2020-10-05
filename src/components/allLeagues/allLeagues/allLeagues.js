@@ -1,10 +1,15 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import {Link} from "react-router-dom";
+
 import _ from "lodash";
 import shortid from "shortid";
 
 import  { allLeagues }  from "../../../actions/leagues/allLeagues/allLeagues";
 import  { allCountries }  from "../../../actions/allCountries/allCountries";
+
+//the api provides 255 country names.
+const ALL_COUNTRIES_LENGTH = 254;
 
 const AllLeagues = () => {
     const dispatch = useDispatch();
@@ -13,13 +18,13 @@ const AllLeagues = () => {
 
     useEffect(() => {
         dispatch(allCountries());
-    }, [dispatch])
+    }, [dispatch]);
 
     useEffect(() => {
         if(!_.isEmpty(selectAllCountries.data)) {
             selectAllCountries.data.countries.map(el => dispatch(allLeagues(el.name_en)));
         }
-    }, [dispatch, selectAllCountries.data])
+    }, [dispatch, selectAllCountries.data]);
 
     let allCountriesArr = [];
     let allLeaguesFiltered = [];
@@ -27,7 +32,7 @@ const AllLeagues = () => {
 
     allCountriesArr = (Object.values(selectAllLeagues.data));
 
-    if(allCountriesArr.length > 254) {
+    if(allCountriesArr.length > ALL_COUNTRIES_LENGTH) {
         allLeaguesFiltered = allCountriesArr.flat().filter(el => el !== null);
         getAllLeagues = allLeaguesFiltered.flat();
     }
@@ -43,21 +48,17 @@ const AllLeagues = () => {
         getAllThirdDivisionLeagues = getAllLeagues.filter(el => el.strDivision === "3");
     }
 
-    
-    if(!_.isEmpty(getAllLeagues)) {
-        
-    }
-
     const showData = () => {
         if(!_.isEmpty(selectAllLeagues.data)) {
             return(
                 <div>
-                Mostly Favorited Leagues:
+                Most Favorited Leagues:
                 <br/>
                 {getAllZeroDivisionLeagues.map(el => {
                     return (
                         <div key={shortid.generate()}>
-                            {el.strLeague}
+                            <p>{el.strLeague}</p>
+                            <Link to={`/allLeagues/${el.strLeague}`}>View</Link>
                         </div>
                     )}
                 )}
@@ -68,7 +69,8 @@ const AllLeagues = () => {
                 {getAllFirstDivisionLeagues.map(el => {
                     return (
                         <div key={shortid.generate()}>
-                            {el.strLeague}
+                            <p>{el.strLeague}</p>
+                            <Link to={`/allLeagues/${el.strLeague}`}>View</Link>
                         </div>
                     )}
                 )}
@@ -79,7 +81,8 @@ const AllLeagues = () => {
                 {getAllSecondDivisionLeagues.map(el => {
                     return (
                         <div key={shortid.generate()}>
-                            {el.strLeague}
+                            <p>{el.strLeague}</p>
+                            <Link to={`/allLeagues/${el.strLeague}`}>View</Link>
                         </div>
                     )}
                 )}
@@ -90,7 +93,8 @@ const AllLeagues = () => {
                 {getAllThirdDivisionLeagues.map(el => {
                     return (
                         <div key={shortid.generate()}>
-                            {el.strLeague}
+                            <p>{el.strLeague}</p>
+                            <Link to={`/allLeagues/${el.strLeague}`}>View</Link>
                         </div>
                     )}
                 )}

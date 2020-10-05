@@ -3,9 +3,9 @@ import {Switch, Route, NavLink, Redirect} from "react-router-dom";
 import SignedIn from '../signedIn/signedIn';
 import SignedOut from '../signedOut/signedOut';
 
-
-//Components
+//Components/Containers
 import AllLeagues from '../allLeagues/allLeagues/allLeagues';
+import League from "../allLeagues/league/league";
 
 const App = () => {
   return (
@@ -15,7 +15,7 @@ const App = () => {
       </nav>
       <Switch>
         <Route path={"/"} exact component={AllLeagues} />
-        <Route path={"/allLeagues/:allLeagues"} exact component={AllLeagues} />
+        <Route path={"/allLeagues/:league"} exact component={League} />
         <Route path={"/signedin"} exact component={SignedIn} />
         <Route path={"/signedout"} exact component={SignedOut} />
         <Redirect to={"/"} />
