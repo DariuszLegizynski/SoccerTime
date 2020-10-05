@@ -1,7 +1,7 @@
 import { GET_ALL_LEAGUES_LOADING, GET_ALL_LEAGUES_SUCCESS, GET_ALL_LEAGUES_FAIL } from "../../index";
 import theSportsDB from "../../../apis/theSportsDB";
 
-export const allLeagues = (...country) => async (dispatch) => { 
+export const allLeagues = (country) => async (dispatch) => { 
     try {
         dispatch ({
             type: GET_ALL_LEAGUES_LOADING
@@ -11,7 +11,8 @@ export const allLeagues = (...country) => async (dispatch) => {
         
         dispatch ({
             type: GET_ALL_LEAGUES_SUCCESS,
-            payload: response.data
+            payload: response.data.countrys,
+            countryName: country
         })
     } catch (e) {
         dispatch ({
@@ -19,3 +20,4 @@ export const allLeagues = (...country) => async (dispatch) => {
         })
     }    
 }
+

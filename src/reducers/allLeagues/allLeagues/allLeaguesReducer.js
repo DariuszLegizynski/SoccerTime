@@ -2,7 +2,7 @@ import {GET_ALL_LEAGUES_LOADING, GET_ALL_LEAGUES_SUCCESS, GET_ALL_LEAGUES_FAIL} 
 
 const DefaultState = {
     loading: false,
-    data: [],
+    data: {},
     errorMsg: ""
 };
 
@@ -15,10 +15,19 @@ const AllLeaguesReducer = (state = DefaultState, action) => {
                 errorMsg: ""
             };
             case GET_ALL_LEAGUES_SUCCESS:
+            // return {
+            //     ...state,
+            //     loading: false,
+            //     countryName: [...action.payload],
+            //     errorMsg: ""
+            // };
             return {
                 ...state,
                 loading: false,
-                data: action.payload,
+                data:{
+                    ...state.data,
+                    [action.countryName]: [action.payload]
+                },
                 errorMsg: ""
             };
             case GET_ALL_LEAGUES_FAIL:
