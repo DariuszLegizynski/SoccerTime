@@ -6,7 +6,6 @@ import SignedOut from '../signedOut/signedOut';
 
 //Components
 import AllLeagues from '../allLeagues/allLeagues/allLeagues';
-import AllCountries from '../allCountries/allCountries';
 
 const App = () => {
   return (
