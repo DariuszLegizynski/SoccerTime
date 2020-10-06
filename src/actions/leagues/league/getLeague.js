@@ -12,7 +12,7 @@ export const getLeague = (league) => async (dispatch) => {
         dispatch ({
             type: GET_LEAGUE_SUCCESS,
             payload: response.data,
-            leagueName: league
+            // leagueName: league
         })
     } catch (e) {
         dispatch ({

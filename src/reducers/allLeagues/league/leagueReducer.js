@@ -16,19 +16,10 @@ const LeagueReducer = (state = DefaultState, action) => {
             };
 
         case GET_LEAGUE_SUCCESS:
-            // return {
-            //     ...state,
-            //     loading: false,
-            //     data: action.payload,
-            //     errorMsg: ""
-            // };
             return {
                 ...state,
                 loading: false,
-                data:{
-                    ...state.data,
-                    [action.leagueName]: [action.payload.teams]
-                },
+                data: action.payload,
                 errorMsg: ""
             };
 
