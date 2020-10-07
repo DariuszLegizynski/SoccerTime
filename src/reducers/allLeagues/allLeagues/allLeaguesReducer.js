@@ -20,7 +20,7 @@ const AllLeaguesReducer = (state = DefaultState, action) => {
                 loading: false,
                 data:{
                     ...state.data,
-                    [action.countryName]: [action.payload.countrys]
+                    [action.countryName]: action.payload.countrys
                 },
                 errorMsg: ""
             };
