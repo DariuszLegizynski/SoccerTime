@@ -9,6 +9,7 @@ import  { allLeagues }  from "../../../actions/leagues/allLeagues/allLeagues";
 import  { allCountries }  from "../../../actions/allCountries/allCountries";
 
 //the api provides 255 country names.
+//TODO: Hardcoded till I find a better solution.
 const ALL_COUNTRIES_LENGTH = 254;
 
 const AllLeagues = () => {

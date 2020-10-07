@@ -16,8 +16,8 @@ const League = (props) => {
         dispatch(getLeague(leagueName));
     }, [dispatch, leagueName]);
 
-     const showLeague = () => {
-         if(!_.isEmpty(selectLeague.data)) {
+    const showLeague = () => {
+        if(!_.isEmpty(selectLeague.data)) {
             return selectLeague.data.teams.map(el => {
                 return (
                     <div key={shortid.generate()}>
@@ -25,18 +25,18 @@ const League = (props) => {
                     </div>
                 )
             })
-         }
+        }
 
-         if(selectLeague.loading) {
+        if(selectLeague.loading) {
             return <p>loading...</p>
-         }
+        }
 
-         if(selectLeague.errorMsg !== "") {
-         return <p>{selectLeague.errorMsg}</p>
-         }
+        if(selectLeague.errorMsg !== "") {
+            return <p>{selectLeague.errorMsg}</p>
+        }
 
-         return <p>Unable to get the league data</p>
-     }
+        return <p>Unable to get the league data</p>
+    }
 
     return (
         <div>
