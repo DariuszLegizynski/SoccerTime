@@ -15,13 +15,20 @@ const League = (props) => {
     useEffect (() => {
         dispatch(getLeague(leagueName));
     }, [dispatch, leagueName]);
-
+    
     const showLeague = () => {
         if(!_.isEmpty(selectLeague.data)) {
             return selectLeague.data.teams.map(el => {
                 return (
                     <div key={shortid.generate()}>
                         {el.strTeam}
+                        {el.strAlternate}
+                        {/* <Link to={`/allTeams/${el.idTeam}, ${el}`}>
+                            View Team
+                        </Link> */}
+                        <Link to={`/allTeams/${el.idTeam}`}>
+                            View Team
+                        </Link>
                     </div>
                 )
             })
