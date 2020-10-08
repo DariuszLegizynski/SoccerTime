@@ -6,16 +6,28 @@ import _ from "lodash";
 import shortid from "shortid";
 
 import { getLeague } from "../../../actions/leagues/league/getLeague";
+import { getTableLookup } from "../../../actions/leagues/tableLookup/getTableLookup";
 
 const League = (props) => {
     const leagueName = props.match.params.league;
+    const leagueId = props.match.params.idLeague;
     const dispatch = useDispatch();
     const selectLeague = useSelector(state => state.league);
+    const selectLeagueId = useSelector(state => state.tableLeague)
 
     useEffect (() => {
         dispatch(getLeague(leagueName));
     }, [dispatch, leagueName]);
-    
+
+    useEffect (() => {
+        dispatch(getTableLookup(leagueId))
+    }, [dispatch, leagueId]);
+
+    if(!_.isEmpty(selectLeagueId.data)){
+        console.log(selectLeagueId.data);
+        console.log(selectLeagueId.data.map(el => el.name));
+    }
+
     const showLeague = () => {
         if(!_.isEmpty(selectLeague.data)) {
             return selectLeague.data.teams.map(el => {
@@ -23,9 +35,6 @@ const League = (props) => {
                     <div key={shortid.generate()}>
                         {el.strTeam}
                         {el.strAlternate}
-                        {/* <Link to={`/allTeams/${el.idTeam}, ${el}`}>
-                            View Team
-                        </Link> */}
                         <Link to={`/allTeams/${el.idTeam}`}>
                             View Team
                         </Link>

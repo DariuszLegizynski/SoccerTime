@@ -59,7 +59,7 @@ const AllLeagues = () => {
                     return (
                         <div key={shortid.generate()}>
                             <p>{el.strLeague}</p>
-                            <Link to={`/allLeagues/${el.strLeague}`}>View</Link>
+                            <Link to={`/allLeagues/${el.strLeague}, ${el.idLeague}`}>View</Link>
                         </div>
                     )}
                 )}
