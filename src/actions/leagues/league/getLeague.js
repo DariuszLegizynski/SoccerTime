@@ -3,20 +3,19 @@ import theSportsDB from "../../../apis/theSportsDB";
 
 export const getLeague = (league) => async (dispatch) => {
     try {
-            dispatch ({
-                type: GET_LEAGUE_LOADING
-            })
+        dispatch ({
+            type: GET_LEAGUE_LOADING
+        })
 
-            const response = await theSportsDB.get(`search_all_teams.php?l=${league}`);
+        const response = await theSportsDB.get(`search_all_teams.php?l=${league}`);
 
-            dispatch ({
-                type: GET_LEAGUE_SUCCESS,
-                payload: response.data
-            })
-        } catch (e) {
-            dispatch ({
-                type: GET_LEAGUE_FAIL
-            })
-        }
-    // }
+        dispatch ({
+            type: GET_LEAGUE_SUCCESS,
+            payload: response.data
+        })
+    } catch (e) {
+        dispatch ({
+            type: GET_LEAGUE_FAIL
+        })
+    }
 }
