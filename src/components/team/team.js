@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import {Link} from "react-router-dom";
 
 import _ from "lodash";
 import shortid from "shortid";
@@ -20,6 +21,7 @@ const Team = (props) => {
         return selectTeam.data.teams.map(el => {
             return (
                 <div key={shortid.generate()}>
+                    <Link to={`/allLeagues/${el.idLeague}`}>Back</Link>
                     <p>Team: </p>
                     {el.strTeam}
                     <p>Team Alternate: </p>
@@ -30,6 +32,9 @@ const Team = (props) => {
                     {el.intFormedYear}
                     <p>Team Description</p>
                     {el.strDescriptionEN}
+                    <br/>
+                    <Link to={`/allLeagues/${el.idLeague}`}>Back</Link>
+                    <br/>
                     <p>Team Badge</p>
                     <img src={el.strTeamBadge+"/preview"} alt="Team Badge" />
                     <p>Team Jersey</p>

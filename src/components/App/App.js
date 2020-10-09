@@ -16,7 +16,7 @@ const App = () => {
       </nav>
       <Switch>
         <Route path={"/"} exact component={AllLeagues} />
-        <Route path={"/allLeagues/:league, :idLeague"} exact component={League} />
+        <Route path={"/allLeagues/:idLeague"} exact component={League} />
         <Route path={"/allTeams/:team"} exact component={Team} />
         <Route path={"/signedin"} exact component={SignedIn} />
         <Route path={"/signedout"} exact component={SignedOut} />
