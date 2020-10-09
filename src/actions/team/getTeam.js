@@ -7,7 +7,7 @@ export const getTeam = (idteam) => async (dispatch) => {
             type: GET_TEAM_LOADING
         })
 
-        const response = await theSportsDB.get(`lookupteam.php?id=${idteam}`)
+        const response = await theSportsDB.get(`lookupteam.php?id=${idteam}`);
 
         dispatch ({
             type: GET_TEAM_SUCCESS,

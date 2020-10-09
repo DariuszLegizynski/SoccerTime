@@ -31,7 +31,7 @@ const TeamReducer = (state = DefaultState, action) => {
             };
 
         default:
-            return state
+            return state;
     }
 }
 
