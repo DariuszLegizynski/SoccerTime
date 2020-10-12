@@ -1,20 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const UserSign = () => {
+
+    const [ userStatus, setUserStatus ] = useState ({
+        email: "",
+        password: ""
+    })
+
+    const handleSubmit = (event) => {
+        console.log(userStatus);
+        event.preventDefault();
+    }
+
+    const handleChange = (event) => {
+        const { id, value } = event.target;
+        setUserStatus((prevValue) => {
+            return {
+                ...prevValue,
+                [id]: value
+            }
+        })
+    }
 
     const showLogin = () => {
         return (
             <div>
                 <h4>Login</h4>
-                <form>
+                <form onSubmit={handleSubmit}>
                     <div>
-                        <input type="email" id="login-email" required />
-                        <label htmlFor="login-email">Email address</label>
+                        <label htmlFor="signIn-email">Email address</label>
+                        <input type="email" id="signIn-email" onChange={handleChange} required />
                     </div>
                     <div>
-                        <input type="password" id="login-password" required />
-                        <label htmlFor="login-password">Your Password</label>
+                        <label htmlFor="signIn-password">Your Password</label>
+                        <input type="password" id="signIn-password" onChange={handleChange} required />
                     </div>
                     <button>Login</button>
                 </form>
@@ -25,7 +45,8 @@ const UserSign = () => {
     return (
         <div>
             {showLogin()}
-            <Link to={"/UserPanel"}>Back</Link>
+            <Link to={"/signup"}><p>SignUp</p></Link>
+            <Link to={"/"}>Back</Link>
         </div>
     )
 }

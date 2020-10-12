@@ -13,13 +13,13 @@ const Header = () => {
                 <NavLink to={"/"}>SEARCH</NavLink>
             </nav>
             <div>
-                <Link to={"/userPanel"}>
-                    User
+                <Link to={"/login"}>
+                    Login
                 </Link>
             </div>
             <div>
-                <Link to={"/profile/:status"}>
-                    Profile
+                <Link to={"/signup"}>
+                    SignUp
                 </Link>
             </div>
         </div>

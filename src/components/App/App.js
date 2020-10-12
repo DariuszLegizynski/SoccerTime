@@ -5,8 +5,9 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import AllLeagues from '../allLeagues/allLeagues/allLeagues';
 import League from "../allLeagues/league/league";
 import Team from "../team/team";
-import UserPanel from "../userAuth/UserPanel";
-import userProfile from "../userAuth/UserProfile";
+
+import UserSignIn from '../userAuth/UserSignIn';
+import UserSignUp from '../userAuth/UserSignUp';
 
 const App = () => {
   return (
@@ -16,8 +17,8 @@ const App = () => {
         <Route path={"/allLeagues/:idLeague"} exact component={League} />
         <Route path={"/allTeams/:team"} exact component={Team} />
 
-        <Route path={"/userPanel"} exact component={UserPanel} />
-        <Route path={"/profile/:status"} exact component={userProfile} />
+        <Route path={"/login"} exact component={UserSignIn} />
+        <Route path={"/signup"} exact component={UserSignUp} />
 
         <Redirect to={"/"} />
       </Switch>
