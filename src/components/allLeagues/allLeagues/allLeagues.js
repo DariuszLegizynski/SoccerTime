@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
+
+import Header from "../../header/Header";
 
 import _ from "lodash";
 import shortid from "shortid";
@@ -59,7 +61,7 @@ const AllLeagues = () => {
                     return (
                         <div key={shortid.generate()}>
                             <p>{el.strLeague}</p>
-                            <Link to={`/allLeagues/${el.idLeague}`}>View</Link>
+                            <Link to={{pathname: `/allLeagues/${el.idLeague}`, state:{leagueName:el.strLeague}}}>View</Link>
                         </div>
                     )}
                 )}
@@ -71,7 +73,7 @@ const AllLeagues = () => {
                     return (
                         <div key={shortid.generate()}>
                             <p>{el.strLeague}</p>
-                            <Link to={`/allLeagues/${el.idLeague}`}>View</Link>
+                            <Link to={{pathname: `/allLeagues/${el.idLeague}`, state:{leagueName:el.strLeague}}}>View</Link>
                         </div>
                     )}
                 )}
@@ -83,7 +85,7 @@ const AllLeagues = () => {
                     return (
                         <div key={shortid.generate()}>
                             <p>{el.strLeague}</p>
-                            <Link to={`/allLeagues/${el.idLeague}`}>View</Link>
+                            <Link to={{pathname: `/allLeagues/${el.idLeague}`, state:{leagueName:el.strLeague}}}>View</Link>
                         </div>
                     )}
                 )}
@@ -95,7 +97,7 @@ const AllLeagues = () => {
                     return (
                         <div key={shortid.generate()}>
                             <p>{el.strLeague}</p>
-                            <Link to={`/allLeagues/${el.idLeague}`}>View</Link>
+                            <Link to={{pathname: `/allLeagues/${el.idLeague}`, state:{leagueName:el.strLeague}}}>View</Link>
                         </div>
                     )}
                 )}
@@ -116,6 +118,7 @@ const AllLeagues = () => {
 
 return (
     <div>
+        <Header />
         <br/>
         <br/>
         All Leagues:

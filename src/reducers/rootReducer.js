@@ -6,6 +6,8 @@ import teamReducer from "./team/teamReducer";
 import tableLookupReducer from "./allLeagues/tableLookup/tableLookupReducer";
 import NextTeamEventsReducer from './team/nextTeamEventsReducer';
 import PreviousTeamEventsReducer from './team/previousTeamEventsReducer';
+import NextLeagueEventsReducer from "./allLeagues/league/nextLeagueEventsReducer";
+import PreviousLeagueEventsReducer from "./allLeagues/league/previousLeagueEventsReducer";
 
 const rootReducer = combineReducers({
     allCountries: allCountriesReducer,
@@ -14,7 +16,9 @@ const rootReducer = combineReducers({
     team: teamReducer,
     tableLeague: tableLookupReducer,
     nextTeamEvents: NextTeamEventsReducer,
-    previousTeamEvents: PreviousTeamEventsReducer
+    previousTeamEvents: PreviousTeamEventsReducer,
+    nextLeagueEvents: NextLeagueEventsReducer,
+    previousLeagueEvents: PreviousLeagueEventsReducer
 });
 
 export default rootReducer;

@@ -6,107 +6,18 @@ import _ from "lodash";
 import shortid from "shortid";
 
 import { getTeam } from "../../actions/team/getTeam";
-import { getNextTeamEvents } from "../../actions/team/getNextTeamEvents";
-import { getPreviousTeamEvents } from "../../actions/team/getPreviousTeamEvents";
+
+import ShowNextEvents from "./showNextEvents";
+import ShowPreviousEvents from "./showPreviousEvents";
 
 const Team = (props) => {
     const idTeam = props.match.params.team;
     const dispatch = useDispatch();
     const selectTeam = useSelector(state => state.team);
-    const selectNextTeamEvents = useSelector(state => state.nextTeamEvents);
-    const selectPreviousTeamEvents = useSelector(state => state.previousTeamEvents);
 
     useEffect (() => {
         dispatch(getTeam(idTeam))
     }, [dispatch, idTeam]);
-
-    useEffect (() => {
-        dispatch(getNextTeamEvents(idTeam))
-    }, [dispatch, idTeam]);
-
-    useEffect (() => {
-        dispatch(getPreviousTeamEvents(idTeam))
-    }, [dispatch, idTeam]);
-
-    const showNextEvents = () => {
-        if(!_.isEmpty(selectNextTeamEvents.data)) {
-            return selectNextTeamEvents.data.events.map(event => {
-                return (
-                    <div key={shortid.generate()}>
-                        <p>Next Match:</p>
-                        <Link to={`/allTeams/${event.idHomeTeam}`}>
-                            {event.strHomeTeam}
-                        </Link>
-                        :
-                        <Link to={`/allTeams/${event.idAwayTeam}`}>
-                            {event.strAwayTeam}
-                        </Link>
-                        <p>Date:</p>
-                        {event.dateEvent} 
-                        at {event.strTime}
-                        <p>Where?</p>
-                        {event.strVenue}
-                        <p>Has the game begon?</p>
-                        {event.strStatus}
-                        <p>Season</p>
-                        {event.strSeason}
-                        <p>League:</p>
-                        {event.strLeague}
-                    </div>
-                )
-            })
-        }
-
-        if(selectNextTeamEvents.loading) {
-            return <p>loading...</p>
-        }
-
-        if(selectNextTeamEvents.errorMsg !== "") {
-            return <p>{selectTeam.errorMsg}</p>
-        }
-
-    return <p>Unable to get the team's upcoming events</p>
-    }
-
-    const showPreviousEvents = () => {
-        if(!_.isEmpty(selectPreviousTeamEvents.data)) {
-            return selectPreviousTeamEvents.data.results.map(event => {
-                return (
-                    <div key={shortid.generate()}>
-                        <p>Next Match:</p>
-                        <Link to={`/allTeams/${event.idHomeTeam}`}>
-                            {event.strHomeTeam}
-                        </Link>
-                        :
-                        <Link to={`/allTeams/${event.idAwayTeam}`}>
-                            {event.strAwayTeam}
-                        </Link>
-                        <p>Date:</p>
-                        {event.dateEvent} 
-                        at {event.strTime}
-                        <p>Where?</p>
-                        {event.strVenue}
-                        <p>Has the game begon?</p>
-                        {event.strStatus}
-                        <p>Season</p>
-                        {event.strSeason}
-                        <p>League:</p>
-                        {event.strLeague}
-                    </div>
-                )
-            })
-        }
-
-        if(selectPreviousTeamEvents.loading) {
-            return <p>loading...</p>
-        }
-
-        if(selectPreviousTeamEvents.errorMsg !== "") {
-            return <p>{selectTeam.errorMsg}</p>
-        }
-
-    return <p>Unable to get the team's previous events</p>
-    }
 
     const showTeam = () => {
     if(!_.isEmpty(selectTeam.data.teams)) {
@@ -183,12 +94,10 @@ const Team = (props) => {
 
     return (
         <div>
-            <h2>Upcoming Team Events:</h2>
-            {showNextEvents()}
+            <ShowNextEvents idTeam={idTeam} />
             Team Details:
             {showTeam()}
-            <h4>Last Team Events:</h4>
-            {showPreviousEvents()}
+            <ShowPreviousEvents idTeam={idTeam} />
         </div>
     )
 }
