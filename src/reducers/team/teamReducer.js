@@ -18,7 +18,7 @@ const TeamReducer = (state = DefaultState, action) => {
         case GET_TEAM_FAIL:
             return {
                 ...state,
-                laoding: false,
+                loading: false,
                 errorMsg: "team not found"
             };
 
