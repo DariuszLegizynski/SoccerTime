@@ -1,5 +1,5 @@
 import { GET_SIGNOUT_ERROR, GET_SIGNOUT_SUCCESS } from "../index";
-import firebase from "../../apis/firebase";
+import firebase from "../../config/firebase";
 
 export const getSignout = () => async (dispatch) => {
     try {
