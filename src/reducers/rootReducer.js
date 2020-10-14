@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 import { firebaseReducer } from "react-redux-firebase";
+import { firestoreReducer } from "redux-firestore";
 import allCountriesReducer from './allCountries/allCountriesReducer';
 import allLeaguesReducer from "./allLeagues/allLeagues/allLeaguesReducer";
 import leagueReducer from "./allLeagues/league/leagueReducer";
@@ -12,6 +13,7 @@ import PreviousLeagueEventsReducer from "./allLeagues/league/previousLeagueEvent
 
 const rootReducer = combineReducers({
     firebaseReducer,
+    firestore: firestoreReducer,
     allCountries: allCountriesReducer,
     allLeagues: allLeaguesReducer,
     league: leagueReducer,
