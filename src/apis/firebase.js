@@ -2,14 +2,14 @@ import firebase from "firebase/app";
 import "firebase/auth";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyB63U-qUn3IOKu3_tT3KdpHlHBHAE9rwSg",
-    authDomain: "soccer-time-ea700.firebaseapp.com",
-    databaseURL: "https://soccer-time-ea700.firebaseio.com",
-    projectId: "soccer-time-ea700",
-    storageBucket: "soccer-time-ea700.appspot.com",
-    messagingSenderId: "952275907192",
-    appId: "1:952275907192:web:8586a0f32c6e258c7ff38d",
-    measurementId: "G-K63QFR38ZL"
+    apiKey: process.env.REACT_APP_FIREBASE_KEY,
+    authDomain: process.env.REACT_APP_FIREBASE_DOMAIN,
+    databaseURL: process.env.REACT_APP_FIREBASE_DATABASE,
+    projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_FIREBASE_SENDER_ID,
+    appId: process.env.REACT_APP_FIREBASE_APP_ID,
+    measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID
   };
 
 firebase.initializeApp(firebaseConfig);
