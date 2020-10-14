@@ -12,7 +12,7 @@ import NextLeagueEventsReducer from "./allLeagues/league/nextLeagueEventsReducer
 import PreviousLeagueEventsReducer from "./allLeagues/league/previousLeagueEventsReducer";
 
 const rootReducer = combineReducers({
-    firebaseReducer,
+    firebase: firebaseReducer,
     firestore: firestoreReducer,
     allCountries: allCountriesReducer,
     allLeagues: allLeaguesReducer,
