@@ -2,7 +2,8 @@
 import { GET_SIGNIN_SUCCESS, GET_SIGNIN_ERROR } from "../../actions/index";
 
 const DefaultState = {
-    authMsg: ""
+    user: {},
+    errorMsg: ""
 };
 
 const signinReducer = (state = DefaultState, action) => {
@@ -10,13 +11,14 @@ const signinReducer = (state = DefaultState, action) => {
         case GET_SIGNIN_SUCCESS:
             return {
                 ...state,
-                authMsg: action.payload
+                user: action.payload,
+                errorMsg: ""
             };
 
         case GET_SIGNIN_ERROR:
             return {
                 ...state,
-                authMsg: action.payload
+                errorMsg: "failed to log in"
             };
     default:
         return state

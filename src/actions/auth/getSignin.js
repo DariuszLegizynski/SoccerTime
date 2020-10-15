@@ -1,16 +1,15 @@
 import { GET_SIGNIN_ERROR, GET_SIGNIN_SUCCESS } from "../index";
-import firebase from "../../config/firebase";
+import { firebaseInit } from "../../index";
 
-export const getSignin = (credentials, callback) => async (dispatch) => {
+export const getSignin = (credentials) => async (dispatch) => {
     try {
-        firebase
+        firebaseInit
             .auth()
             .signInWithEmailAndPassword(credentials.email, credentials.password)
             .then(() => {
                 dispatch({
                     type: GET_SIGNIN_SUCCESS
                 });
-                callback();
             })
             .catch(() => {
                 dispatch({

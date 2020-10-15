@@ -1,5 +1,5 @@
 import { GET_SIGNUP_ERROR, GET_SIGNUP_SUCCESS } from "../index";
-import firebase from "../../apis/firebase";
+import firebase from "../../config/fbConfig";
 
 export const getSignup = (newUser) => async (dispatch) => {
     try {
@@ -25,7 +25,7 @@ export const getSignup = (newUser) => async (dispatch) => {
         
     } catch(e) {
         dispatch ({
-            type: GET_SINGUP_ERROR,
+            type: GET_SIGNUP_ERROR,
             payload: "Something went wrong, we couldn't create your account. Please try again."
         });
     }

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { getSignin } from "../../actions/auth/getSignin";
 
 const UserSign = () => {
 
@@ -9,7 +10,7 @@ const UserSign = () => {
     })
 
     const handleSubmit = (event) => {
-        console.log(userStatus);
+        dispatchEvent(getSignin(userStatus));
         event.preventDefault();
     }
 

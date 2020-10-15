@@ -16,15 +16,14 @@ import { fbConfig } from "./config/fbConfig";
 
 import registerServiceWorker from "./registerServiceWorker";
 
+export const firebaseInit = firebase.initializeApp(fbConfig);
+firebase.firestore();
 
 //rrf stores authenticated users' data in Cloud Firestore
 const rrfConfig = {
   userProfile: "users",
   useFirestoreForProfile: true
 }
-
-firebase.initializeApp(fbConfig);
-firebase.firestore();
 
 const rrfProps = {
   firebase,
