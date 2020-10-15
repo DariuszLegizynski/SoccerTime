@@ -1,9 +1,12 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { getSignup } from "../../actions/auth/getSignup";
 
 const UserSignUp = () => {
+    const dispatch = useDispatch();
 
-    const [ userStatus, setUserStatus ] = useState ({
+    const [ userSignUp, setUserSignUp ] = useState ({
         email: "",
         password: "",
         firstName: "",
@@ -11,17 +14,16 @@ const UserSignUp = () => {
     })
 
     const handleSubmit = (event) => {
-        console.log(userStatus);
+        dispatch(getSignup(userSignUp));
         event.preventDefault();
     }
 
     const handleChange = (event) => {
         const { id, value } = event.target;
-        setUserStatus((prevValue) => {
-            return {
-                ...prevValue,
+        setUserSignUp({
+                ...userSignUp,
                 [id]: value
-            }
+
         })
     }
 
@@ -39,12 +41,12 @@ const UserSignUp = () => {
                         <input type="text" id="lastName" onChange={handleChange} required />
                     </div>
                     <div>
-                        <label htmlFor="signUp-email">Email address</label>
-                        <input type="email" id="signUp-email" onChange={handleChange} required />
+                        <label htmlFor="mail">Email address</label>
+                        <input type="email" id="email" onChange={handleChange} required />
                     </div>
                     <div>
-                        <label htmlFor="signUp-password">Your Password</label>
-                        <input type="password" id="signUp-password" onChange={handleChange} required />
+                        <label htmlFor="password">Your Password</label>
+                        <input type="password" id="password" onChange={handleChange} required />
                     </div>
                     <button>SignUp</button>
                 </form>

@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { getSignin } from "../../actions/auth/getSignin";
 
 const UserSign = () => {
+    const dispatch = useDispatch();
 
     const [ userStatus, setUserStatus ] = useState ({
         email: "",
@@ -10,17 +12,15 @@ const UserSign = () => {
     })
 
     const handleSubmit = (event) => {
-        dispatchEvent(getSignin(userStatus));
+        dispatch(getSignin(userStatus));
         event.preventDefault();
     }
 
     const handleChange = (event) => {
         const { id, value } = event.target;
-        setUserStatus((prevValue) => {
-            return {
-                ...prevValue,
+        setUserStatus({
+                ...userStatus,
                 [id]: value
-            }
         })
     }
 
@@ -30,12 +30,12 @@ const UserSign = () => {
                 <h4>Login</h4>
                 <form onSubmit={handleSubmit}>
                     <div>
-                        <label htmlFor="signIn-email">Email address</label>
-                        <input type="email" id="signIn-email" onChange={handleChange} required />
+                        <label htmlFor="email">Email address</label>
+                        <input type="email" id="email" onChange={handleChange} required />
                     </div>
                     <div>
-                        <label htmlFor="signIn-password">Your Password</label>
-                        <input type="password" id="signIn-password" onChange={handleChange} required />
+                        <label htmlFor="password">Your Password</label>
+                        <input type="password" id="password" onChange={handleChange} required />
                     </div>
                     <button>Login</button>
                 </form>

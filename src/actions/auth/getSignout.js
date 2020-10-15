@@ -1,9 +1,9 @@
 import { GET_SIGNOUT_ERROR, GET_SIGNOUT_SUCCESS } from "../index";
-import firebase from "../../config/fbConfig";
+import { firebaseInit } from "../../index";
 
 export const getSignout = () => async (dispatch) => {
     try {
-        firebase
+        firebaseInit
             .auth()
             .signOut()
             .then(() => {

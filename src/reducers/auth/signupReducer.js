@@ -4,7 +4,7 @@ const DefaultState = {
     authMsg: ""
 };
 
-const signupReducer = (state = DefaultState, action) => {
+const SignupReducer = (state = DefaultState, action) => {
     switch (action.type) {
         case GET_SIGNUP_SUCCESS:
             return {
@@ -22,4 +22,4 @@ const signupReducer = (state = DefaultState, action) => {
     }
 }
 
-export default signupReducer;
+export default SignupReducer;

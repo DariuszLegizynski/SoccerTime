@@ -4,7 +4,7 @@ const DefaultState = {
     authMsg: ""
 };
 
-const signoutReducer = (state = DefaultState, action) => {
+const SignoutReducer = (state = DefaultState, action) => {
     switch (action.type) {
         case GET_SIGNOUT_SUCCESS:
             return {
@@ -22,4 +22,4 @@ const signoutReducer = (state = DefaultState, action) => {
     }
 }
 
-export default signoutReducer;
+export default SignoutReducer;

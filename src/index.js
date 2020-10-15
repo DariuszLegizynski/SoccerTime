@@ -8,6 +8,7 @@ import App from './components/App/App';
 
 import firebase from 'firebase/app'
 import "firebase/auth";
+import 'firebase/database';
 import "firebase/firestore";
 
 import { createFirestoreInstance } from "redux-firestore";
@@ -22,7 +23,8 @@ firebase.firestore();
 //rrf stores authenticated users' data in Cloud Firestore
 const rrfConfig = {
   userProfile: "users",
-  useFirestoreForProfile: true
+  useFirestoreForProfile: true,
+  // enableLogging: false
 }
 
 const rrfProps = {
