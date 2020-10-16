@@ -1,9 +1,10 @@
 import { GET_SIGNUP_ERROR, GET_SIGNUP_SUCCESS } from "../index";
-import { firebaseInit } from "../../index";
+// import { firebase } from "../../config/fbConfig";
 
-export const getSignup = (newUser) => async (dispatch) => {
+export const getSignup = (newUser) => async (dispatch, getFirebase) => {
+    const firebase = getFirebase();
     try {
-        firebaseInit
+        firebase
             .auth()
             .createUserWithEmailAndPassword(
                 newUser.email,

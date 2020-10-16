@@ -6,20 +6,19 @@ import { BrowserRouter } from "react-router-dom";
 import store from './store';
 import App from './components/App/App';
 
-import firebase from 'firebase/app'
-import "firebase/auth";
-import 'firebase/database';
+import firebase from "firebase/app";
 import "firebase/firestore";
+import "firebase/auth"
+
+import fbConfig from "./config/fbConfig";
 
 import { createFirestoreInstance } from "redux-firestore";
 import { ReactReduxFirebaseProvider } from 'react-redux-firebase';
-import { fbConfig } from "./config/fbConfig";
 
 import registerServiceWorker from "./registerServiceWorker";
 
-export const firebaseInit = firebase.initializeApp(fbConfig);
-firebase.firestore();
-
+const firebaseInit = firebase.initializeApp(fbConfig);
+console.log(firebaseInit);
 //rrf stores authenticated users' data in Cloud Firestore
 const rrfConfig = {
   userProfile: "users",

@@ -1,10 +1,13 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { getSignin } from "../../actions/auth/getSignin";
 
 const UserSign = () => {
     const dispatch = useDispatch();
+
+    const signinStatus = useSelector(state => state.signin.authMsg);
+    console.log(signinStatus);
 
     const [ userStatus, setUserStatus ] = useState ({
         email: "",
@@ -38,6 +41,7 @@ const UserSign = () => {
                         <input type="password" id="password" onChange={handleChange} required />
                     </div>
                     <button>Login</button>
+                    <p>Sign Status: {signinStatus}</p>
                 </form>
             </div>
         )

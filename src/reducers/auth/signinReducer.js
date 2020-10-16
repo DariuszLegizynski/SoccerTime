@@ -2,23 +2,22 @@
 import { GET_SIGNIN_SUCCESS, GET_SIGNIN_ERROR } from "../../actions/index";
 
 const DefaultState = {
-    // user: {},
-    errorMsg: ""
+    authMsg: ""
 };
 
 const SigninReducer = (state = DefaultState, action) => {
     switch (action.type) {
-        case GET_SIGNIN_SUCCESS:
-            return {
-                ...state,
-                // user: action.payload,
-                errorMsg: ""
-            };
-
         case GET_SIGNIN_ERROR:
+            console.log("login failed");
             return {
                 ...state,
-                errorMsg: "Unable to sign in"
+                authMsg: "Unable to login"
+            };
+        case GET_SIGNIN_SUCCESS:
+            console.log("login success");
+            return {
+                ...state,
+                authMsg: "login success"
             };
     default:
         return state

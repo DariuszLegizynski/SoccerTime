@@ -1,7 +1,10 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { NavLink, Link } from "react-router-dom";
 
 const Header = () => {
+    const showState = useSelector(state => state);
+    console.log(showState.firebase);
     return(
         <div>
             <div>
