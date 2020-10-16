@@ -3,6 +3,7 @@ import { GET_SIGNIN_ERROR, GET_SIGNIN_SUCCESS } from "../index";
 export const getSignin = (credentials) => async (dispatch, getState, {getFirebase}) => {
     console.log(credentials);
     const firebase = getFirebase();
+    console.log(getFirebase);
     try {
         firebase
             .auth()
