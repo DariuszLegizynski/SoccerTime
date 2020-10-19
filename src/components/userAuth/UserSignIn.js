@@ -1,30 +1,17 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { getSignin } from "../../actions/auth/getSignin";
 
 const UserSign = () => {
     const dispatch = useDispatch();
 
-    const signinStatus = useSelector(state => state.signin.authMsg);
-    console.log(signinStatus);
-
-    const [ userStatus, setUserStatus ] = useState ({
-        email: "",
-        password: ""
-    })
+    const [ email, setEmail ] = useState ("");
+    const [ password, setPassword ] = useState ("");
 
     const handleSubmit = (event) => {
-        dispatch(getSignin(userStatus));
         event.preventDefault();
-    }
-
-    const handleChange = (event) => {
-        const { id, value } = event.target;
-        setUserStatus({
-                ...userStatus,
-                [id]: value
-        })
+        
     }
 
     const showLogin = () => {
@@ -34,14 +21,13 @@ const UserSign = () => {
                 <form onSubmit={handleSubmit}>
                     <div>
                         <label htmlFor="email">Email address</label>
-                        <input type="email" id="email" onChange={handleChange} required />
+                        <input type="email" id="email" onChange={(e) => setEmail(e.target.value)} placeholder="Email Address" required />
                     </div>
                     <div>
                         <label htmlFor="password">Your Password</label>
-                        <input type="password" id="password" onChange={handleChange} required />
+                        <input type="password" id="password" onChange={(e) => setPassword(e.target.value)} placeholder="Password" required />
                     </div>
                     <button>Login</button>
-                    <p>Sign Status: {signinStatus}</p>
                 </form>
             </div>
         )

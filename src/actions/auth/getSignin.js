@@ -3,9 +3,9 @@ import { GET_SIGNIN_ERROR, GET_SIGNIN_SUCCESS } from "../index";
 export const getSignin = (credentials) => async (dispatch, getState, {getFirebase}) => {
     console.log(credentials);
     const firebase = getFirebase();
-    console.log(getFirebase);
+    console.log(firebase);
     try {
-        firebase
+        await firebase()
             .auth()
             .signInWithEmailAndPassword(credentials.email, credentials.password)
             .then(() => {

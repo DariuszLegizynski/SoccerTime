@@ -5,6 +5,7 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import AllLeagues from '../allLeagues/allLeagues/allLeagues';
 import League from "../allLeagues/league/league";
 import Team from "../team/team";
+import Private from "../private/private";
 
 import UserSignIn from '../userAuth/UserSignIn';
 import UserSignUp from '../userAuth/UserSignUp';
@@ -19,6 +20,8 @@ const App = () => {
 
         <Route path={"/login"} exact component={UserSignIn} />
         <Route path={"/signup"} exact component={UserSignUp} />
+
+        <Route path="/private" component={Private} />
 
         <Redirect to={"/"} />
       </Switch>

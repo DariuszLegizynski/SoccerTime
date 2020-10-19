@@ -7,42 +7,49 @@ import store from './store';
 import App from './components/App/App';
 
 import firebase from "firebase/app";
-import "firebase/firestore";
-import "firebase/auth"
+import "firebase/auth";
+
+// import { createFirestoreInstance } from "redux-firestore";
+// import { ReactReduxFirebaseProvider } from 'react-redux-firebase';
+
+// import * as serviceWorker from './serviceWorker';
+import registerServiceWorker from "./registerServiceWorker";
 
 import fbConfig from "./config/fbConfig";
 
-import { createFirestoreInstance } from "redux-firestore";
-import { ReactReduxFirebaseProvider } from 'react-redux-firebase';
+firebase.initializeApp(fbConfig);
 
-import registerServiceWorker from "./registerServiceWorker";
-
-const firebaseInit = firebase.initializeApp(fbConfig);
-console.log(firebaseInit);
 //rrf stores authenticated users' data in Cloud Firestore
-const rrfConfig = {
-  userProfile: "users",
-  useFirestoreForProfile: true,
+// const rrfConfig = {
+//   userProfile: "users",
+  // useFirestoreForProfile: true,
   // enableLogging: false
-}
+// }
 
-const rrfProps = {
-  firebase,
-  config: rrfConfig,
-  dispatch: store.dispatch,
-  createFirestoreInstance
-}
+// const rrfProps = {
+//   firebase,
+//   config: rrfConfig,
+//   dispatch: store.dispatch,
+  // createFirestoreInstance
+// }
+
+window.store = store;
 
 ReactDOM.render(
   <BrowserRouter>
     <Provider store={store} >
-      <ReactReduxFirebaseProvider {...rrfProps} >
+      {/* <ReactReduxFirebaseProvider {...rrfProps} > */}
         <App />
-      </ReactReduxFirebaseProvider>
+      {/* </ReactReduxFirebaseProvider> */}
     </Provider>
   </BrowserRouter>,
   document.querySelector("#root")
 );
 
+
+// If you want your app to work offline and load faster, you can change
+// unregister() to register() below. Note this comes with some pitfalls.
+// Learn more about service workers: https://bit.ly/CRA-PWA
+// serviceWorker.unregister();
 registerServiceWorker();
 
