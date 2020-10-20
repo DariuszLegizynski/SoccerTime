@@ -1,5 +1,5 @@
 import { GET_SIGNOUT_ERROR, GET_SIGNOUT_SUCCESS } from "../index";
-import firebase from "../../apis/firebase";
+import firebase from "firebase/app";
 
 export const getSignout = () => async (dispatch) => {
     try {
@@ -12,17 +12,17 @@ export const getSignout = () => async (dispatch) => {
                 });
             }
     )
-    .catch(() => {
+    .catch((error) => {
         dispatch({
             type: GET_SIGNOUT_ERROR,
-            payload: "Something went wrong, we couldn't sign you out. Please try again."
+            error
         });
     });
         
-    } catch(e) {
+    } catch(error) {
         dispatch ({
             type: GET_SIGNOUT_ERROR,
-            payload: "Something went wrong, we couldn't sign you out. Please try again."
+            error
         });
     }
 };

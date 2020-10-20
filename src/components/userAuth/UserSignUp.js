@@ -1,52 +1,62 @@
 import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { getSignup } from "../../actions/auth/getSignup";
+import _ from "lodash";
 
 const UserSignUp = () => {
+    const authState = useSelector(state => state.signup.authMsg);
+    const dispatch = useDispatch();
 
-    const [ userStatus, setUserStatus ] = useState ({
-        email: "",
-        password: "",
+    const [ userSignup, setUserSignup ] = useState ({
         firstName: "",
-        lastName: ""
-    })
+        lastName: "",
+        email: "",
+        password: ""
+    });
 
-    const handleSubmit = (event) => {
-        console.log(userStatus);
-        event.preventDefault();
+    const registerNewUser = (event) => {
+        event.preventDefault();       
+        dispatch(getSignup(userSignup));
     }
 
     const handleChange = (event) => {
         const { id, value } = event.target;
-        setUserStatus((prevValue) => {
-            return {
-                ...prevValue,
+        setUserSignup({
+                ...userSignup,
                 [id]: value
-            }
         })
+    }
+
+    const currentSignupState = () => {
+        if(!_.isEmpty(authState)){
+            return authState;
+        }
     }
 
     const showSignUp = () => {
         return (
             <div>
                 <h4>SignUp</h4>
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={registerNewUser}>
                     <div>
                         <label htmlFor="firstName">First Name: </label>
-                        <input type="text" id="firstName" onChange={handleChange} required />
+                        <input type="text" id="firstName" onChange={handleChange} placeholder="First Name" required />
                     </div>
                     <div>
                         <label htmlFor="lastName">Last Name: </label>
-                        <input type="text" id="lastName" onChange={handleChange} required />
+                        <input type="text" id="lastName" onChange={handleChange} placeholder="Last Name" required />
                     </div>
                     <div>
-                        <label htmlFor="signUp-email">Email address</label>
-                        <input type="email" id="signUp-email" onChange={handleChange} required />
+                        <label htmlFor="email">Email address</label>
+                        <input type="email" id="email" onChange={handleChange} placeholder="Email Address" required />
                     </div>
                     <div>
-                        <label htmlFor="signUp-password">Your Password</label>
-                        <input type="password" id="signUp-password" onChange={handleChange} required />
+                        <label htmlFor="password">Your Password</label>
+                        <input type="password" id="password" onChange={handleChange} placeholder="Password" required />
                     </div>
                     <button>SignUp</button>
+                    <p>{currentSignupState()}</p>
                 </form>
             </div>
         )

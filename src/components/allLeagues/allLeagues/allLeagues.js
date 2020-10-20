@@ -2,8 +2,6 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
-import Header from "../../header/Header";
-
 import _ from "lodash";
 import shortid from "shortid";
 
@@ -118,7 +116,6 @@ const AllLeagues = () => {
 
 return (
     <div>
-        <Header />
         <br/>
         <br/>
         All Leagues:

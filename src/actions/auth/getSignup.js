@@ -1,5 +1,5 @@
-import { GET_SINGUP_ERROR, GET_SIGNUP_SUCCESS } from "../index";
-import firebase from "../../apis/firebase";
+import { GET_SIGNUP_ERROR, GET_SIGNUP_SUCCESS } from "../index";
+import firebase from "firebase/app";
 
 export const getSignup = (newUser) => async (dispatch) => {
     try {
@@ -11,22 +11,21 @@ export const getSignup = (newUser) => async (dispatch) => {
             )
             .then(() => {
                 dispatch({
-                    type: GET_SIGNUP_SUCCESS,
-                    payload: "Your account was successfully created! Now you need to verify your e-mail address, please go check your inbox."
+                    type: GET_SIGNUP_SUCCESS
                 });
             })
-            .catch((err) => {
+            .catch((error) => {
                 dispatch({
-                    type: GET_SINGUP_ERROR,
-                    payload: "Something went wrong, we couldn't create your account. Please try again."
+                    type: GET_SIGNUP_ERROR,
+                    error
                 });
             });
 
         
-    } catch(e) {
+    } catch(error) {
         dispatch ({
-            type: GET_SINGUP_ERROR,
-            payload: "Something went wrong, we couldn't create your account. Please try again."
+            type: GET_SIGNUP_ERROR,
+            error
         });
     }
 };
