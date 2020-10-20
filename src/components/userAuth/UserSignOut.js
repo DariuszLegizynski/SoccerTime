@@ -14,7 +14,7 @@ const UserSignOut = () => {
         password: ""
     });
 
-    const registerNewUser = (event) => {
+    const signoutUser = (event) => {
         event.preventDefault();       
         dispatch(getSignout(userSignout));
     }

@@ -7,6 +7,7 @@ import store from './store';
 import App from './components/App/App';
 
 import firebase from "firebase/app";
+import 'firebase/firestore';
 import "firebase/auth";
 
 // import { createFirestoreInstance } from "redux-firestore";

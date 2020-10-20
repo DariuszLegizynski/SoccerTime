@@ -11,7 +11,6 @@ const Header = () => {
             </div>
             <nav>
                 <NavLink to={"/"}>SEARCH</NavLink>
-                <NavLink to={"/private"} >Private</NavLink>
             </nav>
             <div>
                 <Link to={"/login"}>

@@ -1,5 +1,5 @@
 import { GET_SIGNIN_ERROR, GET_SIGNIN_SUCCESS } from "../index";
-import firebase from "firebase";
+import firebase from "firebase/app";
 
 export const getSignin = (credentials) => async (dispatch) => {
 
