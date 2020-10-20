@@ -9,13 +9,13 @@ const SignoutReducer = (state = DefaultState, action) => {
         case GET_SIGNOUT_SUCCESS:
             return {
                 ...state,
-                authMsg: action.payload
+                authMsg: "Bye Bye"
             };
 
         case GET_SIGNOUT_ERROR:
             return {
                 ...state,
-                authMsg: action.payload
+                authMsg: "No one simple leaves soccer-time"
             };
     default:
         return state

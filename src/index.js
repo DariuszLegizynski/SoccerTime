@@ -10,7 +10,7 @@ import firebase from "firebase/app";
 import "firebase/auth";
 
 // import { createFirestoreInstance } from "redux-firestore";
-// import { ReactReduxFirebaseProvider } from 'react-redux-firebase';
+import { ReactReduxFirebaseProvider } from 'react-redux-firebase';
 
 // import * as serviceWorker from './serviceWorker';
 import registerServiceWorker from "./registerServiceWorker";
@@ -20,27 +20,27 @@ import fbConfig from "./config/fbConfig";
 firebase.initializeApp(fbConfig);
 
 //rrf stores authenticated users' data in Cloud Firestore
-// const rrfConfig = {
-//   userProfile: "users",
-  // useFirestoreForProfile: true,
+const rrfConfig = {
+  userProfile: "users",
+  useFirestoreForProfile: true,
   // enableLogging: false
-// }
+}
 
-// const rrfProps = {
-//   firebase,
-//   config: rrfConfig,
-//   dispatch: store.dispatch,
+const rrfProps = {
+  firebase,
+  config: rrfConfig, fbConfig,
+  dispatch: store.dispatch,
   // createFirestoreInstance
-// }
+}
 
 window.store = store;
 
 ReactDOM.render(
   <BrowserRouter>
     <Provider store={store} >
-      {/* <ReactReduxFirebaseProvider {...rrfProps} > */}
+      <ReactReduxFirebaseProvider {...rrfProps} >
         <App />
-      {/* </ReactReduxFirebaseProvider> */}
+      </ReactReduxFirebaseProvider>
     </Provider>
   </BrowserRouter>,
   document.querySelector("#root")

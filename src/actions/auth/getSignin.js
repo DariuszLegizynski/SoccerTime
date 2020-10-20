@@ -1,11 +1,10 @@
 import { GET_SIGNIN_ERROR, GET_SIGNIN_SUCCESS } from "../index";
+import firebase from "firebase";
 
-export const getSignin = (credentials) => async (dispatch, getState, {getFirebase}) => {
-    console.log(credentials);
-    const firebase = getFirebase();
-    console.log(firebase);
+export const getSignin = (credentials) => async (dispatch) => {
+
     try {
-        await firebase()
+        firebase
             .auth()
             .signInWithEmailAndPassword(credentials.email, credentials.password)
             .then(() => {
@@ -20,10 +19,10 @@ export const getSignin = (credentials) => async (dispatch, getState, {getFirebas
                 });
             });
         
-    } catch(e) {
+    } catch(error) {
         dispatch ({
             type: GET_SIGNIN_ERROR,
-            payload: "Invalid login credentials."
+            error
         });
     }
 };

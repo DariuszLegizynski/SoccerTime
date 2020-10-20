@@ -8,13 +8,11 @@ const DefaultState = {
 const SigninReducer = (state = DefaultState, action) => {
     switch (action.type) {
         case GET_SIGNIN_ERROR:
-            console.log("login failed");
             return {
                 ...state,
                 authMsg: "Unable to login"
             };
         case GET_SIGNIN_SUCCESS:
-            console.log("login success");
             return {
                 ...state,
                 authMsg: "login success"
