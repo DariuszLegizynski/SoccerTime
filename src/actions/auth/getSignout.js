@@ -10,15 +10,15 @@ export const getSignout = () => async (dispatch) => {
                 dispatch ({
                     type: GET_SIGNOUT_SUCCESS
                 });
-            }
-    )
-    .catch((error) => {
-        dispatch({
-            type: GET_SIGNOUT_ERROR,
-            error
-        });
-    });
-        
+                localStorage.clear();
+            })
+            .catch((error) => {
+                dispatch({
+                    type: GET_SIGNOUT_ERROR,
+                    error
+                });
+            });
+            
     } catch(error) {
         dispatch ({
             type: GET_SIGNOUT_ERROR,

@@ -28,10 +28,11 @@ const AllLeagues = () => {
     }, [dispatch, selectAllCountries.data]);
 
     let allCountriesArr = [];
-    let allLeaguesFiltered = [];
-    let getAllLeagues = [];
 
     allCountriesArr = (Object.values(selectAllLeagues.data));
+
+    let allLeaguesFiltered = [];
+    let getAllLeagues = [];
 
     if(allCountriesArr.length > ALL_COUNTRIES_LENGTH) {
         allLeaguesFiltered = allCountriesArr.flat().filter(el => el !== null);

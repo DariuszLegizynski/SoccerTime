@@ -13,9 +13,7 @@ import NextTeamEventsReducer from './team/nextTeamEventsReducer';
 import PreviousTeamEventsReducer from './team/previousTeamEventsReducer';
 import NextLeagueEventsReducer from "./allLeagues/league/nextLeagueEventsReducer";
 import PreviousLeagueEventsReducer from "./allLeagues/league/previousLeagueEventsReducer";
-import SigninReducer from "./auth/signinReducer";
-import SignoutReducer from "./auth/signoutReducer";
-import SignupReducer from "./auth/signupReducer";
+import AuthReducer from './auth/authReducer';
 
 const rootReducer = combineReducers({
     firebase: firebaseReducer,
@@ -28,9 +26,7 @@ const rootReducer = combineReducers({
     previousTeamEvents: PreviousTeamEventsReducer,
     nextLeagueEvents: NextLeagueEventsReducer,
     previousLeagueEvents: PreviousLeagueEventsReducer,
-    signin: SigninReducer,
-    signout: SignoutReducer,
-    signup: SignupReducer
+    auth: AuthReducer
 });
 
 export default rootReducer;

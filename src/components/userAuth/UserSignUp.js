@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { getSignup } from "../../actions/auth/getSignup";
 import _ from "lodash";
 
 const UserSignUp = () => {
-    const authState = useSelector(state => state.signup.authMsg);
+    const auth = useSelector(state => state.auth);
     const dispatch = useDispatch();
 
     const [ userSignup, setUserSignup ] = useState ({
@@ -29,8 +29,8 @@ const UserSignUp = () => {
     }
 
     const currentSignupState = () => {
-        if(!_.isEmpty(authState)){
-            return authState;
+        if(!_.isEmpty(auth.authMsg)){
+            return auth.authMsg;
         }
     }
 
@@ -56,6 +56,10 @@ const UserSignUp = () => {
                         <input type="password" id="password" onChange={handleChange} placeholder="Password" required />
                     </div>
                     <button>SignUp</button>
+                    {
+                        auth.authenticated ? 
+                        <Redirect to="/user" /> : null
+                    }
                     <p>{currentSignupState()}</p>
                 </form>
             </div>
