@@ -8,6 +8,7 @@ import _ from "lodash";
 import shortid from "shortid";
 
 import { getLeague } from "../../../actions/leagues/league/getLeague";
+import { getFavoritedLeagues } from "../../../actions/favorites/getFavoritedLeagues";
 import NextLeagueEvents from "./nextLeagueEvents";
 import PreviousLeagueEvents from "./previousLeagueEvents";
 
@@ -49,6 +50,7 @@ const League = (props) => {
     return (
         <div>
             <p>{props.location.state.leagueName}</p>
+            <button onClick={() => dispatch(getFavoritedLeagues(props.location.state.leagueName))}>favorite</button>
             <NextLeagueEvents leagueId={leagueId} />
             <Link to={"/"}>Back</Link>
             {showLeague()}

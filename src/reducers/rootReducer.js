@@ -1,7 +1,3 @@
-// export default () => {
-//     return { user : "Hans"}
-// }
-
 import { combineReducers } from 'redux';
 import { firebaseReducer } from "react-redux-firebase";
 import allCountriesReducer from './allCountries/allCountriesReducer';
@@ -14,6 +10,8 @@ import PreviousTeamEventsReducer from './team/previousTeamEventsReducer';
 import NextLeagueEventsReducer from "./allLeagues/league/nextLeagueEventsReducer";
 import PreviousLeagueEventsReducer from "./allLeagues/league/previousLeagueEventsReducer";
 import AuthReducer from './auth/authReducer';
+import favoritedLeaguesReducer from "./favorites/favoritedLeaguesReducer";
+import favoritedTeamsReducer from "./favorites/favoritedTeamsReducer";
 
 const rootReducer = combineReducers({
     firebase: firebaseReducer,
@@ -26,7 +24,9 @@ const rootReducer = combineReducers({
     previousTeamEvents: PreviousTeamEventsReducer,
     nextLeagueEvents: NextLeagueEventsReducer,
     previousLeagueEvents: PreviousLeagueEventsReducer,
-    auth: AuthReducer
+    auth: AuthReducer,
+    favoritedLeagues: favoritedLeaguesReducer,
+    favoritedTeams: favoritedTeamsReducer
 });
 
 export default rootReducer;

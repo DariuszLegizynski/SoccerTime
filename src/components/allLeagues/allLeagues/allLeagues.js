@@ -7,6 +7,7 @@ import shortid from "shortid";
 
 import  { allLeagues }  from "../../../actions/leagues/allLeagues/allLeagues";
 import  { allCountries }  from "../../../actions/allCountries/allCountries";
+import { getFavoritedLeagues } from "../../../actions/favorites/getFavoritedLeagues";
 
 //the api provides 255 country names.
 //TODO: Hardcoded till I find a better solution.
@@ -60,6 +61,7 @@ const AllLeagues = () => {
                     return (
                         <div key={shortid.generate()}>
                             <p>{el.strLeague}</p>
+                            <button onClick={() => dispatch(getFavoritedLeagues(el.strLeague))}>favorite</button>
                             <Link to={{pathname: `/allLeagues/${el.idLeague}`, state:{leagueName:el.strLeague}}}>View</Link>
                         </div>
                     )}
@@ -72,6 +74,7 @@ const AllLeagues = () => {
                     return (
                         <div key={shortid.generate()}>
                             <p>{el.strLeague}</p>
+                            <button onClick={() => dispatch(getFavoritedLeagues(el.strLeague))}>favorite</button>
                             <Link to={{pathname: `/allLeagues/${el.idLeague}`, state:{leagueName:el.strLeague}}}>View</Link>
                         </div>
                     )}
@@ -84,6 +87,7 @@ const AllLeagues = () => {
                     return (
                         <div key={shortid.generate()}>
                             <p>{el.strLeague}</p>
+                            <button onClick={() => dispatch(getFavoritedLeagues(el.strLeague))}>favorite</button>
                             <Link to={{pathname: `/allLeagues/${el.idLeague}`, state:{leagueName:el.strLeague}}}>View</Link>
                         </div>
                     )}
@@ -96,6 +100,7 @@ const AllLeagues = () => {
                     return (
                         <div key={shortid.generate()}>
                             <p>{el.strLeague}</p>
+                            <button onClick={() => dispatch(getFavoritedLeagues(el.strLeague))}>favorite</button>
                             <Link to={{pathname: `/allLeagues/${el.idLeague}`, state:{leagueName:el.strLeague}}}>View</Link>
                         </div>
                     )}

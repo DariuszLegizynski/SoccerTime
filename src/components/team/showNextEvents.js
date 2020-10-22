@@ -17,7 +17,7 @@ const ShowNextEvents = ({idTeam}) => {
     }, [dispatch, idTeam]);
 
     const showData = () => {
-        if(!_.isEmpty(selectNextTeamEvents.data)) {
+        if(!_.isEmpty(selectNextTeamEvents.data.events)) {
             return selectNextTeamEvents.data.events.map(event => {
                 return (
                     <div key={shortid.generate()}>
@@ -43,6 +43,10 @@ const ShowNextEvents = ({idTeam}) => {
                     </div>
                 )
             })
+        }
+
+        if(_.isEmpty(selectNextTeamEvents.data.events)) {
+            return <p>no upcoming team events found</p>
         }
 
         if(selectNextTeamEvents.loading) {

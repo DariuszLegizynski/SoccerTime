@@ -3,7 +3,6 @@ import { useSelector } from "react-redux";
 import { NavLink, Link } from "react-router-dom";
 
 const Header = () => {
-    
     const auth = useSelector(state => state.auth.authenticated);
 
     return(

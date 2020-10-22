@@ -17,7 +17,7 @@ const PreviousLeagueEvents = ({leagueId}) => {
     }, [dispatch, leagueId]);
 
     const showData = () => {
-        if(!_.isEmpty(selectPreviousLeagueEvents.data)) {
+        if(!_.isEmpty(selectPreviousLeagueEvents.data.events)) {
             return selectPreviousLeagueEvents.data.events.map(event => {
                 return (
                     <div key={shortid.generate()}>
@@ -53,6 +53,10 @@ const PreviousLeagueEvents = ({leagueId}) => {
                     </div>
                 )
             })
+        }
+
+        if(_.isEmpty(selectPreviousLeagueEvents.data.events)) {
+            return <p>no past league's events found</p>
         }
 
         if(selectPreviousLeagueEvents.loading) {
