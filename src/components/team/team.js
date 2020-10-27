@@ -6,6 +6,7 @@ import _ from "lodash";
 import shortid from "shortid";
 
 import { getTeam } from "../../actions/team/getTeam";
+import { getFavoritedTeams } from "../../actions/favorites/getFavoritedTeams"
 
 import ShowNextEvents from "./showNextEvents";
 import ShowPreviousEvents from "./showPreviousEvents";
@@ -27,6 +28,7 @@ const Team = (props) => {
                     <Link to={`/allLeagues/${el.idLeague}`}>Back</Link>
                     <p>Team: </p>
                     {el.strTeam}
+                    <button onClick={() => dispatch(getFavoritedTeams(el.idTeam))}>favorite</button>
                     <p>Team Alternate: </p>
                     {el.strAlternate}
                     <p>Country</p>
@@ -94,6 +96,7 @@ const Team = (props) => {
 
     return (
         <div>
+            <button onClick={() => dispatch(getFavoritedTeams(idTeam))}>favorite</button>
             <ShowNextEvents idTeam={idTeam} />
             Team Details:
             {showTeam()}

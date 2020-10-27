@@ -3,6 +3,7 @@ import { firebaseReducer } from "react-redux-firebase";
 import allCountriesReducer from './allCountries/allCountriesReducer';
 import allLeaguesReducer from "./allLeagues/allLeagues/allLeaguesReducer";
 import leagueReducer from "./allLeagues/league/leagueReducer";
+import leagueIdReducer from "./allLeagues/league/leagueIdReducer";
 import teamReducer from "./team/teamReducer";
 import tableLookupReducer from "./allLeagues/tableLookup/tableLookupReducer";
 import NextTeamEventsReducer from './team/nextTeamEventsReducer';
@@ -18,6 +19,7 @@ const rootReducer = combineReducers({
     allCountries: allCountriesReducer,
     allLeagues: allLeaguesReducer,
     league: leagueReducer,
+    leagueId: leagueIdReducer,
     team: teamReducer,
     tableLeague: tableLookupReducer,
     nextTeamEvents: NextTeamEventsReducer,
