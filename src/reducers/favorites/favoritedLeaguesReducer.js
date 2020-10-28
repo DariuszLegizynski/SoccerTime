@@ -11,7 +11,10 @@ const favoritedLeaguesReducer = (state = defaultState, action) => {
                 ...state,
                 favorites: [
                     ...state.favorites,
-                    action.payload
+                    {
+                        leagueName: action.leagueName,
+                        leagueId: action.leagueId
+                    }
                 ]
             }
 

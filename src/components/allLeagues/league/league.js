@@ -9,7 +9,7 @@ import shortid from "shortid";
 
 import { getLeague } from "../../../actions/leagues/league/getLeague";
 import { getLeagueId } from "../../../actions/leagues/league/getLeagueId";
-import { getFavoritedLeagues } from "../../../actions/favorites/getFavoritedLeagues";
+import { getFavoritedTeams } from "../../../actions/favorites/getFavoritedTeams";
 import NextLeagueEvents from "./nextLeagueEvents";
 import PreviousLeagueEvents from "./previousLeagueEvents";
 
@@ -17,9 +17,7 @@ const League = (props) => {
     const leagueId = props.match.params.idLeague;
     const dispatch = useDispatch();
     const selectLeague = useSelector(state => state.league);
-    const selectLeagueId = useSelector(state => state.leagueId.data.leagues)
-
-    console.log(leagueId);
+    const selectLeagueId = useSelector(state => state.leagueId.data.leagues);
 
     useEffect (() => {
         dispatch(getLeague(leagueId));
@@ -41,7 +39,6 @@ const League = (props) => {
 
     const showLeagueDescription = () => {
         if(!_.isEmpty(selectLeagueId)){
-            console.log(selectLeagueId);
             return selectLeagueId.map(el => {
                 return (
                     <div key={shortid.generate()}>
@@ -71,7 +68,7 @@ const League = (props) => {
             return selectLeague.data.teams.map(el => {
                 return (
                     <div key={shortid.generate()}>
-                        <button onClick={() => dispatch(getFavoritedLeagues(el.idTeam))}>favorite</button>
+                        <button onClick={() => dispatch(getFavoritedTeams(el.strTeam, el.idTeam))}>favorite</button>
                         {el.strTeam}
                         {el.strAlternate}
                         <Link to={`/allTeams/${el.idTeam}`}>
@@ -97,7 +94,6 @@ const League = (props) => {
         <div>
             {showLeagueName()}
             {showLeagueDescription()}
-            <button onClick={() => dispatch(getFavoritedLeagues(props.location.state.leagueName))}>favorite</button>
             <NextLeagueEvents leagueId={leagueId} />
             <Link to={"/"}>Back</Link>
             {showLeague()}

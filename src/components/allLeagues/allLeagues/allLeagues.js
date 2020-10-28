@@ -61,8 +61,8 @@ const AllLeagues = () => {
                     return (
                         <div key={shortid.generate()}>
                             <p>{el.strLeague}</p>
-                            <button onClick={() => dispatch(getFavoritedLeagues(el.strLeague))}>favorite</button>
-                            <Link to={{pathname: `/allLeagues/${el.idLeague}`, state:{leagueName:el.strLeague}}}>View</Link>
+                            <button onClick={() => dispatch(getFavoritedLeagues(el.strLeague, el.idLeague))}>favorite</button>
+                            <Link to={{pathname: `/allLeagues/${el.idLeague}`, state:{leagueName: el.strLeague}}}>View</Link>
                         </div>
                     )}
                 )}
@@ -74,7 +74,7 @@ const AllLeagues = () => {
                     return (
                         <div key={shortid.generate()}>
                             <p>{el.strLeague}</p>
-                            <button onClick={() => dispatch(getFavoritedLeagues(el.strLeague))}>favorite</button>
+                            <button onClick={() => dispatch(getFavoritedLeagues(el.strLeague, el.idLeague))}>favorite</button>
                             <Link to={{pathname: `/allLeagues/${el.idLeague}`, state:{leagueName:el.strLeague}}}>View</Link>
                         </div>
                     )}
@@ -87,7 +87,7 @@ const AllLeagues = () => {
                     return (
                         <div key={shortid.generate()}>
                             <p>{el.strLeague}</p>
-                            <button onClick={() => dispatch(getFavoritedLeagues(el.strLeague))}>favorite</button>
+                            <button onClick={() => dispatch(getFavoritedLeagues(el.strLeague, el.idLeague))}>favorite</button>
                             <Link to={{pathname: `/allLeagues/${el.idLeague}`, state:{leagueName:el.strLeague}}}>View</Link>
                         </div>
                     )}
@@ -100,7 +100,7 @@ const AllLeagues = () => {
                     return (
                         <div key={shortid.generate()}>
                             <p>{el.strLeague}</p>
-                            <button onClick={() => dispatch(getFavoritedLeagues(el.strLeague))}>favorite</button>
+                            <button onClick={() => dispatch(getFavoritedLeagues(el.strLeague, el.idLeague))}>favorite</button>
                             <Link to={{pathname: `/allLeagues/${el.idLeague}`, state:{leagueName:el.strLeague}}}>View</Link>
                         </div>
                     )}

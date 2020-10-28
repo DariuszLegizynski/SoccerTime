@@ -11,8 +11,6 @@ const UserProfile = () => {
     const selectUserStatus = useSelector(state => state.auth.authMsg);
     const favoritedLeagues = useSelector(state => state.favoritedLeagues.favorites);
     const favoritedTeams = useSelector(state => state.favoritedTeams.favorites);
-    console.log(favoritedLeagues);
-    console.log(favoritedTeams);
 
     const handleSignout = () => {
         dispatch(getSignout());
@@ -22,9 +20,14 @@ const UserProfile = () => {
         if (!_.isEmpty(favoritedLeagues)) {
             return favoritedLeagues.map(el => {
                 return (
-                    <p key={shortid.generate()}>
-                        {el}
-                    </p>
+                    <div key={shortid.generate()}>
+                        <p>
+                            {el.leagueName}
+                        </p>
+                        <Link to={{pathname: `/allLeagues/${el.leagueId}`}}>
+                            View
+                        </Link>
+                    </div>
                 )
             })
         } else {
@@ -36,9 +39,14 @@ const UserProfile = () => {
         if (!_.isEmpty(favoritedTeams)) {
             return favoritedTeams.map(el => {
                 return (
-                    <p key={shortid.generate()}>
-                        {el}
-                    </p>
+                    <div key={shortid.generate()}>
+                        <p>
+                            {el.teamName}
+                        </p>
+                        <Link to={`/allTeams/${el.teamId}`}>
+                            View Team
+                        </Link>
+                    </div>
                 )
             })
         } else {

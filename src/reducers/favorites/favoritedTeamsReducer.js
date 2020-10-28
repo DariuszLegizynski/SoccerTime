@@ -9,7 +9,13 @@ const favoritedTeamsReducer = (state = defaultState, action) => {
         case GET_FAVORITED_TEAMS:
             return {
                 ...state,
-                ...action.payload
+                favorites: [
+                    ...state.favorites,
+                    {
+                        teamName: action.teamName,
+                        teamId: action.teamId
+                    }
+                ]
             }
 
         default:

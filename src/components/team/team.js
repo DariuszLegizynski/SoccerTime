@@ -28,7 +28,7 @@ const Team = (props) => {
                     <Link to={`/allLeagues/${el.idLeague}`}>Back</Link>
                     <p>Team: </p>
                     {el.strTeam}
-                    <button onClick={() => dispatch(getFavoritedTeams(el.idTeam))}>favorite</button>
+                    <button onClick={() => dispatch(getFavoritedTeams(el.strTeam, el.idTeam))}>favorite</button>
                     <p>Team Alternate: </p>
                     {el.strAlternate}
                     <p>Country</p>
@@ -96,7 +96,6 @@ const Team = (props) => {
 
     return (
         <div>
-            <button onClick={() => dispatch(getFavoritedTeams(idTeam))}>favorite</button>
             <ShowNextEvents idTeam={idTeam} />
             Team Details:
             {showTeam()}
