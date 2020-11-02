@@ -32,7 +32,7 @@ const Header = () => {
         }
     }
 
-    return( 
+    return ( 
         <div className="header">
             <div className="header__logo fadeInFromLeft">
                 <Link to={"/"}>
@@ -40,9 +40,9 @@ const Header = () => {
                 </Link>
             </div>
             <nav className="header__searchbar">
-                <form className="header__form bounce" onSubmit={handleSubmit}>
-                    <input className="header__input" type="text" onChange={handleChange} placeholder="Search for Team" />
-                    <button className="header__btn--search btn">
+                <form className="header__form" onSubmit={handleSubmit}>
+                    <input className="header__input fadeInFromRight" type="text" onChange={handleChange} placeholder="Search for Team" />
+                    <button className="header__btn--search btn bounce">
                         <svg className="header__icon icon">
                             <use href={iconSprites + "#icon-search"} />
                         </svg>
