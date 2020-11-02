@@ -43,7 +43,7 @@ const Header = () => {
                 <form className="header__form" onSubmit={handleSubmit}>
                     <input className="header__input fadeInFromRight" type="text" onChange={handleChange} placeholder="Search for Team" />
                     <button className="header__btn--search btn bounce">
-                        <svg className="header__icon icon">
+                        <svg className="header__icon--search icon">
                             <use href={iconSprites + "#icon-search"} />
                         </svg>
                     </button>
@@ -53,8 +53,8 @@ const Header = () => {
             <div className="header__authentication">
                 {!auth ?
                 <div className="header__login">
-                    <Link to={"/login"}>
-                        <button className="header__btn btn fadeInFromLeft">
+                    <Link to={"/login"} className="header__link">
+                        <button className="header__btn btn fadeInFromLeft" disabled>
                             <svg className="header__icon icon">
                                 <use href={iconSprites + "#icon-enter"} />
                             </svg>
@@ -64,8 +64,8 @@ const Header = () => {
                 }
                 {!auth ?
                 <div className="header__signup">
-                    <Link to={"/signup"}>
-                        <button className="header__btn btn fadeInFromLeft">
+                    <Link to={"/signup"} className="header__link">
+                        <button className="header__btn btn fadeInFromLeft" disabled>
                             <svg className="header__icon icon">
                                 <use href={iconSprites + "#icon-t-shirt"} />
                             </svg>
@@ -75,8 +75,8 @@ const Header = () => {
                 }
                 {auth ?
                 <div className="header__userprofile">
-                    <Link to={"/user"}>
-                        <button className="header__btn btn fadeInFromLeft">
+                    <Link to={"/user"} className="header__link">
+                        <button className="header__btn btn fadeInFromLeft" disabled>
                             <svg className="header__icon icon">
                                 <use href={iconSprites + "#icon-user-circle"} />
                             </svg>

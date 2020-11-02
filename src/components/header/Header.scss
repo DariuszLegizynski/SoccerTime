@@ -15,20 +15,37 @@
         height: 4rem;
         background-color: transparent;
 
+        &:hover, &:focus, &:active {
+            outline: none;
+            background-color: transparent;
+        }
+
         &--search {
             width: 6rem;
             height: 3.05rem;
             margin: 0;
             margin-left: 1rem;
-        }
 
-        &:active {
-			transform: translateY(2px);
+            &:hover, &:focus, &:active {
+                background-color: $color-fourth;
+                transition: all .2s ease-in-out;
+            }
         }
     }
 
     &__icon {
-        height: 65%;
+        &:hover, &:focus {
+            fill: $color-fifth;
+            transform: scale(1.2);
+            transition: all .2s ease-in-out;
+        }
+
+        &--search{
+            &:hover, &:focus {
+                fill: $color-grey-light-1;
+                transform: none;
+            }
+        }
     }
 
     &__input {
@@ -52,6 +69,12 @@
 			font-weight: 100;
 			color: $color-grey-dark-3;
 		}
+    }
+
+    &__link {
+        &:focus {
+            outline: none;
+        }
     }
 
     &__logo {

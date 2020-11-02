@@ -3,15 +3,23 @@
 .btn {
     height: 2rem;
     width: 6rem;
-    border: 0;
+    border: none;
     background-color: $color-fifth;
     border-radius: 2rem;
     color: $color-grey-light-1;
     font-size: 1.2rem;
+
+    &:hover, &:focus, &:active {
+        outline: none;
+    }
 }
 
 .icon {
     fill: $color-grey-light-1;
     width: 60%;
-    height: 40%;
+    height: 65%;
+
+    &:hover, &:focus {
+        outline: none;
+    }
 }
