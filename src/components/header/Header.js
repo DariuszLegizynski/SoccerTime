@@ -1,41 +1,90 @@
-import React from "react";
-import { useSelector } from "react-redux";
-import { NavLink, Link } from "react-router-dom";
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, Redirect } from "react-router-dom";
+import _ from "lodash";
+
+import {getSearchTeam} from "../../actions/team/getSearchTeam";
+
+//styles
+import "./Header.css";
+import logo from "../../resources/logo/SoccerTime.png";
+import iconSprites from "../../resources/icons/icomoon/sprite.svg";
 
 const Header = () => {
     const auth = useSelector(state => state.auth.authenticated);
+    const [searchTeam, setSearchTeam ] = useState("");
+    const dispatch = useDispatch();
+    const searchTeamSelector = useSelector(state => state.searchTeam.data)
 
-    return(
-        <div>
-            <div>
-            <Link to={"/"}>
-                Logo
-            </Link>
+
+    const handleChange = (event) => {
+        setSearchTeam(event.target.value);
+    }
+
+    const handleSubmit = event => {
+        event.preventDefault();
+        dispatch(getSearchTeam(searchTeam));
+    }
+
+    const waitForSearchTeamResults = () => {
+        if(!_.isEmpty(searchTeamSelector)){
+            return <Redirect to={`/searchedTeam/${searchTeam}`} />
+        }
+    }
+
+    return( 
+        <div className="header">
+            <div className="header__logo fadeInFromLeft">
+                <Link to={"/"}>
+                    <img className="logo" src={logo} alt="logo" />
+                </Link>
             </div>
-            <nav>
-                <NavLink to={"/"}>SEARCH</NavLink>
+            <nav className="header__searchbar">
+                <form className="header__form bounce" onSubmit={handleSubmit}>
+                    <input className="header__input" type="text" onChange={handleChange} placeholder="Search for Team" />
+                    <button className="header__btn--search btn">
+                        <svg className="header__icon icon">
+                            <use href={iconSprites + "#icon-search"} />
+                        </svg>
+                    </button>
+                    {waitForSearchTeamResults()}
+                </form>
             </nav>
-            {!auth ?
-            <div>
-                <Link to={"/login"}>
-                    Login
-                </Link>
-            </div> : null
-            }
-            {!auth ?
-            <div>
-                <Link to={"/signup"}>
-                    SignUp
-                </Link>
-            </div> : null
-            }
-            {auth ?
-            <div>
-                <Link to={"/user"}>
-                    User Profile
-                </Link>
-            </div> : null
-            }
+            <div className="header__authentication">
+                {!auth ?
+                <div className="header__login">
+                    <Link to={"/login"}>
+                        <button className="header__btn btn fadeInFromLeft">
+                            <svg className="header__icon icon">
+                                <use href={iconSprites + "#icon-enter"} />
+                            </svg>
+                        </button>
+                    </Link>
+                </div> : null
+                }
+                {!auth ?
+                <div className="header__signup">
+                    <Link to={"/signup"}>
+                        <button className="header__btn btn fadeInFromLeft">
+                            <svg className="header__icon icon">
+                                <use href={iconSprites + "#icon-t-shirt"} />
+                            </svg>
+                        </button>
+                    </Link>
+                </div> : null
+                }
+                {auth ?
+                <div className="header__userprofile">
+                    <Link to={"/user"}>
+                        <button className="header__btn btn fadeInFromLeft">
+                            <svg className="header__icon icon">
+                                <use href={iconSprites + "#icon-user-circle"} />
+                            </svg>
+                        </button>
+                    </Link>
+                </div> : null
+                }
+            </div>
         </div>
     )
 }

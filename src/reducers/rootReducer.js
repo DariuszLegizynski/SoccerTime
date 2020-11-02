@@ -13,6 +13,7 @@ import PreviousLeagueEventsReducer from "./allLeagues/league/previousLeagueEvent
 import AuthReducer from './auth/authReducer';
 import favoritedLeaguesReducer from "./favorites/favoritedLeaguesReducer";
 import favoritedTeamsReducer from "./favorites/favoritedTeamsReducer";
+import searchTeamReducer from './team/searchTeamReducer';
 
 const rootReducer = combineReducers({
     firebase: firebaseReducer,
@@ -28,7 +29,8 @@ const rootReducer = combineReducers({
     previousLeagueEvents: PreviousLeagueEventsReducer,
     auth: AuthReducer,
     favoritedLeagues: favoritedLeaguesReducer,
-    favoritedTeams: favoritedTeamsReducer
+    favoritedTeams: favoritedTeamsReducer,
+    searchTeam: searchTeamReducer
 });
 
 export default rootReducer;

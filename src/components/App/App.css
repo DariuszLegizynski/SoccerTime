@@ -1,0 +1,16 @@
+.btn {
+  height: 2rem;
+  width: 6rem;
+  border: 0;
+  background-color: #620AA8;
+  border-radius: 2rem;
+  color: #faf9f9;
+  font-size: 1.2rem;
+}
+
+.icon {
+  fill: #faf9f9;
+  width: 60%;
+  height: 40%;
+}
+/*# sourceMappingURL=App.css.map */

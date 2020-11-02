@@ -1,6 +1,9 @@
 import React from 'react';
 import { Switch, Route, Redirect } from "react-router-dom";
 
+//Styles
+import "./App.css";
+
 //Components/Containers
 import AllLeagues from '../allLeagues/allLeagues/allLeagues';
 import League from "../allLeagues/league/league";
@@ -12,6 +15,7 @@ import PrivateRoute from "../Private/PrivateRoute";
 import UserSignIn from '../userAuth/UserSignIn';
 import UserSignUp from '../userAuth/UserSignUp';
 import UserProfile from "../userAuth/UserProfile";
+import searchTeamResults from '../team/searchTeamResults';
 
 const App = () => {
   return (
@@ -24,6 +28,7 @@ const App = () => {
         <Route path={"/home"} component={AllLeagues} />
         <Route path={"/allLeagues/:idLeague"} component={League} />
         <Route path={"/allTeams/:team"} component={Team} />
+        <Route path={"/searchedTeam/:searchedTeamResults"} component={searchTeamResults} />
 
         <Route path={"/login"} component={UserSignIn} />
         <Route path={"/signup"} component={UserSignUp} />

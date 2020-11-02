@@ -26,9 +26,9 @@ const Team = (props) => {
             return (
                 <div key={shortid.generate()}>
                     <Link to={`/allLeagues/${el.idLeague}`}>Back</Link>
+                    <button onClick={() => dispatch(getFavoritedTeams(el.strTeam, el.idTeam))}>favorite</button>
                     <p>Team: </p>
                     {el.strTeam}
-                    <button onClick={() => dispatch(getFavoritedTeams(el.strTeam, el.idTeam))}>favorite</button>
                     <p>Team Alternate: </p>
                     {el.strAlternate}
                     <p>Country</p>
@@ -78,6 +78,7 @@ const Team = (props) => {
                     {el.intStadiumCapacity}
                     <p>Stadium Description</p>
                     {el.strStadiumDescription}
+                    <Link to={`/allLeagues/${el.idLeague}`}>Back</Link>
                 </div>
                 )
             })
@@ -100,6 +101,7 @@ const Team = (props) => {
             Team Details:
             {showTeam()}
             <ShowPreviousEvents idTeam={idTeam} />
+            <Link to={"/"}>Home</Link>
         </div>
     )
 }

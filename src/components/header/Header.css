@@ -1,0 +1,84 @@
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #427556;
+  padding: .6rem 0rem;
+}
+
+.header__authentication {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.header__btn {
+  height: 4rem;
+  background-color: transparent;
+}
+
+.header__btn--search {
+  width: 6rem;
+  height: 3.05rem;
+  margin: 0;
+  margin-left: 1rem;
+}
+
+.header__btn:active {
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
+}
+
+.header__icon {
+  height: 65%;
+}
+
+.header__input {
+  font-family: inherit;
+  font-size: 1.4rem;
+  border: none;
+  border-radius: 2rem;
+  background-color: #f4f2f2;
+  padding: .7rem 2rem;
+  width: 90%;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  margin-right: -5.25rem;
+}
+
+.header__input:focus {
+  outline: none;
+  width: 100%;
+  background-color: #f0eeee;
+}
+
+.header__input::-webkit-input-placeholder {
+  font-weight: 100;
+  color: #999;
+}
+
+.header__logo {
+  width: 10%;
+}
+
+.header__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 50rem;
+}
+
+.logo {
+  width: 150%;
+  margin-left: 2rem;
+}
+/*# sourceMappingURL=Header.css.map */

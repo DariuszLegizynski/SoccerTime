@@ -1,0 +1,17 @@
+@import "../../styles/variables";
+
+.btn {
+    height: 2rem;
+    width: 6rem;
+    border: 0;
+    background-color: $color-fifth;
+    border-radius: 2rem;
+    color: $color-grey-light-1;
+    font-size: 1.2rem;
+}
+
+.icon {
+    fill: $color-grey-light-1;
+    width: 60%;
+    height: 40%;
+}

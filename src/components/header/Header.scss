@@ -1,0 +1,71 @@
+@import "../../styles/variables";
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $color-secondary;
+    padding: .6rem 0rem;
+
+    &__authentication {
+        display: flex;
+    }
+
+    &__btn {
+        height: 4rem;
+        background-color: transparent;
+
+        &--search {
+            width: 6rem;
+            height: 3.05rem;
+            margin: 0;
+            margin-left: 1rem;
+        }
+
+        &:active {
+			transform: translateY(2px);
+        }
+    }
+
+    &__icon {
+        height: 65%;
+    }
+
+    &__input {
+        font-family: inherit;
+		font-size: 1.4rem;
+        border: none;
+        border-radius: 2rem;
+        background-color: $color-grey-light-2;
+        padding: .7rem 2rem;
+        width: 90%;
+        transition: all .2s;
+        margin-right: -5.25rem;
+
+        &:focus {
+			outline: none;
+			width: 100%;
+			background-color: $color-grey-light-3;
+		}
+
+		&::-webkit-input-placeholder {
+			font-weight: 100;
+			color: $color-grey-dark-3;
+		}
+    }
+
+    &__logo {
+        width: 10%;
+    }
+
+    &__form {
+        display: flex;
+        justify-content: center;
+        width: 50rem;
+    }
+}
+
+.logo {
+    width: 150%;
+    margin-left: 2rem;
+}

@@ -43,7 +43,7 @@ const League = (props) => {
                 return (
                     <div key={shortid.generate()}>
                         <img src={el.strBadge+"/preview"} alt="League Badge" />
-                        <img src={el.strBanner+"/preview"} alt="League Banner" />
+                        <img src={el.strBanner} alt="League Banner" />
                         <p>{el.Country}</p>
                         <p>{el.strDescritpionEN}</p>
                         <p>{el.strFacebook}</p>
@@ -102,6 +102,7 @@ const League = (props) => {
             <br />
             <LeagueTable leagueId={leagueId} />
             <PreviousLeagueEvents leagueId={leagueId} />
+            <Link to={"/"}>Back</Link>
         </div>
     )
 }
