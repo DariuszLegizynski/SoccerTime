@@ -9,6 +9,9 @@ import  { allLeagues }  from "../../../actions/leagues/allLeagues/allLeagues";
 import  { allCountries }  from "../../../actions/allCountries/allCountries";
 import { getFavoritedLeagues } from "../../../actions/favorites/getFavoritedLeagues";
 
+//styles
+import iconSprites from "../../../resources/icons/icomoon/sprite.svg";
+
 //the api provides 255 country names.
 //TODO: Hardcoded till I find a better solution.
 const ALL_COUNTRIES_LENGTH = 254;
@@ -53,59 +56,69 @@ const AllLeagues = () => {
 
     const showData = () => {
         if(!_.isEmpty(selectAllLeagues.data)) {
-            return(
-                <div>
-                Most Favorited Leagues:
-                <br/>
+            return (
+                <React.Fragment>
+                <h2 className="AllLeagues__h2">Most Favorited Leagues:</h2>
                 {getAllZeroDivisionLeagues.map(el => {
                     return (
                         <div key={shortid.generate()}>
-                            <p>{el.strLeague}</p>
-                            <button onClick={() => dispatch(getFavoritedLeagues(el.strLeague, el.idLeague))}>favorite</button>
+                            <h3 className="AllLeagues__h3">{el.strLeague}</h3>
+                            <img className="AllLeagues_badge" src={el.strBadge+"/preview"} alt="League Badge" />
+                            <button onClick={() => dispatch(getFavoritedLeagues(el.strLeague, el.idLeague))}>
+                                <svg className="AllLeagues__icon--favorite icon">
+                                    <use href={iconSprites + "#icon-soccer"} />
+                                </svg>
+                            </button>
                             <Link to={{pathname: `/allLeagues/${el.idLeague}`, state:{leagueName: el.strLeague}}}>View</Link>
                         </div>
                     )}
                 )}
-                <br/>
-                <br/>
-                First Leagues:
-                <br/>
+                <h2 className="AllLeagues__h2">First Leagues:</h2>
                 {getAllFirstDivisionLeagues.map(el => {
                     return (
                         <div key={shortid.generate()}>
-                            <p>{el.strLeague}</p>
-                            <button onClick={() => dispatch(getFavoritedLeagues(el.strLeague, el.idLeague))}>favorite</button>
+                            <h3 className="AllLeagues__h3">{el.strLeague}</h3>
+                            <img className="AllLeagues_badge" src={el.strBadge+"/preview"} alt="League Badge" />
+                            <button onClick={() => dispatch(getFavoritedLeagues(el.strLeague, el.idLeague))}>
+                                <svg className="AllLeagues__icon--favorite icon">
+                                    <use href={iconSprites + "#icon-soccer"} />
+                                </svg>
+                            </button>
                             <Link to={{pathname: `/allLeagues/${el.idLeague}`, state:{leagueName:el.strLeague}}}>View</Link>
                         </div>
                     )}
                 )}
-                <br/>
-                <br/>
-                Second Leagues:
-                <br/>
+                <h2 className="AllLeagues__h2">Second Leagues:</h2>
                 {getAllSecondDivisionLeagues.map(el => {
                     return (
                         <div key={shortid.generate()}>
-                            <p>{el.strLeague}</p>
-                            <button onClick={() => dispatch(getFavoritedLeagues(el.strLeague, el.idLeague))}>favorite</button>
+                            <h3 className="AllLeagues__h3">{el.strLeague}</h3>
+                            <img className="AllLeagues_badge" src={el.strBadge+"/preview"} alt="League Badge" />
+                            <button onClick={() => dispatch(getFavoritedLeagues(el.strLeague, el.idLeague))}>
+                                <svg className="AllLeagues__icon--favorite icon">
+                                    <use href={iconSprites + "#icon-soccer"} />
+                                </svg>
+                            </button>
                             <Link to={{pathname: `/allLeagues/${el.idLeague}`, state:{leagueName:el.strLeague}}}>View</Link>
                         </div>
                     )}
                 )}
-                <br/>
-                <br/>
-                Third Leagues:
-                <br/>
+                <h2 className="AllLeagues__h2">Third Leagues:</h2>
                 {getAllThirdDivisionLeagues.map(el => {
                     return (
                         <div key={shortid.generate()}>
-                            <p>{el.strLeague}</p>
-                            <button onClick={() => dispatch(getFavoritedLeagues(el.strLeague, el.idLeague))}>favorite</button>
+                            <h3 className="AllLeagues__h3">{el.strLeague}</h3>
+                            <img className="AllLeagues_badge" src={el.strBadge+"/preview"} alt="League Badge" />
+                            <button onClick={() => dispatch(getFavoritedLeagues(el.strLeague, el.idLeague))}>
+                                <svg className="AllLeagues__icon--favorite icon">
+                                    <use href={iconSprites + "#icon-soccer"} />
+                                </svg>
+                            </button>
                             <Link to={{pathname: `/allLeagues/${el.idLeague}`, state:{leagueName:el.strLeague}}}>View</Link>
                         </div>
                     )}
                 )}
-                </div>
+                </React.Fragment>
             )
         }
         
@@ -121,12 +134,8 @@ const AllLeagues = () => {
     }
 
 return (
-    <div>
-        <br/>
-        <br/>
-        All Leagues:
-        <br />
-        <br />
+    <div className="AllLeagues">
+        <h1 className="AllLeagues_h1">Leagues</h1>
         {showData()}
     </div>
 )
