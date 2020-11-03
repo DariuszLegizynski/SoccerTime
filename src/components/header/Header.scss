@@ -33,6 +33,23 @@
         }
     }
 
+    &__form {
+        display: flex;
+        justify-content: center;
+        width: 50rem;
+    }
+
+    //get the icons highlighted when chosen with "tab"
+    &__login, &__signup {
+        &:focus-within{
+            .header__icon{
+                fill: $color-fifth;
+            }
+            transform: scale(1.2);
+            transition: all .2s ease-in-out;
+        }
+    }
+
     &__icon {
         &:hover, &:focus {
             fill: $color-fifth;
@@ -74,17 +91,17 @@
     &__link {
         &:focus {
             outline: none;
+
+            & .header__icon:focus{
+                    fill: $color-fifth;
+                    transform: scale(1.2);
+                    transition: all .2s ease-in-out;
+            }
         }
     }
 
     &__logo {
         width: 10%;
-    }
-
-    &__form {
-        display: flex;
-        justify-content: center;
-        width: 50rem;
     }
 }
 
