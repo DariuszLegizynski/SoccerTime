@@ -91,21 +91,22 @@
     &__link {
         &:focus {
             outline: none;
-
-            & .header__icon:focus{
-                    fill: $color-fifth;
-                    transform: scale(1.2);
-                    transition: all .2s ease-in-out;
+        }
+        &--logo {
+            &:focus {
+                outline: none;
+                background-color: $color-fifth;
+                transition: all .2s ease-in-out;
             }
         }
     }
 
     &__logo {
         width: 10%;
+        margin-left: 2rem;
     }
 }
 
 .logo {
-    width: 150%;
-    margin-left: 2rem;
+    width: 140%;
 }

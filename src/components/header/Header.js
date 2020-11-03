@@ -35,7 +35,7 @@ const Header = () => {
     return ( 
         <div className="header">
             <div className="header__logo fadeInFromLeft">
-                <Link to={"/"}>
+                <Link to={"/"} className="header__link--logo">
                     <img className="logo" src={logo} alt="logo" />
                 </Link>
             </div>

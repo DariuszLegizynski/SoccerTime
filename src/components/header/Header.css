@@ -104,20 +104,19 @@
   outline: none;
 }
 
-.header__link:focus .header__icon:focus {
-  fill: #620AA8;
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
+.header__link--logo:focus {
+  outline: none;
+  background-color: #620AA8;
   -webkit-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
 }
 
 .header__logo {
   width: 10%;
+  margin-left: 2rem;
 }
 
 .logo {
-  width: 150%;
-  margin-left: 2rem;
+  width: 140%;
 }
 /*# sourceMappingURL=Header.css.map */
