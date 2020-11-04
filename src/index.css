@@ -161,10 +161,10 @@ body {
 }
 
 *::-moz-selection {
-  background: #0AA848;
+  background: #FFDD82;
 }
 
 *::selection {
-  background: #0AA848;
+  background: #FFDD82;
 }
 /*# sourceMappingURL=index.css.map */

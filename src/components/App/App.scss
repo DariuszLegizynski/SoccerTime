@@ -4,7 +4,7 @@
     height: 2rem;
     width: 6rem;
     border: none;
-    background-color: $color-fifth;
+    background-color: $color-fourth;
     border-radius: 2rem;
     color: $color-grey-light-1;
     font-size: 1.2rem;
@@ -22,4 +22,8 @@
     &:hover, &:focus {
         outline: none;
     }
+}
+
+.h1, h2, h3, p, span {
+    color: $color-grey-light-1;
 }

@@ -4,7 +4,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: $color-secondary;
+    background-image: $gradient-color-2;
     padding: .6rem 0rem;
 
     &__authentication {
@@ -27,7 +27,7 @@
             margin-left: 1rem;
 
             &:hover, &:focus, &:active {
-                background-color: $color-fourth;
+                background-color: $color-fifth;
                 transition: all .2s ease-in-out;
             }
         }
@@ -43,7 +43,7 @@
     &__login, &__signup {
         &:focus-within{
             .header__icon{
-                fill: $color-fifth;
+                fill: $color-fourth;
             }
             transform: scale(1.2);
             transition: all .2s ease-in-out;
@@ -52,7 +52,7 @@
 
     &__icon {
         &:hover, &:focus {
-            fill: $color-fifth;
+            fill: $color-fourth;
             transform: scale(1.2);
             transition: all .2s ease-in-out;
         }
@@ -95,7 +95,7 @@
         &--logo {
             &:focus {
                 outline: none;
-                background-color: $color-fifth;
+                background-color: $color-fourth;
                 transition: all .2s ease-in-out;
             }
         }

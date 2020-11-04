@@ -21,4 +21,8 @@
 .icon:hover, .icon:focus {
   outline: none;
 }
+
+.h1, h2, h3, p, span {
+  color: #faf9f9;
+}
 /*# sourceMappingURL=App.css.map */

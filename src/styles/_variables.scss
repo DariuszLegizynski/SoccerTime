@@ -1,8 +1,16 @@
-$color-primary: #0AA848;
+// $color-primary: #0AA848;
+// $color-secondary: #427556;
+// $color-tertiary: #4BDB23;
+// $color-fourth: #C95CE0;
+// $color-fifth: #620AA8;
+
+//second set (primary color changed)
+// $color-primary: #009868;
+$color-primary: #111;
 $color-secondary: #427556;
-$color-tertiary: #4BDB23;
-$color-fourth: #C95CE0;
-$color-fifth: #620AA8;
+$color-tertiary: #00857A;
+$color-fourth: #620AA8;
+$color-fifth: #FFDD82;
 
 $color-grey-light-1: #faf9f9;
 $color-grey-light-2: #f4f2f2;
@@ -12,3 +20,6 @@ $color-grey-light-4: #ccc;
 $color-grey-dark-1: #333;
 $color-grey-dark-2: #777;
 $color-grey-dark-3: #999;
+
+$gradient-color-1: linear-gradient(90deg, $color-fifth 0%, $color-fourth 70%);
+$gradient-color-2: radial-gradient($color-secondary 0%, $color-primary 98%);
