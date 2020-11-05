@@ -3,14 +3,59 @@
 .AllLeagues {
     display: flex;
     flex-direction: column;
+
+    // // if neither image or video will be used, background-color should be used.
     background-color: $color-primary;
 
-    // for future use
+    // // image for future use (or if video not used)
     // background-image: url("./../../../resources/images/bence-balla-schottner-deGn9vSwXIM-unsplash.jpg");
     // background-size: cover;
     // background-position: center;
     // background-repeat: no-repeat;
     // height: 306vh;
+
+    &__badge {
+        width: 80%;
+        margin-bottom: 1rem;
+    }
+
+    // Favorite button
+    &__btn {
+        background-color: transparent;
+        position: absolute;
+        width: 3.2rem;
+        height: 3.2rem;
+        right: .5rem;
+        top: 15.5rem;
+    }
+
+    &__icon {
+        position: absolute;
+        top: -8%;
+        left: -8%;
+        height: 3.75rem;
+        width: 3.75rem;
+
+        &:hover, &:focus {
+            transform: scale(1.2);
+            transition: all .2s ease-in-out;
+        }
+    }
+
+    //////////////////
+
+    &__card {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        background-color: transparent;
+    }
+
+    &__cardContainer {
+        position: relative;
+        box-shadow: $shadow-yellow;
+        padding: 1rem;
+    }
 
     &__h1 {
         display: flex;
@@ -23,7 +68,30 @@
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        margin: 2rem 0rem 1rem 2rem;
+        margin-left: 2rem;
+    }
+
+    &__h3 {
+        margin-top: 1rem;
+        margin-left: .2rem;
+        width: 70%;
+    }
+
+    &__video {
+        position: absolute;
+        top: 20vh;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        // z-index: -1;
+        // opacity: .5;
+        overflow: hidden;
+    }
+
+    &__videoContent{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
     }
 }
 
@@ -32,6 +100,8 @@
     justify-content: center;
     width: 25%;
     letter-spacing: 1rem;
+
+    z-index: 1;
 
     border: none;
     background: none;
@@ -46,4 +116,19 @@
     &:hover {
         background-repeat: repeat;
     }
+}
+
+// Carousel
+.slick-slide {
+    display: flex !important;
+}
+
+.slick-slide > div {
+    padding: 0 2rem;
+    display: flex !important;
+    height: 46vh;
+}
+
+.slick-list {
+    padding: 4rem 0 !important;
 }

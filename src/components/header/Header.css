@@ -23,11 +23,6 @@
   background-color: transparent;
 }
 
-.header__btn:hover, .header__btn:focus, .header__btn:active {
-  outline: none;
-  background-color: transparent;
-}
-
 .header__btn--search {
   width: 6rem;
   height: 3.05rem;
@@ -100,12 +95,7 @@
   color: #999;
 }
 
-.header__link:focus {
-  outline: none;
-}
-
 .header__link--logo:focus {
-  outline: none;
   background-color: #620AA8;
   -webkit-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;

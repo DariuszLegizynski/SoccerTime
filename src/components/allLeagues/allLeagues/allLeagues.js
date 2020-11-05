@@ -15,7 +15,7 @@ import "./AllLeagues.css";
 import iconSprites from "../../../resources/icons/icomoon/sprite.svg";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-// import video from "../../../resources/video/football.mp4"
+import video from "../../../resources/video/2016_08_15_SoccerField.mp4"
 
 //the api provides 255 country names.
 //TODO: Hardcoded till I find a better solution.
@@ -106,16 +106,20 @@ const AllLeagues = () => {
                     <Slider {...sliderSettings}>
                         {getAllZeroDivisionLeagues.map(el => {
                             return (
-                                <div key={shortid.generate()} className="AllLeagues__card">
+                                <div className="AllLeagues__cardContainer" key={shortid.generate()}>
+                                    <Link className="header__link link" to={{pathname: `/allLeagues/${el.idLeague}`, state:{leagueName: el.strLeague}}}>
+                                    <div className="AllLeagues__card">
+                                        <img className="AllLeagues__badge" src={el.strBadge+"/preview"} alt="League Badge" />
+                                        <p>{el.strDescritpionEN}</p>
+                                        
+                                    </div>
                                     <h3 className="AllLeagues__h3">{el.strLeague}</h3>
-                                    <img className="AllLeagues_badge" src={el.strBadge+"/preview"} alt="League Badge" />
-                                    <p>{el.strDescritpionEN}</p>
-                                    <button onClick={() => dispatch(getFavoritedLeagues(el.strLeague, el.idLeague))}>
-                                        <svg className="AllLeagues__icon--favorite icon">
+                                    </Link>
+                                    <button className="AllLeagues__btn btn" onClick={() => dispatch(getFavoritedLeagues(el.strLeague, el.idLeague))}>
+                                        <svg className="AllLeagues__icon icon">
                                             <use href={iconSprites + "#icon-soccer"} />
                                         </svg>
                                     </button>
-                                    <Link to={{pathname: `/allLeagues/${el.idLeague}`, state:{leagueName: el.strLeague}}}>View</Link>
                                 </div>
                             )}
                         )}
@@ -124,15 +128,19 @@ const AllLeagues = () => {
                 <Slider {...sliderSettings}>
                     {getAllFirstDivisionLeagues.map(el => {
                         return (
-                            <div key={shortid.generate()} className="AllLeagues__card">
-                                <h3 className="AllLeagues__h3">{el.strLeague}</h3>
-                                <img className="AllLeagues_badge" src={el.strBadge+"/preview"} alt="League Badge" />
-                                <button onClick={() => dispatch(getFavoritedLeagues(el.strLeague, el.idLeague))}>
-                                    <svg className="AllLeagues__icon--favorite icon">
+                            <div className="AllLeagues__cardContainer" key={shortid.generate()}>
+                                <Link className="header__link link" to={{pathname: `/allLeagues/${el.idLeague}`, state:{leagueName:el.strLeague}}}>
+                                    <div className="AllLeagues__card">
+                                        <img className="AllLeagues__badge" src={el.strBadge+"/preview"} alt="League Badge" />
+                                        
+                                    </div>
+                                    <h3 className="AllLeagues__h3">{el.strLeague}</h3>
+                                </Link>
+                                <button className="AllLeagues__btn btn" onClick={() => dispatch(getFavoritedLeagues(el.strLeague, el.idLeague))}>
+                                    <svg className="AllLeagues__icon icon">
                                         <use href={iconSprites + "#icon-soccer"} />
                                     </svg>
                                 </button>
-                                <Link to={{pathname: `/allLeagues/${el.idLeague}`, state:{leagueName:el.strLeague}}}>View</Link>
                             </div>
                         )}
                     )}
@@ -141,15 +149,19 @@ const AllLeagues = () => {
                 <Slider {...sliderSettings}>
                     {getAllSecondDivisionLeagues.map(el => {
                         return (
-                            <div key={shortid.generate()} className="AllLeagues__card">
+                            <div className="AllLeagues__cardContainer" key={shortid.generate()}>
+                                <Link className="header__link link" to={{pathname: `/allLeagues/${el.idLeague}`, state:{leagueName:el.strLeague}}}>
+                                    <div className="AllLeagues__card">
+                                        <img className="AllLeagues__badge" src={el.strBadge+"/preview"} alt="League Badge" />
+                                        
+                                    </div>
                                 <h3 className="AllLeagues__h3">{el.strLeague}</h3>
-                                <img className="AllLeagues_badge" src={el.strBadge+"/preview"} alt="League Badge" />
-                                <button onClick={() => dispatch(getFavoritedLeagues(el.strLeague, el.idLeague))}>
-                                    <svg className="AllLeagues__icon--favorite icon">
+                                </Link>
+                                <button className="AllLeagues__btn btn" onClick={() => dispatch(getFavoritedLeagues(el.strLeague, el.idLeague))}>
+                                    <svg className="AllLeagues__icon icon">
                                         <use href={iconSprites + "#icon-soccer"} />
                                     </svg>
                                 </button>
-                                <Link to={{pathname: `/allLeagues/${el.idLeague}`, state:{leagueName:el.strLeague}}}>View</Link>
                             </div>
                         )}
                     )}
@@ -158,15 +170,18 @@ const AllLeagues = () => {
                 <Slider {...sliderSettings}>
                     {getAllThirdDivisionLeagues.map(el => {
                         return (
-                            <div key={shortid.generate()} className="AllLeagues__card">
-                                <h3 className="AllLeagues__h3">{el.strLeague}</h3>
-                                <img className="AllLeagues_badge" src={el.strBadge+"/preview"} alt="League Badge" />
-                                <button onClick={() => dispatch(getFavoritedLeagues(el.strLeague, el.idLeague))}>
-                                    <svg className="AllLeagues__icon--favorite icon">
+                            <div className="AllLeagues__cardContainer"  key={shortid.generate()}>
+                                <Link className="header__link link" to={{pathname: `/allLeagues/${el.idLeague}`, state:{leagueName:el.strLeague}}}>
+                                    <div className="AllLeagues__card">
+                                        <img className="AllLeagues__badge" src={el.strBadge+"/preview"} alt="League Badge" />
+                                    </div>
+                                    <h3 className="AllLeagues__h3">{el.strLeague}</h3>
+                                </Link>
+                                <button className="AllLeagues__btn btn" onClick={() => dispatch(getFavoritedLeagues(el.strLeague, el.idLeague))}>
+                                    <svg className="AllLeagues__icon icon">
                                         <use href={iconSprites + "#icon-soccer"} />
                                     </svg>
                                 </button>
-                                <Link to={{pathname: `/allLeagues/${el.idLeague}`, state:{leagueName:el.strLeague}}}>View</Link>
                             </div>
                         )}
                     )}
@@ -186,13 +201,16 @@ const AllLeagues = () => {
         return <p>Loading...</p>;
     }
 
-    // const playVideo = () => {
-    //     return (
-    //         <video autoPlay muted loop className="introVideo">
-    //             <source src={video} type="video/mp4" />
-    //         </video>
-    //     )
-    // }
+    const playVideo = () => {
+        return (
+            <div className="AllLeagues__video">
+                <video autoPlay muted loop className="AllLeagues__videoContent">
+                    <source src={video} type="video/mp4" />
+                </video>
+            </div>
+            
+        )
+    }
 
 return (
     <main className="AllLeagues">

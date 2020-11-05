@@ -9,6 +9,56 @@
   background-color: #111;
 }
 
+.AllLeagues__badge {
+  width: 80%;
+  margin-bottom: 1rem;
+}
+
+.AllLeagues__btn {
+  background-color: transparent;
+  position: absolute;
+  width: 3.2rem;
+  height: 3.2rem;
+  right: .5rem;
+  top: 15.5rem;
+}
+
+.AllLeagues__icon {
+  position: absolute;
+  top: -8%;
+  left: -8%;
+  height: 3.75rem;
+  width: 3.75rem;
+}
+
+.AllLeagues__icon:hover, .AllLeagues__icon:focus {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.AllLeagues__card {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: transparent;
+}
+
+.AllLeagues__cardContainer {
+  position: relative;
+  -webkit-box-shadow: 0 0 3rem #FFDD82;
+          box-shadow: 0 0 3rem #FFDD82;
+  padding: 1rem;
+}
+
 .AllLeagues__h1 {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -32,7 +82,29 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 2rem 0rem 1rem 2rem;
+  margin-left: 2rem;
+}
+
+.AllLeagues__h3 {
+  margin-top: 1rem;
+  margin-left: .2rem;
+  width: 70%;
+}
+
+.AllLeagues__video {
+  position: absolute;
+  top: 20vh;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.AllLeagues__videoContent {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .h1 {
@@ -44,6 +116,7 @@
           justify-content: center;
   width: 25%;
   letter-spacing: 1rem;
+  z-index: 1;
   border: none;
   background: none;
   background-image: -webkit-gradient(linear, left top, right top, from(#FFDD82), color-stop(70%, #620AA8)), -webkit-gradient(linear, left top, right top, from(#FFDD82), color-stop(70%, #620AA8));
@@ -58,5 +131,23 @@
 
 .h1:hover {
   background-repeat: repeat;
+}
+
+.slick-slide {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+
+.slick-slide > div {
+  padding: 0 2rem;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  height: 46vh;
+}
+
+.slick-list {
+  padding: 4rem 0 !important;
 }
 /*# sourceMappingURL=AllLeagues.css.map */

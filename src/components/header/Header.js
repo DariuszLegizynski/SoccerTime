@@ -35,7 +35,7 @@ const Header = () => {
     return ( 
         <div className="header">
             <div className="header__logo fadeInFromLeft">
-                <Link to={"/"} className="header__link--logo">
+                <Link to={"/"} className="header__link--logo link">
                     <img className="logo" src={logo} alt="logo" />
                 </Link>
             </div>
@@ -53,7 +53,7 @@ const Header = () => {
             <div className="header__authentication">
                 {!auth ?
                 <div className="header__login">
-                    <Link to={"/login"} className="header__link">
+                    <Link to={"/login"} className="header__link link">
                         <button className="header__btn btn fadeInFromLeft" disabled>
                             <svg className="header__icon icon">
                                 <use href={iconSprites + "#icon-enter"} />
@@ -64,7 +64,7 @@ const Header = () => {
                 }
                 {!auth ?
                 <div className="header__signup">
-                    <Link to={"/signup"} className="header__link">
+                    <Link to={"/signup"} className="header__link link">
                         <button className="header__btn btn fadeInFromLeft" disabled>
                             <svg className="header__icon icon">
                                 <use href={iconSprites + "#icon-t-shirt"} />
@@ -75,7 +75,7 @@ const Header = () => {
                 }
                 {auth ?
                 <div className="header__userprofile">
-                    <Link to={"/user"} className="header__link">
+                    <Link to={"/user"} className="header__link link">
                         <button className="header__btn btn fadeInFromLeft" disabled>
                             <svg className="header__icon icon">
                                 <use href={iconSprites + "#icon-user-circle"} />

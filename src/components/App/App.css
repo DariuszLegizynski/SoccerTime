@@ -10,6 +10,7 @@
 
 .btn:hover, .btn:focus, .btn:active {
   outline: none;
+  background-color: transparent;
 }
 
 .icon {
@@ -22,7 +23,12 @@
   outline: none;
 }
 
+.link:focus {
+  outline: none;
+}
+
 .h1, h2, h3, p, span {
+  font-family: "Roboto", sans-serif;
   color: #faf9f9;
 }
 /*# sourceMappingURL=App.css.map */

@@ -11,6 +11,7 @@
 
     &:hover, &:focus, &:active {
         outline: none;
+        background-color: transparent;
     }
 }
 
@@ -24,6 +25,13 @@
     }
 }
 
+.link {
+    &:focus {
+        outline: none;
+    }
+}
+
 .h1, h2, h3, p, span {
+    font-family: $primary-font;
     color: $color-grey-light-1;
 }

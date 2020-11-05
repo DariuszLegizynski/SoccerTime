@@ -15,11 +15,6 @@
         height: 4rem;
         background-color: transparent;
 
-        &:hover, &:focus, &:active {
-            outline: none;
-            background-color: transparent;
-        }
-
         &--search {
             width: 6rem;
             height: 3.05rem;
@@ -89,12 +84,8 @@
     }
 
     &__link {
-        &:focus {
-            outline: none;
-        }
         &--logo {
             &:focus {
-                outline: none;
                 background-color: $color-fourth;
                 transition: all .2s ease-in-out;
             }
