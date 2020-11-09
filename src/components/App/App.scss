@@ -1,4 +1,6 @@
 @import "../../styles/variables";
+@import "../../styles/animations";
+
 
 .btn {
     height: 2rem;
@@ -26,12 +28,20 @@
 }
 
 .link {
-    &:focus {
+    &:link, &:visited, &:active, &:focus, &:hover {
         outline: none;
+        text-decoration: none;
     }
 }
 
 .h1, h2, h3, p, span {
     font-family: $primary-font;
     color: $color-grey-light-1;
+}
+
+.hr {
+    border: none;
+    margin: 2rem 0 4rem 0;
+    height: .2rem;
+    background-image: $gradient-hr;
 }

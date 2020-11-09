@@ -1,0 +1,68 @@
+.intro {
+  position: relative;
+  padding: 33rem 0;
+  background-color: rgba(14, 44, 34, 0.85);
+}
+
+.intro__top {
+  position: absolute;
+  top: 35%;
+  left: 30%;
+  -webkit-transform: translate(-35%, -30%);
+          transform: translate(-35%, -30%);
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.6);
+  -webkit-transform: skewX(12deg);
+  transform: skewX(12deg);
+}
+
+.intro__top__skew {
+  -webkit-transform: skewX(-12deg);
+  transform: skewX(-12deg);
+}
+
+.intro__h1 {
+  color: #333;
+  padding: 2rem 4rem;
+}
+
+.intro__h2 {
+  color: #333;
+  padding: 2rem 4rem;
+}
+
+.intro__bot {
+  position: absolute;
+  top: 55%;
+  left: 55%;
+  -webkit-transform: translate(-55%, -55%);
+          transform: translate(-55%, -55%);
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.6);
+  -webkit-transform: skewX(12deg);
+  transform: skewX(12deg);
+}
+
+.intro__bot__skew {
+  -webkit-transform: skewX(-12deg);
+  transform: skewX(-12deg);
+}
+
+.intro__video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: .15;
+  overflow: hidden;
+}
+
+.intro__video__content {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+/*# sourceMappingURL=Intro.css.map */

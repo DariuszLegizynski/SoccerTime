@@ -6,6 +6,9 @@
     align-items: center;
     background-image: $gradient-color-2;
     padding: .6rem 0rem;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
 
     &__authentication {
         display: flex;
@@ -14,15 +17,17 @@
     &__btn {
         height: 4rem;
         background-color: transparent;
+        cursor: pointer;
 
         &--search {
             width: 6rem;
             height: 3.05rem;
             margin: 0;
             margin-left: 1rem;
+            cursor: pointer;
 
             &:hover, &:focus, &:active {
-                background-color: $color-fifth;
+                background-color: $color-important;
                 transition: all .2s ease-in-out;
             }
         }
@@ -34,18 +39,9 @@
         width: 50rem;
     }
 
-    //get the icons highlighted when chosen with "tab"
-    &__login, &__signup {
-        &:focus-within{
-            .header__icon{
-                fill: $color-fourth;
-            }
-            transform: scale(1.2);
-            transition: all .2s ease-in-out;
-        }
-    }
-
     &__icon {
+        cursor: pointer;
+
         &:hover, &:focus {
             fill: $color-fourth;
             transform: scale(1.2);
@@ -90,14 +86,37 @@
                 transition: all .2s ease-in-out;
             }
         }
+
+        &:focus {
+            outline: none;
+
+            & > button > svg {
+                transform: scale(1.2);
+                transition: all .2s ease-in-out;
+                fill: $color-fourth;
+            }
+        } 
     }
 
     &__logo {
-        width: 10%;
         margin-left: 2rem;
+    }
+
+    &__searchbar {
+        margin-right: 20rem;
     }
 }
 
 .logo {
-    width: 140%;
+    width: 60%;
+    height: 60%;
+}
+
+//get the icons highlighted when chosen with "tab"
+.linkWrapper {
+    &:focus-within, &:hover{
+        transform: scale(1.1);
+        transition: all .2s ease-in-out;
+        fill: $color-fourth;
+    }
 }

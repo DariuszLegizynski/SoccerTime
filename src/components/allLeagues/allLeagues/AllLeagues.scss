@@ -1,18 +1,17 @@
 @import "../../../styles/variables";
+@import "../../../styles/carousel";
 
 .AllLeagues {
     display: flex;
     flex-direction: column;
+    padding: 10rem 0;
 
-    // // if neither image or video will be used, background-color should be used.
-    background-color: $color-primary;
-
-    // // image for future use (or if video not used)
-    // background-image: url("./../../../resources/images/bence-balla-schottner-deGn9vSwXIM-unsplash.jpg");
-    // background-size: cover;
-    // background-position: center;
-    // background-repeat: no-repeat;
-    // height: 306vh;
+    background-size: cover;
+    background-image: linear-gradient(
+        to right bottom,
+        rgba($color-primary, 0.8),
+        rgba($color-primary, 0.8)),
+        url(../../../resources/images/izuddin-helmi-adnan-K5ChxJaheKI-unsplash.jpg);
 
     &__badge {
         width: 80%;
@@ -27,6 +26,11 @@
         height: 3.2rem;
         right: .5rem;
         top: 15.5rem;
+
+        &:hover, &:focus{
+            background-color: $color-fifth;
+            transition: all .2s ease-in-out;
+        }
     }
 
     &__icon {
@@ -35,13 +39,10 @@
         left: -8%;
         height: 3.75rem;
         width: 3.75rem;
-
-        &:hover, &:focus {
-            transform: scale(1.2);
-            transition: all .2s ease-in-out;
-        }
     }
 
+    //////////////////
+    // C A R D S
     //////////////////
 
     &__card {
@@ -55,7 +56,14 @@
         position: relative;
         box-shadow: $shadow-yellow;
         padding: 1rem;
+        border-radius: 5px;
+        background-size: cover;
+        background-image: $gradient-color-2;
     }
+
+    //////////////////
+    // H E A D E R S
+    //////////////////
 
     &__h1 {
         display: flex;
@@ -69,31 +77,31 @@
         justify-content: flex-start;
         align-items: center;
         margin-left: 2rem;
+        letter-spacing: .6rem;
+        font-size: 1.8rem;
     }
 
     &__h3 {
-        margin-top: 1rem;
+        margin-top: 1.4rem;
         margin-left: .2rem;
         width: 70%;
+        font-size: 1.2rem;
+        letter-spacing: .1rem;;
     }
 
-    &__video {
-        position: absolute;
-        top: 20vh;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        // z-index: -1;
-        // opacity: .5;
-        overflow: hidden;
-    }
+    //////////////////
+    // L E A G U E S   S E C T I O N S
+    //////////////////
 
-    &__videoContent{
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
+    &__league {
+        padding: 2rem 10rem;
+        margin: 3rem 0;
     }
 }
+    //////////////////
+    // M A I N   H E A D E R
+    //////////////////
+ 
 
 .h1 {
     display: flex;
@@ -116,19 +124,4 @@
     &:hover {
         background-repeat: repeat;
     }
-}
-
-// Carousel
-.slick-slide {
-    display: flex !important;
-}
-
-.slick-slide > div {
-    padding: 0 2rem;
-    display: flex !important;
-    height: 46vh;
-}
-
-.slick-list {
-    padding: 4rem 0 !important;
 }

@@ -1,0 +1,100 @@
+@import "./variables";
+
+.carousel {
+    &__btn {
+        &--next {
+            z-index: 1;
+        }
+
+        &--prev {
+            z-index: 1;
+        }
+
+        &:hover, &:focus, &:active {
+            transform: scale(1.1);
+            transition: all .2s ease-in-out;
+        }
+    }
+
+    &__icon {
+        fill: $color-important;
+        width: 200%;
+        height: 200%;
+
+        &:hover, &:focus-within {
+            transform: scale(1.2);
+            transition: all .2s ease-in-out;
+            fill: $color-fourth;
+        }
+    }
+
+}
+
+/////////////////////
+//change dots
+.slick-dots li{
+    margin: 0 1rem !important;
+    button {
+        &:before {
+            color: $color-important !important;
+            font-size: 1.5rem !important;
+            opacity: .5 !important;
+        }
+        &:hover {
+            opacity: .75 !important;
+        }
+    
+    }
+} 
+
+.slick-dots li.slick-active {
+    margin: 0 1rem;
+    button:before {
+        color: $color-fifth !important;
+    }
+} 
+
+// .slick-dots li.slick-active {
+//     margin: 0 2rem;
+// }
+
+///////////////////////
+
+.slick-slide {
+    display: flex !important;
+}
+
+.slick-slide > div {
+    padding: 0 2rem;
+    display: flex !important;
+    height: 20rem;
+}
+
+.slick-list {
+    padding: 4rem 0 !important;
+}
+
+.slick-prev {
+    &:before {
+        content: none !important;
+    }
+}
+
+.slick-next {
+    &:before {
+        content: none !important;
+    }
+}
+
+.slick-arrow {
+    &:focus {
+        outline: none;
+    }
+    
+    &:focus > svg {
+        transform: scale(1.2);
+        transition: all .2s ease-in-out;
+        fill: $color-fourth;
+        outline: none;
+    }
+}

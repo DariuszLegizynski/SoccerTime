@@ -1,0 +1,68 @@
+@import "../../styles/variables";
+
+.intro {
+    position: relative;
+    padding: 33rem 0;
+    background-color: rgba(14, 44, 34, 0.85);
+
+        &__top {
+            position: absolute;
+            top: 35%;
+            left: 30%;
+            transform: translate(-35%, -30%);
+            text-align: center;
+            background-color: rgba(255,255,255,0.6);
+            -webkit-transform: skewX(12deg);
+            transform: skewX(12deg);
+
+            &__skew {
+                -webkit-transform: skewX(-12deg);
+                transform: skewX(-12deg);
+            }
+        }
+
+        &__h1 {
+            color: $color-grey-dark-1;
+            padding: 2rem 4rem;
+        }
+
+        &__h2 {
+            color: $color-grey-dark-1;
+            padding: 2rem 4rem;
+        }
+
+        &__bot {
+            position: absolute;
+            top: 55%;
+            left: 55%;
+            transform: translate(-55%, -55%);
+            text-align: center;
+            background-color: rgba(255,255,255,0.6);
+            -webkit-transform: skewX(12deg);
+            transform: skewX(12deg);
+
+            &__skew {
+                -webkit-transform: skewX(-12deg);
+                transform: skewX(-12deg);
+            }
+        }
+
+    &__video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        opacity: .15;
+
+        overflow: hidden;
+
+        &__content {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            // opacity: .85;
+        }
+    }
+}

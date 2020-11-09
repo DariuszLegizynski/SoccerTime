@@ -82,3 +82,40 @@
       opacity: 1;
   }
 }
+
+.fadeInUpwards {
+  -webkit-animation-duration: 3s;
+  animation-duration: 3s;
+  position: relative;
+  animation: fadeInUpwards 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeInFromLeft {
+  from {
+      bottom: 10rem;
+      opacity: 0;
+  }
+  to {
+      bottom: 0rem;
+      opacity: 1;
+  }
+}
+
+.fadeIn {
+  -webkit-animation-duration: 8s;
+  animation-duration: 8s;
+  animation: fadeIn 6s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

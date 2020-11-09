@@ -1,3 +1,93 @@
+.carousel__btn--next {
+  z-index: 1;
+}
+
+.carousel__btn--prev {
+  z-index: 1;
+}
+
+.carousel__btn:hover, .carousel__btn:focus, .carousel__btn:active {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.carousel__icon {
+  fill: #DB4076;
+  width: 200%;
+  height: 200%;
+}
+
+.carousel__icon:hover, .carousel__icon:focus-within {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  fill: #620AA8;
+}
+
+.slick-dots li {
+  margin: 0 1rem !important;
+}
+
+.slick-dots li button:before {
+  color: #DB4076 !important;
+  font-size: 1.5rem !important;
+  opacity: .5 !important;
+}
+
+.slick-dots li button:hover {
+  opacity: .75 !important;
+}
+
+.slick-dots li.slick-active {
+  margin: 0 1rem;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #FFDD82 !important;
+}
+
+.slick-slide {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+
+.slick-slide > div {
+  padding: 0 2rem;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  height: 20rem;
+}
+
+.slick-list {
+  padding: 4rem 0 !important;
+}
+
+.slick-prev:before {
+  content: none !important;
+}
+
+.slick-next:before {
+  content: none !important;
+}
+
+.slick-arrow:focus {
+  outline: none;
+}
+
+.slick-arrow:focus > svg {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  fill: #620AA8;
+  outline: none;
+}
+
 .AllLeagues {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -6,7 +96,10 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: #111;
+  padding: 10rem 0;
+  background-size: cover;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(17, 17, 17, 0.8)), to(rgba(17, 17, 17, 0.8))), url(../../../resources/images/izuddin-helmi-adnan-K5ChxJaheKI-unsplash.jpg);
+  background-image: linear-gradient(to right bottom, rgba(17, 17, 17, 0.8), rgba(17, 17, 17, 0.8)), url(../../../resources/images/izuddin-helmi-adnan-K5ChxJaheKI-unsplash.jpg);
 }
 
 .AllLeagues__badge {
@@ -23,19 +116,18 @@
   top: 15.5rem;
 }
 
+.AllLeagues__btn:hover, .AllLeagues__btn:focus {
+  background-color: #FFDD82;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
 .AllLeagues__icon {
   position: absolute;
   top: -8%;
   left: -8%;
   height: 3.75rem;
   width: 3.75rem;
-}
-
-.AllLeagues__icon:hover, .AllLeagues__icon:focus {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
 }
 
 .AllLeagues__card {
@@ -54,9 +146,12 @@
 
 .AllLeagues__cardContainer {
   position: relative;
-  -webkit-box-shadow: 0 0 3rem #FFDD82;
-          box-shadow: 0 0 3rem #FFDD82;
+  -webkit-box-shadow: 0 0 1.5rem #FFDD82;
+          box-shadow: 0 0 1.5rem #FFDD82;
   padding: 1rem;
+  border-radius: 5px;
+  background-size: cover;
+  background-image: radial-gradient(#28b485 0%, #111 98%);
 }
 
 .AllLeagues__h1 {
@@ -83,28 +178,21 @@
       -ms-flex-align: center;
           align-items: center;
   margin-left: 2rem;
+  letter-spacing: .6rem;
+  font-size: 1.8rem;
 }
 
 .AllLeagues__h3 {
-  margin-top: 1rem;
+  margin-top: 1.4rem;
   margin-left: .2rem;
   width: 70%;
+  font-size: 1.2rem;
+  letter-spacing: .1rem;
 }
 
-.AllLeagues__video {
-  position: absolute;
-  top: 20vh;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-}
-
-.AllLeagues__videoContent {
-  height: 100%;
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+.AllLeagues__league {
+  padding: 2rem 10rem;
+  margin: 3rem 0;
 }
 
 .h1 {
@@ -131,23 +219,5 @@
 
 .h1:hover {
   background-repeat: repeat;
-}
-
-.slick-slide {
-  display: -webkit-box !important;
-  display: -ms-flexbox !important;
-  display: flex !important;
-}
-
-.slick-slide > div {
-  padding: 0 2rem;
-  display: -webkit-box !important;
-  display: -ms-flexbox !important;
-  display: flex !important;
-  height: 46vh;
-}
-
-.slick-list {
-  padding: 4rem 0 !important;
 }
 /*# sourceMappingURL=AllLeagues.css.map */

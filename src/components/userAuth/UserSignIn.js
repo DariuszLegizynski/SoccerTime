@@ -4,6 +4,8 @@ import { Link, Redirect } from "react-router-dom";
 import { getSignin } from "../../actions/auth/getSignin";
 import _ from "lodash";
 
+import "./UserSignIn.css"
+
 const UserSign = () => {
     const auth = useSelector(state => state.auth);
     const dispatch = useDispatch();
@@ -57,11 +59,11 @@ const UserSign = () => {
     }
 
     return (
-        <div>
+        <section className="signIn">
             {showLogin()}
             <Link to={"/signup"}><p>SignUp</p></Link>
             <Link to={"/"}>Back</Link>
-        </div>
+        </section>
     )
 }
 
