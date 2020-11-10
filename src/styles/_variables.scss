@@ -9,7 +9,6 @@ $tertiary-font: 'Alegreya Sans', sans-serif;
 
 $color-primary: #111;
 $color-secondary: #28b485;
-// $color-secondary: #7ed56f;
 $color-tertiary: #0AA848;
 $color-fourth: #620AA8;
 $color-fifth: #FFDD82;
@@ -28,6 +27,8 @@ $color-grey-dark-3: #999;
 $gradient-color-1: linear-gradient(90deg, $color-fifth 0%, $color-fourth 70%);
 $gradient-color-2: radial-gradient($color-secondary 0%, $color-primary 98%);
 $gradient-color-3: radial-gradient($color-tertiary 0%, $color-primary 98%);
+$gradient-color-4: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)) no-repeat center center;
+$gradient-color-5: linear-gradient(135deg, $color-secondary 0%, $color-primary 90%);
 
 $gradient-hr: radial-gradient(circle, $color-fifth 0%, rgba(210,208,208,0) 50%);
 

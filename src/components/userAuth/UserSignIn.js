@@ -36,33 +36,49 @@ const UserSign = () => {
 
     const showLogin = () => {
         return (
-            <div>
-                <h4>Login</h4>
-                <form onSubmit={signInUser}>
-                    <div>
-                        <label htmlFor="email">Email address</label>
-                        <input type="email" id="email" onChange={handleChange} placeholder="Email Adress" required />
+            <section className="signIn__logIn">
+                <h4 className="signIn__h4 h4">Log In</h4>
+                <form className="signIn__form" onSubmit={signInUser}>
+                    <div className="signIn__email">
+                        <label className="signIn__label" htmlFor="email">Email address</label>
+                        <input className="signIn__Input" type="email" id="email" onChange={handleChange} placeholder="Email Adress" required />
                     </div>
-                    <div>
-                        <label htmlFor="password">Your Password</label>
-                        <input type="password" id="password" onChange={handleChange} placeholder="Password" required />
+                    <div className="signIn_pass">
+                        <label className="signIn__label" htmlFor="password">Your Password</label>
+                        <input className="signIn__Input" type="password" id="password" onChange={handleChange} placeholder="Password" required />
                     </div>
-                    <button>Login</button>
+                    <button className="signIn__btn btn">Login</button>
                     {
                         auth.authenticated ? 
                         <Redirect to="/user" /> : null
                     }
-                    <p>{currentSigninState()}</p>
+                    <p className="signIn__p">{currentSigninState()}</p>
                 </form>
-            </div>
+            </section>
         )
     }
 
     return (
         <section className="signIn">
-            {showLogin()}
-            <Link to={"/signup"}><p>SignUp</p></Link>
-            <Link to={"/"}>Back</Link>
+            <div className="signIn__auth">
+                {showLogin()}
+                <Link className="signIn__link" to={"/signup"}>
+                    <button className="signIn__btn btn">
+                        SignUp
+                    </button>
+                </Link>
+                <Link className="signIn__link" to={"/"}>
+                    Continue as Guest
+                </Link>
+                <Link className="signIn__link" to={"/"}>
+                    Back
+                </Link>
+            </div>
+            <div className="signIn__image">
+                <h2 className="signIn__h2 h2">
+                    Get your favorite leagues and teams 
+                </h2>
+            </div>
         </section>
     )
 }

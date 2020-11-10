@@ -217,7 +217,7 @@
   text-decoration: none;
 }
 
-.h1, h2, h3, p, span {
+.h1, h2, h3, h4, p, span {
   font-family: "Roboto", sans-serif;
   color: #faf9f9;
 }

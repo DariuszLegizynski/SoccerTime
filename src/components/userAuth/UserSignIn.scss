@@ -1,5 +1,62 @@
 @import "../../styles/variables";
 
 .signIn {
-    padding: 10rem 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 5rem;
+
+    &__auth {
+        font-family: "Alegreya Sans", sans-serif;
+        height: 93vh;
+    }
+
+    &__btn {
+        margin: 2rem;
+    }
+
+    &__form {
+        display: grid;
+        justify-items: center;
+    }
+
+    &__h2 {
+        margin-top: 37vh ;
+        margin-left: 7.5rem;
+        text-align: center;
+        text-shadow: $shadow-yellow;
+        text-transform: uppercase;
+        -webkit-transition: all 0.12s ease-out;
+        -o-transition: all 0.12s ease-out;
+        transition: all 0.12s ease-out;
+        width: 30%;
+    }
+    
+    &__h4 {
+        display: grid;
+        justify-items: center;
+        margin-top: 8rem;
+        margin-bottom: 4rem;
+        font-size: 2.5rem;
+        letter-spacing: .4rem;
+    }
+
+    &__image {
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)) no-repeat center center, #EB4E7A url(../../resources/images/hero/soccer-4285133-my-mirrored.png) no-repeat center center;
+        background-size: contain;
+        border-left: 1rem solid $color-important;
+        padding: 5rem;
+        height: 93vh;
+    }
+
+    &__link {
+        display: grid;
+        justify-items: center;
+        margin: 2rem;
+    }
+
+    &__logIn {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        background-image: $gradient-color-5;
+    }
 }
