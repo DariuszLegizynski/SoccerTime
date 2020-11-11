@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, Redirect } from "react-router-dom";
-import { getSignin } from "../../actions/auth/getSignin";
 import _ from "lodash";
 
-import "./UserSignIn.css"
+import { getSignin } from "../../actions/auth/getSignin";
+import { getSignInAnon } from "../../actions/auth/getSignInAnon";
+
+import "./UserSign.css"
 
 const UserSign = () => {
     const auth = useSelector(state => state.auth);
@@ -36,48 +38,48 @@ const UserSign = () => {
 
     const showLogin = () => {
         return (
-            <section className="signIn__logIn">
-                <h4 className="signIn__h4 h4">Log In</h4>
-                <form className="signIn__form" onSubmit={signInUser}>
-                    <div className="signIn__email">
-                        <label className="signIn__label" htmlFor="email">Email address:</label>
-                        <input className="signIn__input" type="email" id="email" onChange={handleChange} placeholder="Email Adress" required />
+            <section className="sign__logIn">
+                <h4 className="sign__h4 h4 fadeInFromTop">Log In</h4>
+                <form className="sign__form" onSubmit={signInUser}>
+                    <div className="fadeInFromLeft">
+                        <label className="sign__label" htmlFor="email">Email address:</label>
+                        <input className="sign__input" type="email" id="email" onChange={handleChange} placeholder="Email Adress" required />
                     </div>
-                    <div className="signIn_pass">
-                        <label className="signIn__label" htmlFor="password">Your Password:</label>
-                        <input className="signIn__input" type="password" id="password" onChange={handleChange} placeholder="Password" required />
+                    <div className="fadeInFromRight">
+                        <label className="sign__label" htmlFor="password">Your Password:</label>
+                        <input className="sign__input" type="password" id="password" onChange={handleChange} placeholder="Password" required />
                     </div>
-                    <button className="signIn__btn btn">Login</button>
+                    <button className="sign__btn btn">Login</button>
                     {
                         auth.authenticated ? 
                         <Redirect to="/user" /> : null
                     }
-                    <p className="signIn__p">{currentSigninState()}</p>
+                    <p className="sign__p">{currentSigninState()}</p>
                 </form>
             </section>
         )
     }
 
     return (
-        <section className="signIn">
-            <div className="signIn__auth">
+        <section className="sign fadeIn">
+            <div className="sign__auth">
                 {showLogin()}
-                <section className="signIn__links">
-                    <Link className="signIn__link link" to={"/signup"}>
-                        <button className="signIn__btn btn" tabIndex="-1">
+                <section className="sign__links">
+                    <Link className="sign__link link" to={"/signup"}>
+                        <button className="sign__btn btn" tabIndex="-1">
                             SignUp
                         </button>
                     </Link>
-                    <Link className="signIn__link--guest link" to={"/"}>
+                    <Link className="sign__link--guest link" onClick={() => dispatch(getSignInAnon())} to={"/user"}>
                         Continue as Guest &rarr;
                     </Link>
-                    <Link className="signIn__link--back link" to={"/"}>
+                    <Link className="sign__link--back link" to={"/"}>
                         &#8592; Back
                     </Link>
                 </section>
             </div>
-            <div className="signIn__image">
-                <h2 className="signIn__h2 h2">
+            <div className="sign__image">
+                <h2 className="sign__h2 h2">
                     Get your favorite leagues and teams 
                 </h2>
             </div>

@@ -9,8 +9,8 @@ import shortid from "shortid";
 //Components
 import Intro from "../../Intro/Intro";
 import Footer from "../../footer/Footer";
-import  { allLeagues }  from "../../../actions/leagues/allLeagues/allLeagues";
-import  { allCountries }  from "../../../actions/allCountries/allCountries";
+import { allLeagues }  from "../../../actions/leagues/allLeagues/allLeagues";
+import { allCountries }  from "../../../actions/allCountries/allCountries";
 import { getFavoritedLeagues } from "../../../actions/favorites/getFavoritedLeagues";
 
 //styles

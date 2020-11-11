@@ -36,20 +36,20 @@ const Footer = () => {
                 </p>
             </section>
             <section className="footer-bottom">
-                <img className="footer-bottom__image fadeInUpwards" src={sportsDBLogo} alt="sportsDB" />
+                <img className="footer-bottom__image fadeInFromBottom" src={sportsDBLogo} alt="sportsDB" />
                 <div className="footer-bottom__api">
                     <a href="https://www.facebook.com/TheDataDB/" target="_blank" rel="noopener noreferrer" className="footer-bottom__link">
-                        <svg className="footer-bottom__icon icon fadeInUpwards" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                        <svg className="footer-bottom__icon icon fadeInFromBottom" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                             <use href={iconSprites + "#icon-facebook2"} />
                         </svg>
                     </a>
                     <a href="https://twitter.com/TheAudioDB" target="_blank" rel="noopener noreferrer" className="footer-bottom__link">
-                        <svg className="footer-bottom__icon icon fadeInUpwards" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                        <svg className="footer-bottom__icon icon fadeInFromBottom" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                             <use href={iconSprites + "#icon-twitter"} />
                         </svg>
                     </a>
                     <a href="https://www.thesportsdb.com/api.php" target="_blank" rel="noopener noreferrer" className="footer-bottom__link">
-                        <svg className="footer-bottom__icon icon fadeInUpwards" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                        <svg className="footer-bottom__icon icon fadeInFromBottom" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                             <use href={iconSprites + "#icon-embed2"} />
                         </svg>
                     </a>

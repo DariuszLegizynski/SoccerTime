@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, Redirect } from "react-router-dom";
-import { getSignup } from "../../actions/auth/getSignup";
 import _ from "lodash";
+
+import { getSignup } from "../../actions/auth/getSignup";
+import { getSignInAnon } from "../../actions/auth/getSignInAnon";
+
+import "./UserSign.css"
 
 const UserSignUp = () => {
     const auth = useSelector(state => state.auth);
@@ -36,42 +40,62 @@ const UserSignUp = () => {
 
     const showSignUp = () => {
         return (
-            <div>
-                <h4>SignUp</h4>
-                <form onSubmit={registerNewUser}>
-                    <div>
-                        <label htmlFor="firstName">First Name: </label>
-                        <input type="text" id="firstName" onChange={handleChange} placeholder="First Name" required />
+            <section className="sign__logIn--signUp">
+                <h4 className="sign__h4 h4 fadeInFromTop">
+                    SignUp
+                </h4>
+                <form className="sign__form" onSubmit={registerNewUser}>
+                    <div className="fadeInFromLeft">
+                        <label className="sign__label" htmlFor="firstName">First Name: </label>
+                        <input className="sign__input" type="text" id="firstName" onChange={handleChange} placeholder="First Name" required />
                     </div>
-                    <div>
-                        <label htmlFor="lastName">Last Name: </label>
-                        <input type="text" id="lastName" onChange={handleChange} placeholder="Last Name" required />
+                    <div className="fadeInFromRight">
+                        <label className="sign__label" htmlFor="lastName">Last Name: </label>
+                        <input className="sign__input" type="text" id="lastName" onChange={handleChange} placeholder="Last Name" required />
                     </div>
-                    <div>
-                        <label htmlFor="email">Email address</label>
-                        <input type="email" id="email" onChange={handleChange} placeholder="Email Address" required />
+                    <div className="fadeInFromLeft">
+                        <label className="sign__label" htmlFor="email">Email address</label>
+                        <input className="sign__input" type="email" id="email" onChange={handleChange} placeholder="Email Address" required />
                     </div>
-                    <div>
-                        <label htmlFor="password">Your Password</label>
-                        <input type="password" id="password" onChange={handleChange} placeholder="Password" required />
+                    <div className="fadeInFromRight">
+                        <label className="sign__label" htmlFor="password">Your Password</label>
+                        <input className="sign__input" type="password" id="password" onChange={handleChange} placeholder="Password" required />
                     </div>
-                    <button>SignUp</button>
+                    <button className="sign__btn btn">SignUp</button>
                     {
                         auth.authenticated ? 
                         <Redirect to="/user" /> : null
                     }
-                    <p>{currentSignupState()}</p>
+                    <p className="sign__p">{currentSignupState()}</p>
                 </form>
-            </div>
+            </section>
         )
     }
 
     return (
-        <div>
-            {showSignUp()}
-            <Link to={"/login"}><p>Login</p></Link>
-            <Link to={"/"}>Back</Link>
-        </div>
+        <section className="sign fadeIn">
+            <div className="sign__auth">
+                {showSignUp()}
+                <section className="sign__links">
+                    <Link className="sign__link link" to={"/login"}>
+                        <button className="sign__btn btn" tabIndex="-1">
+                            Login
+                        </button>
+                    </Link>
+                    <Link className="sign__link--guest link" onClick={() => dispatch(getSignInAnon())} to={"/user"}>
+                        Continue as Guest &rarr;
+                    </Link>
+                    <Link className="sign__link--back link" to={"/"}>
+                        &#8592; Back
+                    </Link>
+                </section>
+            </div>
+            <div className="sign__image">
+                <h2 className="sign__h2 h2">
+                    Get your favorite leagues and teams 
+                </h2>
+            </div>
+        </section>
     )
 }
 

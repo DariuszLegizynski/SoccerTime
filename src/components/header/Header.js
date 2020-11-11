@@ -74,7 +74,7 @@ const Header = () => {
                     </Link> : null
                 }
                 {auth ?
-                    <Link to={"/"} className="header__link link">
+                    <Link to={"/user"} className="header__link link">
                         <button className="header__btn btn fadeInFromLeft" tabIndex="-1">
                             <svg className="header__icon icon">
                                 <use href={iconSprites + "#icon-user-circle"} />

@@ -1,6 +1,6 @@
 @import "../../styles/variables";
 
-.signIn {
+.sign {
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding-top: 5rem;
@@ -135,6 +135,12 @@
     &__logIn {
         display: grid;
         grid-template-rows: 2fr 3fr;
+        background-image: $gradient-color-5;
+    }
+
+    &__logIn--signUp {
+        display: grid;
+        grid-template-rows: 1fr 3fr;
         background-image: $gradient-color-5;
     }
 }

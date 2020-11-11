@@ -138,17 +138,60 @@
   }
 }
 
-.fadeInUpwards {
+.fadeInFromBottom {
   -webkit-animation-duration: 3s;
   animation-duration: 3s;
   position: relative;
-  -webkit-animation: fadeInUpwards 2s;
-          animation: fadeInUpwards 2s;
+  -webkit-animation: fadeInFromBottom 2s;
+          animation: fadeInFromBottom 2s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
 
-@keyframes fadeInFromLeft {
+@-webkit-keyframes fadeInFromBottom {
+  from {
+    top: 10rem;
+    opacity: 0;
+  }
+  to {
+    top: 0rem;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInFromBottom {
+  from {
+    top: 10rem;
+    opacity: 0;
+  }
+  to {
+    top: 0rem;
+    opacity: 1;
+  }
+}
+
+.fadeInFromTop {
+  -webkit-animation-duration: 3s;
+  animation-duration: 3s;
+  position: relative;
+  -webkit-animation: fadeInFromTop 2s;
+          animation: fadeInFromTop 2s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes fadeInFromTop {
+  from {
+    bottom: 10rem;
+    opacity: 0;
+  }
+  to {
+    bottom: 0rem;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInFromTop {
   from {
     bottom: 10rem;
     opacity: 0;
@@ -160,10 +203,10 @@
 }
 
 .fadeIn {
-  -webkit-animation-duration: 8s;
-  animation-duration: 8s;
-  -webkit-animation: fadeIn 6s;
-          animation: fadeIn 6s;
+  -webkit-animation-duration: 6s;
+  animation-duration: 6s;
+  -webkit-animation: fadeIn 4s;
+          animation: fadeIn 4s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
   opacity: 0;

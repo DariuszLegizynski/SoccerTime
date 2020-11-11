@@ -1,4 +1,4 @@
-.signIn {
+.sign {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;
@@ -8,11 +8,11 @@
   overflow: hidden;
 }
 
-.signIn__auth {
+.sign__auth {
   font-family: "Alegreya Sans", sans-serif;
 }
 
-.signIn__btn {
+.sign__btn {
   margin: 2rem;
   height: 4rem;
   width: 16rem;
@@ -22,7 +22,7 @@
   transition: all .2s;
 }
 
-.signIn__btn:hover, .signIn__btn:focus {
+.sign__btn:hover, .sign__btn:focus {
   background-color: #faf9f9;
   color: #111;
   border-color: #FFDD82;
@@ -31,13 +31,13 @@
   transition: all .2s;
 }
 
-.signIn__form {
+.sign__form {
   display: -ms-grid;
   display: grid;
   justify-items: center;
 }
 
-.signIn__h2 {
+.sign__h2 {
   margin-left: 7.5rem;
   text-align: center;
   text-shadow: 0 0 1.5rem #FFDD82;
@@ -47,13 +47,13 @@
   width: 30%;
 }
 
-.signIn__h2:hover {
+.sign__h2:hover {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
   text-shadow: 0 0 1.5rem #FFDD82;
 }
 
-.signIn__h4 {
+.sign__h4 {
   display: -ms-grid;
   display: grid;
   justify-items: center;
@@ -62,7 +62,7 @@
   letter-spacing: .4rem;
 }
 
-.signIn__image {
+.sign__image {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -79,7 +79,7 @@
   padding: 5rem;
 }
 
-.signIn__input {
+.sign__input {
   font-family: inherit;
   font-size: 1.2rem;
   border: none;
@@ -92,27 +92,27 @@
   margin: 1rem 2rem;
 }
 
-.signIn__input:focus {
+.sign__input:focus {
   outline: none;
   background-color: #f0eeee;
 }
 
-.signIn__input::-webkit-input-placeholder {
+.sign__input::-webkit-input-placeholder {
   font-weight: 100;
   color: #999;
 }
 
-.signIn__label {
+.sign__label {
   font-size: 1.2rem;
 }
 
-.signIn__links {
+.sign__links {
   display: -ms-grid;
   display: grid;
   justify-items: center;
 }
 
-.signIn__link:focus > button {
+.sign__link:focus > button {
   background-color: #faf9f9;
   color: #111;
   border-color: #FFDD82;
@@ -121,7 +121,7 @@
   transition: all .2s;
 }
 
-.signIn__link--guest, .signIn__link--back {
+.sign__link--guest, .sign__link--back {
   margin: 2rem;
   font-size: 1.6rem;
   color: #620AA8;
@@ -133,7 +133,7 @@
   transition: all .2s;
 }
 
-.signIn__link--guest:hover, .signIn__link--guest:focus, .signIn__link--back:hover, .signIn__link--back:focus {
+.sign__link--guest:hover, .sign__link--guest:focus, .sign__link--back:hover, .sign__link--back:focus {
   background-color: #620AA8;
   color: #faf9f9;
   -webkit-box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
@@ -142,11 +142,19 @@
   transform: translateY(-0.2rem);
 }
 
-.signIn__logIn {
+.sign__logIn {
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: 2fr 3fr;
       grid-template-rows: 2fr 3fr;
   background-image: linear-gradient(135deg, #28b485 0%, #111 90%);
 }
-/*# sourceMappingURL=UserSignIn.css.map */
+
+.sign__logIn--signUp {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr 3fr;
+      grid-template-rows: 1fr 3fr;
+  background-image: linear-gradient(135deg, #28b485 0%, #111 90%);
+}
+/*# sourceMappingURL=UserSign.css.map */

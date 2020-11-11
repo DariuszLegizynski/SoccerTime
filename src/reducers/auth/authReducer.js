@@ -1,4 +1,4 @@
-import { GET_SIGNIN_SUCCESS, GET_SIGNIN_ERROR, GET_SIGNOUT_SUCCESS, GET_SIGNOUT_ERROR, GET_SIGNUP_SUCCESS, GET_SIGNUP_ERROR } from "../../actions/index";
+import { GET_SIGNIN_SUCCESS, GET_SIGNIN_ERROR, GET_SIGNIN_ANON_ERROR, GET_SIGNIN_ANON_SUCCESS, GET_SIGNOUT_SUCCESS, GET_SIGNOUT_ERROR, GET_SIGNUP_SUCCESS, GET_SIGNUP_ERROR } from "../../actions/index";
 
 const DefaultState = {
     authMsg: "",
@@ -28,6 +28,20 @@ const AuthReducer = (state = DefaultState, action) => {
                 authMsg: "Unable to login"
             };
         case GET_SIGNIN_SUCCESS:
+            return {
+                ...state,
+                authenticated: true,
+                authMsg: "login success"
+            };
+
+        case GET_SIGNIN_ANON_ERROR:
+            return {
+                ...state,
+                authenticated: true,
+                authMsg: "Unable to login"
+            };
+            
+        case GET_SIGNIN_ANON_SUCCESS:
             return {
                 ...state,
                 authenticated: true,
