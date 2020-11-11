@@ -40,12 +40,12 @@ const UserSign = () => {
                 <h4 className="signIn__h4 h4">Log In</h4>
                 <form className="signIn__form" onSubmit={signInUser}>
                     <div className="signIn__email">
-                        <label className="signIn__label" htmlFor="email">Email address</label>
-                        <input className="signIn__Input" type="email" id="email" onChange={handleChange} placeholder="Email Adress" required />
+                        <label className="signIn__label" htmlFor="email">Email address:</label>
+                        <input className="signIn__input" type="email" id="email" onChange={handleChange} placeholder="Email Adress" required />
                     </div>
                     <div className="signIn_pass">
-                        <label className="signIn__label" htmlFor="password">Your Password</label>
-                        <input className="signIn__Input" type="password" id="password" onChange={handleChange} placeholder="Password" required />
+                        <label className="signIn__label" htmlFor="password">Your Password:</label>
+                        <input className="signIn__input" type="password" id="password" onChange={handleChange} placeholder="Password" required />
                     </div>
                     <button className="signIn__btn btn">Login</button>
                     {
@@ -62,17 +62,19 @@ const UserSign = () => {
         <section className="signIn">
             <div className="signIn__auth">
                 {showLogin()}
-                <Link className="signIn__link" to={"/signup"}>
-                    <button className="signIn__btn btn">
-                        SignUp
-                    </button>
-                </Link>
-                <Link className="signIn__link" to={"/"}>
-                    Continue as Guest
-                </Link>
-                <Link className="signIn__link" to={"/"}>
-                    Back
-                </Link>
+                <section className="signIn__links">
+                    <Link className="signIn__link link" to={"/signup"}>
+                        <button className="signIn__btn btn" tabIndex="-1">
+                            SignUp
+                        </button>
+                    </Link>
+                    <Link className="signIn__link--guest link" to={"/"}>
+                        Continue as Guest &rarr;
+                    </Link>
+                    <Link className="signIn__link--back link" to={"/"}>
+                        &#8592; Back
+                    </Link>
+                </section>
             </div>
             <div className="signIn__image">
                 <h2 className="signIn__h2 h2">

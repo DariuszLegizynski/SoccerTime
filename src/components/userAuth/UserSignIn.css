@@ -4,15 +4,31 @@
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
   padding-top: 5rem;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .signIn__auth {
   font-family: "Alegreya Sans", sans-serif;
-  height: 93vh;
 }
 
 .signIn__btn {
   margin: 2rem;
+  height: 4rem;
+  width: 16rem;
+  background-color: #DB4076;
+  border: 0.3rem solid #DB4076;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.signIn__btn:hover, .signIn__btn:focus {
+  background-color: #faf9f9;
+  color: #111;
+  border-color: #FFDD82;
+  cursor: pointer;
+  -webkit-transition: all .2s;
+  transition: all .2s;
 }
 
 .signIn__form {
@@ -22,7 +38,6 @@
 }
 
 .signIn__h2 {
-  margin-top: 37vh;
   margin-left: 7.5rem;
   text-align: center;
   text-shadow: 0 0 1.5rem #FFDD82;
@@ -32,37 +47,106 @@
   width: 30%;
 }
 
+.signIn__h2:hover {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  text-shadow: 0 0 1.5rem #FFDD82;
+}
+
 .signIn__h4 {
   display: -ms-grid;
   display: grid;
   justify-items: center;
-  margin-top: 8rem;
-  margin-bottom: 4rem;
+  margin-top: 5rem;
   font-size: 2.5rem;
   letter-spacing: .4rem;
 }
 
 .signIn__image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.6)), to(rgba(0, 0, 0, 0.6))) no-repeat center center, #EB4E7A url(../../resources/images/hero/soccer-4285133-my-mirrored.png) no-repeat center center;
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)) no-repeat center center, #EB4E7A url(../../resources/images/hero/soccer-4285133-my-mirrored.png) no-repeat center center;
   background-size: contain;
   border-left: 1rem solid #DB4076;
   padding: 5rem;
-  height: 93vh;
 }
 
-.signIn__link {
+.signIn__input {
+  font-family: inherit;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 2rem;
+  background-color: #f4f2f2;
+  padding: .5rem 2rem;
+  width: 90%;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  margin: 1rem 2rem;
+}
+
+.signIn__input:focus {
+  outline: none;
+  background-color: #f0eeee;
+}
+
+.signIn__input::-webkit-input-placeholder {
+  font-weight: 100;
+  color: #999;
+}
+
+.signIn__label {
+  font-size: 1.2rem;
+}
+
+.signIn__links {
   display: -ms-grid;
   display: grid;
   justify-items: center;
+}
+
+.signIn__link:focus > button {
+  background-color: #faf9f9;
+  color: #111;
+  border-color: #FFDD82;
+  cursor: pointer;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.signIn__link--guest, .signIn__link--back {
   margin: 2rem;
+  font-size: 1.6rem;
+  color: #620AA8;
+  display: inline-block;
+  text-decoration: none;
+  border-bottom: 0.1rem solid #620AA8;
+  padding: .3rem;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.signIn__link--guest:hover, .signIn__link--guest:focus, .signIn__link--back:hover, .signIn__link--back:focus {
+  background-color: #620AA8;
+  color: #faf9f9;
+  -webkit-box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  -webkit-transform: translateY(-0.2rem);
+  transform: translateY(-0.2rem);
 }
 
 .signIn__logIn {
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
+  -ms-grid-rows: 2fr 3fr;
+      grid-template-rows: 2fr 3fr;
   background-image: linear-gradient(135deg, #28b485 0%, #111 90%);
 }
 /*# sourceMappingURL=UserSignIn.css.map */

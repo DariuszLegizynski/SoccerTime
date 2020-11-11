@@ -89,7 +89,6 @@
 
         &:focus {
             outline: none;
-
             & > button > svg {
                 transform: scale(1.2);
                 transition: all .2s ease-in-out;

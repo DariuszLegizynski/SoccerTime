@@ -4,14 +4,28 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding-top: 5rem;
+    height: 100vh;
+    overflow: hidden;
 
     &__auth {
         font-family: "Alegreya Sans", sans-serif;
-        height: 93vh;
     }
 
     &__btn {
         margin: 2rem;
+        height: 4rem;
+        width: 16rem;
+        background-color: $color-important;
+        border: .3rem solid $color-important;
+        transition: all .2s;
+
+        &:hover, &:focus {
+            background-color: $color-grey-light-1;
+            color: $color-black;
+            border-color: $color-fifth;
+            cursor: pointer;
+            transition: all .2s;
+        }
     }
 
     &__form {
@@ -20,7 +34,6 @@
     }
 
     &__h2 {
-        margin-top: 37vh ;
         margin-left: 7.5rem;
         text-align: center;
         text-shadow: $shadow-yellow;
@@ -29,34 +42,99 @@
         -o-transition: all 0.12s ease-out;
         transition: all 0.12s ease-out;
         width: 30%;
+
+        &:hover {
+            -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+            text-shadow: $shadow-yellow;
+        }
     }
     
     &__h4 {
         display: grid;
         justify-items: center;
-        margin-top: 8rem;
-        margin-bottom: 4rem;
+        margin-top: 5rem;
         font-size: 2.5rem;
         letter-spacing: .4rem;
     }
 
     &__image {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
         background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)) no-repeat center center, #EB4E7A url(../../resources/images/hero/soccer-4285133-my-mirrored.png) no-repeat center center;
         background-size: contain;
         border-left: 1rem solid $color-important;
         padding: 5rem;
-        height: 93vh;
+    }
+
+    &__input {
+        font-family: inherit;
+		font-size: 1.2rem;
+        border: none;
+        border-radius: 2rem;
+        background-color: $color-grey-light-2;
+        padding: .5rem 2rem;
+        width: 90%;
+        transition: all .2s;
+        margin: 1rem 2rem;
+
+        &:focus {
+			outline: none;
+			background-color: $color-grey-light-3;
+		}
+
+		&::-webkit-input-placeholder {
+			font-weight: 100;
+			color: $color-grey-dark-3;
+		}
+    }
+
+    &__label {
+        font-size: 1.2rem;
+    }
+
+    &__links {
+        display: grid;
+        justify-items: center;
     }
 
     &__link {
-        display: grid;
-        justify-items: center;
-        margin: 2rem;
+        &:focus {
+            & > button{
+                background-color: $color-grey-light-1;
+                color: $color-black;
+                border-color: $color-fifth;
+                cursor: pointer;
+                transition: all .2s;
+            }
+        }
+
+        &--guest, &--back {
+            margin: 2rem;
+            font-size: 1.6rem;
+            color: $color-fourth;
+            display: inline-block;
+            text-decoration: none;
+            border-bottom: .1rem solid $color-fourth;
+            padding: .3rem;
+            -webkit-transition: all .2s;
+            transition: all .2s;
+    
+            &:hover, &:focus {
+                background-color: $color-fourth;
+                color: $color-grey-light-1;
+                -webkit-box-shadow: 0 1rem 2rem rgba(0,0,0,0.15);
+                box-shadow: 0 1rem 2rem rgba(0,0,0,0.15);
+                -webkit-transform: translateY(-.2rem);
+                transform: translateY(-.2rem);
+            }
+        }
     }
 
     &__logIn {
         display: grid;
-        grid-template-rows: 1fr 1fr;
+        grid-template-rows: 2fr 3fr;
         background-image: $gradient-color-5;
     }
 }

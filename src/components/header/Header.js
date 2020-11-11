@@ -57,7 +57,7 @@ const Header = () => {
             <div className="header__authentication">
                 {!auth ?
                     <Link to={"/login"} className="header__link link">
-                        <button className="header__btn btn fadeInFromLeft">
+                        <button className="header__btn btn fadeInFromLeft" tabIndex="-1">
                             <svg className="header__icon icon">
                                 <use href={iconSprites + "#icon-enter"} />
                             </svg>
@@ -66,7 +66,7 @@ const Header = () => {
                 }
                 {!auth ?
                     <Link to={"/signup"} className="header__link link">
-                        <button className="header__btn btn fadeInFromLeft">
+                        <button className="header__btn btn fadeInFromLeft" tabIndex="-1">
                             <svg className="header__icon icon">
                                 <use href={iconSprites + "#icon-t-shirt"} />
                             </svg>
@@ -75,7 +75,7 @@ const Header = () => {
                 }
                 {auth ?
                     <Link to={"/"} className="header__link link">
-                        <button className="header__btn btn fadeInFromLeft">
+                        <button className="header__btn btn fadeInFromLeft" tabIndex="-1">
                             <svg className="header__icon icon">
                                 <use href={iconSprites + "#icon-user-circle"} />
                             </svg>
