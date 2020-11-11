@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,aAAa,CAAC;EACV,gBAAgB,EAAE,aAAa;CAClC",
+    "sources": [
+        "UserProfile.scss",
+        "../../styles/_variables.scss"
+    ],
+    "names": [],
+    "file": "UserProfile.css"
+}

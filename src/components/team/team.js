@@ -26,7 +26,7 @@ const Team = (props) => {
             return (
                 <div key={shortid.generate()}>
                     <Link to={`/allLeagues/${el.idLeague}`}>Back</Link>
-                    <button onClick={() => dispatch(getFavoritedTeams(el.strTeam, el.idTeam))}>favorite</button>
+                    <button onClick={() => dispatch(getFavoritedTeams(el.strTeam, el.idTeam, el.strTeamBadge+"/preview"))}>favorite</button>
                     <p>Team: </p>
                     {el.strTeam}
                     <p>Team Alternate: </p>

@@ -134,14 +134,15 @@ const AllLeagues = () => {
                                 return (
                                     <div className="AllLeagues__cardContainer linkWrapper fadeIn" key={shortid.generate()}>
                                         <Link className="header__link link" to={{pathname: `/allLeagues/${el.idLeague}`, state:{leagueName: el.strLeague}}}>
-                                        <div className="AllLeagues__card">
-                                            <img className="AllLeagues__badge" src={el.strBadge+"/preview"} alt="League Badge" />
-                                            <p>{el.strDescritpionEN}</p>
-                                            
-                                        </div>
-                                        <h3 className="AllLeagues__h3 h3">{el.strLeague}</h3>
+                                            <div className="AllLeagues__card">
+                                                <img className="AllLeagues__badge" src={el.strBadge+"/preview"} alt="League Badge" />
+                                                <p>
+                                                    {el.strDescritpionEN}
+                                                </p>
+                                            </div>
+                                            <h3 className="AllLeagues__h3 h3">{el.strLeague}</h3>
                                         </Link>
-                                        <button className="AllLeagues__btn btn" onClick={() => dispatch(getFavoritedLeagues(el.strLeague, el.idLeague))}>
+                                        <button className="AllLeagues__btn btn" onClick={() => dispatch(getFavoritedLeagues(el.strLeague, el.idLeague, el.strBadge+"/preview"))}>
                                             <svg className="AllLeagues__icon icon">
                                                 <use href={iconSprites + "#icon-soccer"} />
                                             </svg>
@@ -165,7 +166,7 @@ const AllLeagues = () => {
                                             </div>
                                             <h3 className="AllLeagues__h3 h3">{el.strLeague}</h3>
                                         </Link>
-                                        <button className="AllLeagues__btn btn" onClick={() => dispatch(getFavoritedLeagues(el.strLeague, el.idLeague))}>
+                                        <button className="AllLeagues__btn btn" onClick={() => dispatch(getFavoritedLeagues(el.strLeague, el.idLeague, el.strBadge+"/preview"))}>
                                             <svg className="AllLeagues__icon icon">
                                                 <use href={iconSprites + "#icon-soccer"} />
                                             </svg>
@@ -189,7 +190,7 @@ const AllLeagues = () => {
                                             </div>
                                         <h3 className="AllLeagues__h3 h3">{el.strLeague}</h3>
                                         </Link>
-                                        <button className="AllLeagues__btn btn" onClick={() => dispatch(getFavoritedLeagues(el.strLeague, el.idLeague))}>
+                                        <button className="AllLeagues__btn btn" onClick={() => dispatch(getFavoritedLeagues(el.strLeague, el.idLeague, el.strBadge+"/preview"))}>
                                             <svg className="AllLeagues__icon icon">
                                                 <use href={iconSprites + "#icon-soccer"} />
                                             </svg>
@@ -212,7 +213,7 @@ const AllLeagues = () => {
                                             </div>
                                             <h3 className="AllLeagues__h3 h3">{el.strLeague}</h3>
                                         </Link>
-                                        <button className="AllLeagues__btn btn" onClick={() => dispatch(getFavoritedLeagues(el.strLeague, el.idLeague))}>
+                                        <button className="AllLeagues__btn btn" onClick={() => dispatch(getFavoritedLeagues(el.strLeague, el.idLeague, el.strBadge+"/preview"))}>
                                             <svg className="AllLeagues__icon icon">
                                                 <use href={iconSprites + "#icon-soccer"} />
                                             </svg>

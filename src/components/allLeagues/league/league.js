@@ -68,7 +68,7 @@ const League = (props) => {
             return selectLeague.data.teams.map(el => {
                 return (
                     <div key={shortid.generate()}>
-                        <button onClick={() => dispatch(getFavoritedTeams(el.strTeam, el.idTeam))}>favorite</button>
+                        <button onClick={() => dispatch(getFavoritedTeams(el.strTeam, el.idTeamel.strTeamBadge+"/preview"))}>favorite</button>
                         {el.strTeam}
                         {el.strAlternate}
                         <Link to={`/allTeams/${el.idTeam}`}>
