@@ -1,4 +1,128 @@
 .user-profile {
-  background-color: rebeccapurple;
+  background-image: linear-gradient(135deg, #663399 5%, #620AA8 50%);
+  padding-top: 5rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 20% 1fr;
+      grid-template-columns: 20% 1fr;
+  min-height: 100vh;
+}
+
+.user-profile__btn {
+  margin: 2rem;
+  height: 4rem;
+  width: 16rem;
+  background-color: #DB4076;
+  border: 0.3rem solid #DB4076;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.user-profile__btn:hover, .user-profile__btn:focus {
+  background-color: #faf9f9;
+  color: #111;
+  border-color: #FFDD82;
+  cursor: pointer;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.user-profile__badge {
+  width: 80%;
+  height: auto;
+}
+
+.user-profile__card {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: transparent;
+}
+
+.user-profile__cardContainer {
+  position: relative;
+  -webkit-box-shadow: 0 0 1.5rem #FFDD82;
+          box-shadow: 0 0 1.5rem #FFDD82;
+  padding: 1.4rem;
+  border-radius: 5px;
+  background-size: cover;
+  background-image: radial-gradient(#28b485 0%, #111 98%);
+}
+
+.user-profile__list {
+  grid-column: center-start / center-end;
+  margin: 2rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(12rem, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+  grid-gap: 3rem;
+}
+
+.user-profile__sidebar {
+  background: linear-gradient(135deg, #620AA8 12%, #111 99%);
+}
+
+.user-profile__fav {
+  padding-bottom: 4rem;
+  text-align: center;
+}
+
+.user-profile__h3 {
+  font-family: "Alegreya Sans", sans-serif;
+  font-size: 1.3rem;
+  letter-spacing: .4rem;
+  padding-top: 3rem;
+  text-transform: uppercase;
+}
+
+.user-profile__header {
+  padding-bottom: 2rem;
+}
+
+.user-profile__main {
+  padding-top: 5rem;
+}
+
+.user-profile__nav {
+  padding: .5rem;
+  text-align: center;
+  margin: 14vh auto;
+}
+
+.user-profile__no-fav {
+  margin-bottom: 2rem;
+  font-size: 1.3rem;
+  grid-column: 1 / span all;
+}
+
+.user-profile__profile {
+  padding-top: 5rem;
+}
+
+.user-profile__image {
+  border-radius: 50%;
+  height: 10rem;
+  width: 10rem;
+}
+
+.user-profile__h2 {
+  font-family: "Alegreya Sans", sans-serif;
+  font-size: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+
+.user-profile__user-type {
+  color: #faf9f9;
+  font-size: 1.4rem;
+  margin-top: .5rem;
 }
 /*# sourceMappingURL=UserProfile.css.map */

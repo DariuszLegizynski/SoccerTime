@@ -135,10 +135,7 @@ const AllLeagues = () => {
                                     <div className="AllLeagues__cardContainer linkWrapper fadeIn" key={shortid.generate()}>
                                         <Link className="header__link link" to={{pathname: `/allLeagues/${el.idLeague}`, state:{leagueName: el.strLeague}}}>
                                             <div className="AllLeagues__card">
-                                                <img className="AllLeagues__badge" src={el.strBadge+"/preview"} alt="League Badge" />
-                                                <p>
-                                                    {el.strDescritpionEN}
-                                                </p>
+                                                <img className="AllLeagues__badge" src={el.strBadge+"/preview"} alt="League Badge"/>
                                             </div>
                                             <h3 className="AllLeagues__h3 h3">{el.strLeague}</h3>
                                         </Link>
@@ -162,7 +159,6 @@ const AllLeagues = () => {
                                         <Link className="header__link link" to={{pathname: `/allLeagues/${el.idLeague}`, state:{leagueName:el.strLeague}}}>
                                             <div className="AllLeagues__card">
                                                 <img className="AllLeagues__badge" src={el.strBadge+"/preview"} alt="League Badge" />
-                                                
                                             </div>
                                             <h3 className="AllLeagues__h3 h3">{el.strLeague}</h3>
                                         </Link>
@@ -185,8 +181,7 @@ const AllLeagues = () => {
                                     <div className="AllLeagues__cardContainer linkWrapper fadeIn" key={shortid.generate()}>
                                         <Link className="header__link link" to={{pathname: `/allLeagues/${el.idLeague}`, state:{leagueName:el.strLeague}}}>
                                             <div className="AllLeagues__card">
-                                                <img className="AllLeagues__badge" src={el.strBadge+"/preview"} alt="League Badge" />
-                                                
+                                                <img className="AllLeagues__badge" src={el.strBadge+"/preview"} alt="League Badge"/>
                                             </div>
                                         <h3 className="AllLeagues__h3 h3">{el.strLeague}</h3>
                                         </Link>

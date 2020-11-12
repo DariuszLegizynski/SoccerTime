@@ -1,5 +1,122 @@
 @import "../../styles/variables";
 
 .user-profile {
-    background-color: rebeccapurple;
+    background-image: $gradient-color-7;
+
+    padding-top: 5rem;
+    display: grid;
+    grid-template-columns: 20% 1fr;
+    min-height: 100vh;
+
+    &__btn {
+        margin: 2rem;
+        height: 4rem;
+        width: 16rem;
+        background-color: $color-important;
+        border: .3rem solid $color-important;
+        transition: all .2s;
+
+        &:hover, &:focus {
+            background-color: $color-grey-light-1;
+            color: $color-black;
+            border-color: $color-fifth;
+            cursor: pointer;
+            transition: all .2s;
+        }
+    }
+
+    //////////////////////////
+    // C A R D S
+    //////////////////////////
+
+    &__badge {
+        width: 80%;
+        height: auto;
+    }
+
+    &__card {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        background-color: transparent;
+    }
+
+    &__cardContainer {
+        position: relative;
+        box-shadow: $shadow-yellow;
+        padding: 1.4rem;
+        border-radius: 5px;
+        background-size: cover;
+        background-image: $gradient-color-2;
+    }
+
+    &__list {
+        grid-column: center-start / center-end;
+        margin: 2rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+        grid-gap: 3rem;
+    }
+
+    /////////////////////////////
+
+    &__sidebar {
+        background: $gradient-color-6;
+    }
+
+    &__fav {
+        padding-bottom: 4rem;
+        text-align: center;
+    }
+
+    &__h3 {
+        font-family: "Alegreya Sans", sans-serif;
+        font-size: 1.3rem;
+        letter-spacing: .4rem;
+        padding-top: 3rem;
+        text-transform: uppercase;
+    }
+
+    &__header {
+        padding-bottom: 2rem;
+    }
+
+    &__main {
+        padding-top: 5rem;
+    }
+
+    &__nav {
+        padding: .5rem;
+        text-align: center;
+        margin: 14vh auto;
+    }
+
+    &__no-fav {
+        margin-bottom: 2rem;
+        font-size: 1.3rem;
+        grid-column: 1 / span all;
+    }
+
+    &__profile {
+        padding-top: 5rem;
+    }
+
+    &__image {
+        border-radius: 50%;
+        height: 10rem;
+        width: 10rem;
+    }
+
+    &__h2 {
+        font-family: "Alegreya Sans", sans-serif;
+        font-size: 2rem;
+        margin-top: 1rem;
+        margin-bottom: 0;
+    }
+
+    &__user-type {
+        color: $color-grey-light-1;
+        font-size: 1.4rem;
+        margin-top: .5rem;
+    }
 }
