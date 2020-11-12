@@ -1,4 +1,4 @@
-import { GET_FAVORITED_LEAGUES } from "../../actions/index";
+import { GET_FAVORITED_LEAGUES, GET_DELETE_FAVORITED_LEAGUES } from "../../actions/index";
 import _ from "lodash";
 
 const defaultState = {
@@ -19,7 +19,8 @@ const favoritedLeaguesReducer = (state = defaultState, action) => {
         case GET_FAVORITED_LEAGUES:
             if(leagueExists(state, action.leagueId)) {
                 return state;
-            } else {
+            }
+            else {
                 return {
                     ...state,
                     favorites: [
@@ -31,6 +32,15 @@ const favoritedLeaguesReducer = (state = defaultState, action) => {
                         }
                     ]
                 }
+            }
+
+        case GET_DELETE_FAVORITED_LEAGUES:
+            console.log(state);
+            return {
+                ...state,
+                favorites: [
+                    ...state.favorites.filter(el => el.leagueId !== action.leagueId)
+                ]
             }
             
         default:

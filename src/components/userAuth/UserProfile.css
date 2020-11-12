@@ -32,10 +32,26 @@
   height: auto;
 }
 
+.user-profile__btn--remove {
+  background-color: #DB4076;
+  border: 0.3rem solid #DB4076;
+  width: 8rem;
+  height: 2.5rem;
+}
+
+.user-profile__btn--remove:hover, .user-profile__btn--remove:focus {
+  background-color: #faf9f9;
+  color: #111;
+  border-color: #FFDD82;
+  cursor: pointer;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
 .user-profile__card {
-  display: -webkit-box !important;
-  display: -ms-flexbox !important;
-  display: flex !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -47,7 +63,19 @@
 }
 
 .user-profile__cardContainer {
-  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-shadow: 0 0 1.5rem #FFDD82;
           box-shadow: 0 0 1.5rem #FFDD82;
   padding: 1.4rem;
@@ -61,9 +89,12 @@
   margin: 2rem;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(12rem, 1fr))[auto-fill];
-      grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+  -ms-grid-columns: (minmax(12rem, 15%))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(12rem, 15%));
   grid-gap: 3rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .user-profile__sidebar {
@@ -79,7 +110,7 @@
   font-family: "Alegreya Sans", sans-serif;
   font-size: 1.3rem;
   letter-spacing: .4rem;
-  padding-top: 3rem;
+  padding: 1rem;
   text-transform: uppercase;
 }
 

@@ -5,6 +5,8 @@ import { getSignout } from "../../actions/auth/getSignout";
 import _ from "lodash";
 import shortid from "shortid";
 
+import { getDeleteFavoritedLeagues } from "../../actions/favorites/getDeleteFavoritedLeagues";
+
 import "./UserProfile.css";
 import guestAvatar from "../../resources/images/GuestAvatar/philipp-kammerer-6Mxb_mZ_Q8E-unsplash.jpg"
 
@@ -31,11 +33,14 @@ const UserProfile = () => {
                                 {el.leagueName}
                             </h3>
                         </Link>
+                        <button className="user-profile__btn--remove btn" onClick={() => dispatch(getDeleteFavoritedLeagues(el.leagueId))}>
+                            Remove
+                        </button>
                     </div>
                 )
             })
         } else {
-            return <p className="user-profile__no-fav">no favorite leagues found</p>
+            return <p className="user-profile__no-fav fadeIn">no favorite leagues found</p>
         }
     }
 
@@ -52,11 +57,14 @@ const UserProfile = () => {
                                 {el.teamName}
                             </h3>
                         </Link>
+                        <button className="user-profile__btn--remove btn" onClick={() => dispatch(getDeleteFavoritedLeagues(el.leagueId))}>
+                            Remove
+                        </button>
                     </div>
                 )
             })
         } else {
-            return <p className="user-profile__no-fav">no favorite teams found</p>
+            return <p className="user-profile__no-fav fadeIn">no favorite teams found</p>
         }
     }
 
@@ -88,7 +96,7 @@ const UserProfile = () => {
                         </h3>
                         <hr className="user-profile__hr hr" />
                     </header>
-                    <div className="user-profile__list">
+                    <div className="user-profile__list fadeIn">
                         {showLeagues()}
                     </div>
                 </div>
@@ -99,7 +107,7 @@ const UserProfile = () => {
                         </h3>
                         <hr className="user-profile__hr hr" />
                     </header>
-                    <div className="user-profile__list">
+                    <div className="user-profile__list fadeIn">
                         {showTeams()}
                     </div>
                 </div>
