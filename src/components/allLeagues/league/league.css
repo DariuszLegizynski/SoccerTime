@@ -1,0 +1,17 @@
+.league {
+  padding-top: 5rem;
+}
+
+.league__intro {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(25rem, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+  grid-gap: .4rem;
+  grid-auto-rows: 35rem;
+}
+
+.league__intro__intro img {
+  width: 25rem;
+}
+/*# sourceMappingURL=league.css.map */

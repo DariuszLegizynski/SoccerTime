@@ -114,6 +114,8 @@
   height: 3.2rem;
   right: .5rem;
   top: 15.5rem;
+  -webkit-transition: all .2s;
+  transition: all .2s;
 }
 
 .AllLeagues__btn:hover, .AllLeagues__btn:focus {
@@ -152,6 +154,8 @@
   border-radius: 5px;
   background-size: cover;
   background-image: radial-gradient(#28b485 0%, #111 98%);
+  -webkit-transition: all .2s;
+  transition: all .2s;
 }
 
 .AllLeagues__h1 {

@@ -1,0 +1,16 @@
+@import "../../../styles/variables";
+
+.league {
+    padding-top: 5rem;
+
+    &__intro {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+        grid-gap: .4rem;
+        grid-auto-rows: 35rem;
+
+        &__intro img {
+            width: 25rem;
+        }
+    }
+}

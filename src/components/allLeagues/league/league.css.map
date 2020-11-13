@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,OAAO,CAAC;EACJ,WAAW,EAAE,IAAI;CAYpB;;AAVI,AAAD,cAAQ,CAAC;EACL,OAAO,EAAE,IAAI;EACb,qBAAqB,EAAE,qCAAqC;EAC5D,QAAQ,EAAE,KAAK;EACf,cAAc,EAAE,KAAK;CAKxB;;AAHI,AAAD,qBAAQ,CAAC,GAAG,CAAC;EACT,KAAK,EAAE,KAAK;CACf",
+    "sources": [
+        "league.scss",
+        "../../../styles/_variables.scss"
+    ],
+    "names": [],
+    "file": "league.css"
+}
