@@ -17,17 +17,18 @@
     }
 
     &__header {
+        margin: 4rem;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
-        justify-items: center;
+        justify-content: space-evenly;
 
         &__banner {
             margin: 2rem;
         }
 
         &__title {
-            width: 100%;
+            // width: 100%;
             text-align: center;
             text-align: -webkit-center;
 

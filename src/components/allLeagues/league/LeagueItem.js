@@ -17,7 +17,7 @@ const LeagueItem = ({picture, altPicture, altText}) => {
 
     return (
         <figure className="league__gallery__image" style={{ gridRowEnd: `span ${newSpanSize}`}}>
-            <img className="league__picture" onLoad={handleImageLoad} src={picture ? picture : altPicture} alt={altText} />
+            <img className="league__picture" onLoad={handleImageLoad} src={picture ? picture + "/preview" : altPicture} alt={altText} />
         </figure>
     )
 }
