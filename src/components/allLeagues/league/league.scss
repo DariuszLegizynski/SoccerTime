@@ -58,27 +58,29 @@
                 cursor: pointer;
             }
 
-            &__icon--back {
-                cursor: pointer;
-                width: 5rem;
-                height: 5rem;
-
-                &:hover {
-                    fill: $color-fourth;
-                    transform: scale(1.2);
-                    transition: all .2s ease-in-out;
+            &__icon {
+                // cursor: pointer;
+                &--back {
+                    width: 5rem;
+                    height: 5rem;
+    
+                    &:hover {
+                        fill: $color-fourth;
+                        transform: scale(1.2);
+                        transition: all .2s ease-in-out;
+                    }
                 }
-            }
 
-            &__icon--share {
-                cursor: pointer;
-                width: 4rem;
-                height: 4rem;
-
-                &:hover, &:focus {
-                    fill: $color-fifth;
-                    transform: scale(1.2);
-                    transition: all .2s ease-in-out;
+                &--share {
+                    cursor: pointer;
+                    width: 4rem;
+                    height: 4rem;
+    
+                    &:hover, &:focus {
+                        fill: $color-fifth;
+                        transform: scale(1.2);
+                        transition: all .2s ease-in-out;
+                    }
                 }
             }
 
@@ -96,10 +98,34 @@
         }
 
         &__share {
-            height: 5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            overflow: hidden;
+            position: absolute;
+            left: 125rem;
+            top: 10rem;
+            width: 5rem;
+            height: 20rem;
 
             &__hide {
+                display: none;
                 height: 0;
+            }
+
+            &__link {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 4rem;
+                height: 4rem;
+
+                &:hover, &:focus {
+                    outline: none;
+                    transform: scale(1.2);
+                    transition: all .2s ease-in-out;
+                }
             }
         }
     }
@@ -115,4 +141,24 @@
             grid-row-end: span 2;
         }
     }
+}
+
+.share-link--mail {
+    background-color: green;
+    border-radius: 50%;
+}
+
+.share-link--facebook {
+    background-color: $color-facebook;
+    border-radius: 50%;
+}
+
+.share-link--google-plus {
+    background-color: $color-google-plus;
+    border-radius: 50%;
+}
+
+.share-link--twitter {
+    background-color: $color-twitter;
+    border-radius: 50%;
 }

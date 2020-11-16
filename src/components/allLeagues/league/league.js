@@ -45,12 +45,14 @@ const League = (props) => {
 	// Toggles visiblity of share bar
 	const handleShareButton = () => {
 	  document.querySelector(".league__intro__share").classList.toggle("league__intro__share__hide");
+	  document.querySelector(".league__intro__share__link").toggleAttribute("tabIndex", "0");
 	}
 
 	// when "enter" is pressed
 	const handleShareButtonOnPress = (event) => {
 		if (event.key === "Enter") {
 			document.querySelector(".league__intro__share").classList.toggle("league__intro__share__hide");
+			document.querySelector(".league__intro__share__link").toggleAttribute("tabIndex");
 		}
 	  }
 
@@ -68,34 +70,34 @@ const League = (props) => {
 								<div className="league__intro__navigation">
 									<Link to={"/"} className="league__intro__navigation__link link">
 										<button className="league__intro__navigation__btn btn" tabIndex="-1">
-											<svg className="league__intro__navigation__icon--back icon fadeInFromLeft">
+											<svg tabIndex="-1" className="league__intro__navigation__icon--back icon fadeInFromLeft">
 												<use href={iconSprites + "#icon-back"} />
 											</svg>
 										</button>
 									</Link>
-									<svg onClick={handleShareButton} onKeyPress={handleShareButtonOnPress} className="league__intro__navigation__icon--share icon fadeInFromRight" tabIndex="0">
+									<svg tabIndex="-1" onClick={handleShareButton} onKeyPress={handleShareButtonOnPress} className="league__intro__navigation__icon--share icon fadeInFromRight" tabIndex="0">
 										<use href={iconSprites + "#icon-share2"} />
 									</svg>
 								</div>
 								{ /* Share bar */ }
 								<div className="league__intro__share league__intro__share__hide">
-									<a onClick={handleShareButton} onKeyPress={handleShareButtonOnPress} href={`mailto:?Subject=Look%20what%20I%20found%20on%20the%20web!&Body=I%20saw%20this%20and%20thought%20of%20you!%20 ${"www.mySoccer-time.com/allLeagues/" + el.idLeague}`}>
-										<svg className="league__intro__share__icon--mail icon fadeInFromLeft">
+									<a className="league__intro__share__link share-link--mail fadeInFromTop" onClick={handleShareButton} onKeyPress={handleShareButtonOnPress} href={`mailto:?Subject=Look%20what%20I%20found%20on%20the%20web!&Body=I%20saw%20this%20and%20thought%20of%20you!%20 ${"www.mySoccer-time.com/allLeagues/" + el.idLeague}`}>
+										<svg className="league__intro__share__icon icon ">
 											<use href={iconSprites + "#icon-envelope-o"} />
 										</svg>
 									</a>
-									<a onClick={handleShareButton} onKeyPress={handleShareButtonOnPress} href={`http://www.facebook.com/sharer.php?u=${"www.mySoccer-time.com/allLeagues/" + el.idLeague}`} rel="noopener noreferrer" target="_blank">
-										<svg className="league__intro__share__icon--facebook icon fadeInFromLeft">
+									<a className="league__intro__share__link share-link--facebook fadeInFromTop" onClick={handleShareButton} onKeyPress={handleShareButtonOnPress} href={`http://www.facebook.com/sharer.php?u=${"www.mySoccer-time.com/allLeagues/" + el.idLeague}`} rel="noopener noreferrer" target="_blank">
+										<svg className="league__intro__share__icon icon">
 											<use href={iconSprites + "#icon-facebook2"} />
 										</svg>
 									</a>
-									<a onClick={handleShareButton} onKeyPress={handleShareButtonOnPress} href={`https://plus.google.com/share?url=${"www.mySoccer-time.com/allLeagues/" + el.idLeague}`} rel="noopener noreferrer" target="_blank">
-										<svg className="league__intro__share__icon--google icon fadeInFromLeft">
+									<a className="league__intro__share__link share-link--google-plus fadeInFromTop" onClick={handleShareButton} onKeyPress={handleShareButtonOnPress} href={`https://plus.google.com/share?url=${"www.mySoccer-time.com/allLeagues/" + el.idLeague}`} rel="noopener noreferrer" target="_blank">
+										<svg className="league__intro__share__icon icon">
 											<use href={iconSprites + "#icon-google-plus"} />
 										</svg>
 									</a>
-									<a onClick={handleShareButton} onKeyPress={handleShareButtonOnPress} href={`https://twitter.com/share?url=${"www.mySoccer-time.com/allLeagues/" + el.idLeague}`} rel="noopener noreferrer" target="_blank">
-										<svg className="league__intro__share__icon--twitter icon fadeInFromLeft">
+									<a className="league__intro__share__link share-link--twitter fadeInFromTop" onClick={handleShareButton} onKeyPress={handleShareButtonOnPress} href={`https://twitter.com/share?url=${"www.mySoccer-time.com/allLeagues/" + el.idLeague}`} rel="noopener noreferrer" target="_blank">
+										<svg className="league__intro__share__icon icon">
 											<use href={iconSprites + "#icon-twitter"} />
 										</svg>
 									</a>
