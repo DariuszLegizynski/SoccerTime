@@ -1,8 +1,5 @@
 import React, { useEffect } from "react";
-import {
-	useSelector,
-	useDispatch,
-} from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
 import LeagueTable from "../leagueTable/leagueTable";
@@ -16,7 +13,16 @@ import { getFavoritedTeams } from "../../../actions/favorites/getFavoritedTeams"
 import NextLeagueEvents from "./nextLeagueEvents";
 import PreviousLeagueEvents from "./previousLeagueEvents";
 
-import altFanart1 from "../../../resources/images/hero/training-1306131.jpg";
+import iconSprites from "../../../resources/icons/icomoon/sprite.svg";
+import altFanart1 from "../../../resources/images/alt/training-1306131.jpg";
+import altFanart2 from "../../../resources/images/alt/audience-1866738.jpg";
+import altFanart3 from "../../../resources/images/alt/football-3471402.jpg";
+import altFanart4 from "../../../resources/images/alt/jimmy-conover-SEQ2VI0KI6A-unsplash.jpg";
+import altFanart5 from "../../../resources/images/alt/liam-mckay-XcvAfCgYX0Y-unsplash.jpg";
+import altFanart6 from "../../../resources/images/alt/stadium-931975.jpg";
+import altFanart7 from "../../../resources/images/alt/soccer-1490541.jpg";
+import altFanart8 from "../../../resources/images/alt/soccer-players-1478802.jpg";
+
 import "./league.css";
 import LeagueItem from "./LeagueItem";
 
@@ -42,6 +48,55 @@ const League = (props) => {
 			return selectLeagueId.map(
 				(el) => {
 					return (
+						<section className="league__intro fadeIn" key={shortid.generate()}>
+							<figure className="league__intro__image" style={{
+								background: `linear-gradient(0deg, rgba(0,0,0,1) 5%, rgba(0,0,0,0.45) 92%) center center no-repeat, #fff
+								url(${el.strFanart2 ? el.strFanart2 : altFanart2})
+								center top no-repeat`}}
+								>
+								<div className="league__intro__navigation">
+									<Link to={"/"} className="league__intro__navigation__link link">
+										<button className="league__intro__navigation__btn btn" tabIndex="-1">
+											<svg className="league__intro__navigation__icon--back icon fadeInFromLeft">
+												<use href={iconSprites + "#icon-back"} />
+											</svg>
+										</button>
+									</Link>
+									{/* <button className="league__intro__navigation__btn--share btn"> */}
+										<svg className="league__intro__navigation__icon--share icon fadeInFromRight" tabIndex="0">
+											<use href={iconSprites + "#icon-share2"} />
+										</svg>
+									{/* </button> */}
+								</div>
+								<div className="league__intro__header__title">
+									<h1 className="league__intro__header__title__h1 h1">
+										{
+											el.strLeague
+										}
+									</h1>
+								</div>
+								<div className="league__intro__header__banner">
+									<img
+										className="league__intro__header__banner__image"
+										src={
+											el.strBadge + "/preview"
+										}
+										alt="League-Banner"
+									/>
+								</div>
+							</figure>
+						</section>
+					);
+				}
+			);
+		}
+	}
+
+	const leagueGallery = () => {
+		if (!_.isEmpty(selectLeagueId)) {
+			return selectLeagueId.map(
+				(el) => {
+					return (
 						<section
 							className="league__gallery fadeIn"
 							key={shortid.generate()}>
@@ -58,21 +113,10 @@ const League = (props) => {
 							/>
 							<LeagueItem
 								picture={
-									el.strFanart2
-								}
-								altPicture={
-									altFanart1
-								}
-								altText={
-									"Fanart2"
-								}
-                            />
-							<LeagueItem
-								picture={
 									el.strBanner
 								}
 								altPicture={
-									altFanart1
+									altFanart3
 								}
 								altText={
 									"Badge"
@@ -83,7 +127,7 @@ const League = (props) => {
 									el.strFanart3
 								}
 								altPicture={
-									altFanart1
+									altFanart4
 								}
 								altText={
 									"Fanart3"
@@ -91,10 +135,10 @@ const League = (props) => {
 							/>
 							<LeagueItem
 								picture={
-									el.strFanart1
+									el.strFanart5
 								}
 								altPicture={
-									altFanart1
+									altFanart5
 								}
 								altText={
 									"Fanart1"
@@ -105,7 +149,7 @@ const League = (props) => {
 									el.strTrophy
 								}
 								altPicture={
-									altFanart1
+									altFanart6
 								}
 								altText={
 									"Trophy"
@@ -116,7 +160,7 @@ const League = (props) => {
 									el.strPoster
 								}
 								altPicture={
-									altFanart1
+									altFanart7
 								}
 								altText={
 									"Poster"
@@ -127,43 +171,12 @@ const League = (props) => {
 									el.strFanart4
 								}
 								altPicture={
-									altFanart1
+									altFanart8
 								}
 								altText={
 									"Fanart4"
 								}
 							/>
-						</section>
-					);
-				}
-			);
-		}
-	};
-
-	const showTitle = () => {
-		if (!_.isEmpty(selectLeagueId)) {
-			return selectLeagueId.map(
-				(el) => {
-					return (
-						<section
-							className="league__header"
-							key={shortid.generate()}>
-							<div className="league__header__title">
-								<h1 className="league__header__title__h1 h1">
-									{
-										el.strLeague
-									}
-								</h1>
-							</div>
-							<div className="league__header__banner">
-								<img
-									className="league__header__banner__image"
-									src={
-										el.strBadge + "/preview"
-									}
-									alt="League-Banner"
-								/>
-							</div>
 						</section>
 					);
 				}
@@ -281,7 +294,6 @@ const League = (props) => {
 	return (
 		<div className="league">
 			{leagueIntro()}
-			{showTitle()}
 			{showLeagueDescription()}
 			<NextLeagueEvents
 				leagueId={leagueId}

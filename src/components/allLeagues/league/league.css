@@ -3,22 +3,19 @@
   background-image: radial-gradient(#0AA848 0%, #111 98%);
 }
 
-.league__gallery {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (minmax(40rem, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
-  grid-gap: 0 10px;
-  grid-auto-rows: 10px;
+.league__intro {
+  background: linear-gradient(165deg, #251431 0%, #161130 22%);
+  color: #fff;
 }
 
-.league__gallery__image img {
-  width: 40rem;
-  -ms-grid-row-span: 2;
-      grid-row-end: span 2;
+.league__intro__image {
+  background-size: cover !important;
+  height: 92vh;
+  width: auto;
+  padding: 7% 10%;
 }
 
-.league__header {
+.league__intro__header {
   margin: 4rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -35,30 +32,100 @@
           justify-content: space-evenly;
 }
 
-.league__header__banner {
+.league__intro__header__banner {
   margin: 2rem;
 }
 
-.league__header__title {
+.league__intro__header__title {
   text-align: center;
   text-align: -webkit-center;
 }
 
-.league__header__title__h1 {
+.league__intro__header__title__h1 {
   font-size: 5rem;
+  background-repeat: no-repeat;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  width: 100%;
+}
+
+.league__intro__header__title__h1:hover {
   background-repeat: repeat;
   -webkit-transition: all .2s;
   transition: all .2s;
 }
 
-.league__header__title__h1:hover {
-  background-repeat: no-repeat;
-  color: #FFDD82;
-  -webkit-transition: all .2s;
-  transition: all .2s;
+.league__intro__navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 5rem;
 }
 
-.h1 {
-  width: 100%;
+.league__intro__navigation__btn {
+  height: 4rem;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.league__intro__navigation__icon--back {
+  cursor: pointer;
+  width: 5rem;
+  height: 5rem;
+}
+
+.league__intro__navigation__icon--back:hover {
+  fill: #620AA8;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.league__intro__navigation__icon--share {
+  cursor: pointer;
+  width: 4rem;
+  height: 4rem;
+}
+
+.league__intro__navigation__icon--share:hover, .league__intro__navigation__icon--share:focus {
+  fill: #FFDD82;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.league__intro__navigation__link:focus {
+  outline: none;
+}
+
+.league__intro__navigation__link:focus > button > svg {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  fill: #620AA8;
+}
+
+.league__gallery {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(40rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+  grid-gap: 0 10px;
+  grid-auto-rows: 10px;
+}
+
+.league__gallery__image img {
+  width: 40rem;
+  -ms-grid-row-span: 2;
+      grid-row-end: span 2;
 }
 /*# sourceMappingURL=league.css.map */
