@@ -31,11 +31,10 @@ const League = (props) => {
 		props.match.params.idLeague;
 	const dispatch = useDispatch();
 	const selectLeague = useSelector(
-		(state) => state.league
+		state => state.league
 	);
 	const selectLeagueId = useSelector(
-		(state) =>
-			state.leagueId.data.leagues
+		state => state.leagueId.data.leagues
 	);
 
 	useEffect(() => {
@@ -43,10 +42,22 @@ const League = (props) => {
 		dispatch(getLeagueId(leagueId));
 	}, [dispatch, leagueId]);
 
+	// Toggles visiblity of share bar
+	const handleShareButton = () => {
+	  document.querySelector(".league__intro__share").classList.toggle("league__intro__share__hide");
+	}
+
+	// when "enter" is pressed
+	const handleShareButtonOnPress = (event) => {
+		if (event.key === "Enter") {
+			document.querySelector(".league__intro__share").classList.toggle("league__intro__share__hide");
+		}
+	  }
+
 	const leagueIntro = () => {
 		if (!_.isEmpty(selectLeagueId)) {
-			return selectLeagueId.map(
-				(el) => {
+			console.log(selectLeagueId);
+			return selectLeagueId.map(el => {
 					return (
 						<section className="league__intro fadeIn" key={shortid.generate()}>
 							<figure className="league__intro__image" style={{
@@ -62,11 +73,32 @@ const League = (props) => {
 											</svg>
 										</button>
 									</Link>
-									{/* <button className="league__intro__navigation__btn--share btn"> */}
-										<svg className="league__intro__navigation__icon--share icon fadeInFromRight" tabIndex="0">
-											<use href={iconSprites + "#icon-share2"} />
+									<svg onClick={handleShareButton} onKeyPress={handleShareButtonOnPress} className="league__intro__navigation__icon--share icon fadeInFromRight" tabIndex="0">
+										<use href={iconSprites + "#icon-share2"} />
+									</svg>
+								</div>
+								{ /* Share bar */ }
+								<div className="league__intro__share league__intro__share__hide">
+									<a onClick={handleShareButton} onKeyPress={handleShareButtonOnPress} href={`mailto:?Subject=Look%20what%20I%20found%20on%20the%20web!&Body=I%20saw%20this%20and%20thought%20of%20you!%20 ${"www.mySoccer-time.com/allLeagues/" + el.idLeague}`}>
+										<svg className="league__intro__share__icon--mail icon fadeInFromLeft">
+											<use href={iconSprites + "#icon-envelope-o"} />
 										</svg>
-									{/* </button> */}
+									</a>
+									<a onClick={handleShareButton} onKeyPress={handleShareButtonOnPress} href={`http://www.facebook.com/sharer.php?u=${"www.mySoccer-time.com/allLeagues/" + el.idLeague}`} rel="noopener noreferrer" target="_blank">
+										<svg className="league__intro__share__icon--facebook icon fadeInFromLeft">
+											<use href={iconSprites + "#icon-facebook2"} />
+										</svg>
+									</a>
+									<a onClick={handleShareButton} onKeyPress={handleShareButtonOnPress} href={`https://plus.google.com/share?url=${"www.mySoccer-time.com/allLeagues/" + el.idLeague}`} rel="noopener noreferrer" target="_blank">
+										<svg className="league__intro__share__icon--google icon fadeInFromLeft">
+											<use href={iconSprites + "#icon-google-plus"} />
+										</svg>
+									</a>
+									<a onClick={handleShareButton} onKeyPress={handleShareButtonOnPress} href={`https://twitter.com/share?url=${"www.mySoccer-time.com/allLeagues/" + el.idLeague}`} rel="noopener noreferrer" target="_blank">
+										<svg className="league__intro__share__icon--twitter icon fadeInFromLeft">
+											<use href={iconSprites + "#icon-twitter"} />
+										</svg>
+									</a>
 								</div>
 								<div className="league__intro__header__title">
 									<h1 className="league__intro__header__title__h1 h1">

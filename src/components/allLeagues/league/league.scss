@@ -94,6 +94,14 @@
                 } 
             }
         }
+
+        &__share {
+            height: 5rem;
+
+            &__hide {
+                height: 0;
+            }
+        }
     }
 
     &__gallery {

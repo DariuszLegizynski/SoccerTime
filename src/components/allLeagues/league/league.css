@@ -114,6 +114,14 @@
   fill: #620AA8;
 }
 
+.league__intro__share {
+  height: 5rem;
+}
+
+.league__intro__share__hide {
+  height: 0;
+}
+
 .league__gallery {
   display: -ms-grid;
   display: grid;
