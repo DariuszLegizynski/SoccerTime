@@ -1,3 +1,136 @@
+.league__next-events {
+  padding: 4rem;
+}
+
+.league__next-events__h2 {
+  margin-bottom: 4rem;
+  margin-left: 4rem;
+  font-size: 2.6rem;
+  letter-spacing: .2rem;
+}
+
+.league__next-events__card-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+  -webkit-column-gap: 1rem;
+          column-gap: 1rem;
+  row-gap: 8rem;
+  place-items: center;
+}
+
+.league__next-events__card-container__card {
+  padding-bottom: 2rem;
+  background-size: cover;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(17, 17, 17, 0.6)), to(rgba(17, 17, 17, 0.6))), url(../../../resources/images/daniel-van-den-berg-29Jx9qyTW14-unsplash.jpg);
+  background-image: linear-gradient(to right bottom, rgba(17, 17, 17, 0.6), rgba(17, 17, 17, 0.6)), url(../../../resources/images/daniel-van-den-berg-29Jx9qyTW14-unsplash.jpg);
+}
+
+.league__next-events__card-container__card__h4 {
+  font-size: 1.2rem;
+  margin: .5rem 0;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.league__next-events__card-container__card__h4:hover {
+  -webkit-transform: scale(1.4);
+          transform: scale(1.4);
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.league__next-events__card-container__card__p {
+  font-size: 1rem;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.league__next-events__card-container__card__p:hover {
+  -webkit-transform: scale(1.4);
+          transform: scale(1.4);
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.league__next-events__card-container__card__hr {
+  width: 20rem;
+  background-image: radial-gradient(circle, #FFDD82 0%, rgba(210, 208, 208, 0) 90%);
+  border: none;
+  margin: 1rem;
+}
+
+.league__next-events__card-container__card__img {
+  width: 26rem;
+  height: auto;
+}
+
+.league__next-events__card-container__card__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  place-items: center;
+}
+
+.league__next-events__card-container__card__links {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2fr .5rem 2fr;
+      grid-template-columns: 2fr .5rem 2fr;
+  place-content: center;
+  cursor: pointer;
+  font-size: 1.8rem;
+  margin: 1rem 0rem;
+}
+
+.league__next-events__card-container__card__links__link {
+  margin: 0 1rem;
+  color: #FFDD82;
+  display: inline-block;
+  border-bottom: 0.1rem solid #FFDD82;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.league__next-events__card-container__card__links__link:focus, .league__next-events__card-container__card__links__link:hover {
+  background-color: #FFDD82;
+  color: #DB4076;
+  padding: 0rem 0.5rem;
+  -webkit-box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.link--home-team {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.link--away-team {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.league__league-table {
+  padding: 4rem;
+}
+
 .league {
   padding-top: 3rem;
   background-image: radial-gradient(#0AA848 0%, #111 98%);

@@ -7,6 +7,8 @@ import shortid from "shortid";
 
 import { getNextLeagueEvents } from "../../../actions/leagues/league/getNextLeagueEvents";
 
+import "./league.css";
+
 const NextLeagueEvents = ({leagueId}) => {
     const dispatch = useDispatch();
     const selectNextLeagueEvents = useSelector (state => state.nextLeagueEvents);
@@ -17,39 +19,43 @@ const NextLeagueEvents = ({leagueId}) => {
 
     const showData = () => {
         if(!_.isEmpty(selectNextLeagueEvents.data.events)) {
-            console.log(selectNextLeagueEvents.data);
             return selectNextLeagueEvents.data.events.map(event => {
                 return (
-                    <div className="league__next-events__card-container" key={shortid.generate()}>
-                        <div className="league__next-event__card-container__thumb">
-                            <img className="league__next-event__card-container__img" src={event.strThumb + "/preview"} alt="event thumb" />
+                    <div className="league__next-events__card-container__card" key={shortid.generate()}>
+                        <div className="league__next-events__card-container__card__thumb">
+                            <img className="league__next-events__card-container__card__img" src={event.strThumb + "/preview"} alt="event thumb" />
                         </div>
-                        <div className="league__next-event__card-container__links">
-                            <Link className="league__next-event__card-container__link link" to={`/allTeams/${event.idHomeTeam}`}>
+                        <div className="league__next-events__card-container__card__links">
+                            <Link className="league__next-events__card-container__card__links__link link--home-team link" to={`/allTeams/${event.idHomeTeam}`}>
                                 {event.strHomeTeam}
                             </Link>
-                            :
-                            <Link className="league__next-event__card-container__link link" to={`/allTeams/${event.idAwayTeam}`}>
+                            <p className="league__next-events__card-container__card__links__p p">
+                                :
+                            </p>
+                            <Link className="league__next-events__card-container__card__links__link link--away-team link" to={`/allTeams/${event.idAwayTeam}`}>
                                 {event.strAwayTeam}
                             </Link>
                         </div>
-                        <div className="league__next-event__card-container__info">
-                            <h4 className="league__next-event__card-container__h4 h4">Date</h4>
-                                <p className="league__next-event__card-container__p p">
-                                    {event.dateEvent}
-                                </p>
-                            <h4 className="league__next-event__card-container__h4 h4">Time</h4>
-                                <p className="league__next-event__card-container__p p">
-                                    {event.strTime}
-                                </p>
-                            <h4 className="league__next-event__card-container__h4 h4">Where?</h4>
-                                <p className="league__next-event__card-container__p p">
-                                    {event.strVenue}
-                                </p>
-                            <h4 className="league__next-event__card-container__h4 h4">Game Status</h4>
-                                <p className="league__next-event__card-container__p p">
-                                    {event.strStatus}
-                                </p>
+                        <div className="league__next-events__card-container__card__info">
+                            <h4 className="league__next-events__card-container__card__h4 h4">Date</h4>
+                            <p className="league__next-events__card-container__card__p p">
+                                {event.dateEvent}
+                            </p>
+                            <hr className="league__next-events__card-container__card__hr hr" />
+                            <h4 className="league__next-events__card-container__card__h4 h4">Time</h4>
+                            <p className="league__next-events__card-container__card__p p">
+                                {event.strTime}
+                            </p>
+                            <hr className="league__next-events__card-container__card__hr hr" />
+                            <h4 className="league__next-events__card-container__card__h4 h4">Place</h4>
+                            <p className="league__next-events__card-container__card__p p">
+                                {event.strVenue}
+                            </p>
+                            <hr className="league__next-events__card-container__card__hr hr" />
+                            <h4 className="league__next-events__card-container__card__h4 h4">Game Status</h4>
+                            <p className="league__next-events__card-container__card__p p">
+                                {event.strStatus}
+                            </p>
                         </div>
                     </div>
                 )
@@ -73,8 +79,10 @@ const NextLeagueEvents = ({leagueId}) => {
 
     return(
         <section className="league__next-events">
-            <h2>Upcoming League Events</h2>
-            {showData()}
+            <h2 className="league__next-events__h2 h2">Upcoming League Events</h2>
+            <div className="league__next-events__card-container">
+                {showData()}
+            </div>
         </section>
     )
 }

@@ -54,7 +54,6 @@ const League = (props) => {
 
 	const leagueIntro = () => {
 		if (!_.isEmpty(selectLeagueId)) {
-			console.log(selectLeagueId);
 			return selectLeagueId.map(el => {
 					return (
 						<section className="league__intro fadeIn" key={shortid.generate()}>
@@ -260,7 +259,6 @@ const League = (props) => {
 
 	const showLeague = () => {
 		if (!_.isEmpty(selectLeague.data)) {
-			console.log(selectLeague.data);
 			return selectLeague.data.teams.map(
 				(el) => {
 					return (
@@ -316,7 +314,9 @@ const League = (props) => {
 				{showTeamsBadge()}
 			</section>
 			{showLeagueDescription()}
+			<hr className="hr" />
 			<NextLeagueEvents leagueId={leagueId}/>
+			<hr className="hr" />
 			<Link className="sign__link link" to={"/"}>
 				&#8592; Back
 			</Link>

@@ -57,13 +57,13 @@ const LeagueTable = ({leagueId}) => {
     }
 
     return (
-        <div>
+        <section className="league__league-table">
             <h2>League's Table & results</h2>
             <h3>Season 2019 - 2020</h3>
             <Link to={"/"}>Back</Link>
             {showLeagueTable()}
             <Link to={"/"}>Back</Link>
-        </div>
+        </section>
     )
 }
 
