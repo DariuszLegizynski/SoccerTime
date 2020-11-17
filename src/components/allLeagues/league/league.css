@@ -20,6 +20,7 @@
           column-gap: 1rem;
   row-gap: 8rem;
   place-items: center;
+  padding-bottom: 4rem;
 }
 
 .league__next-events__card-container__card {
