@@ -17,10 +17,10 @@ const NextLeagueEvents = ({leagueId}) => {
 
     const showData = () => {
         if(!_.isEmpty(selectNextLeagueEvents.data.events)) {
+            console.log(selectNextLeagueEvents.data);
             return selectNextLeagueEvents.data.events.map(event => {
                 return (
-                    <div key={shortid.generate()}>
-                        <p>Next Match:</p>
+                    <div className="league__next-events__details" key={shortid.generate()}>
                         <Link to={`/allTeams/${event.idHomeTeam}`}>
                             {event.strHomeTeam}
                         </Link>
@@ -60,10 +60,10 @@ const NextLeagueEvents = ({leagueId}) => {
     }
 
     return(
-        <div>
+        <section className="league__next-events">
             <h2>Upcoming League Events</h2>
             {showData()}
-        </div>
+        </section>
     )
 }
 

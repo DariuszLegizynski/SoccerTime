@@ -1,7 +1,7 @@
 @import "../../../styles/variables";
 
 .league {
-    padding-top: 5rem;
+    padding-top: 3rem;
     background-image: $gradient-color-3;
 
     &__intro {
@@ -12,7 +12,7 @@
 
         &__image {
             background-size: cover !important;
-            height: 92vh;
+            height: 96vh;
             width: auto;
             padding: 7% 10%;
         }
@@ -59,7 +59,6 @@
             }
 
             &__icon {
-                // cursor: pointer;
                 &--back {
                     width: 5rem;
                     height: 5rem;
@@ -141,10 +140,56 @@
             grid-row-end: span 2;
         }
     }
+
+    &__info {
+        margin: 2rem;
+
+        &__description {
+            padding: 4rem 9rem;
+
+            &__h2 {
+                margin: 2rem;
+                font-size: 2.4rem;
+                letter-spacing: .2rem;
+            }
+
+            &__p {
+                font-size: 1.2rem;
+                margin: 2rem;
+            }
+        }
+
+        &__media {
+            display: flex;
+            padding: 4rem;
+            align-items: center;
+            justify-content: space-evenly;
+
+            &__link {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 6rem;
+                height: 6rem;
+            }
+        }
+    }
+
+    &__team-badge {
+        padding: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+
+        &__img {
+            width: 5rem;
+            height: 5rem;
+        }
+    }
 }
 
 .share-link--mail {
-    background-color: green;
+    background-color: $color-tertiary;
     border-radius: 50%;
 }
 
@@ -153,12 +198,22 @@
     border-radius: 50%;
 }
 
-.share-link--google-plus {
-    background-color: $color-google-plus;
+.share-link--twitter {
+    background-color: $color-twitter;
     border-radius: 50%;
 }
 
-.share-link--twitter {
-    background-color: $color-twitter;
+.share-link--rss {
+    background-color: $color-rss;
+    border-radius: 50%;
+}
+
+.share-link--webpage {
+    background-color: $color-tertiary;
+    border-radius: 50%;
+}
+
+.share-link--youtube {
+    background-color: $color-youtube;
     border-radius: 50%;
 }

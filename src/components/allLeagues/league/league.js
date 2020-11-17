@@ -25,17 +25,13 @@ import altFanart8 from "../../../resources/images/alt/soccer-players-1478802.jpg
 
 import "./league.css";
 import LeagueItem from "./LeagueItem";
+import TeamBadge from "./TeamBadge";
 
 const League = (props) => {
-	const leagueId =
-		props.match.params.idLeague;
+	const leagueId = props.match.params.idLeague;
 	const dispatch = useDispatch();
-	const selectLeague = useSelector(
-		state => state.league
-	);
-	const selectLeagueId = useSelector(
-		state => state.leagueId.data.leagues
-	);
+	const selectLeague = useSelector (state => state.league);
+	const selectLeagueId = useSelector(state => state.leagueId.data.leagues);
 
 	useEffect(() => {
 		dispatch(getLeague(leagueId));
@@ -75,7 +71,7 @@ const League = (props) => {
 											</svg>
 										</button>
 									</Link>
-									<svg tabIndex="-1" onClick={handleShareButton} onKeyPress={handleShareButtonOnPress} className="league__intro__navigation__icon--share icon fadeInFromRight" tabIndex="0">
+									<svg tabIndex="-1" onClick={handleShareButton} onKeyPress={handleShareButtonOnPress} className="league__intro__navigation__icon--share icon fadeInFromRight">
 										<use href={iconSprites + "#icon-share2"} />
 									</svg>
 								</div>
@@ -91,11 +87,6 @@ const League = (props) => {
 											<use href={iconSprites + "#icon-facebook2"} />
 										</svg>
 									</a>
-									<a className="league__intro__share__link share-link--google-plus fadeInFromTop" onClick={handleShareButton} onKeyPress={handleShareButtonOnPress} href={`https://plus.google.com/share?url=${"www.mySoccer-time.com/allLeagues/" + el.idLeague}`} rel="noopener noreferrer" target="_blank">
-										<svg className="league__intro__share__icon icon">
-											<use href={iconSprites + "#icon-google-plus"} />
-										</svg>
-									</a>
 									<a className="league__intro__share__link share-link--twitter fadeInFromTop" onClick={handleShareButton} onKeyPress={handleShareButtonOnPress} href={`https://twitter.com/share?url=${"www.mySoccer-time.com/allLeagues/" + el.idLeague}`} rel="noopener noreferrer" target="_blank">
 										<svg className="league__intro__share__icon icon">
 											<use href={iconSprites + "#icon-twitter"} />
@@ -104,19 +95,11 @@ const League = (props) => {
 								</div>
 								<div className="league__intro__header__title">
 									<h1 className="league__intro__header__title__h1 h1">
-										{
-											el.strLeague
-										}
+										{ el.strLeague }
 									</h1>
 								</div>
 								<div className="league__intro__header__banner">
-									<img
-										className="league__intro__header__banner__image"
-										src={
-											el.strBadge + "/preview"
-										}
-										alt="League-Banner"
-									/>
+									<img className="league__intro__header__banner__image" src={ el.strBadge + "/preview" } alt="League-Banner"/>
 								</div>
 							</figure>
 						</section>
@@ -126,138 +109,149 @@ const League = (props) => {
 		}
 	}
 
-	const leagueGallery = () => {
-		if (!_.isEmpty(selectLeagueId)) {
-			return selectLeagueId.map(
-				(el) => {
-					return (
-						<section
-							className="league__gallery fadeIn"
-							key={shortid.generate()}>
-							<LeagueItem
-								picture={
-									el.strLogo
-								}
-								altPicture={
-									altFanart1
-								}
-								altText={
-									"Logo"
-								}
-							/>
-							<LeagueItem
-								picture={
-									el.strBanner
-								}
-								altPicture={
-									altFanart3
-								}
-								altText={
-									"Badge"
-								}
-							/>
-							<LeagueItem
-								picture={
-									el.strFanart3
-								}
-								altPicture={
-									altFanart4
-								}
-								altText={
-									"Fanart3"
-								}
-							/>
-							<LeagueItem
-								picture={
-									el.strFanart5
-								}
-								altPicture={
-									altFanart5
-								}
-								altText={
-									"Fanart1"
-								}
-							/>
-                            <LeagueItem
-								picture={
-									el.strTrophy
-								}
-								altPicture={
-									altFanart6
-								}
-								altText={
-									"Trophy"
-								}
-							/>
-							<LeagueItem
-								picture={
-									el.strPoster
-								}
-								altPicture={
-									altFanart7
-								}
-								altText={
-									"Poster"
-								}
-							/>
-							<LeagueItem
-								picture={
-									el.strFanart4
-								}
-								altPicture={
-									altFanart8
-								}
-								altText={
-									"Fanart4"
-								}
-							/>
-						</section>
-					);
-				}
-			);
+	const showTeamsBadge = () => {
+		if(!_.isEmpty(selectLeague.data)) {
+			return selectLeague.data.teams.map(el => {
+				return (
+					<TeamBadge teamBadge={el.strTeamBadge} teamId={el.idTeam} key={shortid.generate()}/>
+				)
+			})
 		}
-	};
+	}
+
+	// const leagueGallery = () => {
+	// 	if (!_.isEmpty(selectLeagueId)) {
+	// 		return selectLeagueId.map(
+	// 			(el) => {
+	// 				return (
+	// 					<section
+	// 						className="league__gallery fadeIn"
+	// 						key={shortid.generate()}>
+	// 						<LeagueItem
+	// 							picture={
+	// 								el.strLogo
+	// 							}
+	// 							altPicture={
+	// 								altFanart1
+	// 							}
+	// 							altText={
+	// 								"Logo"
+	// 							}
+	// 						/>
+	// 						<LeagueItem
+	// 							picture={
+	// 								el.strBanner
+	// 							}
+	// 							altPicture={
+	// 								altFanart3
+	// 							}
+	// 							altText={
+	// 								"Badge"
+	// 							}
+	// 						/>
+	// 						<LeagueItem
+	// 							picture={
+	// 								el.strFanart3
+	// 							}
+	// 							altPicture={
+	// 								altFanart4
+	// 							}
+	// 							altText={
+	// 								"Fanart3"
+	// 							}
+	// 						/>
+	// 						<LeagueItem
+	// 							picture={
+	// 								el.strFanart5
+	// 							}
+	// 							altPicture={
+	// 								altFanart5
+	// 							}
+	// 							altText={
+	// 								"Fanart1"
+	// 							}
+	// 						/>
+    //                         <LeagueItem
+	// 							picture={
+	// 								el.strTrophy
+	// 							}
+	// 							altPicture={
+	// 								altFanart6
+	// 							}
+	// 							altText={
+	// 								"Trophy"
+	// 							}
+	// 						/>
+	// 						<LeagueItem
+	// 							picture={
+	// 								el.strPoster
+	// 							}
+	// 							altPicture={
+	// 								altFanart7
+	// 							}
+	// 							altText={
+	// 								"Poster"
+	// 							}
+	// 						/>
+	// 						<LeagueItem
+	// 							picture={
+	// 								el.strFanart4
+	// 							}
+	// 							altPicture={
+	// 								altFanart8
+	// 							}
+	// 							altText={
+	// 								"Fanart4"
+	// 							}
+	// 						/>
+	// 					</section>
+	// 				);
+	// 			}
+	// 		);
+	// 	}
+	// };
 
 	const showLeagueDescription = () => {
 		if (!_.isEmpty(selectLeagueId)) {
-			return selectLeagueId.map(
-				(el) => {
+			return selectLeagueId.map(el => {
 					return (
-						<div
-							className="league__info"
-							key={shortid.generate()}>
-							<p>
-								{el.Country}
-							</p>
-							<p className="league__descriptionEN">
-								{
-									el.strDescritpionEN
-								}
-							</p>
-							<p className="league__facebook">
-								{
-									el.strFacebook
-								}
-							</p>
-							<p className="league__rss">
-								{el.strRSS}
-							</p>
-							<p className="league__twitter">
-								{
-									el.strTwitter
-								}
-							</p>
-							<p className="league__webpage">
-								{
-									el.strWebsite
-								}
-							</p>
-							<p className="league__youtube">
-								{
-									el.strYoutube
-								}
-							</p>
-						</div>
+						<section className="league__info" key={shortid.generate()}>
+							<div className="league__info__description">
+								<h2 className="league__info__description__h2 h2">
+									Description
+								</h2>
+								<p className="league__info__description__p p">
+									{ el.strDescriptionEN }
+								</p>
+							</div>
+							<div className="league__info__media">
+								<a className="league__info__media__link share-link--webpage fadeInFromTop"  href={"https://" + el.strWebsite} rel="noopener noreferrer" target="_blank">
+									<svg className="league__info__media__icon icon">
+										<use href={iconSprites + "#icon-earth"} />
+									</svg>
+								</a>
+								<a className="league__info__media__link share-link--rss fadeInFromTop"  href={el.strRSS} rel="noopener noreferrer" target="_blank">
+									<svg className="league__info__media__icon icon">
+										<use href={iconSprites + "#icon-rss2"} />
+									</svg>
+								</a>
+								<a className="league__info__media__link share-link--youtube fadeInFromTop"  href={"https://" + el.strYoutube} rel="noopener noreferrer" target="_blank">
+									<svg className="league__info__media__icon icon">
+										<use href={iconSprites + "#icon-youtube"} />
+									</svg>
+								</a>
+								<a className="league__info__media__link share-link--twitter fadeInFromTop"  href={"https://" + el.strTwitter} rel="noopener noreferrer" target="_blank">
+									<svg className="league__info__media__icon icon">
+										<use href={iconSprites + "#icon-twitter"} />
+									</svg>
+								</a>
+								<a className="league__info__media__link share-link--facebook fadeInFromTop" href={"https://" + el.strFacebook} rel="noopener noreferrer" target="_blank">
+									<svg className="league__info__media__icon icon">
+										<use href={iconSprites + "#icon-facebook2"} />
+									</svg>
+								</a>
+							</div>
+						</section>
 					);
 				}
 			);
@@ -266,38 +260,28 @@ const League = (props) => {
 
 	const showLeague = () => {
 		if (!_.isEmpty(selectLeague.data)) {
+			console.log(selectLeague.data);
 			return selectLeague.data.teams.map(
 				(el) => {
 					return (
-						<div
-							className="league__team"
-							key={shortid.generate()}>
-							<button
-								className="league__btn btn"
-								onClick={() =>
-									dispatch(
-										getFavoritedTeams(
+						<div className="league__team" key={shortid.generate()}>
+							<button className="league__btn btn" onClick={() => dispatch(getFavoritedTeams
+										(
 											el.strTeam,
-											el
-												.idTeamel
-												.strTeamBadge +
-												"/preview"
+											el.idTeamel.strTeamBadge + "/preview"
 										)
-									)
-								}>
+									)}>
 								favorite
 							</button>
 							<p className="league__team-name">
-								{el.strTeam}
+								{ el.strTeam }
 							</p>
 							<p className="league__team-alt-name">
 								{
 									el.strAlternate
 								}
 							</p>
-							<Link
-								className="league__link link"
-								to={`/allTeams/${el.idTeam}`}>
+							<Link className="league__link link" to={`/allTeams/${el.idTeam}`}>
 								View Team
 							</Link>
 						</div>
@@ -328,24 +312,19 @@ const League = (props) => {
 	return (
 		<div className="league">
 			{leagueIntro()}
+			<section className="league__team-badge">
+				{showTeamsBadge()}
+			</section>
 			{showLeagueDescription()}
-			<NextLeagueEvents
-				leagueId={leagueId}
-			/>
-			<Link
-				className="sign__link link"
-				to={"/"}>
+			<NextLeagueEvents leagueId={leagueId}/>
+			<Link className="sign__link link" to={"/"}>
 				&#8592; Back
 			</Link>
 			{showLeague()}
 			<Link to={"/"}>Back</Link>
-			<LeagueTable
-				leagueId={leagueId}
-			/>
+			<LeagueTable leagueId={leagueId}/>
 			{/* <PreviousLeagueEvents leagueId={leagueId} /> */}
-			<Link
-				className="sign__link link"
-				to={"/"}>
+			<Link className="sign__link link" to={"/"}>
 				&#8592; Back
 			</Link>
 		</div>
