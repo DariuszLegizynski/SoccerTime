@@ -182,7 +182,7 @@
 }
 
 .league__info__description {
-  padding: 4rem 9rem;
+  padding: 0rem 9rem;
 }
 
 .league__info__description__h2 {
@@ -200,7 +200,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 4rem;
+  padding: 8rem 4rem;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -224,7 +224,7 @@
 }
 
 .league__team-badge {
-  padding: 2rem;
+  padding: 8rem 4rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

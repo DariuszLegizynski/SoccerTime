@@ -145,7 +145,7 @@
         margin: 2rem;
 
         &__description {
-            padding: 4rem 9rem;
+            padding: 0rem 9rem;
 
             &__h2 {
                 margin: 2rem;
@@ -161,7 +161,7 @@
 
         &__media {
             display: flex;
-            padding: 4rem;
+            padding: 8rem 4rem;
             align-items: center;
             justify-content: space-evenly;
 
@@ -176,7 +176,7 @@
     }
 
     &__team-badge {
-        padding: 2rem;
+        padding: 8rem 4rem;
         display: flex;
         align-items: center;
         justify-content: space-evenly;

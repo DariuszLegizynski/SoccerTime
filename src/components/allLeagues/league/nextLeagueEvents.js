@@ -20,25 +20,37 @@ const NextLeagueEvents = ({leagueId}) => {
             console.log(selectNextLeagueEvents.data);
             return selectNextLeagueEvents.data.events.map(event => {
                 return (
-                    <div className="league__next-events__details" key={shortid.generate()}>
-                        <Link to={`/allTeams/${event.idHomeTeam}`}>
-                            {event.strHomeTeam}
-                        </Link>
-                        :
-                        <Link to={`/allTeams/${event.idAwayTeam}`}>
-                            {event.strAwayTeam}
-                        </Link>
-                        <p>Date:</p>
-                        {event.dateEvent} 
-                        at {event.strTime}
-                        <p>Where?</p>
-                        {event.strVenue}
-                        <p>Has the game begon?</p>
-                        {event.strStatus}
-                        <p>Season</p>
-                        {event.strSeason}
-                        <p>League:</p>
-                        {event.strLeague}
+                    <div className="league__next-events__card-container" key={shortid.generate()}>
+                        <div className="league__next-event__card-container__thumb">
+                            <img className="league__next-event__card-container__img" src={event.strThumb + "/preview"} alt="event thumb" />
+                        </div>
+                        <div className="league__next-event__card-container__links">
+                            <Link className="league__next-event__card-container__link link" to={`/allTeams/${event.idHomeTeam}`}>
+                                {event.strHomeTeam}
+                            </Link>
+                            :
+                            <Link className="league__next-event__card-container__link link" to={`/allTeams/${event.idAwayTeam}`}>
+                                {event.strAwayTeam}
+                            </Link>
+                        </div>
+                        <div className="league__next-event__card-container__info">
+                            <h4 className="league__next-event__card-container__h4 h4">Date</h4>
+                                <p className="league__next-event__card-container__p p">
+                                    {event.dateEvent}
+                                </p>
+                            <h4 className="league__next-event__card-container__h4 h4">Time</h4>
+                                <p className="league__next-event__card-container__p p">
+                                    {event.strTime}
+                                </p>
+                            <h4 className="league__next-event__card-container__h4 h4">Where?</h4>
+                                <p className="league__next-event__card-container__p p">
+                                    {event.strVenue}
+                                </p>
+                            <h4 className="league__next-event__card-container__h4 h4">Game Status</h4>
+                                <p className="league__next-event__card-container__p p">
+                                    {event.strStatus}
+                                </p>
+                        </div>
                     </div>
                 )
             })
