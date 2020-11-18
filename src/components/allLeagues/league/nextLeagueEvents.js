@@ -68,11 +68,11 @@ const NextLeagueEvents = ({leagueId}) => {
         }
 
         if(_.isEmpty(selectNextLeagueEvents.data.events)) {
-            return <p>no upcoming league events found</p>
+            return <p className="league__next-events__no-events p">no upcoming league events found :(</p>
         }
 
         if(selectNextLeagueEvents.loading) {
-            return <p>loading...</p>
+            return <p className="league__next-events__loading p">loading...</p>
         }
 
         if(selectNextLeagueEvents.errorMsg !== "") {

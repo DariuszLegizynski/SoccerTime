@@ -97,6 +97,12 @@
             }
         }
     }
+
+    &__no-events {
+        grid-column-start: 2;
+        grid-column-end: 4;
+        font-size: 2rem;
+    }
 }
 
 .link--home-team {

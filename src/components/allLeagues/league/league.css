@@ -112,6 +112,13 @@
   transition: all .3s;
 }
 
+.league__next-events__no-events {
+  -ms-grid-column: 2;
+      grid-column-start: 2;
+  grid-column-end: 4;
+  font-size: 2rem;
+}
+
 .link--home-team {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -138,7 +145,7 @@
 
 .league {
   padding-top: 3rem;
-  background-image: radial-gradient(#0AA848 0%, #111 98%);
+  background-image: radial-gradient(#0aa848 0%, #111 98%);
 }
 
 .league__intro {
@@ -290,6 +297,8 @@
           justify-content: center;
   width: 4rem;
   height: 4rem;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
 }
 
 .league__intro__share__link:hover, .league__intro__share__link:focus {
@@ -298,21 +307,6 @@
           transform: scale(1.2);
   -webkit-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
-}
-
-.league__gallery {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (minmax(40rem, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
-  grid-gap: 0 10px;
-  grid-auto-rows: 10px;
-}
-
-.league__gallery__image img {
-  width: 40rem;
-  -ms-grid-row-span: 2;
-      grid-row-end: span 2;
 }
 
 .league__info {
@@ -379,8 +373,98 @@
   height: 5rem;
 }
 
+.league__team-short-description {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[10];
+      grid-template-columns: repeat(10, 1fr);
+  -webkit-column-gap: 2rem;
+          column-gap: 2rem;
+  row-gap: 2rem;
+  padding: 20rem 2rem;
+  background-size: cover;
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(17, 17, 17, 0.05)), color-stop(rgba(10, 168, 72, 0.95)), to(rgba(17, 17, 17, 0.05))), url(../../../resources/images/alt/stadium-931975.jpg);
+  background-image: linear-gradient(90deg, rgba(17, 17, 17, 0.05), rgba(10, 168, 72, 0.95), rgba(17, 17, 17, 0.05)), url(../../../resources/images/alt/stadium-931975.jpg);
+}
+
+.league__team-short-description__card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  place-items: center;
+  height: 32vh;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 2rem 1rem 4rem 1rem;
+}
+
+.league__team-short-description__card__btn {
+  background-color: #620AA8;
+  position: absolute;
+  width: 3.2rem;
+  height: 3.2rem;
+  top: 15.5rem;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.league__team-short-description__card__btn:hover, .league__team-short-description__card__btn:focus {
+  background-color: #FFDD82;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.league__team-short-description__card__icon {
+  position: absolute;
+  top: -8%;
+  left: -8%;
+  height: 3.75rem;
+  width: 3.75rem;
+}
+
+.league__team-short-description__card__link {
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.league__team-short-description__card__link:hover, .league__team-short-description__card__link:focus {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.league__team-short-description__card__link:hover h2, .league__team-short-description__card__link:focus h2 {
+  color: #DB4076;
+}
+
+.league__team-short-description__card__link__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  place-items: center;
+}
+
+.league__team-short-description__card__link__info__team-badge {
+  width: 75%;
+}
+
+.league__team-short-description__card__link__info__team-name {
+  color: #111;
+  font-size: 1.6rem;
+  padding: 1rem 0;
+}
+
 .share-link--mail {
-  background-color: #0AA848;
+  background-color: #0aa848;
   border-radius: 50%;
 }
 
@@ -400,7 +484,7 @@
 }
 
 .share-link--webpage {
-  background-color: #0AA848;
+  background-color: #0aa848;
   border-radius: 50%;
 }
 

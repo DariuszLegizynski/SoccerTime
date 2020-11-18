@@ -14,6 +14,7 @@ import NextLeagueEvents from "./nextLeagueEvents";
 import PreviousLeagueEvents from "./previousLeagueEvents";
 
 import iconSprites from "../../../resources/icons/icomoon/sprite.svg";
+import altTeamBadge from "../../../resources/images/hero/soccer-4598714.jpg"
 import altFanart1 from "../../../resources/images/alt/training-1306131.jpg";
 import altFanart2 from "../../../resources/images/alt/audience-1866738.jpg";
 import altFanart3 from "../../../resources/images/alt/football-3471402.jpg";
@@ -118,98 +119,6 @@ const League = (props) => {
 		}
 	}
 
-	// const leagueGallery = () => {
-	// 	if (!_.isEmpty(selectLeagueId)) {
-	// 		return selectLeagueId.map(
-	// 			(el) => {
-	// 				return (
-	// 					<section
-	// 						className="league__gallery fadeIn"
-	// 						key={shortid.generate()}>
-	// 						<LeagueItem
-	// 							picture={
-	// 								el.strLogo
-	// 							}
-	// 							altPicture={
-	// 								altFanart1
-	// 							}
-	// 							altText={
-	// 								"Logo"
-	// 							}
-	// 						/>
-	// 						<LeagueItem
-	// 							picture={
-	// 								el.strBanner
-	// 							}
-	// 							altPicture={
-	// 								altFanart3
-	// 							}
-	// 							altText={
-	// 								"Badge"
-	// 							}
-	// 						/>
-	// 						<LeagueItem
-	// 							picture={
-	// 								el.strFanart3
-	// 							}
-	// 							altPicture={
-	// 								altFanart4
-	// 							}
-	// 							altText={
-	// 								"Fanart3"
-	// 							}
-	// 						/>
-	// 						<LeagueItem
-	// 							picture={
-	// 								el.strFanart5
-	// 							}
-	// 							altPicture={
-	// 								altFanart5
-	// 							}
-	// 							altText={
-	// 								"Fanart1"
-	// 							}
-	// 						/>
-    //                         <LeagueItem
-	// 							picture={
-	// 								el.strTrophy
-	// 							}
-	// 							altPicture={
-	// 								altFanart6
-	// 							}
-	// 							altText={
-	// 								"Trophy"
-	// 							}
-	// 						/>
-	// 						<LeagueItem
-	// 							picture={
-	// 								el.strPoster
-	// 							}
-	// 							altPicture={
-	// 								altFanart7
-	// 							}
-	// 							altText={
-	// 								"Poster"
-	// 							}
-	// 						/>
-	// 						<LeagueItem
-	// 							picture={
-	// 								el.strFanart4
-	// 							}
-	// 							altPicture={
-	// 								altFanart8
-	// 							}
-	// 							altText={
-	// 								"Fanart4"
-	// 							}
-	// 						/>
-	// 					</section>
-	// 				);
-	// 			}
-	// 		);
-	// 	}
-	// };
-
 	const showLeagueDescription = () => {
 		if (!_.isEmpty(selectLeagueId)) {
 			return selectLeagueId.map(el => {
@@ -257,31 +166,32 @@ const League = (props) => {
 		}
 	};
 
-	const showLeague = () => {
+	const showLeagueTeams = () => {
 		if (!_.isEmpty(selectLeague.data)) {
+			console.log(selectLeague.data.teams);
 			return selectLeague.data.teams.map(
 				(el) => {
 					return (
-						<div className="league__team" key={shortid.generate()}>
-							<button className="league__btn btn" onClick={() => dispatch(getFavoritedTeams
-										(
+						<div className="league__team-short-description__card" key={shortid.generate()}>
+							<Link className="league__team-short-description__card__link link" to={`/allTeams/${el.idTeam}`}>
+								<div className="league__team-short-description__card__link__info">
+									<img className="league__team-short-description__card__link__info__team-badge" src={el.strTeamBadge ? el.strTeamBadge + "/preview" : altTeamBadge} alt="team-badge" /> 
+									<h2 className="league__team-short-description__card__link__info__team-name">
+										{ el.strTeam }
+									</h2>
+								</div>
+							</Link>
+							<button className="league__team-short-description__card__btn btn" onClick={() => dispatch(
+								getFavoritedTeams(
 											el.strTeam,
-											el.idTeamel.strTeamBadge + "/preview"
+											el.idTeame,
+											el.strTeamBadge + "/preview"
 										)
 									)}>
-								favorite
+								<svg className="league__team-short-description__card__icon icon">
+									<use href={iconSprites + "#icon-soccer"} />
+								</svg>
 							</button>
-							<p className="league__team-name">
-								{ el.strTeam }
-							</p>
-							<p className="league__team-alt-name">
-								{
-									el.strAlternate
-								}
-							</p>
-							<Link className="league__link link" to={`/allTeams/${el.idTeam}`}>
-								View Team
-							</Link>
 						</div>
 					);
 				}
@@ -316,17 +226,11 @@ const League = (props) => {
 			{showLeagueDescription()}
 			<hr className="hr" />
 			<NextLeagueEvents leagueId={leagueId}/>
-			<hr className="hr" />
-			<Link className="sign__link link" to={"/"}>
-				&#8592; Back
-			</Link>
-			{showLeague()}
-			<Link to={"/"}>Back</Link>
+			<section className="league__team-short-description">
+				{showLeagueTeams()}
+			</section>
 			<LeagueTable leagueId={leagueId}/>
 			{/* <PreviousLeagueEvents leagueId={leagueId} /> */}
-			<Link className="sign__link link" to={"/"}>
-				&#8592; Back
-			</Link>
 		</div>
 	);
 };
