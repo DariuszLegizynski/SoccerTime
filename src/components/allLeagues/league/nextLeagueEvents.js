@@ -7,6 +7,7 @@ import shortid from "shortid";
 
 import { getNextLeagueEvents } from "../../../actions/leagues/league/getNextLeagueEvents";
 
+import altBackgroundEvent from "../../../resources/images/alt/training-1306131.jpg";
 import "./league.css";
 
 const NextLeagueEvents = ({leagueId}) => {
@@ -23,17 +24,21 @@ const NextLeagueEvents = ({leagueId}) => {
                 return (
                     <div className="league__next-events__card-container__card" key={shortid.generate()}>
                         <div className="league__next-events__card-container__card__thumb">
-                            <img className="league__next-events__card-container__card__img" src={event.strThumb + "/preview"} alt="event thumb" />
+                            <img className="league__next-events__card-container__card__img" src={event.strThumb ? event.strThumb + "/preview" : altBackgroundEvent} alt="event thumb" />
                         </div>
                         <div className="league__next-events__card-container__card__links">
                             <Link className="league__next-events__card-container__card__links__link link--home-team link" to={`/allTeams/${event.idHomeTeam}`}>
-                                {event.strHomeTeam}
+                                <p className="league__next-events__card-container__card__links__p p">
+                                    {event.strHomeTeam}
+                                </p>
                             </Link>
                             <p className="league__next-events__card-container__card__links__p p">
                                 :
                             </p>
                             <Link className="league__next-events__card-container__card__links__link link--away-team link" to={`/allTeams/${event.idAwayTeam}`}>
-                                {event.strAwayTeam}
+                                <p className="league__next-events__card-container__card__links__p p">
+                                    {event.strAwayTeam}
+                                </p>
                             </Link>
                         </div>
                         <div className="league__next-events__card-container__card__info">

@@ -11,16 +11,17 @@
     }
 
     &__card-container {
-        display: grid;
+        display: inline-grid;
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: auto;
-        column-gap: 1rem;
+        column-gap: 3rem;
         row-gap: 8rem;
         place-items: center;
         padding-bottom: 4rem;
 
         &__card {
             padding-bottom: 2rem;
+            height: 95vh;
 
             background-size: cover;
             background-image: linear-gradient(
@@ -58,7 +59,7 @@
             }
 
             &__img {
-                width: 26rem;
+                width: 100%;
                 height: auto;
             }
 
@@ -66,6 +67,7 @@
                 display: flex;
                 flex-direction: column;
                 place-items: center;
+                padding-top: 2rem;
             }
 
             &__links {
@@ -74,10 +76,10 @@
                 place-content: center;
                 cursor: pointer;
                 font-size: 1.8rem;
-                margin: 1rem 0rem;
+                padding: 4rem 2rem;
+                height: 6rem;
 
                 &__link {
-                    margin: 0 1rem;
                     color: $color-fifth;
                     display: inline-block;
                     border-bottom: .1rem solid $color-fifth;
@@ -100,9 +102,11 @@
 .link--home-team {
     display: flex;
     justify-content: center;
+    margin-right: 1rem;
 }
 
 .link--away-team {
     display: flex;
     justify-content: center;
+    margin-left: 1rem;
 }
