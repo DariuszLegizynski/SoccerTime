@@ -1,9 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
+
+import { useTable } from "react-table";
+import { COLUMNS } from "./columns";
 
 import _ from "lodash";
-import shortid from "shortid";
 
 import { getTableLookup } from "../../../actions/leagues/tableLookup/getTableLookup";
 
@@ -14,35 +16,60 @@ const LeagueTable = ({leagueId}) => {
     useEffect (() => {
         dispatch(getTableLookup(leagueId))
     }, [dispatch, leagueId]);
+    
+    let request = [];
+    if(!_.isEmpty(selectLeagueId.data)) {
+        request = selectLeagueId.data.map(el => el);
+    }
 
-    const showLeagueTable = () => {
+    const currentYear = new Date().getFullYear();
+    const nextYear = currentYear + 1;
+
+    const memoColumns = useMemo(() => COLUMNS, []);
+    const memoData = useMemo(() => request, [request]);
+    
+    const tableInstance = useTable({
+        columns: memoColumns,
+        data: memoData
+    })
+
+    const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } = tableInstance;
+
+    const showTable = () => {
         if(!_.isEmpty(selectLeagueId.data)) {
-            return selectLeagueId.data.map(el => {
-                return (
-                    <div key={shortid.generate()}>
-                        <p>Team</p>
-                        <Link to={`/allTeams/${el.teamid}`}>
-                            {el.name}
-                        </Link>
-                        <p>Total Games</p>
-                        {el.played}
-                        <p>Wins</p>
-                        {el.win}
-                        <p>Draws</p>
-                        {el.draw}
-                        <p>Losses</p>
-                        {el.loss}
-                        <p>Goals +</p>
-                        {el.goalsfor}
-                        <p>Goals -</p>
-                        {el.goalsagainst}
-                        <p>Goals Difference</p>
-                        {el.goalsdifference}
-                        <p>Points</p>
-                        {el.total}
-                    </div>
-                )
-            })
+            return (
+                <table className="league__league-table__table" {...getTableProps()}>
+                    <thead className="league__league-table__table__thead">
+                        {
+                        headerGroups.map((headerGroup) => (
+                            <tr className="league__league-table__table__thead__tr" {...headerGroup.getHeaderGroupProps()}>
+                                {headerGroup.headers.map(column => (
+                                    <th className="league__league-table__table__thead__tr__th" {...column.getHeaderProps()}>
+                                        {column.render("Header")}
+                                    </th>
+                                ))}
+                            </tr>
+                            ))
+                        }
+                    </thead>
+                    <tbody className="league__league-table__table__tbody" {...getTableBodyProps()}>
+                        {rows.map(row => {
+                            prepareRow(row)
+                            return (
+                                <tr className="league__league-table__table__tbody__tr" {...row.getRowProps()}>
+                                    {row.cells.map(cell => {
+                                        return (
+                                        <td className="league__league-table__table__tbody__tr__td" >
+                                            {cell.render("Cell")}
+                                        </td>
+                                        )
+                                    })}
+                                </tr>
+                            )
+                        })}
+                    </tbody>
+                </table>
+            )
         }
 
         if(selectLeagueId.loading) {
@@ -58,11 +85,10 @@ const LeagueTable = ({leagueId}) => {
 
     return (
         <section className="league__league-table">
-            <h2>League's Table & results</h2>
-            <h3>Season 2019 - 2020</h3>
-            <Link to={"/"}>Back</Link>
-            {showLeagueTable()}
-            <Link to={"/"}>Back</Link>
+            <h2 className="league__league-table__h2 h2">League's Table & results</h2>
+            <h3 className="league__league-table__h3 h3">Season {currentYear} - {nextYear}</h3>
+            {showTable()}
+
         </section>
     )
 }

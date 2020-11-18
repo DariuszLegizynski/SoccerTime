@@ -230,6 +230,13 @@ const League = (props) => {
 				{showLeagueTeams()}
 			</section>
 			<LeagueTable leagueId={leagueId}/>
+			<Link to={"/"} className="league__intro__navigation__link link">
+				<button className="league__intro__navigation__btn btn" tabIndex="-1">
+					<svg tabIndex="-1" className="league__intro__navigation__icon--back icon fadeInFromLeft">
+						<use href={iconSprites + "#icon-back"} />
+					</svg>
+				</button>
+			</Link>
 			{/* <PreviousLeagueEvents leagueId={leagueId} /> */}
 		</div>
 	);

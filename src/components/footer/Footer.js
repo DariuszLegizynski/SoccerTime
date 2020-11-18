@@ -29,7 +29,7 @@ const Footer = () => {
                     <p className="footer-top__link--phone link">555-666-777</p>
                 </div>
                 <p className="footer-top__copyright">
-                    Copyright &copy;2020
+                    Copyright &copy;{(new Date().getFullYear())}
                     <br/>
                     Code by
                     <a href="/" className="footer-top__link link"> Dariusz Legizynski</a>

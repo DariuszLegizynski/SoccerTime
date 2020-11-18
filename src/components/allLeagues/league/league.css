@@ -143,6 +143,46 @@
   padding: 4rem;
 }
 
+.league__league-table__table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.league__league-table__table__thead__tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.league__league-table__table__thead__tr:hover {
+  background-color: #ddd;
+}
+
+.league__league-table__table__thead__tr__th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #4CAF50;
+  color: white;
+}
+
+.league__league-table__table__tbody__tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.league__league-table__table__tbody__tr:nth-child(odd) {
+  background-color: #e7eb1f;
+}
+
+.league__league-table__table__tbody__tr:hover {
+  background-color: #ddd;
+}
+
+.league__league-table__table__tbody__tr__td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
 .league {
   padding-top: 3rem;
   background-image: radial-gradient(#0aa848 0%, #111 98%);

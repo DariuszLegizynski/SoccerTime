@@ -2,4 +2,56 @@
 
 .league__league-table {
     padding: 4rem;
+
+    &__table {
+        border-collapse: collapse;
+        width: 100%;
+
+        &__thead {
+
+            &__tr {
+
+                &:nth-child(even) {
+                    background-color: #f2f2f2;
+                }
+
+                &:hover {
+                    background-color: #ddd;
+                }
+
+                &__th {
+                    border: 1px solid #ddd;
+                    padding: 8px;
+                    padding-top: 12px;
+                    padding-bottom: 12px;
+                    text-align: center;
+                    background-color: #4CAF50;
+                    color: white;
+                }
+            }
+        }
+
+        &__tbody {
+
+            &__tr {
+
+                &:nth-child(even) {
+                    background-color: #f2f2f2;
+                }
+
+                &:nth-child(odd) {
+                    background-color: #e7eb1f;
+                }
+
+                &:hover {
+                    background-color: #ddd;
+                }
+
+                &__td {
+                    border: 1px solid #ddd;
+                    padding: 8px;
+                }
+            }
+        }
+    }
 }
