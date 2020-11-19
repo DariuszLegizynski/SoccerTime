@@ -167,7 +167,6 @@ const League = (props) => {
 
 	const showLeagueTeams = () => {
 		if (!_.isEmpty(selectLeague.data)) {
-			console.log(selectLeague.data.teams);
 			return selectLeague.data.teams.map(
 				(el) => {
 					return (

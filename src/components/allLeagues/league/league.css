@@ -140,7 +140,7 @@
 }
 
 .league__league-table {
-  padding: 4rem;
+  padding: 4rem 12rem;
 }
 
 .league__league-table__h2 {
@@ -170,6 +170,10 @@
   color: white;
 }
 
+.league__league-table__table__thead__tr__th:nth-child(1) {
+  display: none;
+}
+
 .league__league-table__table__tbody__tr:nth-child(even) {
   background-color: #28b485;
 }
@@ -192,6 +196,10 @@
 
 .league__league-table__table__tbody__tr__td:not(:first-child) {
   text-align: center;
+}
+
+.league__league-table__table__tbody__tr__td:nth-child(2) {
+  display: none;
 }
 
 .league {
@@ -427,8 +435,8 @@
 .league__team-short-description {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[10];
-      grid-template-columns: repeat(10, 1fr);
+  -ms-grid-columns: (1fr)[9];
+      grid-template-columns: repeat(9, 1fr);
   -webkit-column-gap: 2rem;
           column-gap: 2rem;
   row-gap: 2rem;
@@ -458,7 +466,7 @@
   position: absolute;
   width: 3.2rem;
   height: 3.2rem;
-  top: 15.5rem;
+  top: 16.5rem;
   -webkit-transition: all .2s;
   transition: all .2s;
 }

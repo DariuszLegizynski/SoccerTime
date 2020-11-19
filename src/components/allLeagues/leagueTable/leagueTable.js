@@ -21,7 +21,6 @@ const LeagueTable = ({leagueId}) => {
     let request = [];
     if(!_.isEmpty(selectLeagueId.data)) {
         request = selectLeagueId.data.map(el => el);
-        console.log(request);
     }
 
     let currentYear = 0;
@@ -34,9 +33,6 @@ const LeagueTable = ({leagueId}) => {
     if (seasonChangeDate >= currentDate) {
         nextYear = currentYear;
         currentYear = currentYear - 1;
-        console.log(currentYear);
-        console.log(nextYear);
-
     } else {
         currentYear = new Date().getFullYear();
         nextYear = currentYear + 1;
