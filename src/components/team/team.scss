@@ -1,0 +1,133 @@
+@import "../../styles/variables";
+@import "teamGallery";
+
+.team {
+    padding-top: 3rem;
+    background-image: $gradient-color-3;
+
+    &__intro {
+        background: -webkit-linear-gradient(285deg, #251431 0%, #161130 22%);
+        background: -o-linear-gradient(285deg, #251431 0%, #161130 22%);
+        background: linear-gradient(165deg, #251431 0%, #161130 22%);
+        color: #fff;
+
+        &__image {
+            background-size: cover !important;
+            height: 96vh;
+            width: auto;
+            padding: 7% 10%;
+        }
+
+        &__header {
+            margin: 4rem;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-evenly;
+    
+            &__banner {
+                margin: 2rem;
+            }
+    
+            &__title {
+                text-align: center;
+                text-align: -webkit-center;
+    
+                &__h1 {
+                    font-size: 5rem;
+                    background-repeat: no-repeat;
+                    transition: all .2s;
+                    width: 100%;
+    
+                    &:hover {
+                        background-repeat: repeat;
+                        transition: all .2s;
+                    }
+                }
+            }
+        }
+
+        &__navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 5rem;
+
+            &__btn {
+                height: 4rem;
+                background-color: transparent;
+                cursor: pointer;
+            }
+
+            &__icon {
+                &--back {
+                    width: 5rem;
+                    height: 5rem;
+    
+                    &:hover {
+                        fill: $color-fourth;
+                        transform: scale(1.2);
+                        transition: all .2s ease-in-out;
+                    }
+                }
+
+                &--share {
+                    cursor: pointer;
+                    width: 4rem;
+                    height: 4rem;
+    
+                    &:hover, &:focus {
+                        fill: $color-fifth;
+                        transform: scale(1.2);
+                        transition: all .2s ease-in-out;
+                    }
+                }
+            }
+
+            &__link {
+
+                &:focus {
+                    outline: none;
+                    & > button > svg {
+                        transform: scale(1.2);
+                        transition: all .2s ease-in-out;
+                        fill: $color-fourth;
+                    }
+                } 
+            }
+        }
+
+        &__share {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            overflow: hidden;
+            position: absolute;
+            left: 125rem;
+            top: 10rem;
+            width: 5rem;
+            height: 20rem;
+
+            &__hide {
+                display: none;
+                height: 0;
+            }
+
+            &__link {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 4rem;
+                height: 4rem;
+                transition: all .2s ease-in-out;
+
+                &:hover, &:focus {
+                    outline: none;
+                    transform: scale(1.2);
+                    transition: all .2s ease-in-out;
+                }
+            }
+        }
+    }
+}

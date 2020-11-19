@@ -1,0 +1,14 @@
+@import "../../styles/variables";
+
+.team__gallery {
+    padding: 8rem 4rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+    grid-gap: 0 10px;
+    grid-auto-rows: 10px;
+
+    &__image img {
+        width: 40rem;
+        grid-row-end: span 2;
+    }
+}

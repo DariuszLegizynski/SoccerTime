@@ -1,0 +1,182 @@
+.team__gallery {
+  padding: 8rem 4rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(40rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+  grid-gap: 0 10px;
+  grid-auto-rows: 10px;
+}
+
+.team__gallery__image img {
+  width: 40rem;
+  -ms-grid-row-span: 2;
+      grid-row-end: span 2;
+}
+
+.team {
+  padding-top: 3rem;
+  background-image: radial-gradient(#0aa848 0%, #111 98%);
+}
+
+.team__intro {
+  background: linear-gradient(165deg, #251431 0%, #161130 22%);
+  color: #fff;
+}
+
+.team__intro__image {
+  background-size: cover !important;
+  height: 96vh;
+  width: auto;
+  padding: 7% 10%;
+}
+
+.team__intro__header {
+  margin: 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.team__intro__header__banner {
+  margin: 2rem;
+}
+
+.team__intro__header__title {
+  text-align: center;
+  text-align: -webkit-center;
+}
+
+.team__intro__header__title__h1 {
+  font-size: 5rem;
+  background-repeat: no-repeat;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  width: 100%;
+}
+
+.team__intro__header__title__h1:hover {
+  background-repeat: repeat;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.team__intro__navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 5rem;
+}
+
+.team__intro__navigation__btn {
+  height: 4rem;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.team__intro__navigation__icon--back {
+  width: 5rem;
+  height: 5rem;
+}
+
+.team__intro__navigation__icon--back:hover {
+  fill: #620AA8;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.team__intro__navigation__icon--share {
+  cursor: pointer;
+  width: 4rem;
+  height: 4rem;
+}
+
+.team__intro__navigation__icon--share:hover, .team__intro__navigation__icon--share:focus {
+  fill: #FFDD82;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.team__intro__navigation__link:focus {
+  outline: none;
+}
+
+.team__intro__navigation__link:focus > button > svg {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  fill: #620AA8;
+}
+
+.team__intro__share {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  overflow: hidden;
+  position: absolute;
+  left: 125rem;
+  top: 10rem;
+  width: 5rem;
+  height: 20rem;
+}
+
+.team__intro__share__hide {
+  display: none;
+  height: 0;
+}
+
+.team__intro__share__link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.team__intro__share__link:hover, .team__intro__share__link:focus {
+  outline: none;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+/*# sourceMappingURL=team.css.map */

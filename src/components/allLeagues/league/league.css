@@ -136,7 +136,7 @@
 }
 
 .card__previous {
-  height: 105vh;
+  height: 110vh;
 }
 
 .link--home-team {
@@ -615,5 +615,10 @@
 .share-link--youtube {
   background-color: #FF0000;
   border-radius: 50%;
+}
+
+.link__end {
+  margin: auto;
+  width: 100%;
 }
 /*# sourceMappingURL=league.css.map */
