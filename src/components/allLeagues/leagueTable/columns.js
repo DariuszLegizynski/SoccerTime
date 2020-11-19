@@ -8,7 +8,7 @@ export const COLUMNS = [
         Cell: el => {
             console.log(el);
             return (
-                <Link to={`/allTeams/${el.row.values.teamid}`}>{el.value}</Link>
+                <Link className="league__league-table__table__tbody__tr__td__link link" to={`/allTeams/${el.row.values.teamid}`}>{el.value}</Link>
             )
           }
     },

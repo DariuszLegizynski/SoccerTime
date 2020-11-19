@@ -43,11 +43,11 @@
 
             &__tr {
                 &:nth-child(even) {
-                    background-color: $color-secondary;
+                    background-color: $color-grey-light-1;
                 }
 
                 &:nth-child(odd) {
-                    background-color: $color-tertiary;
+                    background-color: $color-grey-light-4;
                 }
 
                 &:hover, &:focus {
@@ -67,6 +67,27 @@
 
                     &:nth-child(2) {
                         display: none;
+                    }
+
+                    &__link {
+                        // margin: 2rem;
+                        // font-size: 1.6rem;
+                        color: $color-fourth;
+                        display: inline-block;
+                        text-decoration: none;
+                        border-bottom: .1rem solid $color-fourth;
+                        // padding: .3rem;
+                        -webkit-transition: all .2s;
+                        transition: all .2s;
+                
+                        &:hover, &:focus {
+                            background-color: $color-fourth;
+                            color: $color-grey-light-1;
+                            -webkit-box-shadow: 0 1rem 2rem rgba(0,0,0,0.15);
+                            box-shadow: 0 1rem 2rem rgba(0,0,0,0.15);
+                            -webkit-transform: translateY(-.2rem);
+                            transform: translateY(-.2rem);
+                        }
                     }
                 }
             }
