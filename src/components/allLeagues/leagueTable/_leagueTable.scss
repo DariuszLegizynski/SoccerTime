@@ -3,6 +3,18 @@
 .league__league-table {
     padding: 4rem;
 
+    &__h2 {
+        font-size: 2rem;
+        letter-spacing: .2rem;
+        margin: 2rem;
+    }
+
+    &__h3 {
+        margin: 2rem;
+        font-size: 1.4rem;
+        letter-spacing: .1rem;
+    }
+
     &__table {
         border-collapse: collapse;
         width: 100%;
@@ -11,21 +23,13 @@
 
             &__tr {
 
-                &:nth-child(even) {
-                    background-color: #f2f2f2;
-                }
-
-                &:hover {
-                    background-color: #ddd;
-                }
-
                 &__th {
-                    border: 1px solid #ddd;
-                    padding: 8px;
-                    padding-top: 12px;
-                    padding-bottom: 12px;
+                    font-size: 1.2rem;
+                    border: 1px solid $color-grey-light-3;
+                    padding-top: .4rem;
+                    padding-bottom: .4rem;
                     text-align: center;
-                    background-color: #4CAF50;
+                    background-color: $color-fourth-light;
                     color: white;
                 }
             }
@@ -36,20 +40,27 @@
             &__tr {
 
                 &:nth-child(even) {
-                    background-color: #f2f2f2;
+                    background-color: $color-secondary;
                 }
 
                 &:nth-child(odd) {
-                    background-color: #e7eb1f;
+                    background-color: $color-tertiary;
                 }
 
-                &:hover {
-                    background-color: #ddd;
+                &:hover, &:focus {
+                    background-color: $color-fifth;
+                    outline: none;
                 }
 
                 &__td {
-                    border: 1px solid #ddd;
-                    padding: 8px;
+                    border: 1px solid $color-grey-light-3;
+                    padding: .4rem 0rem .4rem 1rem;
+                    font-size: 1.1rem;
+                    color: $color-black;
+
+                    &:not(:first-child) {
+                        text-align: center;
+                    }
                 }
             }
         }

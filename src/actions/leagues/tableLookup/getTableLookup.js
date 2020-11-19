@@ -3,15 +3,11 @@ import theSportsDB from "../../../apis/theSportsDB";
 
 export const getTableLookup = (idLeague) => async (dispatch) => {
 
-    let currentYear = new Date().getFullYear();
-    let nextYear = currentYear + 1;
+    let currentYear = 0;
+    let nextYear = 0;
 
     const currentDate = new Date(new Date().getFullYear() + '-' + (new Date().getMonth()));
-    const seasonChangeDate = "01/08/" + currentYear;
-
-    console.log(seasonChangeDate > currentDate);
-    console.log(currentYear);
-    console.log(nextYear);
+    const seasonChangeDate = new Date("01/08/" + currentYear);
 
     //to get the current season
     if (seasonChangeDate >= currentDate) {
@@ -21,11 +17,9 @@ export const getTableLookup = (idLeague) => async (dispatch) => {
         console.log(nextYear);
 
     } else {
-        return;
+        currentYear = new Date().getFullYear();
+        nextYear = currentYear + 1;
     }
-
-    console.log(currentYear);
-    console.log(nextYear);
 
     try {
         dispatch ({

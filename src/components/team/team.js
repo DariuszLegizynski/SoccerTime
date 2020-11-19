@@ -13,6 +13,7 @@ import ShowPreviousEvents from "./showPreviousEvents";
 
 const Team = (props) => {
     const idTeam = props.match.params.team;
+    console.log(idTeam);
     const dispatch = useDispatch();
     const selectTeam = useSelector(state => state.team);
 

@@ -25,7 +25,6 @@ import altFanart7 from "../../../resources/images/alt/soccer-1490541.jpg";
 import altFanart8 from "../../../resources/images/alt/soccer-players-1478802.jpg";
 
 import "./league.css";
-import LeagueItem from "./LeagueItem";
 import TeamBadge from "./TeamBadge";
 
 const League = (props) => {

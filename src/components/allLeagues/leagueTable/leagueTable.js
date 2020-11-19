@@ -8,6 +8,7 @@ import { COLUMNS } from "./columns";
 import _ from "lodash";
 
 import { getTableLookup } from "../../../actions/leagues/tableLookup/getTableLookup";
+import shortid from "shortid";
 
 const LeagueTable = ({leagueId}) => {
     const dispatch = useDispatch();
@@ -20,10 +21,26 @@ const LeagueTable = ({leagueId}) => {
     let request = [];
     if(!_.isEmpty(selectLeagueId.data)) {
         request = selectLeagueId.data.map(el => el);
+        console.log(request);
     }
 
-    const currentYear = new Date().getFullYear();
-    const nextYear = currentYear + 1;
+    let currentYear = 0;
+    let nextYear = 0;
+
+    const currentDate = new Date(new Date().getFullYear() + '-' + (new Date().getMonth()));
+    const seasonChangeDate = new Date("01/08/" + currentYear);
+
+    //to get the current season
+    if (seasonChangeDate >= currentDate) {
+        nextYear = currentYear;
+        currentYear = currentYear - 1;
+        console.log(currentYear);
+        console.log(nextYear);
+
+    } else {
+        currentYear = new Date().getFullYear();
+        nextYear = currentYear + 1;
+    }
 
     const memoColumns = useMemo(() => COLUMNS, []);
     const memoData = useMemo(() => request, [request]);
@@ -42,7 +59,7 @@ const LeagueTable = ({leagueId}) => {
                     <thead className="league__league-table__table__thead">
                         {
                         headerGroups.map((headerGroup) => (
-                            <tr className="league__league-table__table__thead__tr" {...headerGroup.getHeaderGroupProps()}>
+                            <tr className="league__league-table__table__thead__tr" {...headerGroup.getHeaderGroupProps()} key={shortid.generate()}>
                                 {headerGroup.headers.map(column => (
                                     <th className="league__league-table__table__thead__tr__th" {...column.getHeaderProps()}>
                                         {column.render("Header")}
@@ -56,10 +73,10 @@ const LeagueTable = ({leagueId}) => {
                         {rows.map(row => {
                             prepareRow(row)
                             return (
-                                <tr className="league__league-table__table__tbody__tr" {...row.getRowProps()}>
+                                <tr className="league__league-table__table__tbody__tr" {...row.getRowProps()} key={shortid.generate()} tabIndex="0">
                                     {row.cells.map(cell => {
                                         return (
-                                        <td className="league__league-table__table__tbody__tr__td" >
+                                        <td className="league__league-table__table__tbody__tr__td" key={shortid.generate()}>
                                             {cell.render("Cell")}
                                         </td>
                                         )
@@ -88,7 +105,6 @@ const LeagueTable = ({leagueId}) => {
             <h2 className="league__league-table__h2 h2">League's Table & results</h2>
             <h3 className="league__league-table__h3 h3">Season {currentYear} - {nextYear}</h3>
             {showTable()}
-
         </section>
     )
 }
