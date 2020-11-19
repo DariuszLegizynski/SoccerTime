@@ -86,14 +86,24 @@ const LeagueTable = ({leagueId}) => {
         }
 
         if(selectLeagueId.loading) {
-            return <p>loading...</p>
+            return (
+                <div>
+                    <p className="league__league-table__loading p">loading...</p>
+                </div>
+            )
         }
 
         if(selectLeagueId.errorMsg !== "") {
-            return <p>{selectLeagueId.errorMsg}</p>
+            return (
+                <div>
+                    <p className="league__league-table__no-table p">{selectLeagueId.errorMsg}</p>
+                </div>
+            ) 
         }
 
-        return <p>No League Table data found</p>
+        return (
+                <p className="league__league-table__no-table p">No League Table data found</p>
+        )
     }
 
     return (

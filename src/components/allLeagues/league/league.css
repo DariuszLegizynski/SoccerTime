@@ -1,15 +1,15 @@
-.league__next-events {
+.league__events {
   padding: 4rem;
 }
 
-.league__next-events__h2 {
+.league__events__h2 {
   margin-bottom: 4rem;
   margin-left: 4rem;
   font-size: 2.6rem;
   letter-spacing: .2rem;
 }
 
-.league__next-events__card-container {
+.league__events__card-container {
   display: -ms-inline-grid;
   display: inline-grid;
   -ms-grid-columns: (1fr)[4];
@@ -23,7 +23,7 @@
   padding-bottom: 4rem;
 }
 
-.league__next-events__card-container__card {
+.league__events__card-container__card {
   padding-bottom: 2rem;
   height: 95vh;
   background-size: cover;
@@ -31,46 +31,46 @@
   background-image: linear-gradient(to right bottom, rgba(17, 17, 17, 0.6), rgba(17, 17, 17, 0.6)), url(../../../resources/images/daniel-van-den-berg-29Jx9qyTW14-unsplash.jpg);
 }
 
-.league__next-events__card-container__card__h4 {
+.league__events__card-container__card__h4 {
   font-size: 1.2rem;
   margin: .5rem 0;
   -webkit-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
 }
 
-.league__next-events__card-container__card__h4:hover {
+.league__events__card-container__card__h4:hover {
   -webkit-transform: scale(1.4);
           transform: scale(1.4);
   -webkit-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
 }
 
-.league__next-events__card-container__card__p {
+.league__events__card-container__card__p {
   font-size: 1rem;
   -webkit-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
 }
 
-.league__next-events__card-container__card__p:hover {
+.league__events__card-container__card__p:hover {
   -webkit-transform: scale(1.4);
           transform: scale(1.4);
   -webkit-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
 }
 
-.league__next-events__card-container__card__hr {
+.league__events__card-container__card__hr {
   width: 20rem;
   background-image: radial-gradient(circle, #FFDD82 0%, rgba(210, 208, 208, 0) 90%);
   border: none;
   margin: 1rem;
 }
 
-.league__next-events__card-container__card__img {
+.league__events__card-container__card__img {
   width: 100%;
   height: auto;
 }
 
-.league__next-events__card-container__card__info {
+.league__events__card-container__card__info {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -82,11 +82,11 @@
   padding-top: 2rem;
 }
 
-.league__next-events__card-container__card__links {
+.league__events__card-container__card__links {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 2fr .5rem 2fr;
-      grid-template-columns: 2fr .5rem 2fr;
+  -ms-grid-columns: 2fr 2rem 2fr;
+      grid-template-columns: 2fr 2rem 2fr;
   place-content: center;
   cursor: pointer;
   font-size: 1.8rem;
@@ -94,7 +94,11 @@
   height: 6rem;
 }
 
-.league__next-events__card-container__card__links__link {
+.league__events__card-container__card__links__p {
+  padding: .1rem;
+}
+
+.league__events__card-container__card__links__link {
   color: #FFDD82;
   display: inline-block;
   border-bottom: 0.1rem solid #FFDD82;
@@ -102,7 +106,7 @@
   transition: all .3s;
 }
 
-.league__next-events__card-container__card__links__link:focus, .league__next-events__card-container__card__links__link:hover {
+.league__events__card-container__card__links__link:focus, .league__events__card-container__card__links__link:hover {
   background-color: #FFDD82;
   color: #DB4076;
   padding: 0rem 0.5rem;
@@ -112,11 +116,27 @@
   transition: all .3s;
 }
 
-.league__next-events__no-events {
+.league__events__card-container__card__video {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  place-items: center;
+  padding: 2rem;
+}
+
+.league__events__no-events {
   -ms-grid-column: 2;
       grid-column-start: 2;
   grid-column-end: 4;
   font-size: 2rem;
+}
+
+.card__previous {
+  height: 105vh;
 }
 
 .link--home-team {
@@ -153,6 +173,12 @@
   margin: 2rem;
   font-size: 1.4rem;
   letter-spacing: .1rem;
+}
+
+.league__league-table__no-table {
+  margin: 8rem auto;
+  width: 50%;
+  font-size: 2rem;
 }
 
 .league__league-table__table {

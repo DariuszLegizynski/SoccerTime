@@ -1,6 +1,6 @@
 @import "../../../styles/variables";
 
-.league__next-events {
+.league__events {
     padding: 4rem;
 
     &__h2 {
@@ -72,12 +72,16 @@
 
             &__links {
                 display: grid;
-                grid-template-columns: 2fr .5rem 2fr;
+                grid-template-columns: 2fr 2rem 2fr;
                 place-content: center;
                 cursor: pointer;
                 font-size: 1.8rem;
                 padding: 4rem 2rem;
                 height: 6rem;
+
+                &__p {
+                    padding: .1rem;
+                }
 
                 &__link {
                     color: $color-fifth;
@@ -95,6 +99,13 @@
                     }
                 }
             }
+
+            &__video {
+                display: flex;
+                flex-direction: column;
+                place-items: center;
+                padding: 2rem;
+            }
         }
     }
 
@@ -103,6 +114,10 @@
         grid-column-end: 4;
         font-size: 2rem;
     }
+}
+
+.card__previous {
+    height: 105vh;
 }
 
 .link--home-team {

@@ -22,43 +22,43 @@ const NextLeagueEvents = ({leagueId}) => {
         if(!_.isEmpty(selectNextLeagueEvents.data.events)) {
             return selectNextLeagueEvents.data.events.map(event => {
                 return (
-                    <div className="league__next-events__card-container__card" key={shortid.generate()}>
-                        <div className="league__next-events__card-container__card__thumb">
-                            <img className="league__next-events__card-container__card__img" src={event.strThumb ? event.strThumb + "/preview" : altBackgroundEvent} alt="event thumb" />
+                    <div className="league__events__card-container__card" key={shortid.generate()}>
+                        <div className="league__events__card-container__card__thumb">
+                            <img className="league__events__card-container__card__img" src={event.strThumb ? event.strThumb + "/preview" : altBackgroundEvent} alt="event thumb" />
                         </div>
-                        <div className="league__next-events__card-container__card__links">
-                            <Link className="league__next-events__card-container__card__links__link link--home-team link" to={`/allTeams/${event.idHomeTeam}`}>
-                                <p className="league__next-events__card-container__card__links__p p">
+                        <div className="league__events__card-container__card__links">
+                            <Link className="league__events__card-container__card__links__link link--home-team link" to={`/allTeams/${event.idHomeTeam}`}>
+                                <p className="league__events__card-container__card__links__p p">
                                     {event.strHomeTeam}
                                 </p>
                             </Link>
-                            <p className="league__next-events__card-container__card__links__p p">
+                            <p className="league__events__card-container__card__links__p p">
                                 :
                             </p>
-                            <Link className="league__next-events__card-container__card__links__link link--away-team link" to={`/allTeams/${event.idAwayTeam}`}>
-                                <p className="league__next-events__card-container__card__links__p p">
+                            <Link className="league__events__card-container__card__links__link link--away-team link" to={`/allTeams/${event.idAwayTeam}`}>
+                                <p className="league__events__card-container__card__links__p p">
                                     {event.strAwayTeam}
                                 </p>
                             </Link>
                         </div>
-                        <div className="league__next-events__card-container__card__info">
-                            <h4 className="league__next-events__card-container__card__h4 h4">Date</h4>
-                            <p className="league__next-events__card-container__card__p p">
+                        <div className="league__events__card-container__card__info">
+                            <h4 className="league__events__card-container__card__h4 h4">Date</h4>
+                            <p className="league__events__card-container__card__p p">
                                 {event.dateEvent}
                             </p>
-                            <hr className="league__next-events__card-container__card__hr hr" />
-                            <h4 className="league__next-events__card-container__card__h4 h4">Time</h4>
-                            <p className="league__next-events__card-container__card__p p">
+                            <hr className="league__events__card-container__card__hr hr" />
+                            <h4 className="league__events__card-container__card__h4 h4">Time</h4>
+                            <p className="league__events__card-container__card__p p">
                                 {event.strTime}
                             </p>
-                            <hr className="league__next-events__card-container__card__hr hr" />
-                            <h4 className="league__next-events__card-container__card__h4 h4">Place</h4>
-                            <p className="league__next-events__card-container__card__p p">
+                            <hr className="league__events__card-container__card__hr hr" />
+                            <h4 className="league__events__card-container__card__h4 h4">Place</h4>
+                            <p className="league__events__card-container__card__p p">
                                 {event.strVenue}
                             </p>
-                            <hr className="league__next-events__card-container__card__hr hr" />
-                            <h4 className="league__next-events__card-container__card__h4 h4">Game Status</h4>
-                            <p className="league__next-events__card-container__card__p p">
+                            <hr className="league__events__card-container__card__hr hr" />
+                            <h4 className="league__events__card-container__card__h4 h4">Game Status</h4>
+                            <p className="league__events__card-container__card__p p">
                                 {event.strStatus}
                             </p>
                         </div>
@@ -67,25 +67,26 @@ const NextLeagueEvents = ({leagueId}) => {
             })
         }
 
+        //red braces becouse of the "(" at the end of the line with <p></p>
         if(_.isEmpty(selectNextLeagueEvents.data.events)) {
-            return <p className="league__next-events__no-events p">no upcoming league events found :(</p>
+            return <p className="league__events__no-events p">no upcoming league events found :(</p>
         }
 
         if(selectNextLeagueEvents.loading) {
-            return <p className="league__next-events__loading p">loading...</p>
+            return <p className="league__events__loading p">loading...</p>
         }
 
         if(selectNextLeagueEvents.errorMsg !== "") {
             return <p>{selectNextLeagueEvents.errorMsg}</p>
         }
 
-    return <p>Unable to get the league's upcoming events</p>
+    return <p className="league__events__no-events p">Unable to get the league's upcoming events</p>
     }
 
     return(
-        <section className="league__next-events">
-            <h2 className="league__next-events__h2 h2">Upcoming League Events</h2>
-            <div className="league__next-events__card-container">
+        <section className="league__events">
+            <h2 className="league__events__h2 h2">Upcoming League Events</h2>
+            <div className="league__events__card-container">
                 {showData()}
             </div>
         </section>
