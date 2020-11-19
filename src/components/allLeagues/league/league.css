@@ -456,6 +456,15 @@
           justify-content: center;
   width: 6rem;
   height: 6rem;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.league__info__media__link:hover, .league__info__media__link:focus {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
 }
 
 .league__team-badge {
@@ -474,6 +483,18 @@
 .league__team-badge__img {
   width: 5rem;
   height: 5rem;
+}
+
+.league__team-badge__link {
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.league__team-badge__link:hover, .league__team-badge__link:focus {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
 }
 
 .league__team-short-description {

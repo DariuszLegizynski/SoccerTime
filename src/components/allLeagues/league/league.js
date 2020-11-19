@@ -132,27 +132,27 @@ const League = (props) => {
 								</p>
 							</div>
 							<div className="league__info__media">
-								<a className="league__info__media__link share-link--webpage fadeInFromTop"  href={"https://" + el.strWebsite} rel="noopener noreferrer" target="_blank">
+								<a className="league__info__media__link share-link--webpage link fadeInFromTop"  href={"https://" + el.strWebsite} rel="noopener noreferrer" target="_blank">
 									<svg className="league__info__media__icon icon">
 										<use href={iconSprites + "#icon-earth"} />
 									</svg>
 								</a>
-								<a className="league__info__media__link share-link--rss fadeInFromTop"  href={el.strRSS} rel="noopener noreferrer" target="_blank">
+								<a className="league__info__media__link share-link--rss link fadeInFromTop"  href={el.strRSS} rel="noopener noreferrer" target="_blank">
 									<svg className="league__info__media__icon icon">
 										<use href={iconSprites + "#icon-rss2"} />
 									</svg>
 								</a>
-								<a className="league__info__media__link share-link--youtube fadeInFromTop"  href={"https://" + el.strYoutube} rel="noopener noreferrer" target="_blank">
+								<a className="league__info__media__link share-link--youtube link fadeInFromTop"  href={"https://" + el.strYoutube} rel="noopener noreferrer" target="_blank">
 									<svg className="league__info__media__icon icon">
 										<use href={iconSprites + "#icon-youtube"} />
 									</svg>
 								</a>
-								<a className="league__info__media__link share-link--twitter fadeInFromTop"  href={"https://" + el.strTwitter} rel="noopener noreferrer" target="_blank">
+								<a className="league__info__media__link share-link--twitter link fadeInFromTop"  href={"https://" + el.strTwitter} rel="noopener noreferrer" target="_blank">
 									<svg className="league__info__media__icon icon">
 										<use href={iconSprites + "#icon-twitter"} />
 									</svg>
 								</a>
-								<a className="league__info__media__link share-link--facebook fadeInFromTop" href={"https://" + el.strFacebook} rel="noopener noreferrer" target="_blank">
+								<a className="league__info__media__link share-link--facebook link fadeInFromTop" href={"https://" + el.strFacebook} rel="noopener noreferrer" target="_blank">
 									<svg className="league__info__media__icon icon">
 										<use href={iconSprites + "#icon-facebook2"} />
 									</svg>

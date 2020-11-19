@@ -162,6 +162,12 @@
                 justify-content: center;
                 width: 6rem;
                 height: 6rem;
+                transition: all .2s;
+        
+                &:hover, &:focus {
+                    transform: scale(1.2);
+                    transition: all .2s ease-in-out;
+                }
             }
         }
     }
@@ -175,6 +181,15 @@
         &__img {
             width: 5rem;
             height: 5rem;
+        }
+
+        &__link {
+            transition: all .2s;
+        
+            &:hover, &:focus {
+                transform: scale(1.2);
+                transition: all .2s ease-in-out;
+            }
         }
     }
 
