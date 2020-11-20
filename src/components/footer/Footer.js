@@ -15,7 +15,6 @@ const Footer = () => {
                         SOCCER TIMER
                     </h2>
                     <nav className="footer-top__nav">
-                        <div></div>
                         <Link className="footer-top__link link fadeInFromLeft" to={"/"}>Home</Link>
                         <Link className="footer-top__link link fadeInFromLeft" to={"/"}>Profile</Link>
                     </nav>

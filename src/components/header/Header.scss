@@ -2,6 +2,7 @@
 
 .header {
     display: flex;
+    flex: 0 1 auto;
     justify-content: space-between;
     align-items: center;
     background-image: $gradient-color-2;
@@ -36,7 +37,6 @@
     &__form {
         display: flex;
         justify-content: center;
-        width: 50rem;
     }
 
     &__icon {
@@ -102,13 +102,17 @@
     }
 
     &__searchbar {
-        margin-right: 20rem;
+        width: 100%;
+        max-width: 50rem;
+        height: auto;
     }
 }
 
 .logo {
-    width: 60%;
-    height: 60%;
+    width: 100%;
+    max-width: 25.6rem;
+    min-width: 16rem;
+    height: auto;
 }
 
 //get the icons highlighted when chosen with "tab"

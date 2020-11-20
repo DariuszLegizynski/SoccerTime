@@ -2,6 +2,9 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 auto;
+          flex: 0 1 auto;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -48,7 +51,6 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 50rem;
 }
 
 .header__icon {
@@ -116,12 +118,16 @@
 }
 
 .header__searchbar {
-  margin-right: 20rem;
+  width: 100%;
+  max-width: 50rem;
+  height: auto;
 }
 
 .logo {
-  width: 60%;
-  height: 60%;
+  width: 100%;
+  max-width: 25.6rem;
+  min-width: 16rem;
+  height: auto;
 }
 
 .linkWrapper:focus-within, .linkWrapper:hover {

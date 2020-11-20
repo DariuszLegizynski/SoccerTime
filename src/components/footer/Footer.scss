@@ -1,7 +1,6 @@
 @import "../../styles/variables";
 
 .footer {
-    // background-color: $color-secondary;
     background-image: $gradient-color-3;
     color: $color-grey-light-1;
     font-size: .9rem;
@@ -43,7 +42,7 @@
         &__nav {
             align-items: center;
             display: grid;
-            grid-template-columns: repeat(3, 7rem);
+            grid-template-columns: repeat(2, 7rem);
         }
 
         &__link {
@@ -107,3 +106,39 @@
     }
 }
 
+@media only screen and (max-width: 1200px) {
+    .footer {
+        padding: 7rem 8rem;
+
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .footer {
+      padding: 7rem 4rem;
+
+      &-top {
+          &__header, &__item {
+                grid-template-columns: 15rem 15rem;
+          }
+
+        &__nav {
+            grid-template-columns: repeat(2, 4rem);
+        }
+      }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .footer {
+        padding: 7rem 2rem;
+
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .footer {
+        padding: 7rem 8rem;
+
+    }
+}
