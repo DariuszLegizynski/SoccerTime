@@ -1,5 +1,34 @@
 .team__gallery {
   padding: 8rem 4rem;
+}
+
+.team__gallery__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  margin: 4rem 0 10rem 0;
+}
+
+.team__gallery__title__h2 {
+  font-size: 2rem;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin-right: 6rem;
+}
+
+.team__gallery__title__p {
+  font-size: 8rem;
+  padding: 0 4rem;
+}
+
+.team__gallery__images {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (minmax(40rem, 1fr))[auto-fit];
@@ -8,10 +37,171 @@
   grid-auto-rows: 10px;
 }
 
-.team__gallery__image img {
+.team__gallery__images__image img {
   width: 40rem;
   -ms-grid-row-span: 2;
       grid-row-end: span 2;
+}
+
+.team__events {
+  padding: 4rem;
+}
+
+.team__events__h2 {
+  margin-bottom: 4rem;
+  margin-left: 4rem;
+  font-size: 2.6rem;
+  letter-spacing: .2rem;
+}
+
+.team__events__card-container {
+  display: -ms-inline-grid;
+  display: inline-grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+  -webkit-column-gap: 3rem;
+          column-gap: 3rem;
+  row-gap: 8rem;
+  place-items: center;
+  padding-bottom: 4rem;
+}
+
+.team__events__card-container__card {
+  padding-bottom: 2rem;
+  height: 95vh;
+  background-size: cover;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(17, 17, 17, 0.6)), to(rgba(17, 17, 17, 0.6))), url(../../resources/images/daniel-van-den-berg-29Jx9qyTW14-unsplash.jpg);
+  background-image: linear-gradient(to right bottom, rgba(17, 17, 17, 0.6), rgba(17, 17, 17, 0.6)), url(../../resources/images/daniel-van-den-berg-29Jx9qyTW14-unsplash.jpg);
+}
+
+.team__events__card-container__card__h4 {
+  font-size: 1.2rem;
+  margin: .5rem 0;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.team__events__card-container__card__h4:hover {
+  -webkit-transform: scale(1.4);
+          transform: scale(1.4);
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.team__events__card-container__card__p {
+  font-size: 1rem;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.team__events__card-container__card__p:hover {
+  -webkit-transform: scale(1.4);
+          transform: scale(1.4);
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.team__events__card-container__card__hr {
+  width: 20rem;
+  background-image: radial-gradient(circle, #FFDD82 0%, rgba(210, 208, 208, 0) 90%);
+  border: none;
+  margin: 1rem;
+}
+
+.team__events__card-container__card__img {
+  width: 100%;
+  height: auto;
+}
+
+.team__events__card-container__card__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  place-items: center;
+  padding-top: 2rem;
+}
+
+.team__events__card-container__card__links {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2fr 2rem 2fr;
+      grid-template-columns: 2fr 2rem 2fr;
+  place-content: center;
+  cursor: pointer;
+  font-size: 1.8rem;
+  padding: 4rem 2rem;
+  height: 6rem;
+}
+
+.team__events__card-container__card__links__p {
+  padding: .1rem;
+}
+
+.team__events__card-container__card__links__link {
+  color: #FFDD82;
+  display: inline-block;
+  border-bottom: 0.1rem solid #FFDD82;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.team__events__card-container__card__links__link:focus, .team__events__card-container__card__links__link:hover {
+  background-color: #FFDD82;
+  color: #DB4076;
+  padding: 0rem 0.5rem;
+  -webkit-box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.team__events__card-container__card__video {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  place-items: center;
+  padding: 2rem;
+}
+
+.team__events__no-events {
+  -ms-grid-column: 2;
+      grid-column-start: 2;
+  grid-column-end: 4;
+  font-size: 2rem;
+}
+
+.card__previous {
+  height: 110vh;
+}
+
+.link--home-team {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-right: 1rem;
+}
+
+.link--away-team {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-left: 1rem;
 }
 
 .team {
@@ -174,6 +364,61 @@
 
 .team__intro__share__link:hover, .team__intro__share__link:focus {
   outline: none;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.team__info {
+  margin: 2rem;
+}
+
+.team__info__description {
+  padding: 0rem 9rem;
+}
+
+.team__info__description__h2 {
+  margin: 2rem;
+  font-size: 2.4rem;
+  letter-spacing: .2rem;
+}
+
+.team__info__description__p {
+  font-size: 1.2rem;
+  margin: 2rem;
+}
+
+.team__info__media {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 8rem 4rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.team__info__media__link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 6rem;
+  height: 6rem;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.team__info__media__link:hover, .team__info__media__link:focus {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
   -webkit-transition: all .2s ease-in-out;

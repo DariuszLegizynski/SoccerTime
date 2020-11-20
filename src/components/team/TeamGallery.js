@@ -16,8 +16,8 @@ const TeamGallery = ({picture, altPicture, altText}) => {
     }
 
     return (
-        <figure className="team__gallery__image" style={{ gridRowEnd: `span ${newSpanSize}`}}>
-            <img className="team__picture" onLoad={handleImageLoad} src={picture ? picture : altPicture} alt={altText} />
+        <figure className="team__gallery__images__image" style={{ gridRowEnd: `span ${newSpanSize}`}}>
+            <img onLoad={handleImageLoad} src={picture ? picture : altPicture} alt={altText} />
         </figure>
     )
 }

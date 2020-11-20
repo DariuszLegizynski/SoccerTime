@@ -1,5 +1,6 @@
 @import "../../styles/variables";
 @import "teamGallery";
+@import "teamEvents";
 
 .team {
     padding-top: 3rem;
@@ -124,6 +125,46 @@
 
                 &:hover, &:focus {
                     outline: none;
+                    transform: scale(1.2);
+                    transition: all .2s ease-in-out;
+                }
+            }
+        }
+    }
+
+    &__info {
+        margin: 2rem;
+
+        &__description {
+            padding: 0rem 9rem;
+
+            &__h2 {
+                margin: 2rem;
+                font-size: 2.4rem;
+                letter-spacing: .2rem;
+            }
+
+            &__p {
+                font-size: 1.2rem;
+                margin: 2rem;
+            }
+        }
+
+        &__media {
+            display: flex;
+            padding: 8rem 4rem;
+            align-items: center;
+            justify-content: space-evenly;
+
+            &__link {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 6rem;
+                height: 6rem;
+                transition: all .2s;
+        
+                &:hover, &:focus {
                     transform: scale(1.2);
                     transition: all .2s ease-in-out;
                 }

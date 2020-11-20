@@ -15,7 +15,8 @@ import TeamGallery from "./TeamGallery";
 
 import "./team.css"
 import iconSprites from "../../resources/icons/icomoon/sprite.svg";
-import altFanart from "../../resources/images/alt/jimmy-conover-SEQ2VI0KI6A-unsplash.jpg";
+import altFanart from "../../resources/images/alt/football-3471402.jpg";
+import altStadium from "../../resources/images/alt/audience-1866738.jpg";
 
 
 const Team = (props) => {
@@ -102,80 +103,72 @@ const Team = (props) => {
             return selectTeam.data.teams.map(el => {
                 return (
                     <section className="team__gallery fadeIn" key={shortid.generate()}>
-                        <TeamGallery picture={el.strTeamLogo} altPicture={altFanart} altText={"Logo"} />
-                        <TeamGallery picture={el.strTeamFanart2} altPicture={altFanart} altText={"Fanart2"} />
-                        <TeamGallery picture={el.strTeamBadge} altPicture={altFanart} altText={"Badge"} />
-                        <TeamGallery picture={el.strTeamFanart3} altPicture={altFanart} altText={"Fanart3"} />
-                        <TeamGallery picture={el.strTeamFanart1} altPicture={altFanart} altText={"Fanart1"} />
-                        <TeamGallery picture={el.strTeamJersey} altPicture={altFanart} altText={"Trophy"} />
-                        <TeamGallery picture={el.strTeamFanart4} altPicture={altFanart} altText={"Fanart4"} />
-                        <TeamGallery picture={el.strTeamBanner} altPicture={altFanart} altText={"Banner"} />
+                        <div className="team__gallery__title">
+                            <h2 className="team__gallery__title__h2 h2">
+                                Since
+                            </h2>
+                            <p className="team__gallery__title__p p">
+                                { el.intFormedYear }
+                            </p>
+                        </div>
+                        <div className="team__gallery__images fadeIn">
+                            <TeamGallery picture={el.strTeamLogo} altPicture={altFanart} altText={"Logo"} />
+                            <TeamGallery picture={el.strTeamFanart2} altPicture={altFanart} altText={"Fanart2"} />
+                            <TeamGallery picture={el.strTeamBadge} altPicture={altFanart} altText={"Badge"} />
+                            <TeamGallery picture={el.strTeamFanart3} altPicture={altFanart} altText={"Fanart3"} />
+                            <TeamGallery picture={el.strTeamFanart1} altPicture={altFanart} altText={"Fanart1"} />
+                            <TeamGallery picture={el.strTeamJersey} altPicture={altFanart} altText={"Trophy"} />
+                            <TeamGallery picture={el.strTeamFanart4} altPicture={altFanart} altText={"Fanart4"} />
+                            <TeamGallery picture={el.strTeamBanner} altPicture={altFanart} altText={"Banner"} />
+                        </div>
+                        <button onClick={() => dispatch(getFavoritedTeams(el.strTeam, el.idTeam, el.strTeamBadge+"/preview"))}>add team to favorites</button>
                     </section>
                 )
             })
         }
     }
 
-    const showTeam = () => {
+    const showTeamDescription = () => {
     if(!_.isEmpty(selectTeam.data.teams)) {
         return selectTeam.data.teams.map(el => {
             return (
-                <div key={shortid.generate()}>
-                    <Link to={`/allTeams/${el.idTeam}`}>Back</Link>
-                    <button onClick={() => dispatch(getFavoritedTeams(el.strTeam, el.idTeam, el.strTeamBadge+"/preview"))}>favorite</button>
-                    <p>Team: </p>
-                    {el.strTeam}
-                    <p>Team Alternate: </p>
-                    {el.strAlternate}
-                    <p>Country</p>
-                    {el.strCountry}
-                    <p>Year Formed: </p>
-                    {el.intFormedYear}
-                    <p>Team Description</p>
-                    {el.strDescriptionEN}
-                    <br/>
-                    <Link to={`/allTeams/${el.idTeam}`}>Back</Link>
-                    <br/>
-                    <p>Team Badge</p>
-                    <img src={el.strTeamBadge+"/preview"} alt="Team Badge" />
-                    <p>Team Jersey</p>
-                    <img src={el.strTeamJersey+"/preview"} alt="Jersey" />
-                    <p>Team Logo</p>
-                    <img src={el.strTeamLogo+"/preview"} alt="Team Logo" />
-                    <p>Team Fanart 1</p>
-                    <img src={el.strTeamFanart1+"/preview"} alt="Team Fanart 1" />
-                    <p>Team Fanart 2</p>
-                    <img src={el.strTeamFanart2+"/preview"} alt="Team Fanart 2" />
-                    <p>Team Fanart 3</p>
-                    <img src={el.strTeamFanart3+"/preview"} alt="Team Fanart 3" />
-                    <p>Team Fanart 4</p>
-                    <img src={el.strTeamFanart4+"/preview"} alt="Team Fanart 4" />
-                    <p>Team Banner</p>
-                    <img src={el.strTeamBanner+"/preview"} alt="Team Banner" />
-                    <br/>
-                    <p>Website</p>
-                    {el.strWebsite}
-                    <p>Twitter</p>
-                    {el.strTwitter}
-                    <p>Facebook</p>
-                    {el.strFacebook}
-                    <p>Youtube</p>
-                    {el.strYoutube}
-                    <p>Instagram</p>
-                    {el.strInstagram}
-                    <br/>
-                    <p>Stadium: </p>
-                    {el.strStadium}
-                    <p>Stadium Thumb</p>
-                    <img src={el.strStadiumThumb+"/preview"} alt="Stadium Thumb" />
-                    <p>Stadium Location: </p>
-                    {el.strStadiumLocation}
-                    <p>Stadium Capacity: </p>
-                    {el.intStadiumCapacity}
-                    <p>Stadium Description</p>
-                    {el.strStadiumDescription}
-                    <Link to={`/allTeams/${el.idTeam}`}>Back</Link>
-                </div>
+                <section className="team__info" key={shortid.generate()}>
+                    <div className="team__info__description">
+                        <h2 className="team__info__description__h2 h2">
+                            Description
+                        </h2>
+                        <p className="team__info__description__p p">
+                            { el.strDescriptionEN }
+                        </p>
+                    </div>
+                    <div className="team__info__media">
+                        <a className="team__info__media__link share-link--webpage link fadeInFromTop"  href={"https://" + el.strWebsite} rel="noopener noreferrer" target="_blank">
+                            <svg className="team__info__media__icon icon">
+                                <use href={iconSprites + "#icon-earth"} />
+                            </svg>
+                        </a>
+                        <a className="team__info__media__link share-link--rss link fadeInFromTop"  href={el.strRSS} rel="noopener noreferrer" target="_blank">
+                            <svg className="team__info__media__icon icon">
+                                <use href={iconSprites + "#icon-rss2"} />
+                            </svg>
+                        </a>
+                        <a className="team__info__media__link share-link--youtube link fadeInFromTop"  href={"https://" + el.strYoutube} rel="noopener noreferrer" target="_blank">
+                            <svg className="team__info__media__icon icon">
+                                <use href={iconSprites + "#icon-youtube"} />
+                            </svg>
+                        </a>
+                        <a className="team__info__media__link share-link--twitter link fadeInFromTop"  href={"https://" + el.strTwitter} rel="noopener noreferrer" target="_blank">
+                            <svg className="team__info__media__icon icon">
+                                <use href={iconSprites + "#icon-twitter"} />
+                            </svg>
+                        </a>
+                        <a className="team__info__media__link share-link--facebook link fadeInFromTop" href={"https://" + el.strFacebook} rel="noopener noreferrer" target="_blank">
+                            <svg className="team__info__media__icon icon">
+                                <use href={iconSprites + "#icon-facebook2"} />
+                            </svg>
+                        </a>
+                    </div>
+                </section>
                 )
             })
         };
@@ -191,15 +184,75 @@ const Team = (props) => {
     return <p>Unable to get the team's data</p>
     }
 
+    const showStadium = () => {
+        if(!_.isEmpty(selectTeam.data.teams)) {
+            return selectTeam.data.teams.map(el => {
+                return (
+                    <section className="team__info" key={shortid.generate()}>
+                        <button onClick={() => dispatch(getFavoritedTeams(el.strTeam, el.idTeam, el.strTeamBadge+"/preview"))}>add team to favorites</button>
+                        <figure className="team__intro__image" style={{
+                            background: `linear-gradient(0deg, rgba(0,0,0,1) 5%, rgba(0,0,0,0.45) 92%) center center no-repeat, #fff
+                            url(${el.strStadiumThumb ? el.strStadiumThumb : altStadium})
+                            center top no-repeat`}}>
+                            <div className="team__info__description">
+                                <h2 className="team__info__description__h2 h2">
+                                    Stadium
+                                </h2>
+                                <p className="team__info__description__p p">
+                                    {el.strStadium}
+                                </p>
+                                <h2 className="team__info__description__h2 h2">
+                                    Location
+                                </h2>
+                                <p className="team__info__description__p p">
+                                    {el.strStadiumLocation}
+                                </p>
+                                <h2 className="team__info__description__h2 h2">
+                                    Capacity
+                                </h2>
+                                <p className="team__info__description__p p">
+                                    {el.intStadiumCapacity}
+                                </p>
+                                <h2 className="team__info__description__h2 h2">
+                                    Description
+                                </h2>
+                                <p className="team__info__description__p p">
+                                    {el.strStadiumDescription}
+                                </p>
+                            </div>
+                        </figure>
+                    </section>
+                    
+                )
+            })
+        }
+
+        if(selectTeam.loading) {
+            return <p>loading...</p>
+        }
+
+        if(selectTeam.errorMsg !== "") {
+            return <p>{selectTeam.errorMsg}</p>
+        }
+
+    return <p>Unable to get the team's stadium</p>
+    }
+
     return (
         <div className="team">
             {teamIntro()}
             {teamGallery()}
+            {showTeamDescription()}
             <ShowNextEvents idTeam={idTeam} />
-            Team Details:
-            {showTeam()}
+            {showStadium()}
             <ShowPreviousEvents idTeam={idTeam} />
-            <Link to={"/"}>Home</Link>
+            <Link to={"/"} className="team__intro__navigation__link link">
+				<button className="team__intro__navigation__btn btn" tabIndex="-1">
+					<svg tabIndex="-1" className="team__intro__navigation__icon--back icon fadeInFromLeft">
+						<use href={iconSprites + "#icon-back"} />
+					</svg>
+				</button>
+			</Link>
         </div>
     )
 }
