@@ -6,6 +6,36 @@
     padding-top: 3rem;
     background-image: $gradient-color-3;
 
+    &__container-btn {
+        position: relative;
+        padding: 12rem 0;
+
+        &__center-btn {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+
+            &__button {
+                width: 18rem;
+                height: 6rem;
+                background-color: $color-important;
+                transition: all .2s;
+                font-size: 1.8rem;
+        
+                &:hover, &:focus {
+                    cursor: pointer;
+                    background-color: $color-fifth;
+                    transition: all .2s;
+                    color: $color-black;
+                }
+            }
+        }
+    }
+
+
     &__intro {
         background: -webkit-linear-gradient(285deg, #251431 0%, #161130 22%);
         background: -o-linear-gradient(285deg, #251431 0%, #161130 22%);
@@ -133,7 +163,7 @@
     }
 
     &__info {
-        margin: 2rem;
+        margin: 12rem 2rem 2rem 2rem;
 
         &__description {
             padding: 0rem 9rem;
@@ -170,5 +200,51 @@
                 }
             }
         }
+    }
+
+    &__stadium {
+        margin-top: 10rem;
+
+        &__description {
+            padding: 0rem 9rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+
+            &__facts {
+                display: flex;
+                flex-direction: row;
+
+                &__location {
+                    padding: 2rem 4rem;
+                }
+
+                &__capacity {
+                    padding: 2rem 4rem;
+                }
+            }
+        }
+
+        &__image {
+            background-size: cover !important;
+            height: 110vh;
+            width: auto;
+            padding: 2% 10%;
+        }
+    }
+}
+
+.description {
+
+    &__h2 {
+        margin: 2rem;
+        font-size: 2.4rem;
+        letter-spacing: .2rem;
+    }
+
+    &__p {
+        font-size: 1.2rem;
+        margin: 2rem;
     }
 }

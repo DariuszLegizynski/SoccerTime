@@ -48,8 +48,8 @@
 }
 
 .team__events__h2 {
+  margin-top: 12rem;
   margin-bottom: 4rem;
-  margin-left: 4rem;
   font-size: 2.6rem;
   letter-spacing: .2rem;
 }
@@ -207,6 +207,37 @@
 .team {
   padding-top: 3rem;
   background-image: radial-gradient(#0aa848 0%, #111 98%);
+}
+
+.team__container-btn {
+  position: relative;
+  padding: 12rem 0;
+}
+
+.team__container-btn__center-btn {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.team__container-btn__center-btn__button {
+  width: 18rem;
+  height: 6rem;
+  background-color: #DB4076;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-size: 1.8rem;
+}
+
+.team__container-btn__center-btn__button:hover, .team__container-btn__center-btn__button:focus {
+  cursor: pointer;
+  background-color: #FFDD82;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  color: #111;
 }
 
 .team__intro {
@@ -371,7 +402,7 @@
 }
 
 .team__info {
-  margin: 2rem;
+  margin: 12rem 2rem 2rem 2rem;
 }
 
 .team__info__description {
@@ -423,5 +454,59 @@
           transform: scale(1.2);
   -webkit-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
+}
+
+.team__stadium {
+  margin-top: 10rem;
+}
+
+.team__stadium__description {
+  padding: 0rem 9rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.team__stadium__description__facts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.team__stadium__description__facts__location {
+  padding: 2rem 4rem;
+}
+
+.team__stadium__description__facts__capacity {
+  padding: 2rem 4rem;
+}
+
+.team__stadium__image {
+  background-size: cover !important;
+  height: 110vh;
+  width: auto;
+  padding: 2% 10%;
+}
+
+.description__h2 {
+  margin: 2rem;
+  font-size: 2.4rem;
+  letter-spacing: .2rem;
+}
+
+.description__p {
+  font-size: 1.2rem;
+  margin: 2rem;
 }
 /*# sourceMappingURL=team.css.map */

@@ -121,7 +121,6 @@ const Team = (props) => {
                             <TeamGallery picture={el.strTeamFanart4} altPicture={altFanart} altText={"Fanart4"} />
                             <TeamGallery picture={el.strTeamBanner} altPicture={altFanart} altText={"Banner"} />
                         </div>
-                        <button onClick={() => dispatch(getFavoritedTeams(el.strTeam, el.idTeam, el.strTeamBadge+"/preview"))}>add team to favorites</button>
                     </section>
                 )
             })
@@ -188,41 +187,45 @@ const Team = (props) => {
         if(!_.isEmpty(selectTeam.data.teams)) {
             return selectTeam.data.teams.map(el => {
                 return (
-                    <section className="team__info" key={shortid.generate()}>
-                        <button onClick={() => dispatch(getFavoritedTeams(el.strTeam, el.idTeam, el.strTeamBadge+"/preview"))}>add team to favorites</button>
-                        <figure className="team__intro__image" style={{
-                            background: `linear-gradient(0deg, rgba(0,0,0,1) 5%, rgba(0,0,0,0.45) 92%) center center no-repeat, #fff
+                    <section className="team__stadium" key={shortid.generate()}>
+                        <figure className="team__stadium__image" style={{
+                            background: `linear-gradient(90deg,  rgba(10, 168, 72, .75), rgba(17, 17, 17, .55), rgba(10, 168, 72, .75)),
                             url(${el.strStadiumThumb ? el.strStadiumThumb : altStadium})
                             center top no-repeat`}}>
-                            <div className="team__info__description">
-                                <h2 className="team__info__description__h2 h2">
+                            <div className="team__stadium__description">
+                                <h2 className="team__stadium__description__h2 description__h2 h2">
                                     Stadium
                                 </h2>
-                                <p className="team__info__description__p p">
+                                <p className="team__stadium__description__p description__p p">
                                     {el.strStadium}
                                 </p>
-                                <h2 className="team__info__description__h2 h2">
-                                    Location
-                                </h2>
-                                <p className="team__info__description__p p">
-                                    {el.strStadiumLocation}
-                                </p>
-                                <h2 className="team__info__description__h2 h2">
-                                    Capacity
-                                </h2>
-                                <p className="team__info__description__p p">
-                                    {el.intStadiumCapacity}
-                                </p>
-                                <h2 className="team__info__description__h2 h2">
+                                <h2 className="team__stadium__description__h2 description__h2 h2">
                                     Description
                                 </h2>
-                                <p className="team__info__description__p p">
+                                <p className="team__stadium__description__p description__p p">
                                     {el.strStadiumDescription}
                                 </p>
+                                <div className="team__stadium__description__facts">
+                                    <div className="team__stadium__description__facts__location">
+                                        <h2 className="team__stadium__description__facts__location__h2 description__h2 h2">
+                                            Location
+                                        </h2>
+                                        <p className="team__stadium__description__facts__location__p description__p p">
+                                            {el.strStadiumLocation}
+                                        </p>
+                                    </div>
+                                    <div className="team__stadium__description__facts__capacity">
+                                        <h2 className="team__stadium__descriptionn__facts__capacity__h2 description__h2 h2">
+                                            Capacity
+                                        </h2>
+                                        <p className="team__stadium__descriptionn__facts__capacity__p description__p p">
+                                            {el.intStadiumCapacity}
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
                         </figure>
                     </section>
-                    
                 )
             })
         }
@@ -238,12 +241,34 @@ const Team = (props) => {
     return <p>Unable to get the team's stadium</p>
     }
 
+    const favoriteButton = () => {
+        if(!_.isEmpty(selectTeam.data.teams)) {
+            return selectTeam.data.teams.map(el => {
+                return (
+                    <div className="team__container-btn">
+                        <div className="team__container-btn__center-btn">
+                            <button className="team__container-btn__center-btn__button btn" onClick={() => dispatch(getFavoritedTeams(el.strTeam, el.idTeam, el.strTeamBadge+"/preview"))}>
+                                favorite team
+                            </button>
+                        </div>
+                    </div>
+                )
+            })
+        }
+    }
+
     return (
         <div className="team">
             {teamIntro()}
             {teamGallery()}
+            <hr className="hr" />
+            {favoriteButton()}
+            <hr className="hr" />
             {showTeamDescription()}
             <ShowNextEvents idTeam={idTeam} />
+            <hr className="hr" />
+            {favoriteButton()}
+            <hr className="hr" />
             {showStadium()}
             <ShowPreviousEvents idTeam={idTeam} />
             <Link to={"/"} className="team__intro__navigation__link link">
