@@ -115,26 +115,34 @@
 
 @media only screen and (max-width: 1024px) {
     .footer {
-      padding: 7rem 4rem;
+        padding: 7rem 4rem;
 
-      &-top {
-          &__header, &__item {
+        &-top {
+            &__header, &__item {
                 grid-template-columns: 15rem 15rem;
-          }
+            }
 
-        &__nav {
+            &__nav {
             grid-template-columns: repeat(2, 4rem);
+            }
         }
-      }
     }
 }
 
 @media only screen and (max-width: 768px) {
     .footer {
-        padding: 7rem 2rem;
+        padding: 4em;
+        grid-template-columns: 1fr 1fr;
 
+        // &-bottom {
+        //     align-items: center;
+        //     display: grid;
+        //     grid-template-columns: 1fr 1fr;
+        //     margin-top: 2rem;
+        // }
     }
 }
+
 
 @media only screen and (max-width: 480px) {
     .footer {

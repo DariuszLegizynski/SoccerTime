@@ -143,7 +143,9 @@
 
 @media only screen and (max-width: 768px) {
   .footer {
-    padding: 7rem 2rem;
+    padding: 4em;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
   }
 }
 
