@@ -95,7 +95,7 @@
             margin: 0 2rem;
             padding: .5rem;
             transition: background-color .4s;
-            width: 7.5%;
+            width: 4rem;
 
             &:hover {
                 fill: $color-fourth;
@@ -110,6 +110,12 @@
     .footer {
         padding: 7rem 8rem;
 
+        // &-bottom {
+
+        //     &__icon {
+        //         width: 15%;
+        //     }
+        // }
     }
 }
 
@@ -126,27 +132,79 @@
             grid-template-columns: repeat(2, 4rem);
             }
         }
+
+        // &-bottom {
+
+        //     &__icon {
+        //         width: 15%;
+        //     }
+        // }
     }
 }
 
 @media only screen and (max-width: 768px) {
     .footer {
-        padding: 4em;
-        grid-template-columns: 1fr 1fr;
+        padding: 2rem;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: none;
 
-        // &-bottom {
-        //     align-items: center;
-        //     display: grid;
-        //     grid-template-columns: 1fr 1fr;
-        //     margin-top: 2rem;
-        // }
+        &-top {
+
+            &__header, &__item {
+                grid-template-columns: 2fr 1fr;
+            }
+        }
+
+        &-bottom {
+            align-items: center;
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            justify-items: center;
+
+            &__icon {
+                width: 3rem;
+            }
+
+            &__image {
+                align-self: center;
+                width: 15rem;
+            }
+
+            &__api {
+                align-self: center;
+            }
+        }
     }
 }
 
 
 @media only screen and (max-width: 480px) {
     .footer {
-        padding: 7rem 8rem;
+        padding: 1rem;
+        grid-template-rows: 2fr 1fr;
 
+        &-top {
+            display: flex;
+            flex-direction: column;
+
+            &__item {
+                grid-template-rows: 1fr 1fr;
+                grid-template-columns: none;
+                justify-content: center;
+                justify-items: center;
+            }
+
+            &__h3 {
+                padding: 1rem;
+            }
+
+            &__link, &__link--phone {
+                padding: 1rem;
+            }
+
+            &__copyright {
+                align-self: center;
+            }
+        }
     }
 }
