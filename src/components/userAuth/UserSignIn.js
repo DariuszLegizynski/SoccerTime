@@ -41,11 +41,11 @@ const UserSign = () => {
             <section className="sign__logIn">
                 <h4 className="sign__h4 h4 fadeInFromTop">Log In</h4>
                 <form className="sign__form" onSubmit={signInUser}>
-                    <div className="fadeInFromLeft">
+                    <div className="sign__logIn__wrapper fadeInFromLeft">
                         <label className="sign__label" htmlFor="email">Email address:</label>
                         <input className="sign__input" type="email" id="email" onChange={handleChange} placeholder="Email Adress" required />
                     </div>
-                    <div className="fadeInFromRight">
+                    <div className="sign__logIn__wrapper fadeInFromRight">
                         <label className="sign__label" htmlFor="password">Your Password:</label>
                         <input className="sign__input" type="password" id="password" onChange={handleChange} placeholder="Password" required />
                     </div>

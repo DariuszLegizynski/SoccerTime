@@ -144,3 +144,17 @@
         background-image: $gradient-color-5;
     }
 }
+
+@media only screen and (max-width: 768px) {
+    .sign {
+        &__input {
+            margin: 1rem 1rem;
+        }
+
+        &__logIn {
+            &__wrapper {
+                display: grid;
+            }
+        }
+    }
+}

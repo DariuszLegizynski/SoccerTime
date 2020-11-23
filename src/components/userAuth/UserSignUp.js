@@ -45,19 +45,19 @@ const UserSignUp = () => {
                     SignUp
                 </h4>
                 <form className="sign__form" onSubmit={registerNewUser}>
-                    <div className="fadeInFromLeft">
+                    <div className="sign__logIn__wrapper fadeInFromLeft">
                         <label className="sign__label" htmlFor="firstName">First Name: </label>
                         <input className="sign__input" type="text" id="firstName" onChange={handleChange} placeholder="First Name" required />
                     </div>
-                    <div className="fadeInFromRight">
+                    <div className="sign__logIn__wrapper fadeInFromRight">
                         <label className="sign__label" htmlFor="lastName">Last Name: </label>
                         <input className="sign__input" type="text" id="lastName" onChange={handleChange} placeholder="Last Name" required />
                     </div>
-                    <div className="fadeInFromLeft">
+                    <div className="sign__logIn__wrapper fadeInFromLeft">
                         <label className="sign__label" htmlFor="email">Email address</label>
                         <input className="sign__input" type="email" id="email" onChange={handleChange} placeholder="Email Address" required />
                     </div>
-                    <div className="fadeInFromRight">
+                    <div className="sign__logIn__wrapper fadeInFromRight">
                         <label className="sign__label" htmlFor="password">Your Password</label>
                         <input className="sign__input" type="password" id="password" onChange={handleChange} placeholder="Password" required />
                     </div>

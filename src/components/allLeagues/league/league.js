@@ -15,14 +15,7 @@ import PreviousLeagueEvents from "./previousLeagueEvents";
 
 import iconSprites from "../../../resources/icons/icomoon/sprite.svg";
 import altTeamBadge from "../../../resources/images/hero/soccer-4598714.jpg"
-// import altFanart1 from "../../../resources/images/alt/training-1306131.jpg";
 import altFanart2 from "../../../resources/images/alt/audience-1866738.jpg";
-// import altFanart3 from "../../../resources/images/alt/football-3471402.jpg";
-// import altFanart4 from "../../../resources/images/alt/jimmy-conover-SEQ2VI0KI6A-unsplash.jpg";
-// import altFanart5 from "../../../resources/images/alt/liam-mckay-XcvAfCgYX0Y-unsplash.jpg";
-// import altFanart6 from "../../../resources/images/alt/stadium-931975.jpg";
-// import altFanart7 from "../../../resources/images/alt/soccer-1490541.jpg";
-// import altFanart8 from "../../../resources/images/alt/soccer-players-1478802.jpg";
 
 import "./league.css";
 import TeamBadge from "./TeamBadge";
