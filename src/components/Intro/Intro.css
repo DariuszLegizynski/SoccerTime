@@ -26,6 +26,10 @@
   padding: 2rem 4rem;
 }
 
+.intro__span {
+  color: #333;
+}
+
 .intro__h2 {
   color: #333;
   padding: 2rem 4rem;
@@ -64,5 +68,30 @@
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+@media only screen and (max-width: 1024px) {
+  .intro {
+    padding: 20rem 0;
+  }
+  .intro__top {
+    left: 15%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .intro {
+    padding: 17rem 0;
+  }
+  .intro__bot {
+    left: 45%;
+    top: 65%;
+  }
+  .intro__span {
+    display: block;
+  }
+  .btn {
+    width: 4rem;
+  }
 }
 /*# sourceMappingURL=Intro.css.map */

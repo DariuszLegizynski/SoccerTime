@@ -22,7 +22,7 @@ const Intro = () => {
             <div className="intro__top fadeIn">
                 <div className="intro__top__skew">
                     <h1 className="intro__h1">
-                        All You Ever Wanted to Know About Football
+                        All You Ever Wanted <span className="intro__span span">to Know About Football</span>
                     </h1>
                 </div>
             </div>

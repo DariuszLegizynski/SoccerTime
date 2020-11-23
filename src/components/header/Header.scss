@@ -123,3 +123,29 @@
         fill: $color-fourth;
     }
 }
+
+@media only screen and (max-width: 768px) {
+    .header {
+        flex-wrap: wrap;
+
+        &__logo {
+            justify-content: flex-start;
+            margin-left: 1rem;
+        }
+
+        &__searchbar {
+            order: 3;
+            justify-content: center;
+            max-width: none;
+        }
+
+        &__authentication {
+            order: 2;
+            justify-content: flex-end;
+        }
+    }
+
+    .logo {
+        width: 75%;
+    }
+}

@@ -26,6 +26,10 @@
             padding: 2rem 4rem;
         }
 
+        &__span {
+            color: $color-grey-dark-1;
+        }
+
         &__h2 {
             color: $color-grey-dark-1;
             padding: 2rem 4rem;
@@ -63,5 +67,38 @@
             width: 100%;
             object-fit: cover;
         }
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .intro {
+        padding: 20rem 0;
+
+        &__top {
+            left: 15%;
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .intro {
+        padding: 17rem 0;
+
+        // &__top {
+        //     left: 5%;
+        // }
+
+        &__bot {
+            left: 45%;
+            top: 65%;
+        }
+
+        &__span {
+            display: block;
+        }
+    }
+
+    .btn{
+        width: 4rem;
     }
 }
