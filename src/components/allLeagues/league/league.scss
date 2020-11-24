@@ -313,6 +313,10 @@
                 grid-template-columns: repeat(3, 1fr);
             }
         }
+
+        &__team-short-description {
+            grid-template-columns: repeat(7, 1fr);
+        }
     }
 }
 
@@ -325,6 +329,10 @@
             &__card-container {
                 column-gap: 1rem;
             }
+        }
+
+        &__team-short-description {
+            grid-template-columns: repeat(6, 1fr);
         }
     }
 }
@@ -339,16 +347,37 @@
                 grid-template-columns: repeat(2, 1fr);
             }
         }
+
+        &__team-short-description {
+            grid-template-columns: repeat(4, 1fr);
+        }
     }
 }
 
 @media only screen and (max-width: 768px) {
     .league {
         &__events {
-            padding: 2rem 1rem;
+            padding: 1rem 1rem;
 
             &__card-container {
                 grid-template-columns: repeat(1, 1fr);
+                row-gap: 1.4rem;
+                padding-bottom: 1rem;
+            }
+        }
+
+        &__info {
+
+            &__description {
+                padding: 0rem .5rem;
+
+                &__p {
+                    margin: .5rem;
+                }
+            }
+
+            &__media {
+                padding: 4rem 1rem;
             }
         }
 
@@ -358,8 +387,48 @@
             }
         }
 
+        &__league-table {
+            padding: 4rem 2rem;
+
+            &__no-table {
+                margin: 1rem 4rem;
+            }
+        }
+
         &__team-short-description {
             grid-template-columns: repeat(2, 1fr);
+            padding: 2rem 2rem;
+
+            &__card {
+                &__btn {
+                    right: 1.5rem;
+                }
+            }
         }
+    }
+
+    .h1 {
+        letter-spacing: .5rem;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .league {
+
+        &__info {
+
+            &__media {
+                padding: 4rem 1rem;
+
+                &__link {
+                    width: 4rem;
+                    height: 4rem;
+                }
+            }
+        }
+    }
+
+    .h1 {
+        letter-spacing: .5rem;
     }
 }

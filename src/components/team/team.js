@@ -172,14 +172,14 @@ const Team = (props) => {
         };
 
         if(selectTeam.loading) {
-            return <p>loading...</p>
+            return <span>loading...</span>
         }
 
         if(selectTeam.errorMsg !== "") {
-            return <p>{selectTeam.errorMsg}</p>
+            return <span>{selectTeam.errorMsg}</span>
         }
 
-    return <p>Unable to get the team's data</p>
+    return <span>Unable to get the team's data</span>
     }
 
     const showStadium = () => {
@@ -230,14 +230,14 @@ const Team = (props) => {
         }
 
         if(selectTeam.loading) {
-            return <p>loading...</p>
+            return <span>loading...</span>
         }
 
         if(selectTeam.errorMsg !== "") {
-            return <p>{selectTeam.errorMsg}</p>
+            return <span>{selectTeam.errorMsg}</span>
         }
 
-    return <p>Unable to get the team's stadium</p>
+    return <span>Unable to get the team's stadium</span>
     }
 
     const favoriteButton = () => {

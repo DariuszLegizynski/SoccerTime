@@ -190,21 +190,21 @@ const League = (props) => {
 		}
 
 		if (selectLeague.loading) {
-			return <p>loading...</p>;
+			return <span>loading...</span>;
 		}
 
 		if (selectLeague.errorMsg !== "") {
 			return (
-				<p>
+				<span>
 					{selectLeague.errorMsg}
-				</p>
+				</span>
 			);
 		}
 
 		return (
-			<p>
+			<span>
 				Unable to get the league data
-			</p>
+			</span>
 		);
 	};
 
@@ -221,6 +221,7 @@ const League = (props) => {
 				{showLeagueTeams()}
 			</section>
 			<LeagueTable leagueId={leagueId}/>
+			<hr className="hr" />
 			<PreviousLeagueEvents leagueId={leagueId} />
 			<Link to={"/"} className="league__intro__navigation__link link">
 				<button className="league__intro__navigation__btn btn" tabIndex="-1">

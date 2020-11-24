@@ -101,7 +101,7 @@ const LeagueTable = ({leagueId}) => {
         }
 
         return (
-                <p className="league__league-table__no-table p">No League Table data found</p>
+                <span className="league__league-table__no-table p">No League Table data found</span>
         )
     }
 
