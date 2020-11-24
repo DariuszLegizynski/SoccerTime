@@ -686,15 +686,15 @@
     margin: 5rem 0;
   }
   .league__league-table {
-    padding: 4rem 2rem;
+    padding: 2rem;
   }
   .league__league-table__no-table {
-    margin: 1rem 4rem;
+    margin: 1rem 2rem;
   }
   .league__team-short-description {
     -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
-    padding: 2rem 2rem;
+    padding: 2rem;
   }
   .league__team-short-description__card__btn {
     right: 1.5rem;
@@ -711,6 +711,12 @@
   .league__info__media__link {
     width: 4rem;
     height: 4rem;
+  }
+  .league__league-table {
+    padding: .5rem;
+  }
+  .league__league-table__no-table {
+    margin: 1rem 2rem;
   }
   .h1 {
     letter-spacing: .5rem;

@@ -415,7 +415,7 @@
   letter-spacing: .2rem;
 }
 
-.team__info__description__p {
+.team__info__description__span {
   font-size: 1.2rem;
   margin: 2rem;
 }
@@ -505,8 +505,141 @@
   letter-spacing: .2rem;
 }
 
-.description__p {
+.description__span {
   font-size: 1.2rem;
   margin: 2rem;
+}
+
+@media only screen and (max-width: 1500px) {
+  .team__events__card-container {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .team__events {
+    padding: 4rem 1rem;
+  }
+  .team__events__card-container {
+    -webkit-column-gap: 1rem;
+            column-gap: 1rem;
+  }
+  .team__stadium {
+    margin-top: 6rem;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .team__events {
+    padding: 3rem 1rem;
+  }
+  .team__events__card-container {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+  .team__info {
+    margin: 6rem 2rem 2rem 2rem;
+  }
+  .team__stadium {
+    margin-top: 4rem;
+  }
+  .team__stadium__description {
+    padding: 0rem 3rem;
+  }
+  .team__stadium__image {
+    padding: 2% 3%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .team__container-btn {
+    padding: 3rem 0;
+  }
+  .team__events {
+    padding: 1rem 1rem;
+  }
+  .team__events__card-container {
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+    row-gap: 1.4rem;
+    padding-bottom: 1rem;
+  }
+  .team__events__h2 {
+    margin: 3rem 0;
+  }
+  .team__info {
+    margin: 2rem;
+  }
+  .team__info__description {
+    padding: 0rem .5rem;
+  }
+  .team__info__description__span {
+    margin: .5rem;
+  }
+  .team__info__media {
+    padding: 4rem 1rem;
+  }
+  .team__intro__navigation {
+    margin: 5rem 0;
+  }
+  .team__gallery {
+    display: none;
+  }
+  .team__stadium {
+    margin-top: 3rem;
+  }
+  .team__stadium__description {
+    padding: 0rem 3rem;
+  }
+  .team__stadium__image {
+    padding: 2% 1%;
+  }
+  .h1 {
+    letter-spacing: .5rem;
+  }
+  .description__span {
+    margin: 1rem;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .team {
+    padding-top: 0rem;
+  }
+  .team__container-btn {
+    padding: 2rem 0;
+  }
+  .team__events__h2 {
+    margin: 1.6rem 0;
+  }
+  .team__info {
+    margin: 1rem;
+  }
+  .team__info__media {
+    padding: 4rem 1rem;
+  }
+  .team__info__media__link {
+    width: 4rem;
+    height: 4rem;
+  }
+  .team__stadium {
+    margin-top: 2rem;
+  }
+  .team__stadium__description {
+    padding: 0rem .5rem;
+  }
+  .team__stadium__image {
+    padding: 2% 1%;
+  }
+  .description__span {
+    margin: .5rem;
+  }
+  .h1 {
+    letter-spacing: .5rem;
+  }
+  .hr {
+    margin: 2rem 0;
+  }
 }
 /*# sourceMappingURL=team.css.map */

@@ -174,7 +174,7 @@
                 letter-spacing: .2rem;
             }
 
-            &__p {
+            &__span {
                 font-size: 1.2rem;
                 margin: 2rem;
             }
@@ -243,8 +243,189 @@
         letter-spacing: .2rem;
     }
 
-    &__p {
+    &__span {
         font-size: 1.2rem;
         margin: 2rem;
+    }
+}
+
+@media only screen and (max-width: 1500px) {
+    .team {
+
+        &__events {
+
+            &__card-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .team {
+
+        &__events {
+            padding: 4rem 1rem;
+
+            &__card-container {
+                column-gap: 1rem;
+            }
+        }
+
+        &__stadium {
+            margin-top: 6rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .team {
+
+        &__events {
+            padding: 3rem 1rem;
+
+            &__card-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        &__info {
+            margin: 6rem 2rem 2rem 2rem;
+        }
+
+        &__stadium {
+            margin-top: 4rem;
+
+            &__description {
+                padding: 0rem 3rem;
+            }
+
+            &__image {
+                padding: 2% 3%;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .team {
+        &__container-btn {
+            padding: 3rem 0;
+        }
+
+        &__events {
+            padding: 1rem 1rem;
+
+            &__card-container {
+                grid-template-columns: repeat(1, 1fr);
+                row-gap: 1.4rem;
+                padding-bottom: 1rem;
+            }
+
+            &__h2 {
+                margin: 3rem 0;
+            }
+        }
+
+        &__info {
+            margin: 2rem;
+
+            &__description {
+                padding: 0rem .5rem;
+
+                &__span {
+                    margin: .5rem;
+                }
+            }
+
+            &__media {
+                padding: 4rem 1rem;
+            }
+        }
+
+        &__intro {
+            &__navigation {
+                margin: 5rem 0;
+            }
+        }
+
+        &__gallery {
+            display: none;
+        }
+
+        &__stadium {
+            margin-top: 3rem;
+
+            &__description {
+                padding: 0rem 3rem;
+            }
+
+            &__image {
+                padding: 2% 1%;
+            }
+        }
+    }
+
+    .h1 {
+        letter-spacing: .5rem;
+    }
+
+    .description__span {
+        margin: 1rem;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .team {
+        padding-top: 0rem;
+
+        &__container-btn {
+            padding: 2rem 0;
+        }
+
+        &__events {
+
+            &__h2 {
+                margin: 1.6rem 0;
+            }
+        }
+
+        &__info {
+            margin: 1rem;
+
+
+            &__media {
+                padding: 4rem 1rem;
+
+                &__link {
+                    width: 4rem;
+                    height: 4rem;
+                }
+            }
+        }
+
+        &__stadium {
+            margin-top: 2rem;
+
+            &__description {
+                padding: 0rem .5rem;
+            }
+
+            &__image {
+                padding: 2% 1%;
+            }
+        }
+    }
+
+    .description__span {
+        margin: .5rem;
+    }
+
+    .h1 {
+        letter-spacing: .5rem;
+    }
+
+    .hr {
+        margin: 2rem 0;
     }
 }

@@ -388,16 +388,16 @@
         }
 
         &__league-table {
-            padding: 4rem 2rem;
+            padding: 2rem;
 
             &__no-table {
-                margin: 1rem 4rem;
+                margin: 1rem 2rem;
             }
         }
 
         &__team-short-description {
             grid-template-columns: repeat(2, 1fr);
-            padding: 2rem 2rem;
+            padding: 2rem;
 
             &__card {
                 &__btn {
@@ -424,6 +424,14 @@
                     width: 4rem;
                     height: 4rem;
                 }
+            }
+        }
+
+        &__league-table {
+            padding: .5rem;
+
+            &__no-table {
+                margin: 1rem 2rem;
             }
         }
     }

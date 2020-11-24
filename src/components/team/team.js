@@ -106,9 +106,9 @@ const Team = (props) => {
                             <h2 className="team__gallery__title__h2 h2">
                                 Since
                             </h2>
-                            <p className="team__gallery__title__p p">
+                            <span className="team__gallery__title__span span">
                                 { el.intFormedYear }
-                            </p>
+                            </span>
                         </div>
                         <div className="team__gallery__images fadeIn">
                             <TeamGallery picture={el.strTeamLogo} altPicture={altFanart} altText={"Logo"} />
@@ -135,9 +135,9 @@ const Team = (props) => {
                         <h2 className="team__info__description__h2 h2">
                             Description
                         </h2>
-                        <p className="team__info__description__p p">
+                        <span className="team__info__description__span p">
                             { el.strDescriptionEN }
-                        </p>
+                        </span>
                     </div>
                     <div className="team__info__media">
                         <a className="team__info__media__link share-link--webpage link fadeInFromTop"  href={"https://" + el.strWebsite} rel="noopener noreferrer" target="_blank">
@@ -195,31 +195,31 @@ const Team = (props) => {
                                 <h2 className="team__stadium__description__h2 description__h2 h2">
                                     Stadium
                                 </h2>
-                                <p className="team__stadium__description__p description__p p">
+                                <span className="team__stadium__description__span description__span span">
                                     {el.strStadium}
-                                </p>
+                                </span>
                                 <h2 className="team__stadium__description__h2 description__h2 h2">
                                     Description
                                 </h2>
-                                <p className="team__stadium__description__p description__p p">
+                                <span className="team__stadium__description__span description__span span">
                                     {el.strStadiumDescription}
-                                </p>
+                                </span>
                                 <div className="team__stadium__description__facts">
                                     <div className="team__stadium__description__facts__location">
                                         <h2 className="team__stadium__description__facts__location__h2 description__h2 h2">
                                             Location
                                         </h2>
-                                        <p className="team__stadium__description__facts__location__p description__p p">
+                                        <span className="team__stadium__description__facts__location__span description__span span">
                                             {el.strStadiumLocation}
-                                        </p>
+                                        </span>
                                     </div>
                                     <div className="team__stadium__description__facts__capacity">
                                         <h2 className="team__stadium__descriptionn__facts__capacity__h2 description__h2 h2">
                                             Capacity
                                         </h2>
-                                        <p className="team__stadium__descriptionn__facts__capacity__p description__p p">
+                                        <span className="team__stadium__descriptionn__facts__capacity__span description__span span">
                                             {el.intStadiumCapacity}
-                                        </p>
+                                        </span>
                                     </div>
                                 </div>
                             </div>
