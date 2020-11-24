@@ -44,7 +44,6 @@ const Team = (props) => {
 
     const teamIntro = () => {
         if(!_.isEmpty(selectTeam.data.teams)) {
-            console.log(selectTeam.data.teams);
             return selectTeam.data.teams.map(el => {
                 return (
                     <section className="team__intro fadeIn" key={shortid.generate()}>
@@ -245,7 +244,7 @@ const Team = (props) => {
         if(!_.isEmpty(selectTeam.data.teams)) {
             return selectTeam.data.teams.map(el => {
                 return (
-                    <div className="team__container-btn">
+                    <div className="team__container-btn" key={shortid.generate()}>
                         <div className="team__container-btn__center-btn">
                             <button className="team__container-btn__center-btn__button btn" onClick={() => dispatch(getFavoritedTeams(el.strTeam, el.idTeam, el.strTeamBadge+"/preview"))}>
                                 favorite team

@@ -9,10 +9,6 @@ import shortid from "shortid";
 const SearchTeamResults = () => {
     const selectSearchedTeams = useSelector(state => state.searchTeam.data.teams);
 
-    if(!_.isEmpty(selectSearchedTeams)) {
-        console.log(selectSearchedTeams.filter(el => el.strSport === "Soccer"));
-    }
-
     const showResults = () => {
         if(_.isEmpty(selectSearchedTeams)) {
             return <p>no results found.</p>

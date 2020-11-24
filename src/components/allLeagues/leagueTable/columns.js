@@ -6,7 +6,6 @@ export const COLUMNS = [
         Header: "Team Name",
         accessor: "name",
         Cell: el => {
-            console.log(el);
             return (
                 <Link className="league__league-table__table__tbody__tr__td__link link" to={`/allTeams/${el.row.values.teamid}`}>{el.value}</Link>
             )

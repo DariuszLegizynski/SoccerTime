@@ -20,7 +20,6 @@ const PreviousLeagueEvents = ({leagueId}) => {
 
     const showData = () => {
         if(!_.isEmpty(selectPreviousLeagueEvents.data.events)) {
-            console.log(selectPreviousLeagueEvents.data.events);
             return selectPreviousLeagueEvents.data.events.map(event => {
                 return (
                     <div className="league__events__card-container__card card__previous" key={shortid.generate()}>
