@@ -472,6 +472,8 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -620,5 +622,49 @@
 .link__end {
   margin: auto;
   width: 100%;
+}
+
+@media only screen and (max-width: 1500px) {
+  .league__events__card-container {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .league__events {
+    padding: 4rem 1rem;
+  }
+  .league__events__card-container {
+    -webkit-column-gap: 1rem;
+            column-gap: 1rem;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .league__events {
+    padding: 3rem 1rem;
+  }
+  .league__events__card-container {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .league__events {
+    padding: 2rem 1rem;
+  }
+  .league__events__card-container {
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+  }
+  .league__intro__navigation {
+    margin: 5rem 0;
+  }
+  .league__team-short-description {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
 }
 /*# sourceMappingURL=league.css.map */
