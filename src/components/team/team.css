@@ -420,6 +420,26 @@
   margin: 2rem;
 }
 
+.team__info__description__span__hide {
+  display: none;
+  height: 0;
+}
+
+.team__info__description__indicator__plus__hide {
+  display: none;
+  height: 0;
+}
+
+.team__info__description__indicator__minus {
+  display: none;
+  height: 0;
+}
+
+.team__info__description__indicator__minus__show {
+  display: block;
+  height: auto;
+}
+
 .team__info__media {
   display: -webkit-box;
   display: -ms-flexbox;

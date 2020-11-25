@@ -42,6 +42,22 @@ const Team = (props) => {
           }
       }
 
+    // Toggles visibility of team description
+    const handleTeamDescription = () => {
+        document.querySelector(".team__info__description__span").classList.toggle("team__info__description__span__hide");
+        document.querySelector(".team__info__description__indicator__plus").classList.toggle("team__info__description__indicator__plus__hide");
+        document.querySelector(".team__info__description__indicator__minus").classList.toggle("team__info__description__indicator__minus__show");
+    }
+
+        // when "enter" is pressed
+        const handleTeamDescriptionOnPress = (event) => {
+            if (event.key === "Enter") {
+                document.querySelector(".team__info__description__span").classList.toggle("team__info__description__span__hide");
+                document.querySelector(".team__info__description__indicator__plus").classList.toggle("team__info__description__indicator__plus__hide");
+                document.querySelector(".team__info__description__indicator__minus").classList.toggle("team__info__description__indicator__minus__show");
+            }
+        }
+
     const teamIntro = () => {
         if(!_.isEmpty(selectTeam.data.teams)) {
             return selectTeam.data.teams.map(el => {
@@ -132,10 +148,18 @@ const Team = (props) => {
             return (
                 <section className="team__info" key={shortid.generate()}>
                     <div className="team__info__description">
-                        <h2 className="team__info__description__h2 h2">
-                            Description
-                        </h2>
-                        <span className="team__info__description__span p">
+                        <button className="team__info__description__btn btn" onClick={handleTeamDescription} onKeyPress={handleTeamDescriptionOnPress}>
+                            <h2 className="team__info__description__h2 h2">
+                                Description
+                            </h2>
+                            <svg tabIndex="-1" className="team__info__description__indicator__plus">
+                                <use href={iconSprites + "#icon-plus-circle"} />
+                            </svg>
+                            <svg tabIndex="-1" className="team__info__description__indicator__minus">
+                                <use href={iconSprites + "#icon-minus-circle"} />
+                            </svg>
+                        </button>
+                        <span className="team__info__description__span team__info__description__span__hide p">
                             { el.strDescriptionEN }
                         </span>
                     </div>
@@ -204,6 +228,7 @@ const Team = (props) => {
                                 <span className="team__stadium__description__span description__span span">
                                     {el.strStadiumDescription}
                                 </span>
+                                
                                 <div className="team__stadium__description__facts">
                                     <div className="team__stadium__description__facts__location">
                                         <h2 className="team__stadium__description__facts__location__h2 description__h2 h2">

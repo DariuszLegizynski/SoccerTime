@@ -15,6 +15,14 @@ Single-colored icons can be modified like so:
 }
 ========================================== */
 
+.icon-minus-circle {
+  width: 0.857421875em;
+}
+
+.icon-plus-circle {
+  width: 0.857421875em;
+}
+
 .icon-youtube {
   width: 0.857421875em;
 }

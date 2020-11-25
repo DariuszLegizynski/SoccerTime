@@ -1,7 +1,7 @@
 import React from "react";
 
 import "./Intro.css";
-import bgVideo from "../../resources/video/mp4/1300678_Abstract_huge_football_HD_BG.mp4"
+import bgVideo from "../../resources/video/webm/1300678_Abstract_huge_football_HD_BG.webm"
 
 const Intro = () => {
 
@@ -9,8 +9,8 @@ const Intro = () => {
         return (
             <div className="intro__video fadeIn">
                 <video className="intro__video__content" autoPlay muted loop>
-                    <source src={bgVideo} type="video/mp4" />
-                    Your browser is not supported!
+                    <source src={bgVideo} type="video/webm" />
+                    Your browser is not supported
                 </video>
             </div>
         )

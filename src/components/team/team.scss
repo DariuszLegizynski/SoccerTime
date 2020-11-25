@@ -177,6 +177,31 @@
             &__span {
                 font-size: 1.2rem;
                 margin: 2rem;
+
+                &__hide {
+                    display: none;
+                    height: 0;
+                }
+            }
+
+            &__indicator {
+
+                &__plus {
+                    &__hide {
+                        display: none;
+                        height: 0;
+                    }
+                }
+
+                &__minus {
+                    display: none;
+                    height: 0;
+
+                    &__show {
+                        display: block;
+                        height: auto;
+                    }
+                }
             }
         }
 
