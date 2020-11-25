@@ -1,6 +1,6 @@
 @import "../../styles/variables";
 
-.team__events {
+.team__previous {
     padding: 4rem;
 
     &__btn {
@@ -28,7 +28,7 @@
         place-items: center;
         padding-bottom: 4rem;
 
-        &__hide {
+        &__hide{
             display: none;
             height: 0;
         }

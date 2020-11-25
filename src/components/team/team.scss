@@ -1,6 +1,7 @@
 @import "../../styles/variables";
 @import "teamGallery";
 @import "teamEvents";
+@import "teamPrevious";
 
 .team {
     padding-top: 3rem;
@@ -167,6 +168,27 @@
 
         &__description {
             padding: 0rem 9rem;
+            position: relative;
+
+            &__btn {
+                position: absolute;
+                cursor: pointer;
+                background-color: transparent;
+                width: 4rem;
+                height: 4rem;
+                transition: all .2s;
+                left: 27rem;
+                top: 0rem;
+                display: none;
+
+                &:focus {
+                    & > svg {
+                        transform: scale(1.2);
+                        transition: all .2s ease-in-out;
+                        fill: $color-fourth;
+                    }
+                }
+            }
 
             &__h2 {
                 margin: 2rem;
@@ -187,19 +209,34 @@
             &__indicator {
 
                 &__plus {
-                    &__hide {
-                        display: none;
-                        height: 0;
-                    }
-                }
-
-                &__minus {
                     display: none;
                     height: 0;
 
                     &__show {
                         display: block;
                         height: auto;
+                        transition: all .2s ease-in-out;
+
+                        &:hover {
+                            transform: scale(1.2);
+                            transition: all .2s ease-in-out;
+                            fill: $color-fourth;
+                        }
+                    }
+                }
+
+                &__minus {
+                    transition: all .2s ease-in-out;
+
+                    &:hover {
+                        transform: scale(1.2);
+                        transition: all .2s ease-in-out;
+                        fill: $color-fourth;
+                    }
+
+                    &__hide {
+                        display: none;
+                        height: 0;
                     }
                 }
             }
@@ -235,7 +272,6 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            
 
             &__facts {
                 display: flex;
@@ -258,6 +294,11 @@
             padding: 2% 10%;
         }
     }
+}
+
+.team-icon {
+    width: 2.4rem;
+    height: 2.4rem;
 }
 
 .description {
@@ -283,6 +324,13 @@
                 grid-template-columns: repeat(3, 1fr);
             }
         }
+
+        &__previous {
+
+            &__card-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
     }
 }
 
@@ -290,6 +338,14 @@
     .team {
 
         &__events {
+            padding: 4rem 1rem;
+
+            &__card-container {
+                column-gap: 1rem;
+            }
+        }
+
+        &__previous {
             padding: 4rem 1rem;
 
             &__card-container {
@@ -305,8 +361,15 @@
 
 @media only screen and (max-width: 1024px) {
     .team {
-
         &__events {
+            padding: 3rem 1rem;
+
+            &__card-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        &__previous {
             padding: 3rem 1rem;
 
             &__card-container {
@@ -316,6 +379,13 @@
 
         &__info {
             margin: 6rem 2rem 2rem 2rem;
+
+            &__description {
+
+                &__btn {
+                    display: inline-block;
+                }
+            }
         }
 
         &__stadium {
@@ -339,6 +409,20 @@
         }
 
         &__events {
+            padding: 1rem 1rem;
+
+            &__card-container {
+                grid-template-columns: repeat(1, 1fr);
+                row-gap: 1.4rem;
+                padding-bottom: 1rem;
+            }
+
+            &__h2 {
+                margin: 3rem 0;
+            }
+        }
+
+        &__previous {
             padding: 1rem 1rem;
 
             &__card-container {
@@ -376,6 +460,7 @@
 
         &__gallery {
             display: none;
+            height: 0;
         }
 
         &__stadium {
@@ -409,6 +494,13 @@
         }
 
         &__events {
+
+            &__h2 {
+                margin: 1.6rem 0;
+            }
+        }
+
+        &__previous {
 
             &__h2 {
                 margin: 1.6rem 0;

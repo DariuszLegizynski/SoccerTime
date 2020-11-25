@@ -47,6 +47,16 @@
   padding: 4rem;
 }
 
+.team__events__btn {
+  margin: 0rem 0rem 3rem 14rem;
+  cursor: pointer;
+  background-color: transparent;
+  width: 4rem;
+  height: 4rem;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
 .team__events__h2 {
   margin-top: 12rem;
   margin-bottom: 4rem;
@@ -66,6 +76,11 @@
   row-gap: 8rem;
   place-items: center;
   padding-bottom: 4rem;
+}
+
+.team__events__card-container__hide {
+  display: none;
+  height: 0;
 }
 
 .team__events__card-container__card {
@@ -173,7 +188,259 @@
   padding: 2rem;
 }
 
+.team__events__indicator__plus {
+  display: none;
+  height: 0;
+}
+
+.team__events__indicator__plus__show {
+  display: block;
+  height: auto;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.team__events__indicator__plus__show:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  fill: #620AA8;
+}
+
+.team__events__indicator__minus {
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.team__events__indicator__minus:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  fill: #620AA8;
+}
+
+.team__events__indicator__minus__hide {
+  display: none;
+  height: 0;
+}
+
 .team__events__no-events {
+  -ms-grid-column: 2;
+      grid-column-start: 2;
+  grid-column-end: 4;
+  font-size: 2rem;
+}
+
+.card__previous {
+  height: 110vh;
+}
+
+.link--home-team {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-right: 1rem;
+}
+
+.link--away-team {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-left: 1rem;
+}
+
+.team__previous {
+  padding: 4rem;
+}
+
+.team__previous__btn {
+  margin: 0rem 0rem 3rem 14rem;
+  cursor: pointer;
+  background-color: transparent;
+  width: 4rem;
+  height: 4rem;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.team__previous__h2 {
+  margin-top: 12rem;
+  margin-bottom: 4rem;
+  font-size: 2.6rem;
+  letter-spacing: .2rem;
+}
+
+.team__previous__card-container {
+  display: -ms-inline-grid;
+  display: inline-grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+  -webkit-column-gap: 3rem;
+          column-gap: 3rem;
+  row-gap: 8rem;
+  place-items: center;
+  padding-bottom: 4rem;
+}
+
+.team__previous__card-container__hide {
+  display: none;
+  height: 0;
+}
+
+.team__previous__card-container__card {
+  padding-bottom: 2rem;
+  height: 95vh;
+  background-size: cover;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(17, 17, 17, 0.6)), to(rgba(17, 17, 17, 0.6))), url(../../resources/images/daniel-van-den-berg-29Jx9qyTW14-unsplash.jpg);
+  background-image: linear-gradient(to right bottom, rgba(17, 17, 17, 0.6), rgba(17, 17, 17, 0.6)), url(../../resources/images/daniel-van-den-berg-29Jx9qyTW14-unsplash.jpg);
+}
+
+.team__previous__card-container__card__h4 {
+  font-size: 1.2rem;
+  margin: .5rem 0;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.team__previous__card-container__card__h4:hover {
+  -webkit-transform: scale(1.4);
+          transform: scale(1.4);
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.team__previous__card-container__card__p {
+  font-size: 1rem;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.team__previous__card-container__card__p:hover {
+  -webkit-transform: scale(1.4);
+          transform: scale(1.4);
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.team__previous__card-container__card__hr {
+  width: 20rem;
+  background-image: radial-gradient(circle, #FFDD82 0%, rgba(210, 208, 208, 0) 90%);
+  border: none;
+  margin: 1rem;
+}
+
+.team__previous__card-container__card__img {
+  width: 100%;
+  height: auto;
+}
+
+.team__previous__card-container__card__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  place-items: center;
+  padding-top: 2rem;
+}
+
+.team__previous__card-container__card__links {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2fr 2rem 2fr;
+      grid-template-columns: 2fr 2rem 2fr;
+  place-content: center;
+  cursor: pointer;
+  font-size: 1.8rem;
+  padding: 4rem 2rem;
+  height: 6rem;
+}
+
+.team__previous__card-container__card__links__p {
+  padding: .1rem;
+}
+
+.team__previous__card-container__card__links__link {
+  color: #FFDD82;
+  display: inline-block;
+  border-bottom: 0.1rem solid #FFDD82;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.team__previous__card-container__card__links__link:focus, .team__previous__card-container__card__links__link:hover {
+  background-color: #FFDD82;
+  color: #DB4076;
+  padding: 0rem 0.5rem;
+  -webkit-box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.team__previous__card-container__card__video {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  place-items: center;
+  padding: 2rem;
+}
+
+.team__previous__indicator__plus {
+  display: none;
+  height: 0;
+}
+
+.team__previous__indicator__plus__show {
+  display: block;
+  height: auto;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.team__previous__indicator__plus__show:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  fill: #620AA8;
+}
+
+.team__previous__indicator__minus {
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.team__previous__indicator__minus:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  fill: #620AA8;
+}
+
+.team__previous__indicator__minus__hide {
+  display: none;
+  height: 0;
+}
+
+.team__previous__no-events {
   -ms-grid-column: 2;
       grid-column-start: 2;
   grid-column-end: 4;
@@ -407,6 +674,28 @@
 
 .team__info__description {
   padding: 0rem 9rem;
+  position: relative;
+}
+
+.team__info__description__btn {
+  position: absolute;
+  cursor: pointer;
+  background-color: transparent;
+  width: 4rem;
+  height: 4rem;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  left: 27rem;
+  top: 0rem;
+  display: none;
+}
+
+.team__info__description__btn:focus > svg {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  fill: #620AA8;
 }
 
 .team__info__description__h2 {
@@ -425,19 +714,42 @@
   height: 0;
 }
 
-.team__info__description__indicator__plus__hide {
+.team__info__description__indicator__plus {
   display: none;
   height: 0;
+}
+
+.team__info__description__indicator__plus__show {
+  display: block;
+  height: auto;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.team__info__description__indicator__plus__show:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  fill: #620AA8;
 }
 
 .team__info__description__indicator__minus {
-  display: none;
-  height: 0;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
 }
 
-.team__info__description__indicator__minus__show {
-  display: block;
-  height: auto;
+.team__info__description__indicator__minus:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  fill: #620AA8;
+}
+
+.team__info__description__indicator__minus__hide {
+  display: none;
+  height: 0;
 }
 
 .team__info__media {
@@ -519,6 +831,11 @@
   padding: 2% 10%;
 }
 
+.team-icon {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
 .description__h2 {
   margin: 2rem;
   font-size: 2.4rem;
@@ -535,6 +852,10 @@
     -ms-grid-columns: (1fr)[3];
         grid-template-columns: repeat(3, 1fr);
   }
+  .team__previous__card-container {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 @media only screen and (max-width: 1200px) {
@@ -542,6 +863,13 @@
     padding: 4rem 1rem;
   }
   .team__events__card-container {
+    -webkit-column-gap: 1rem;
+            column-gap: 1rem;
+  }
+  .team__previous {
+    padding: 4rem 1rem;
+  }
+  .team__previous__card-container {
     -webkit-column-gap: 1rem;
             column-gap: 1rem;
   }
@@ -558,8 +886,18 @@
     -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
   }
+  .team__previous {
+    padding: 3rem 1rem;
+  }
+  .team__previous__card-container {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
   .team__info {
     margin: 6rem 2rem 2rem 2rem;
+  }
+  .team__info__description__btn {
+    display: inline-block;
   }
   .team__stadium {
     margin-top: 4rem;
@@ -588,6 +926,18 @@
   .team__events__h2 {
     margin: 3rem 0;
   }
+  .team__previous {
+    padding: 1rem 1rem;
+  }
+  .team__previous__card-container {
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+    row-gap: 1.4rem;
+    padding-bottom: 1rem;
+  }
+  .team__previous__h2 {
+    margin: 3rem 0;
+  }
   .team__info {
     margin: 2rem;
   }
@@ -605,6 +955,7 @@
   }
   .team__gallery {
     display: none;
+    height: 0;
   }
   .team__stadium {
     margin-top: 3rem;
@@ -631,6 +982,9 @@
     padding: 2rem 0;
   }
   .team__events__h2 {
+    margin: 1.6rem 0;
+  }
+  .team__previous__h2 {
     margin: 1.6rem 0;
   }
   .team__info {

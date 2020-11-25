@@ -7,6 +7,8 @@ import shortid from "shortid";
 
 import { getNextTeamEvents } from "../../actions/team/getNextTeamEvents";
 
+import "./team.css";
+import iconSprites from "../../resources/icons/icomoon/sprite.svg";
 import altBackgroundEvent from "../../resources/images/alt/soccer-1490541.jpg";
 
 const ShowNextEvents = ({idTeam}) => {
@@ -17,6 +19,22 @@ const ShowNextEvents = ({idTeam}) => {
     useEffect (() => {
         dispatch(getNextTeamEvents(idTeam))
     }, [dispatch, idTeam]);
+
+        // Toggles visibility of team events
+        const handleTeamDescription = () => {
+            document.querySelector(".team__events__card-container").classList.toggle("team__events__card-container__hide");
+            document.querySelector(".team__events__indicator__plus").classList.toggle("team__events__indicator__plus__show");
+            document.querySelector(".team__events__indicator__minus").classList.toggle("team__events__indicator__minus__hide");
+        }
+    
+            // when "enter" is pressed
+            const handleTeamDescriptionOnPress = (event) => {
+                if (event.key) {
+                    document.querySelector(".team__events__card-container").classList.toggle("team__events__card-container__hide");
+                    document.querySelector(".team__events__indicator__plus").classList.toggle("team__events__indicator__plus__show");
+                    document.querySelector(".team__events__indicator__minus").classList.toggle("team__events__indicator__minus__hide");
+                }
+            }
 
     const showData = () => {
         if(!_.isEmpty(selectNextTeamEvents.data.events)) {
@@ -85,6 +103,14 @@ const ShowNextEvents = ({idTeam}) => {
     return (
         <section className="team__events">
             <h2 className="team__events__h2 h2">Upcoming Team Events</h2>
+            <button className="team__events__btn btn" onClick={handleTeamDescription} onKeyPress={handleTeamDescriptionOnPress}>
+                <svg tabIndex="-1" className="team__events__indicator__plus team-icon icon">
+                    <use href={iconSprites + "#icon-plus-circle"} />
+                </svg>
+                <svg tabIndex="-1" className="team__events__indicator__minus team-icon icon">
+                    <use href={iconSprites + "#icon-minus-circle"} />
+                </svg>
+            </button>
             <div className="team__events__card-container">
                 {showData()}
             </div>
