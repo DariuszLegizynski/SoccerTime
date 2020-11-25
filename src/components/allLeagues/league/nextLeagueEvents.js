@@ -7,8 +7,9 @@ import shortid from "shortid";
 
 import { getNextLeagueEvents } from "../../../actions/leagues/league/getNextLeagueEvents";
 
-import altBackgroundEvent from "../../../resources/images/alt/training-1306131.jpg";
 import "./league.css";
+import iconSprites from "../../../resources/icons/icomoon/sprite.svg";
+import altBackgroundEvent from "../../../resources/images/alt/training-1306131.jpg";
 
 const NextLeagueEvents = ({leagueId}) => {
     const dispatch = useDispatch();
@@ -17,6 +18,22 @@ const NextLeagueEvents = ({leagueId}) => {
     useEffect (() => {
         dispatch(getNextLeagueEvents(leagueId))
     }, [dispatch, leagueId]);
+
+    // Toggles visiblity of next league's events
+	const handleNextTeamEventsButton = () => {
+        document.querySelector(".league__events__card-container").classList.toggle("league__events__card-container__hide");
+        document.querySelector(".league__events__indicator__plus").classList.toggle("league__events__indicator__plus__show");
+        document.querySelector(".league__events__indicator__minus").classList.toggle("league__events__indicator__minus__hide");
+	}
+  
+	  // when "enter" is pressed
+	  const handleNextTeamEventsButtonOnPress = (event) => {
+		  if (event.key) {
+              document.querySelector(".league__events__card-container").classList.toggle("league__events__card-container__hide");
+              document.querySelector(".league__events__indicator__plus").classList.toggle("league__events__indicator__plus__show");
+              document.querySelector(".league__events__indicator__minus").classList.toggle("league__events__indicator__minus__hide");
+		  }
+	  }
 
     const showData = () => {
         if(!_.isEmpty(selectNextLeagueEvents.data.events)) {
@@ -86,6 +103,14 @@ const NextLeagueEvents = ({leagueId}) => {
     return(
         <section className="league__events">
             <h2 className="league__events__h2 h2">Upcoming League Events</h2>
+            <button className="league__events__btn btn" onClick={handleNextTeamEventsButton} onKeyPress={handleNextTeamEventsButtonOnPress}>
+                <svg className="league__events__indicator__plus team-icon icon">
+                    <use href={iconSprites + "#icon-plus-circle"} />
+                </svg>
+                <svg className="league__events__indicator__minus team-icon icon">
+                    <use href={iconSprites + "#icon-minus-circle"} />
+                </svg>
+            </button>
             <div className="league__events__card-container">
                 {showData()}
             </div>

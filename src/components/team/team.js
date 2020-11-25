@@ -152,10 +152,10 @@ const Team = (props) => {
                             Description
                         </h2>
                         <button className="team__info__description__btn btn" onClick={handleTeamDescription} onKeyPress={handleTeamDescriptionOnPress}>
-                            <svg tabIndex="-1" className="team__info__description__indicator__plus team-icon icon">
+                            <svg className="team__info__description__indicator__plus team-icon icon">
                                 <use href={iconSprites + "#icon-plus-circle"} />
                             </svg>
-                            <svg tabIndex="-1" className="team__info__description__indicator__minus team-icon icon">
+                            <svg className="team__info__description__indicator__minus team-icon icon">
                                 <use href={iconSprites + "#icon-minus-circle"} />
                             </svg>
                         </button>

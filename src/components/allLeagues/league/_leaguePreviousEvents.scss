@@ -1,6 +1,6 @@
 @import "../../../styles/variables";
 
-.league__events {
+.league__previous {
     padding: 4rem;
 
     &__btn {
@@ -160,7 +160,7 @@
         }
     }
 
-    &__no-events {
+    &__no-previous {
         grid-column-start: 2;
         grid-column-end: 4;
         font-size: 2rem;

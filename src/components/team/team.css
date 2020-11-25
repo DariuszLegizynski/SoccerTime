@@ -85,7 +85,7 @@
 
 .team__events__card-container__card {
   padding-bottom: 2rem;
-  height: 95vh;
+  height: 60rem;
   background-size: cover;
   background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(17, 17, 17, 0.6)), to(rgba(17, 17, 17, 0.6))), url(../../resources/images/daniel-van-den-berg-29Jx9qyTW14-unsplash.jpg);
   background-image: linear-gradient(to right bottom, rgba(17, 17, 17, 0.6), rgba(17, 17, 17, 0.6)), url(../../resources/images/daniel-van-den-berg-29Jx9qyTW14-unsplash.jpg);
@@ -299,7 +299,6 @@
 
 .team__previous__card-container__card {
   padding-bottom: 2rem;
-  height: 95vh;
   background-size: cover;
   background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(17, 17, 17, 0.6)), to(rgba(17, 17, 17, 0.6))), url(../../resources/images/daniel-van-den-berg-29Jx9qyTW14-unsplash.jpg);
   background-image: linear-gradient(to right bottom, rgba(17, 17, 17, 0.6), rgba(17, 17, 17, 0.6)), url(../../resources/images/daniel-van-den-berg-29Jx9qyTW14-unsplash.jpg);
@@ -448,7 +447,7 @@
 }
 
 .card__previous {
-  height: 110vh;
+  height: 67rem;
 }
 
 .link--home-team {

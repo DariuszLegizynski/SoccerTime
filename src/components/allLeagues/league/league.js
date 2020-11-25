@@ -39,11 +39,43 @@ const League = (props) => {
 
 	// when "enter" is pressed
 	const handleShareButtonOnPress = (event) => {
-		if (event.key === "Enter") {
+		if (event.key) {
 			document.querySelector(".league__intro__share").classList.toggle("league__intro__share__hide");
 			document.querySelector(".league__intro__share__link").toggleAttribute("tabIndex");
 		}
 	}
+
+	// Toggles visiblity of league-description
+	const handleLeagueDescriptionButton = () => {
+		document.querySelector(".league__info__description__p").classList.toggle("league__info__description__p__hide");
+		document.querySelector(".league__info__description__indicator__plus").classList.toggle("league__info__description__indicator__plus__show");
+		document.querySelector(".league__info__description__indicator__minus").classList.toggle("league__info__description__indicator__minus__hide");
+	  }
+  
+	  // when "enter" is pressed
+	  const handleLeagueDescriptionButtonOnPress = (event) => {
+		  if (event.key) {
+			  document.querySelector(".league__info__description__p").classList.toggle("league__info__description__p__hide");
+			  document.querySelector(".league__info__description__indicator__plus").classList.toggle("league__info__description__indicator__plus__show");
+			  document.querySelector(".league__info__description__indicator__minus").classList.toggle("league__info__description__indicator__minus__hide");
+		  }
+	  }
+
+	// Toggles visiblity of team-short-description
+	const handleShortTeamDescriptionButton = () => {
+		document.querySelector(".league__team-short-description__card-container").classList.toggle("league__team-short-description__card-container__hide");
+		document.querySelector(".league__team-short-description__indicator__plus").classList.toggle("league__team-short-description__indicator__plus__show");
+		document.querySelector(".league__team-short-description__indicator__minus").classList.toggle("league__team-short-description__indicator__minus__hide");
+	}
+  
+	  // when "enter" is pressed
+	  const handleShortTeamDescriptionButtonOnPress = (event) => {
+		  if (event.key) {
+			  document.querySelector(".league__team-short-description__card-container").classList.toggle("league__team-short-description__card-container__hide");
+			  document.querySelector(".league__team-short-description__indicator__plus").classList.toggle("league__team-short-description__indicator__plus__show");
+			  document.querySelector(".league__team-short-description__indicator__minus").classList.toggle("league__team-short-description__indicator__minus__hide");
+		  }
+	  }
 
 	const leagueIntro = () => {
 		if (!_.isEmpty(selectLeagueId)) {
@@ -58,12 +90,12 @@ const League = (props) => {
 								<div className="league__intro__navigation">
 									<Link to={"/"} className="league__intro__navigation__link link">
 										<button className="league__intro__navigation__btn btn" tabIndex="-1">
-											<svg tabIndex="-1" className="league__intro__navigation__icon--back icon fadeInFromLeft">
+											<svg className="league__intro__navigation__icon--back icon fadeInFromLeft">
 												<use href={iconSprites + "#icon-back"} />
 											</svg>
 										</button>
 									</Link>
-									<svg tabIndex="-1" onClick={handleShareButton} onKeyPress={handleShareButtonOnPress} className="league__intro__navigation__icon--share icon fadeInFromRight">
+									<svg tabIndex="0" onClick={handleShareButton} onKeyPress={handleShareButtonOnPress} className="league__intro__navigation__icon--share icon fadeInFromRight">
 										<use href={iconSprites + "#icon-share2"} />
 									</svg>
 								</div>
@@ -120,6 +152,14 @@ const League = (props) => {
 								<h2 className="league__info__description__h2 h2">
 									Description
 								</h2>
+								<button className="league__info__description__btn btn" onClick={handleLeagueDescriptionButton} onKeyPress={handleLeagueDescriptionButtonOnPress}>
+									<svg className="league__info__description__indicator__plus team-icon icon">
+										<use href={iconSprites + "#icon-plus-circle"} />
+									</svg>
+									<svg className="league__info__description__indicator__minus team-icon icon">
+										<use href={iconSprites + "#icon-minus-circle"} />
+									</svg>
+								</button>
 								<p className="league__info__description__p p">
 									{ el.strDescriptionEN }
 								</p>
@@ -218,7 +258,20 @@ const League = (props) => {
 			<hr className="hr" />
 			<NextLeagueEvents leagueId={leagueId}/>
 			<section className="league__team-short-description">
-				{showLeagueTeams()}
+				<h2 className="league__team-short-description__h2">
+					Teams
+				</h2>
+				<button className="league__team-short-description__btn btn" onClick={handleShortTeamDescriptionButton} onKeyPress={handleShortTeamDescriptionButtonOnPress}>
+					<svg className="league__team-short-description__indicator__plus team-icon icon">
+						<use href={iconSprites + "#icon-plus-circle"} />
+					</svg>
+					<svg className="league__team-short-description__indicator__minus team-icon icon">
+						<use href={iconSprites + "#icon-minus-circle"} />
+					</svg>
+				</button>
+				<div className="league__team-short-description__card-container">
+					{showLeagueTeams()}
+				</div>
 			</section>
 			<LeagueTable leagueId={leagueId}/>
 			<hr className="hr" />
