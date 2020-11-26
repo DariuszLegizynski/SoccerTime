@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "build/socer-time",
+    "public": "build/soccer-time",
     "ignore": [
       "firebase.json",
       "**/.*",
