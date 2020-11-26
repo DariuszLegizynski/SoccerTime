@@ -13,6 +13,10 @@ import { allLeagues }  from "../../../actions/leagues/allLeagues/allLeagues";
 import { allCountries }  from "../../../actions/allCountries/allCountries";
 import { getFavoritedLeagues } from "../../../actions/favorites/getFavoritedLeagues";
 
+//Tippy
+import {delegate} from 'tippy.js';
+import 'tippy.js/dist/tippy.css'; // optional
+
 //styles
 import "./AllLeagues.css";
 import iconSprites from "../../../resources/icons/icomoon/sprite.svg";
@@ -60,6 +64,17 @@ const AllLeagues = () => {
         getAllSecondDivisionLeagues = getAllLeagues.filter(el => el.strDivision === "2");
         getAllThirdDivisionLeagues = getAllLeagues.filter(el => el.strDivision === "3");
     }
+
+    /////////////////
+    // used by Tippy
+
+    delegate (".AllLeagues__league", {
+        target: ".AllLeagues__btn",
+        content: "Favorite?",
+    })
+
+    ///////////////////
+    // react-slick
 
     const SampleNextArrow = ({ className, to, onClick }) => {
         return (
@@ -133,12 +148,14 @@ const AllLeagues = () => {
         ]
     }
 
+    /////////////////////
+
     const showData = () => {
         if(!_.isEmpty(selectAllLeagues.data)) {
             return (
                 <React.Fragment>
                     <section className="AllLeagues__league">
-                        <h2 className="AllLeagues__h2 h2 fadeIn">Most Favorited Leagues:</h2>
+                    <h2 className="AllLeagues__h2 h2 fadeIn">Most Favorited Leagues:</h2>
                         <Slider {...sliderSettings}>
                             {getAllZeroDivisionLeagues.map(el => {
                                 return (

@@ -13,6 +13,10 @@ import { getFavoritedTeams } from "../../../actions/favorites/getFavoritedTeams"
 import NextLeagueEvents from "./nextLeagueEvents";
 import PreviousLeagueEvents from "./previousLeagueEvents";
 
+//Tippy
+import {delegate} from 'tippy.js';
+import 'tippy.js/dist/tippy.css'; // optional
+
 import iconSprites from "../../../resources/icons/icomoon/sprite.svg";
 import altTeamBadge from "../../../resources/images/hero/soccer-4598714.jpg"
 import altFanart2 from "../../../resources/images/alt/audience-1866738.jpg";
@@ -76,6 +80,16 @@ const League = (props) => {
 			  document.querySelector(".league__team-short-description__indicator__minus").classList.toggle("league__team-short-description__indicator__minus__hide");
 		  }
 	  }
+
+	/////////////////
+	// used by Tippy
+	
+    delegate (".league__team-short-description", {
+        target: ".league__team-short-description__card__btn",
+        content: "Favorite?",
+    })
+
+    ///////////////////
 
 	const leagueIntro = () => {
 		if (!_.isEmpty(selectLeagueId)) {
