@@ -20,6 +20,7 @@ import { ReactReduxFirebaseProvider } from 'react-redux-firebase';
 import registerServiceWorker from "./registerServiceWorker";
 
 import fbConfig from "./config/fbConfig";
+import ScrollToTop from './ScrollToTop';
 
 firebase.initializeApp(fbConfig);
 
@@ -43,6 +44,7 @@ ReactDOM.render(
   <BrowserRouter>
     <Provider store={store} >
       <ReactReduxFirebaseProvider {...rrfProps} >
+        <ScrollToTop />
         <App />
       </ReactReduxFirebaseProvider>
     </Provider>
