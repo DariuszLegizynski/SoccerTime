@@ -78,7 +78,7 @@ const AllLeagues = () => {
 
     const SampleNextArrow = ({ className, to, onClick }) => {
         return (
-            <button className={`carousel__btn--next btn ${className}`} onClick={onClick} aria-label={to} >
+            <button className={`carousel__btn--next ${className}`} onClick={onClick} aria-label={to} >
                 <svg className="carousel__icon icon">
                     <use href={iconSprites + "#icon-circle-right"} />
                 </svg>
@@ -88,7 +88,7 @@ const AllLeagues = () => {
 
     const SamplePrevArrow = ({ className, to, onClick }) => {
         return (
-            <button className={`carousel__btn--prev btn ${className}`} onClick={onClick} aria-label={to} >
+            <button className={`carousel__btn--prev ${className}`} onClick={onClick} aria-label={to} >
                 <svg className="carousel__icon icon">
                     <use href={iconSprites + "#icon-circle-left"} />
                 </svg>
