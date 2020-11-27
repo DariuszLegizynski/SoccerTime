@@ -99,6 +99,7 @@ const AllLeagues = () => {
     const sliderSettings =  {
         dots: true,
         infinite: false,
+        autoplay: true,
         speed: 500,
         slidesToShow: 7,
         slidesToScroll: 6,
