@@ -565,7 +565,7 @@
   background-repeat: no-repeat;
   -webkit-transition: all .2s;
   transition: all .2s;
-  width: 100%;
+  width: 95%;
 }
 
 .league__intro__header__title__h1:hover {
@@ -575,6 +575,7 @@
 }
 
 .league__intro__navigation {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -607,6 +608,9 @@
 }
 
 .league__intro__navigation__icon--share {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 40%;
+          flex: 0 1 40%;
   cursor: pointer;
   width: 4rem;
   height: 4rem;
@@ -618,6 +622,12 @@
           transform: scale(1.2);
   -webkit-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
+}
+
+.league__intro__navigation__link {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 40%;
+          flex: 0 1 40%;
 }
 
 .league__intro__navigation__link:focus {
@@ -636,6 +646,9 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 20%;
+          flex: 0 1 20%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -647,14 +660,17 @@
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   overflow: hidden;
-  position: absolute;
-  left: 125rem;
-  top: 10rem;
   width: 5rem;
   height: 20rem;
+  position: absolute;
+  top: -1.2em;
+  right: -4rem;
 }
 
 .league__intro__share__hide {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 20%;
+          flex: 0 1 20%;
   display: none;
   height: 0;
 }
@@ -1110,6 +1126,10 @@
   }
   .league__intro__navigation {
     margin: 5rem 0;
+  }
+  .league__intro__header__title__h1 {
+    font-size: 4rem;
+    width: 90%;
   }
   .league__league-table {
     padding: 2rem;

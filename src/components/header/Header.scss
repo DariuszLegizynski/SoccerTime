@@ -149,3 +149,12 @@
         width: 75%;
     }
 }
+
+@media only screen and (max-width: 480px) {
+    .header {
+
+        &__logo {
+            width: 50%;
+        }
+    }
+}

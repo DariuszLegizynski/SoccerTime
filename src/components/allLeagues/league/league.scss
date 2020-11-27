@@ -39,7 +39,7 @@
                     font-size: 5rem;
                     background-repeat: no-repeat;
                     transition: all .2s;
-                    width: 100%;
+                    width: 95%;
     
                     &:hover {
                         background-repeat: repeat;
@@ -50,6 +50,7 @@
         }
 
         &__navigation {
+            position: relative;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -74,6 +75,7 @@
                 }
 
                 &--share {
+                    flex: 0 1 40%;
                     cursor: pointer;
                     width: 4rem;
                     height: 4rem;
@@ -87,6 +89,7 @@
             }
 
             &__link {
+                flex: 0 1 40%;
 
                 &:focus {
                     outline: none;
@@ -101,17 +104,19 @@
 
         &__share {
             display: flex;
+            flex: 0 1 20%;
             flex-direction: column;
             align-items: center;
             justify-content: space-evenly;
             overflow: hidden;
-            position: absolute;
-            left: 125rem;
-            top: 10rem;
             width: 5rem;
             height: 20rem;
+            position: absolute;
+            top: -1.2em;
+            right: -4rem;;
 
             &__hide {
+                flex: 0 1 20%;
                 display: none;
                 height: 0;
             }
@@ -556,6 +561,15 @@
         &__intro {
             &__navigation {
                 margin: 5rem 0;
+            }
+
+            &__header {
+                &__title {
+                    &__h1 {
+                        font-size: 4rem;
+                        width: 90%;
+                    }
+                }
             }
         }
 

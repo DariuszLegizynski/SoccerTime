@@ -112,25 +112,26 @@ const League = (props) => {
 									<svg tabIndex="0" onClick={handleShareButton} onKeyPress={handleShareButtonOnPress} className="league__intro__navigation__icon--share icon fadeInFromRight">
 										<use href={iconSprites + "#icon-share2"} />
 									</svg>
+									{ /* Share bar */ }
+									<div className="league__intro__share league__intro__share__hide">
+										<a className="league__intro__share__link share-link--mail fadeInFromTop" onClick={handleShareButton} onKeyPress={handleShareButtonOnPress} href={`mailto:?Subject=Look%20what%20I%20found%20on%20the%20web!&Body=I%20saw%20this%20and%20thought%20of%20you!%20 ${"www.mySoccer-time.com/allLeagues/" + el.idLeague}`}>
+											<svg className="league__intro__share__icon icon ">
+												<use href={iconSprites + "#icon-envelope-o"} />
+											</svg>
+										</a>
+										<a className="league__intro__share__link share-link--facebook fadeInFromTop" onClick={handleShareButton} onKeyPress={handleShareButtonOnPress} href={`http://www.facebook.com/sharer.php?u=${"www.mySoccer-time.com/allLeagues/" + el.idLeague}`} rel="noopener noreferrer" target="_blank">
+											<svg className="league__intro__share__icon icon">
+												<use href={iconSprites + "#icon-facebook2"} />
+											</svg>
+										</a>
+										<a className="league__intro__share__link share-link--twitter fadeInFromTop" onClick={handleShareButton} onKeyPress={handleShareButtonOnPress} href={`https://twitter.com/share?url=${"www.mySoccer-time.com/allLeagues/" + el.idLeague}`} rel="noopener noreferrer" target="_blank">
+											<svg className="league__intro__share__icon icon">
+												<use href={iconSprites + "#icon-twitter"} />
+											</svg>
+										</a>
+									</div>
 								</div>
-								{ /* Share bar */ }
-								<div className="league__intro__share league__intro__share__hide">
-									<a className="league__intro__share__link share-link--mail fadeInFromTop" onClick={handleShareButton} onKeyPress={handleShareButtonOnPress} href={`mailto:?Subject=Look%20what%20I%20found%20on%20the%20web!&Body=I%20saw%20this%20and%20thought%20of%20you!%20 ${"www.mySoccer-time.com/allLeagues/" + el.idLeague}`}>
-										<svg className="league__intro__share__icon icon ">
-											<use href={iconSprites + "#icon-envelope-o"} />
-										</svg>
-									</a>
-									<a className="league__intro__share__link share-link--facebook fadeInFromTop" onClick={handleShareButton} onKeyPress={handleShareButtonOnPress} href={`http://www.facebook.com/sharer.php?u=${"www.mySoccer-time.com/allLeagues/" + el.idLeague}`} rel="noopener noreferrer" target="_blank">
-										<svg className="league__intro__share__icon icon">
-											<use href={iconSprites + "#icon-facebook2"} />
-										</svg>
-									</a>
-									<a className="league__intro__share__link share-link--twitter fadeInFromTop" onClick={handleShareButton} onKeyPress={handleShareButtonOnPress} href={`https://twitter.com/share?url=${"www.mySoccer-time.com/allLeagues/" + el.idLeague}`} rel="noopener noreferrer" target="_blank">
-										<svg className="league__intro__share__icon icon">
-											<use href={iconSprites + "#icon-twitter"} />
-										</svg>
-									</a>
-								</div>
+								
 								<div className="league__intro__header__title">
 									<h1 className="league__intro__header__title__h1 h1">
 										{ el.strLeague }

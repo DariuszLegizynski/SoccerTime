@@ -172,15 +172,6 @@
 }
 
 .AllLeagues__h2 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   margin-left: 2rem;
   letter-spacing: .6rem;
   font-size: 1.8rem;
@@ -240,6 +231,12 @@
 @media only screen and (max-width: 480px) {
   .h1 {
     width: 50%;
+  }
+  .AllLeagues {
+    padding: 2rem 0;
+  }
+  .AllLeagues__league {
+    padding: 2rem 4rem;
   }
 }
 /*# sourceMappingURL=AllLeagues.css.map */
