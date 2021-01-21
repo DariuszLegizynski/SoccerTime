@@ -12,7 +12,7 @@
       -ms-flex-align: center;
           align-items: center;
   background-image: radial-gradient(#28b485 0%, #111 98%);
-  padding: .6rem 0rem;
+  padding: 0.6rem 0rem;
   position: fixed;
   width: 100%;
   z-index: 10;
@@ -40,8 +40,8 @@
 
 .header__btn--search:hover, .header__btn--search:focus, .header__btn--search:active {
   background-color: #DB4076;
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .header__form {
@@ -61,8 +61,8 @@
   fill: #620AA8;
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .header__icon--search:hover, .header__icon--search:focus {
@@ -77,10 +77,10 @@
   border: none;
   border-radius: 2rem;
   background-color: #f4f2f2;
-  padding: .7rem 2rem;
+  padding: 0.7rem 2rem;
   width: 90%;
-  -webkit-transition: all .2s;
-  transition: all .2s;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
   margin-right: -5.25rem;
 }
 
@@ -97,8 +97,8 @@
 
 .header__link--logo:focus {
   background-color: #620AA8;
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .header__link:focus {
@@ -108,8 +108,8 @@
 .header__link:focus > button > svg {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   fill: #620AA8;
 }
 
@@ -133,8 +133,8 @@
 .linkWrapper:focus-within, .linkWrapper:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   fill: #620AA8;
 }
 
@@ -148,6 +148,7 @@
         -ms-flex-pack: start;
             justify-content: flex-start;
     margin-left: 1rem;
+    width: 60%;
   }
   .header__searchbar {
     -webkit-box-ordinal-group: 4;
@@ -167,7 +168,8 @@
             justify-content: flex-end;
   }
   .logo {
-    width: 75%;
+    width: 100%;
+    min-width: 8rem;
   }
 }
 

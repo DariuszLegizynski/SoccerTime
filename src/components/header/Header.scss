@@ -1,73 +1,77 @@
 @import "../../styles/variables";
 
 .header {
-    display: flex;
-    flex: 0 1 auto;
-    justify-content: space-between;
-    align-items: center;
-    background-image: $gradient-color-2;
-    padding: .6rem 0rem;
-    position: fixed;
-    width: 100%;
-    z-index: 10;
+	display: flex;
+	flex: 0 1 auto;
+	justify-content: space-between;
+	align-items: center;
+	background-image: $gradient-color-2;
+	padding: 0.6rem 0rem;
+	position: fixed;
+	width: 100%;
+	z-index: 10;
 
-    &__authentication {
-        display: flex;
-    }
+	&__authentication {
+		display: flex;
+	}
 
-    &__btn {
-        height: 4rem;
-        background-color: transparent;
-        cursor: pointer;
+	&__btn {
+		height: 4rem;
+		background-color: transparent;
+		cursor: pointer;
 
-        &--search {
-            width: 6rem;
-            height: 3.05rem;
-            margin: 0;
-            margin-left: 1rem;
-            cursor: pointer;
+		&--search {
+			width: 6rem;
+			height: 3.05rem;
+			margin: 0;
+			margin-left: 1rem;
+			cursor: pointer;
 
-            &:hover, &:focus, &:active {
-                background-color: $color-important;
-                transition: all .2s ease-in-out;
-            }
-        }
-    }
+			&:hover,
+			&:focus,
+			&:active {
+				background-color: $color-important;
+				transition: all 0.2s ease-in-out;
+			}
+		}
+	}
 
-    &__form {
-        display: flex;
-        justify-content: center;
-    }
+	&__form {
+		display: flex;
+		justify-content: center;
+	}
 
-    &__icon {
-        cursor: pointer;
+	&__icon {
+		cursor: pointer;
 
-        &:hover, &:focus {
-            fill: $color-fourth;
-            transform: scale(1.2);
-            transition: all .2s ease-in-out;
-        }
+		&:hover,
+		&:focus {
+			fill: $color-fourth;
+			transform: scale(1.2);
+			transition: all 0.2s ease-in-out;
+		}
 
-        &--search{
-            &:hover, &:focus {
-                fill: $color-grey-light-1;
-                transform: none;
-            }
-        }
-    }
+		&--search {
+			&:hover,
+			&:focus {
+				fill: $color-grey-light-1;
+				transform: none;
+			}
+		}
+	}
 
-    &__input {
-        font-family: inherit;
+	&__input {
+		font-family: inherit;
 		font-size: 1.4rem;
-        border: none;
-        border-radius: 2rem;
-        background-color: $color-grey-light-2;
-        padding: .7rem 2rem;
-        width: 90%;
-        transition: all .2s;
-        margin-right: -5.25rem;
+		border: none;
+		border-radius: 2rem;
+		background-color: $color-grey-light-2;
+		padding: 0.7rem 2rem;
+		width: 90%;
+		transition: all 0.2s;
+		margin-right: -5.25rem;
 
-        &:focus {
+		&:focus {
 			outline: none;
 			width: 100%;
 			background-color: $color-grey-light-3;
@@ -77,84 +81,86 @@
 			font-weight: 100;
 			color: $color-grey-dark-3;
 		}
-    }
+	}
 
-    &__link {
-        &--logo {
-            &:focus {
-                background-color: $color-fourth;
-                transition: all .2s ease-in-out;
-            }
-        }
+	&__link {
+		&--logo {
+			&:focus {
+				background-color: $color-fourth;
+				transition: all 0.2s ease-in-out;
+			}
+		}
 
-        &:focus {
-            outline: none;
-            & > button > svg {
-                transform: scale(1.2);
-                transition: all .2s ease-in-out;
-                fill: $color-fourth;
-            }
-        } 
-    }
+		&:focus {
+			outline: none;
+			& > button > svg {
+				transform: scale(1.2);
+				transition: all 0.2s ease-in-out;
+				fill: $color-fourth;
+			}
+		}
+	}
 
-    &__logo {
-        margin-left: 2rem;
-    }
+	&__logo {
+		margin-left: 2rem;
+	}
 
-    &__searchbar {
-        width: 100%;
-        max-width: 50rem;
-        height: auto;
-    }
+	&__searchbar {
+		width: 100%;
+		max-width: 50rem;
+		height: auto;
+	}
 }
 
 .logo {
-    width: 100%;
-    max-width: 25.6rem;
-    min-width: 16rem;
-    height: auto;
+	width: 100%;
+	max-width: 25.6rem;
+	min-width: 16rem;
+	height: auto;
 }
 
 //get the icons highlighted when chosen with "tab"
 .linkWrapper {
-    &:focus-within, &:hover{
-        transform: scale(1.1);
-        transition: all .2s ease-in-out;
-        fill: $color-fourth;
-    }
+	&:focus-within,
+	&:hover {
+		transform: scale(1.1);
+		transition: all 0.2s ease-in-out;
+		fill: $color-fourth;
+	}
 }
 
 @media only screen and (max-width: 768px) {
-    .header {
-        flex-wrap: wrap;
+	.header {
+		flex-wrap: wrap;
 
-        &__logo {
-            justify-content: flex-start;
-            margin-left: 1rem;
-        }
+		&__logo {
+			justify-content: flex-start;
+			margin-left: 1rem;
+			width: 60%;
+		}
 
-        &__searchbar {
-            order: 3;
-            justify-content: center;
-            max-width: none;
-        }
+		&__searchbar {
+			order: 3;
+			justify-content: center;
+			max-width: none;
+		}
 
-        &__authentication {
-            order: 2;
-            justify-content: flex-end;
-        }
-    }
+		&__authentication {
+			order: 2;
+			justify-content: flex-end;
+		}
+	}
 
-    .logo {
-        width: 75%;
-    }
+	.logo {
+		width: 100%;
+		min-width: 8rem;
+	}
 }
 
 @media only screen and (max-width: 480px) {
-    .header {
-
-        &__logo {
-            width: 50%;
-        }
-    }
+	.header {
+		&__logo {
+			width: 50%;
+		}
+	}
 }
