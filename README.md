@@ -1,5 +1,3 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 # SoccerTime
 
 Reac-redux application to browse your favorite football leagues and teams.
