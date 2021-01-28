@@ -2,7 +2,7 @@
 
 Reac-redux application to browse your favorite football leagues and teams.
 
-https://soccer-time-ea700.web.app/home
+[SoccerTime]
 
 ## Getting Started
 
@@ -53,8 +53,11 @@ What is needed for the software to run.
 
 ## Contributors
 
-Dariusz Legizynski- Initial work
+Dariusz Legizynski - Initial work
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE.md file for details.
+This project is licensed under the MIT License - see the [LICENSE.md] file for details.
+
+[SoccerTime]: https://soccer-time-ea700.web.app/home
+[LICENSE.md]: https://github.com/DariuszLegizynski/SoccerTime/blob/master/LICENSE
