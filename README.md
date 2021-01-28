@@ -50,3 +50,11 @@ What is needed for the software to run.
 3. Each country with a football league = null is filtered out.
 4. Every non-null result is presented.
 5. The leagues table (season) gets changed on the 1.08 of each year (leagueTable.js -> const seasonChangeDate).
+
+## Contributors
+
+Dariusz Legizynski- Initial work
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE.md file for details.
