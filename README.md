@@ -1,6 +1,6 @@
 # SoccerTime
 
-Reac-redux application to browse your favorite football leagues and teams.
+React-redux application to browse your favorite football leagues and teams.
 
 [SoccerTime]
 
