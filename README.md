@@ -4,6 +4,16 @@ Reac-redux application to browse your favorite football leagues and teams.
 
 [SoccerTime]
 
+# Built with
+
+* React
+
+* Redux
+
+* SCSS
+
+* Firebase
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
@@ -32,17 +42,6 @@ What is needed for the software to run.
 
 4. Enjoy! :-)
 
-# Built with
-
-* React
-
-* Redux
-
-* SCSS
-
-* Firebase
-
-
 ## Brief summary
 
 1. The application makes an API call to the "TheSportsDB" to get all of the supported countries.
@@ -50,10 +49,12 @@ What is needed for the software to run.
 3. Each country with a football league = null is filtered out.
 4. Every non-null result is presented.
 5. The leagues table (season) gets changed on the 1.08 of each year (leagueTable.js -> const seasonChangeDate).
+6. Authentication via Firebase, guest login possible.
+7. Desktop first.
 
 ## Contributors
 
-Dariusz Legizynski - Initial work
+Dariusz Legizynski - Initial work.
 
 ## License
 
