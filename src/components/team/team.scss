@@ -4,559 +4,629 @@
 @import "teamPrevious";
 
 .team {
-    padding-top: 3rem;
-    background-image: $gradient-color-3;
+	padding-top: 3rem;
+	background-image: $gradient-color-3;
 
-    &__container-btn {
-        position: relative;
-        padding: 12rem 0;
+	&__container-btn {
+		position: relative;
+		padding: 12rem 0;
 
-        &__center-btn {
-            margin: 0;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
+		&__center-btn {
+			margin: 0;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			-ms-transform: translate(-50%, -50%);
+			transform: translate(-50%, -50%);
 
-            &__button {
-                width: 18rem;
-                height: 6rem;
-                background-color: $color-important;
-                transition: all .2s;
-                font-size: 1.8rem;
-        
-                &:hover, &:focus {
-                    cursor: pointer;
-                    background-color: $color-fifth;
-                    transition: all .2s;
-                    color: $color-black;
-                }
-            }
-        }
-    }
+			&__button {
+				width: 18rem;
+				height: 6rem;
+				background-color: $color-important;
+				transition: all 0.2s;
+				font-size: 1.8rem;
 
+				&:hover,
+				&:focus {
+					cursor: pointer;
+					background-color: $color-fifth;
+					transition: all 0.2s;
+					color: $color-black;
+				}
+			}
+		}
+	}
 
-    &__intro {
-        background: -webkit-linear-gradient(285deg, #251431 0%, #161130 22%);
-        background: -o-linear-gradient(285deg, #251431 0%, #161130 22%);
-        background: linear-gradient(165deg, #251431 0%, #161130 22%);
-        color: #fff;
+	&__intro {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 
-        &__image {
-            background-size: cover !important;
-            height: 96vh;
-            width: auto;
-            padding: 7% 10%;
-        }
+		background: -webkit-linear-gradient(
+			285deg,
+			#251431 0%,
+			#161130 22%
+		);
+		background: -o-linear-gradient(
+			285deg,
+			#251431 0%,
+			#161130 22%
+		);
+		background: linear-gradient(
+			165deg,
+			#251431 0%,
+			#161130 22%
+		);
+		color: #fff;
 
-        &__header {
-            margin: 4rem;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-evenly;
-    
-            &__banner {
-                margin: 2rem;
-            }
-    
-            &__title {
-                text-align: center;
-                text-align: -webkit-center;
-    
-                &__h1 {
-                    font-size: 5rem;
-                    background-repeat: no-repeat;
-                    transition: all .2s;
-                    width: 95%;
-    
-                    &:hover {
-                        background-repeat: repeat;
-                        transition: all .2s;
-                    }
-                }
-            }
-        }
+		&__image {
+			background-size: cover !important;
+			height: 96vh;
+			width: auto;
+			padding: 7% 10%;
+		}
 
-        &__navigation {
-            position: relative;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 5rem;
+		&__header {
+			margin: 4rem;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-evenly;
 
-            &__btn {
-                height: 4rem;
-                background-color: transparent;
-                cursor: pointer;
-            }
+			&__banner {
+				margin: 2rem;
+			}
 
-            &__icon {
-                &--back {
-                    width: 5rem;
-                    height: 5rem;
-    
-                    &:hover {
-                        fill: $color-fourth;
-                        transform: scale(1.2);
-                        transition: all .2s ease-in-out;
-                    }
-                }
+			&__title {
+				text-align: center;
+				text-align: -webkit-center;
 
-                &--share {
-                    flex: 0 1 40%;
-                    cursor: pointer;
-                    width: 4rem;
-                    height: 4rem;
-    
-                    &:hover, &:focus {
-                        fill: $color-fifth;
-                        transform: scale(1.2);
-                        transition: all .2s ease-in-out;
-                    }
-                }
-            }
+				&__h1 {
+					font-size: 5rem;
+					background-repeat: no-repeat;
+					transition: all 0.2s;
+					width: 95%;
 
-            &__link {
-                flex: 0 1 40%;
+					&:hover {
+						background-repeat: repeat;
+						transition: all 0.2s;
+					}
+				}
+			}
+		}
 
-                &:focus {
-                    outline: none;
-                    & > button > svg {
-                        transform: scale(1.2);
-                        transition: all .2s ease-in-out;
-                        fill: $color-fourth;
-                    }
-                } 
-            }
-        }
+		&__navigation {
+			position: relative;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-bottom: 5rem;
 
-        &__share {
-            display: flex;
-            flex: 0 1 20%;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-evenly;
-            overflow: hidden;
-            position: absolute;
-            top: -1.2em;
-            right: -4rem;;
-            width: 5rem;
-            height: 20rem;
+			&__btn {
+				height: 4rem;
+				background-color: transparent;
+				cursor: pointer;
+			}
 
-            &__hide {
-                flex: 0 1 20%;
-                display: none;
-                height: 0;
-            }
+			&__icon {
+				&--back {
+					width: 5rem;
+					height: 5rem;
 
-            &__link {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                width: 4rem;
-                height: 4rem;
-                transition: all .2s ease-in-out;
+					&:hover {
+						fill: $color-fourth;
+						transform: scale(1.2);
+						transition: all 0.2s ease-in-out;
+					}
+				}
 
-                &:hover, &:focus {
-                    outline: none;
-                    transform: scale(1.2);
-                    transition: all .2s ease-in-out;
-                }
-            }
-        }
-    }
+				&--share {
+					flex: 0 1 40%;
+					cursor: pointer;
+					width: 4rem;
+					height: 4rem;
 
-    &__info {
-        margin: 12rem 2rem 2rem 2rem;
+					&:hover,
+					&:focus {
+						fill: $color-fifth;
+						transform: scale(1.2);
+						transition: all 0.2s ease-in-out;
+					}
+				}
+			}
 
-        &__description {
-            padding: 0rem 9rem;
-            position: relative;
+			&__link {
+				flex: 0 1 40%;
 
-            &__btn {
-                position: absolute;
-                cursor: pointer;
-                background-color: transparent;
-                width: 4rem;
-                height: 4rem;
-                transition: all .2s;
-                left: 27rem;
-                top: 0rem;
-                display: none;
+				&:focus {
+					outline: none;
+					& > button > svg {
+						transform: scale(1.2);
+						transition: all 0.2s ease-in-out;
+						fill: $color-fourth;
+					}
+				}
+			}
+		}
 
-                &:focus {
-                    & > svg {
-                        transform: scale(1.2);
-                        transition: all .2s ease-in-out;
-                        fill: $color-fourth;
-                    }
-                }
-            }
+		&__share {
+			display: flex;
+			flex: 0 1 20%;
+			flex-direction: column;
+			align-items: center;
+			justify-content: space-evenly;
+			overflow: hidden;
+			position: absolute;
+			top: -1.2em;
+			right: -4rem;
+			width: 5rem;
+			height: 20rem;
 
-            &__h2 {
-                margin: 2rem;
-                font-size: 2.4rem;
-                letter-spacing: .2rem;
-            }
+			&__hide {
+				flex: 0 1 20%;
+				display: none;
+				height: 0;
+			}
 
-            &__span {
-                font-size: 1.2rem;
-                margin: 2rem;
+			&__link {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 4rem;
+				height: 4rem;
+				transition: all 0.2s ease-in-out;
 
-                &__hide {
-                    display: none;
-                    height: 0;
-                }
-            }
+				&:hover,
+				&:focus {
+					outline: none;
+					transform: scale(1.2);
+					transition: all 0.2s ease-in-out;
+				}
+			}
+		}
+	}
 
-            &__indicator {
+	&__info {
+		margin: 12rem 2rem 2rem 2rem;
 
-                &__plus {
-                    display: none;
-                    height: 0;
+		&__description {
+			padding: 0rem 9rem;
 
-                    &__show {
-                        display: block;
-                        height: auto;
-                        transition: all .2s ease-in-out;
+			&__btn {
+				cursor: pointer;
+				background-color: transparent;
+				width: 4rem;
+				height: 4rem;
+				transition: all 0.2s;
+				left: 27rem;
+				top: 0rem;
+				display: none;
 
-                        &:hover {
-                            transform: scale(1.2);
-                            transition: all .2s ease-in-out;
-                            fill: $color-fourth;
-                        }
-                    }
-                }
+				&:focus {
+					& > svg {
+						transform: scale(1.2);
+						transition: all 0.2s ease-in-out;
+						fill: $color-fourth;
+					}
+				}
+			}
 
-                &__minus {
-                    transition: all .2s ease-in-out;
+			&__h2 {
+				margin: 2rem;
+				font-size: 2.4rem;
+				letter-spacing: 0.2rem;
+			}
 
-                    &:hover {
-                        transform: scale(1.2);
-                        transition: all .2s ease-in-out;
-                        fill: $color-fourth;
-                    }
+			&__span {
+				font-size: 1.2rem;
+				margin: 2rem;
 
-                    &__hide {
-                        display: none;
-                        height: 0;
-                    }
-                }
-            }
-        }
+				&__hide {
+					display: none;
+					height: 0;
+				}
+			}
 
-        &__media {
-            display: flex;
-            padding: 8rem 4rem;
-            align-items: center;
-            justify-content: space-evenly;
+			&__indicator {
+				&__plus {
+					display: none;
+					height: 0;
 
-            &__link {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                width: 6rem;
-                height: 6rem;
-                transition: all .2s;
-        
-                &:hover, &:focus {
-                    transform: scale(1.2);
-                    transition: all .2s ease-in-out;
-                }
-            }
-        }
-    }
+					&__show {
+						display: block;
+						height: auto;
+						transition: all 0.2s ease-in-out;
 
-    &__stadium {
-        margin-top: 10rem;
+						&:hover {
+							transform: scale(1.2);
+							transition: all 0.2s ease-in-out;
+							fill: $color-fourth;
+						}
+					}
+				}
 
-        &__description {
-            padding: 0rem 9rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+				&__minus {
+					transition: all 0.2s ease-in-out;
 
-            &__facts {
-                display: flex;
-                flex-direction: row;
+					&:hover {
+						transform: scale(1.2);
+						transition: all 0.2s ease-in-out;
+						fill: $color-fourth;
+					}
 
-                &__location {
-                    padding: 2rem 4rem;
-                }
+					&__hide {
+						display: none;
+						height: 0;
+					}
+				}
+			}
+		}
 
-                &__capacity {
-                    padding: 2rem 4rem;
-                }
-            }
-        }
+		&__media {
+			display: flex;
+			padding: 8rem 4rem;
+			align-items: center;
+			justify-content: space-evenly;
 
-        &__image {
-            background-size: cover !important;
-            height: 110vh;
-            width: auto;
-            padding: 2% 10%;
-        }
-    }
+			&__link {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 6rem;
+				height: 6rem;
+				transition: all 0.2s;
+
+				&:hover,
+				&:focus {
+					transform: scale(1.2);
+					transition: all 0.2s ease-in-out;
+				}
+			}
+		}
+	}
+
+	&__stadium {
+		margin-top: 10rem;
+		margin-bottom: 6rem;
+
+		&__description {
+			padding: 0rem 9rem;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+
+			&__facts {
+				display: flex;
+				flex-direction: row;
+
+				&__location {
+					padding: 2rem 4rem;
+				}
+
+				&__capacity {
+					padding: 2rem 4rem;
+				}
+			}
+		}
+
+		&__image {
+			background-size: cover !important;
+			height: 110vh;
+			width: auto;
+			padding: 2% 10%;
+		}
+	}
 }
 
 .team-icon {
-    width: 2.4rem;
-    height: 2.4rem;
+	width: 2.4rem;
+	height: 2.4rem;
 }
 
 .description {
+	&__h2 {
+		margin: 2rem;
+		font-size: 2.4rem;
+		letter-spacing: 0.2rem;
+	}
 
-    &__h2 {
-        margin: 2rem;
-        font-size: 2.4rem;
-        letter-spacing: .2rem;
-    }
-
-    &__span {
-        font-size: 1.2rem;
-        margin: 2rem;
-    }
+	&__span {
+		font-size: 1.2rem;
+		margin: 2rem;
+	}
 }
 
 @media only screen and (max-width: 1500px) {
-    .team {
+	.team {
+		&__events {
+			&__card-container {
+				grid-template-columns: repeat(3, 1fr);
+			}
+		}
 
-        &__events {
-
-            &__card-container {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
-        &__previous {
-
-            &__card-container {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-    }
+		&__previous {
+			&__card-container {
+				grid-template-columns: repeat(3, 1fr);
+			}
+		}
+	}
 }
 
 @media only screen and (max-width: 1200px) {
-    .team {
+	.team {
+		&__events {
+			padding: 4rem 1rem;
 
-        &__events {
-            padding: 4rem 1rem;
+			&__card-container {
+				column-gap: 1rem;
+			}
+		}
 
-            &__card-container {
-                column-gap: 1rem;
-            }
-        }
+		&__previous {
+			padding: 4rem 1rem;
 
-        &__previous {
-            padding: 4rem 1rem;
+			&__card-container {
+				column-gap: 1rem;
+			}
+		}
 
-            &__card-container {
-                column-gap: 1rem;
-            }
-        }
-
-        &__stadium {
-            margin-top: 6rem;
-        }
-    }
+		&__stadium {
+			margin-top: 6rem;
+		}
+	}
 }
 
 @media only screen and (max-width: 1024px) {
-    .team {
-        &__events {
-            padding: 3rem 1rem;
+	.team {
+		&__events {
+			padding: 3rem 1rem;
 
-            &__card-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
+			&__card-container {
+				grid-template-columns: repeat(2, 1fr);
+			}
+		}
 
-        &__previous {
-            padding: 3rem 1rem;
+		&__previous {
+			padding: 3rem 1rem;
 
-            &__card-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
+			&__card-container {
+				grid-template-columns: repeat(2, 1fr);
+			}
+		}
 
-        &__info {
-            margin: 6rem 2rem 2rem 2rem;
+		&__info {
+			margin: 6rem 2rem 2rem 2rem;
 
-            &__description {
+			&__description {
+				&__btn {
+					display: inline-block;
+				}
+			}
+		}
 
-                &__btn {
-                    display: inline-block;
-                }
-            }
-        }
+		&__stadium {
+			margin-top: 4rem;
 
-        &__stadium {
-            margin-top: 4rem;
+			&__description {
+				padding: 0rem 3rem;
+			}
 
-            &__description {
-                padding: 0rem 3rem;
-            }
-
-            &__image {
-                padding: 2% 3%;
-            }
-        }
-    }
+			&__image {
+				padding: 2% 3%;
+			}
+		}
+	}
 }
 
 @media only screen and (max-width: 768px) {
-    .team {
-        &__container-btn {
-            padding: 3rem 0;
-        }
+	.team {
+		&__container-btn {
+			padding: 3rem 0;
+		}
 
-        &__events {
-            padding: 1rem 1rem;
+		&__events {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			padding: 1rem 1rem;
 
-            &__card-container {
-                grid-template-columns: repeat(1, 1fr);
-                row-gap: 1.4rem;
-                padding-bottom: 1rem;
-            }
+			&__card-container {
+				grid-template-columns: repeat(1, 1fr);
+				row-gap: 1.4rem;
+				padding-bottom: 1rem;
+			}
 
-            &__h2 {
-                margin: 3rem 0;
-            }
-        }
+			&__h2 {
+				margin: 3rem 0;
+			}
+		}
 
-        &__previous {
-            padding: 1rem 1rem;
+		&__previous {
+			padding: 1rem 1rem;
 
-            &__card-container {
-                grid-template-columns: repeat(1, 1fr);
-                row-gap: 1.4rem;
-                padding-bottom: 1rem;
-            }
+			&__card-container {
+				grid-template-columns: repeat(1, 1fr);
+				row-gap: 1.4rem;
+				padding-bottom: 1rem;
+			}
 
-            &__h2 {
-                margin: 3rem 0;
-            }
-        }
+			&__h2 {
+				margin: 3rem 0;
+			}
+		}
 
-        &__info {
-            margin: 2rem;
+		&__info {
+			margin: 2rem;
 
-            &__description {
-                padding: 0rem .5rem;
+			&__description {
+				padding: 0rem 0.5rem;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
 
-                &__span {
-                    margin: .5rem;
-                }
-            }
+				&__span {
+					margin: 0.5rem;
+				}
+			}
 
-            &__media {
-                padding: 4rem 1rem;
-            }
-        }
+			&__media {
+				padding: 4rem 1rem;
+			}
+		}
 
-        &__intro {
-            &__navigation {
-                margin: 5rem 0;
-            }
+		&__intro {
+			padding-top: 8rem;
 
-            &__header {
-                &__title {
-                    &__h1 {
-                        font-size: 4rem;
-                        width: 90%;
-                    }
-                }
-            }
-        }
+			&__navigation {
+				margin: 5rem 0;
+			}
 
-        &__gallery {
-            display: none;
-            height: 0;
-        }
+			&__header {
+				&__title {
+					&__h1 {
+						font-size: 2.6rem;
+						width: 90%;
+					}
+				}
+			}
+		}
 
-        &__stadium {
-            margin-top: 3rem;
+		&__gallery {
+			display: none;
+			height: 0;
+		}
 
-            &__description {
-                padding: 0rem 3rem;
-            }
+		&__stadium {
+			margin-top: 3rem;
 
-            &__image {
-                padding: 2% 1%;
-            }
-        }
-    }
+			&__description {
+				padding: 0rem 3rem;
+			}
 
-    .h1 {
-        letter-spacing: .5rem;
-    }
+			&__image {
+				padding: 2% 1%;
+			}
+		}
+	}
 
-    .description__span {
-        margin: 1rem;
-    }
+	.h1 {
+		letter-spacing: 0.5rem;
+	}
+
+	.description__span {
+		margin: 1rem;
+	}
 }
 
 @media only screen and (max-width: 480px) {
-    .team {
-        padding-top: 0rem;
+	.team {
+		padding-top: 0rem;
 
-        &__container-btn {
-            padding: 2rem 0;
-        }
+		&__container-btn {
+			padding: 2rem 0;
+		}
 
-        &__events {
+		&__events {
+			&__h2 {
+				margin: 1.6rem 0;
+			}
+		}
 
-            &__h2 {
-                margin: 1.6rem 0;
-            }
-        }
+		&__intro {
+			&__header {
+				&__banner {
+					&__image {
+						width: 12rem;
+					}
+				}
 
-        &__previous {
+				&__title {
+					&__h1 {
+						font-size: 2rem;
+						width: 100%;
+					}
+				}
+			}
 
-            &__h2 {
-                margin: 1.6rem 0;
-            }
-        }
+			&__image {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-evenly;
+			}
+		}
 
-        &__info {
-            margin: 1rem;
+		&__previous {
+			&__card-container__card__links {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
 
+			&__h2 {
+				margin: 1.6rem 0;
+			}
+		}
 
-            &__media {
-                padding: 4rem 1rem;
+		&__info {
+			margin: 1rem;
 
-                &__link {
-                    width: 4rem;
-                    height: 4rem;
-                }
-            }
-        }
+			&__media {
+				padding: 4rem 1rem;
 
-        &__stadium {
-            margin-top: 2rem;
+				&__link {
+					width: 4rem;
+					height: 4rem;
+				}
+			}
+		}
 
-            &__description {
-                padding: 0rem .5rem;
-            }
+		&__stadium {
+			margin-top: 2rem;
+			padding-bottom: 28rem;
 
-            &__image {
-                padding: 2% 1%;
-            }
-        }
-    }
+			&__description {
+				padding: 0rem 0.5rem;
 
-    .description__span {
-        margin: .5rem;
-    }
+				&__facts {
+					text-align: center;
+					display: flex;
+					flex-direction: column;
 
-    .h1 {
-        letter-spacing: .5rem;
-    }
+					&__location,
+					&__capacity {
+						margin: 0;
+						padding: 0;
 
-    .hr {
-        margin: 2rem 0;
-    }
+						& h2 {
+							margin: 0;
+						}
+					}
+				}
+
+				&__h2 {
+					margin: 1rem;
+				}
+
+				&__span {
+					font-size: 1rem;
+				}
+			}
+
+			&__image {
+				padding: 2% 1%;
+			}
+		}
+	}
+
+	.description__span {
+		margin: 0.5rem;
+	}
+
+	.h1 {
+		letter-spacing: 0.5rem;
+	}
+
+	.hr {
+		margin: 2rem 0;
+	}
 }

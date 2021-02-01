@@ -1,183 +1,192 @@
 @import "../../styles/variables";
 
 .team__previous {
-    padding: 4rem;
+	padding: 4rem;
 
-    &__btn {
-        margin: 0rem 0rem 3rem 14rem;
-        cursor: pointer;
-        background-color: transparent;
-        width: 4rem;
-        height: 4rem;
-        transition: all .2s;
-    }
+	&__btn {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 3rem;
+		cursor: pointer;
+		background-color: transparent;
+		width: 4rem;
+		height: 4rem;
+		transition: all 0.2s;
+	}
 
-    &__h2 {
-        margin-top: 12rem;
-        margin-bottom: 4rem;
-        font-size: 2.6rem;
-        letter-spacing: .2rem;
-    }
+	&__h2 {
+		margin-top: 12rem;
+		margin-bottom: 4rem;
+		font-size: 2.6rem;
+		letter-spacing: 0.2rem;
+	}
 
-    &__card-container {
-        display: inline-grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: auto;
-        column-gap: 3rem;
-        row-gap: 8rem;
-        place-items: center;
-        padding-bottom: 4rem;
+	&__card-container {
+		display: inline-grid;
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-rows: auto;
+		column-gap: 3rem;
+		row-gap: 8rem;
+		place-items: center;
+		padding-bottom: 4rem;
 
-        &__hide{
-            display: none;
-            height: 0;
-        }
+		&__hide {
+			display: none;
+			height: 0;
+		}
 
-        &__card {
-            padding-bottom: 2rem;
+		&__card {
+			padding-bottom: 2rem;
 
-            background-size: cover;
-            background-image: linear-gradient(
-                to right bottom,
-                rgba($color-primary, 0.6),
-                rgba($color-primary, 0.6)),
-                url(../../resources/images/daniel-van-den-berg-29Jx9qyTW14-unsplash.jpg);
+			background-size: cover;
+			background-image: linear-gradient(
+					to right bottom,
+					rgba($color-primary, 0.6),
+					rgba($color-primary, 0.6)
+				),
+				url(../../resources/images/daniel-van-den-berg-29Jx9qyTW14-unsplash.jpg);
 
-            &__h4 {
-                font-size: 1.2rem;
-                margin: .5rem 0;
-                transition: all .2s ease-in-out;
+			&__h4 {
+				font-size: 1.2rem;
+				margin: 0.5rem 0;
+				transition: all 0.2s ease-in-out;
 
-                &:hover {
-                    transform: scale(1.4);
-                    transition: all .2s ease-in-out;
-                }
-            }
+				&:hover {
+					transform: scale(1.4);
+					transition: all 0.2s ease-in-out;
+				}
+			}
 
-            &__p {
-                font-size: 1rem;
-                transition: all .2s ease-in-out;
+			&__p {
+				font-size: 1rem;
+				transition: all 0.2s ease-in-out;
 
-                &:hover {
-                    transform: scale(1.4);
-                    transition: all .2s ease-in-out;
-                }
-            }
+				&:hover {
+					transform: scale(1.4);
+					transition: all 0.2s ease-in-out;
+				}
+			}
 
-            &__hr {
-                width: 20rem;
-                background-image: radial-gradient(circle, #FFDD82 0%, rgba(210, 208, 208, 0) 90%);
-                border: none;
-                margin: 1rem;
-            }
+			&__hr {
+				width: 20rem;
+				background-image: radial-gradient(
+					circle,
+					#ffdd82 0%,
+					rgba(210, 208, 208, 0) 90%
+				);
+				border: none;
+				margin: 1rem;
+			}
 
-            &__img {
-                width: 100%;
-                height: auto;
-            }
+			&__img {
+				width: 100%;
+				height: auto;
+			}
 
-            &__info {
-                display: flex;
-                flex-direction: column;
-                place-items: center;
-                padding-top: 2rem;
-            }
+			&__info {
+				display: flex;
+				flex-direction: column;
+				place-items: center;
+				padding-top: 2rem;
+			}
 
-            &__links {
-                display: grid;
-                grid-template-columns: 2fr 2rem 2fr;
-                place-content: center;
-                cursor: pointer;
-                font-size: 1.8rem;
-                padding: 4rem 2rem;
-                height: 6rem;
+			&__links {
+				display: grid;
+				grid-template-columns: 2fr 2rem 2fr;
+				place-content: center;
+				cursor: pointer;
+				font-size: 1.8rem;
+				padding: 4rem 2rem;
+				height: 6rem;
 
-                &__p {
-                    padding: .1rem;
-                }
+				&__p {
+					padding: 0.1rem;
+				}
 
-                &__link {
-                    color: $color-fifth;
-                    display: inline-block;
-                    border-bottom: .1rem solid $color-fifth;
-                    transition: all .3s;
+				&__link {
+					color: $color-fifth;
+					display: inline-block;
+					border-bottom: 0.1rem solid $color-fifth;
+					transition: all 0.3s;
 
-                    &:focus, &:hover {
-                        background-color: $color-fifth;
-                        color: $color-important;
-                        padding: 0rem 0.5rem;
-                        -webkit-box-shadow: 0 1rem 2rem rgba(0,0,0,0.15);
-                        box-shadow: 0 1rem 2rem rgba(0,0,0,0.15);
-                        transition: all .3s;
-                    }
-                }
-            }
+					&:focus,
+					&:hover {
+						background-color: $color-fifth;
+						color: $color-important;
+						padding: 0rem 0.5rem;
+						-webkit-box-shadow: 0 1rem 2rem
+							rgba(0, 0, 0, 0.15);
+						box-shadow: 0 1rem 2rem
+							rgba(0, 0, 0, 0.15);
+						transition: all 0.3s;
+					}
+				}
+			}
 
-            &__video {
-                display: flex;
-                flex-direction: column;
-                place-items: center;
-                padding: 2rem;
-            }
-        }
+			&__video {
+				display: flex;
+				flex-direction: column;
+				place-items: center;
+				padding: 2rem;
+			}
+		}
+	}
 
-        
-    }
+	&__indicator {
+		&__plus {
+			display: none;
+			height: 0;
 
-    &__indicator {
+			&__show {
+				display: block;
+				height: auto;
+				transition: all 0.2s ease-in-out;
 
-        &__plus {
-            display: none;
-            height: 0;
+				&:hover {
+					transform: scale(1.2);
+					transition: all 0.2s ease-in-out;
+					fill: $color-fourth;
+				}
+			}
+		}
 
-            &__show {
-                display: block;
-                height: auto;
-                transition: all .2s ease-in-out;
+		&__minus {
+			transition: all 0.2s ease-in-out;
 
-                &:hover {
-                    transform: scale(1.2);
-                    transition: all .2s ease-in-out;
-                    fill: $color-fourth;
-                }
-            }
-        }
+			&:hover {
+				transform: scale(1.2);
+				transition: all 0.2s ease-in-out;
+				fill: $color-fourth;
+			}
 
-        &__minus {
-            transition: all .2s ease-in-out;
+			&__hide {
+				display: none;
+				height: 0;
+			}
+		}
+	}
 
-            &:hover {
-                transform: scale(1.2);
-                transition: all .2s ease-in-out;
-                fill: $color-fourth;
-            }
-
-            &__hide {
-                display: none;
-                height: 0;
-            }
-        }
-    }
-
-    &__no-events {
-        grid-column-start: 2;
-        grid-column-end: 4;
-        font-size: 2rem;
-    }
+	&__no-events {
+		grid-column-start: 2;
+		grid-column-end: 4;
+		font-size: 2rem;
+	}
 }
 
 .card__previous {
-    height: 67rem;
+	height: auto;
 }
 
 .link--home-team {
-    display: flex;
-    justify-content: center;
-    margin-right: 1rem;
+	display: flex;
+	justify-content: center;
+	margin-right: 1rem;
 }
 
 .link--away-team {
-    display: flex;
-    justify-content: center;
-    margin-left: 1rem;
+	display: flex;
+	justify-content: center;
+	margin-left: 1rem;
 }

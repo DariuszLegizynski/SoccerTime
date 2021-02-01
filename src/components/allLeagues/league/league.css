@@ -1,5 +1,15 @@
 .league__events {
   padding: 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .league__events__btn {
@@ -7,8 +17,8 @@
   background-color: transparent;
   width: 4rem;
   height: 4rem;
-  -webkit-transition: all .2s;
-  transition: all .2s;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
   margin-bottom: 3rem;
   margin-left: 18rem;
   display: none;
@@ -18,7 +28,7 @@
   margin-bottom: 1rem;
   margin-left: 4rem;
   font-size: 2.6rem;
-  letter-spacing: .2rem;
+  letter-spacing: 0.2rem;
 }
 
 .league__events__card-container {
@@ -41,8 +51,18 @@
 }
 
 .league__events__card-container__card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding-bottom: 2rem;
-  height: 60rem;
+  height: auto;
   background-size: cover;
   background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(17, 17, 17, 0.6)), to(rgba(17, 17, 17, 0.6))), url(../../../resources/images/daniel-van-den-berg-29Jx9qyTW14-unsplash.jpg);
   background-image: linear-gradient(to right bottom, rgba(17, 17, 17, 0.6), rgba(17, 17, 17, 0.6)), url(../../../resources/images/daniel-van-den-berg-29Jx9qyTW14-unsplash.jpg);
@@ -50,34 +70,34 @@
 
 .league__events__card-container__card__h4 {
   font-size: 1.2rem;
-  margin: .5rem 0;
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
+  margin: 0.5rem 0;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .league__events__card-container__card__h4:hover {
   -webkit-transform: scale(1.4);
           transform: scale(1.4);
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .league__events__card-container__card__p {
   font-size: 1rem;
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .league__events__card-container__card__p:hover {
   -webkit-transform: scale(1.4);
           transform: scale(1.4);
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .league__events__card-container__card__hr {
   width: 20rem;
-  background-image: radial-gradient(circle, #FFDD82 0%, rgba(210, 208, 208, 0) 90%);
+  background-image: radial-gradient(circle, #ffdd82 0%, rgba(210, 208, 208, 0) 90%);
   border: none;
   margin: 1rem;
 }
@@ -106,21 +126,21 @@
       grid-template-columns: 2fr 2rem 2fr;
   place-content: center;
   cursor: pointer;
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   padding: 4rem 2rem;
   height: 6rem;
 }
 
 .league__events__card-container__card__links__p {
-  padding: .1rem;
+  padding: 0.1rem;
 }
 
 .league__events__card-container__card__links__link {
   color: #FFDD82;
   display: inline-block;
   border-bottom: 0.1rem solid #FFDD82;
-  -webkit-transition: all .3s;
-  transition: all .3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 .league__events__card-container__card__links__link:focus, .league__events__card-container__card__links__link:hover {
@@ -129,8 +149,8 @@
   padding: 0rem 0.5rem;
   -webkit-box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
-  -webkit-transition: all .3s;
-  transition: all .3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 .league__events__card-container__card__video {
@@ -153,28 +173,28 @@
 .league__events__indicator__plus__show {
   display: block;
   height: auto;
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .league__events__indicator__plus__show:hover {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   fill: #620AA8;
 }
 
 .league__events__indicator__minus {
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .league__events__indicator__minus:hover {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   fill: #620AA8;
 }
 
@@ -191,7 +211,7 @@
 }
 
 .card__previous {
-  height: 67rem;
+  height: auto;
 }
 
 .link--home-team {
@@ -215,6 +235,16 @@
 }
 
 .league__previous {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 4rem;
 }
 
@@ -223,8 +253,8 @@
   background-color: transparent;
   width: 4rem;
   height: 4rem;
-  -webkit-transition: all .2s;
-  transition: all .2s;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
   margin-bottom: 3rem;
   margin-left: 18rem;
   display: none;
@@ -234,7 +264,7 @@
   margin-bottom: 1rem;
   margin-left: 4rem;
   font-size: 2.6rem;
-  letter-spacing: .2rem;
+  letter-spacing: 0.2rem;
 }
 
 .league__previous__card-container {
@@ -257,8 +287,17 @@
 }
 
 .league__previous__card-container__card {
-  padding-bottom: 2rem;
-  height: 60rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: auto;
   background-size: cover;
   background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(17, 17, 17, 0.6)), to(rgba(17, 17, 17, 0.6))), url(../../../resources/images/daniel-van-den-berg-29Jx9qyTW14-unsplash.jpg);
   background-image: linear-gradient(to right bottom, rgba(17, 17, 17, 0.6), rgba(17, 17, 17, 0.6)), url(../../../resources/images/daniel-van-den-berg-29Jx9qyTW14-unsplash.jpg);
@@ -266,34 +305,34 @@
 
 .league__previous__card-container__card__h4 {
   font-size: 1.2rem;
-  margin: .5rem 0;
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
+  margin: 0.5rem 0;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .league__previous__card-container__card__h4:hover {
   -webkit-transform: scale(1.4);
           transform: scale(1.4);
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .league__previous__card-container__card__p {
   font-size: 1rem;
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .league__previous__card-container__card__p:hover {
   -webkit-transform: scale(1.4);
           transform: scale(1.4);
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .league__previous__card-container__card__hr {
   width: 20rem;
-  background-image: radial-gradient(circle, #FFDD82 0%, rgba(210, 208, 208, 0) 90%);
+  background-image: radial-gradient(circle, #ffdd82 0%, rgba(210, 208, 208, 0) 90%);
   border: none;
   margin: 1rem;
 }
@@ -328,15 +367,15 @@
 }
 
 .league__previous__card-container__card__links__p {
-  padding: .1rem;
+  padding: 0.1rem;
 }
 
 .league__previous__card-container__card__links__link {
   color: #FFDD82;
   display: inline-block;
   border-bottom: 0.1rem solid #FFDD82;
-  -webkit-transition: all .3s;
-  transition: all .3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 .league__previous__card-container__card__links__link:focus, .league__previous__card-container__card__links__link:hover {
@@ -345,20 +384,12 @@
   padding: 0rem 0.5rem;
   -webkit-box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
-  -webkit-transition: all .3s;
-  transition: all .3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 .league__previous__card-container__card__video {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  place-items: center;
-  padding: 2rem;
+  padding: 1rem;
 }
 
 .league__previous__indicator__plus {
@@ -369,28 +400,28 @@
 .league__previous__indicator__plus__show {
   display: block;
   height: auto;
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .league__previous__indicator__plus__show:hover {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   fill: #620AA8;
 }
 
 .league__previous__indicator__minus {
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .league__previous__indicator__minus:hover {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   fill: #620AA8;
 }
 
@@ -407,7 +438,7 @@
 }
 
 .card__previous {
-  height: 67rem;
+  height: auto;
 }
 
 .link--home-team {
@@ -523,6 +554,16 @@
 }
 
 .league__intro {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background: linear-gradient(165deg, #251431 0%, #161130 22%);
   color: #fff;
 }
@@ -563,15 +604,15 @@
 .league__intro__header__title__h1 {
   font-size: 5rem;
   background-repeat: no-repeat;
-  -webkit-transition: all .2s;
-  transition: all .2s;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
   width: 95%;
 }
 
 .league__intro__header__title__h1:hover {
   background-repeat: repeat;
-  -webkit-transition: all .2s;
-  transition: all .2s;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .league__intro__navigation {
@@ -603,8 +644,8 @@
   fill: #620AA8;
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .league__intro__navigation__icon--share {
@@ -620,8 +661,8 @@
   fill: #FFDD82;
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .league__intro__navigation__link {
@@ -637,8 +678,8 @@
 .league__intro__navigation__link:focus > button > svg {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   fill: #620AA8;
 }
 
@@ -687,16 +728,16 @@
           justify-content: center;
   width: 4rem;
   height: 4rem;
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .league__intro__share__link:hover, .league__intro__share__link:focus {
   outline: none;
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .league__info {
@@ -719,7 +760,7 @@
 .league__info__description__h2 {
   margin: 2rem;
   font-size: 2.4rem;
-  letter-spacing: .2rem;
+  letter-spacing: 0.2rem;
 }
 
 .league__info__description__p {
@@ -740,28 +781,28 @@
 .league__info__description__indicator__plus__show {
   display: block;
   height: auto;
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .league__info__description__indicator__plus__show:hover {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   fill: #620AA8;
 }
 
 .league__info__description__indicator__minus {
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .league__info__description__indicator__minus:hover {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   fill: #620AA8;
 }
 
@@ -795,15 +836,15 @@
           justify-content: center;
   width: 6rem;
   height: 6rem;
-  -webkit-transition: all .2s;
-  transition: all .2s;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .league__info__media__link:hover, .league__info__media__link:focus {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .league__team-badge {
@@ -827,15 +868,15 @@
 }
 
 .league__team-badge__link {
-  -webkit-transition: all .2s;
-  transition: all .2s;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .league__team-badge__link:hover, .league__team-badge__link:focus {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .league__team-short-description {
@@ -852,6 +893,7 @@
   height: 4rem;
   margin-left: 6rem;
   display: none;
+  position: relative;
 }
 
 .league__team-short-description__card-container {
@@ -879,26 +921,24 @@
       -ms-flex-direction: column;
           flex-direction: column;
   place-items: center;
-  height: 21rem;
-  position: relative;
+  height: auto;
+  text-align: center;
   background-color: rgba(255, 255, 255, 0.8);
   padding: 2rem 1rem 4rem 1rem;
 }
 
 .league__team-short-description__card__btn {
   background-color: #620AA8;
-  position: absolute;
   width: 3.2rem;
   height: 3.2rem;
-  top: 16.5rem;
-  -webkit-transition: all .2s;
-  transition: all .2s;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .league__team-short-description__card__btn:hover, .league__team-short-description__card__btn:focus {
   background-color: #FFDD82;
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .league__team-short-description__card__icon {
@@ -910,15 +950,15 @@
 }
 
 .league__team-short-description__card__link {
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .league__team-short-description__card__link:hover, .league__team-short-description__card__link:focus {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .league__team-short-description__card__link:hover h2, .league__team-short-description__card__link:focus h2 {
@@ -954,28 +994,28 @@
 .league__team-short-description__indicator__plus__show {
   display: block;
   height: auto;
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .league__team-short-description__indicator__plus__show:hover {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   fill: #620AA8;
 }
 
 .league__team-short-description__indicator__minus {
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .league__team-short-description__indicator__minus:hover {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   fill: #620AA8;
 }
 
@@ -1100,26 +1140,54 @@
   .league__events {
     padding: 1rem 1rem;
   }
+  .league__events__btn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-left: 0;
+  }
   .league__events__card-container {
-    -ms-grid-columns: (1fr)[1];
-        grid-template-columns: repeat(1, 1fr);
-    row-gap: 1.4rem;
-    padding-bottom: 1rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .league__previous {
     padding: 1rem 1rem;
   }
   .league__previous__card-container {
-    -ms-grid-columns: (1fr)[1];
-        grid-template-columns: repeat(1, 1fr);
-    row-gap: 1.4rem;
-    padding-bottom: 1rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .league__info__description {
-    padding: 0rem .5rem;
+    padding: 0rem 0.5rem;
   }
   .league__info__description__p {
-    margin: .5rem;
+    margin: 0.5rem;
   }
   .league__info__media {
     padding: 4rem 1rem;
@@ -1138,15 +1206,19 @@
     margin: 1rem 2rem;
   }
   .league__team-short-description__card-container {
-    -ms-grid-columns: (1fr)[2];
-        grid-template-columns: repeat(2, 1fr);
-    padding: 2rem;
-  }
-  .league__team-short-description__card__btn {
-    right: 1.5rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .h1 {
-    letter-spacing: .5rem;
+    letter-spacing: 0.5rem;
   }
 }
 
@@ -1158,14 +1230,33 @@
     width: 4rem;
     height: 4rem;
   }
+  .league__intro__header__banner__image {
+    width: 12rem;
+  }
+  .league__intro__header__title__h1 {
+    font-size: 2rem;
+    width: 100%;
+  }
+  .league__intro__image {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
   .league__league-table {
-    padding: .5rem;
+    padding: 0.5rem;
   }
   .league__league-table__no-table {
     margin: 1rem 2rem;
   }
   .h1 {
-    letter-spacing: .5rem;
+    letter-spacing: 0.5rem;
   }
 }
 /*# sourceMappingURL=league.css.map */
