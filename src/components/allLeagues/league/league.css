@@ -928,6 +928,7 @@
 }
 
 .league__team-short-description__card__btn {
+  position: relative;
   background-color: #620AA8;
   width: 3.2rem;
   height: 3.2rem;

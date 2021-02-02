@@ -9,109 +9,154 @@ import _ from "lodash";
 import { getTableLookup } from "../../../actions/leagues/tableLookup/getTableLookup";
 import shortid from "shortid";
 
-const LeagueTable = ({leagueId}) => {
-    const dispatch = useDispatch();
-    const selectLeagueId = useSelector (state => state.tableLeague);
+const LeagueTable = ({ leagueId }) => {
+	const dispatch = useDispatch();
+	const selectLeagueId = useSelector(
+		(state) => state.tableLeague
+	);
 
-    useEffect (() => {
-        dispatch(getTableLookup(leagueId))
-    }, [dispatch, leagueId]);
-    
-    let request = [];
-    if(!_.isEmpty(selectLeagueId.data)) {
-        request = selectLeagueId.data.map(el => el);
-    }
+	useEffect(() => {
+		dispatch(getTableLookup(leagueId));
+	}, [dispatch, leagueId]);
 
-    let currentYear = 0;
-    let nextYear = 0;
+	let request = [];
+	if (!_.isEmpty(selectLeagueId.data)) {
+		request = selectLeagueId.data.map((el) => el);
+	}
 
-    const currentDate = new Date(new Date().getFullYear() + '-' + (new Date().getMonth()));
-    const seasonChangeDate = new Date("01/08/" + currentYear);
+	let currentYear = 0;
+	let nextYear = 0;
 
-    //to get the current season
-    if (seasonChangeDate >= currentDate) {
-        nextYear = currentYear;
-        currentYear = currentYear - 1;
-    } else {
-        currentYear = new Date().getFullYear();
-        nextYear = currentYear + 1;
-    }
+	const currentDate = new Date(
+		new Date().getFullYear() + "-" + new Date().getMonth()
+	);
+	const seasonChangeDate = new Date("01/08/" + currentYear);
 
-    const memoColumns = useMemo(() => COLUMNS, []);
-    const memoData = useMemo(() => request, [request]);
-    
-    const tableInstance = useTable({
-        columns: memoColumns,
-        data: memoData
-    })
+	//to get the current season
+	if (seasonChangeDate >= currentDate) {
+		nextYear = currentYear;
+		currentYear = currentYear - 1;
+	} else {
+		currentYear = new Date().getFullYear();
+		nextYear = currentYear + 1;
+	}
 
-    const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } = tableInstance;
+	const memoColumns = useMemo(() => COLUMNS, []);
+	const memoData = useMemo(() => request, [request]);
 
-    const showTable = () => {
-        if(!_.isEmpty(selectLeagueId.data)) {
-            return (
-                <table className="league__league-table__table" {...getTableProps()}>
-                    <thead className="league__league-table__table__thead">
-                        {
-                        headerGroups.map((headerGroup) => (
-                            <tr className="league__league-table__table__thead__tr" {...headerGroup.getHeaderGroupProps()} key={shortid.generate()}>
-                                {headerGroup.headers.map(column => (
-                                    <th className="league__league-table__table__thead__tr__th" {...column.getHeaderProps()}>
-                                        {column.render("Header")}
-                                    </th>
-                                ))}
-                            </tr>
-                            ))
-                        }
-                    </thead>
-                    <tbody className="league__league-table__table__tbody" {...getTableBodyProps()}>
-                        {rows.map(row => {
-                            prepareRow(row)
-                            return (
-                                <tr className="league__league-table__table__tbody__tr" {...row.getRowProps()} key={shortid.generate()} tabIndex="0">
-                                    {row.cells.map(cell => {
-                                        return (
-                                        <td className="league__league-table__table__tbody__tr__td" key={shortid.generate()}>
-                                            {cell.render("Cell")}
-                                        </td>
-                                        )
-                                    })}
-                                </tr>
-                            )
-                        })}
-                    </tbody>
-                </table>
-            )
-        }
+	const tableInstance = useTable({
+		columns: memoColumns,
+		data: memoData,
+	});
 
-        if(selectLeagueId.loading) {
-            return (
-                <div>
-                    <p className="league__league-table__loading p">loading...</p>
-                </div>
-            )
-        }
+	const {
+		getTableProps,
+		getTableBodyProps,
+		headerGroups,
+		rows,
+		prepareRow,
+	} = tableInstance;
 
-        if(selectLeagueId.errorMsg !== "") {
-            return (
-                <div>
-                    <p className="league__league-table__no-table p">{selectLeagueId.errorMsg}</p>
-                </div>
-            ) 
-        }
+	const showTable = () => {
+		if (!_.isEmpty(selectLeagueId.data)) {
+			return (
+				<table
+					className="league__league-table__table"
+					{...getTableProps()}
+				>
+					<thead className="league__league-table__table__thead">
+						{headerGroups.map((headerGroup) => (
+							<tr
+								className="league__league-table__table__thead__tr"
+								{...headerGroup.getHeaderGroupProps()}
+								key={shortid.generate()}
+							>
+								{headerGroup.headers.map(
+									(column) => (
+										<th
+											className="league__league-table__table__thead__tr__th"
+											{...column.getHeaderProps()}
+										>
+											{column.render(
+												"Header"
+											)}
+										</th>
+									)
+								)}
+							</tr>
+						))}
+					</thead>
+					<tbody
+						className="league__league-table__table__tbody"
+						{...getTableBodyProps()}
+					>
+						{rows.map((row) => {
+							prepareRow(row);
+							return (
+								<tr
+									className="league__league-table__table__tbody__tr"
+									{...row.getRowProps()}
+									key={shortid.generate()}
+									tabIndex="0"
+								>
+									{row.cells.map((cell) => {
+										return (
+											<td
+												className="league__league-table__table__tbody__tr__td"
+												key={shortid.generate()}
+											>
+												{cell.render(
+													"Cell"
+												)}
+											</td>
+										);
+									})}
+								</tr>
+							);
+						})}
+					</tbody>
+				</table>
+			);
+		}
 
-        return (
-                <span className="league__league-table__no-table p">No League Table data found</span>
-        )
-    }
+		if (selectLeagueId.loading) {
+			return (
+				<div>
+					<p className="league__league-table__loading p">
+						loading...
+					</p>
+				</div>
+			);
+		}
 
-    return (
-        <section className="league__league-table">
-            <h2 className="league__league-table__h2 h2">League's Table & results</h2>
-            <h3 className="league__league-table__h3 h3">Season {currentYear} - {nextYear}</h3>
-            {showTable()}
-        </section>
-    )
-}
+		if (selectLeagueId.errorMsg !== "") {
+			return (
+				<div>
+					<p className="league__league-table__no-table p">
+						{selectLeagueId.errorMsg}
+					</p>
+				</div>
+			);
+		}
+
+		return (
+			<span className="league__league-table__no-table p">
+				No League Table data found
+			</span>
+		);
+	};
+
+	return (
+		<section className="league__league-table">
+			<h2 className="league__league-table__h2 h2">
+				League's Table & results
+			</h2>
+			<h3 className="league__league-table__h3 h3">
+				Season {currentYear} - {nextYear}
+			</h3>
+			{showTable()}
+		</section>
+	);
+};
 
 export default LeagueTable;
