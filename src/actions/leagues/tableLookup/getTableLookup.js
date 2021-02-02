@@ -6,8 +6,6 @@ import {
 import theSportsDB from "../../../apis/theSportsDB";
 
 export const getTableLookup = (idLeague) => async (dispatch) => {
-	console.log(idLeague);
-
 	let currentYear = new Date().getFullYear();
 	let nextYear = currentYear + 1;
 
@@ -15,12 +13,8 @@ export const getTableLookup = (idLeague) => async (dispatch) => {
 		new Date().getFullYear() + "-" + new Date().getMonth()
 	);
 
-	console.log(currentDate);
-
 	// 08/01 is August the 1st...
 	const seasonChangeDate = new Date("08/01/" + currentYear);
-
-	console.log(seasonChangeDate);
 
 	//to get the current season
 	if (seasonChangeDate >= currentDate) {
