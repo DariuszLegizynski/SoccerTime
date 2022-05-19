@@ -90,7 +90,7 @@ const PreviousLeagueEvents = ({leagueId}) => {
         }
 
         if(_.isEmpty(selectPreviousLeagueEvents.data.events)) {
-            return <p className="league__previous__no-events p">no past league's events found</p>
+            return <p className="league__previous__no-events p">API Endpoint changed: no past league's events found</p>
         }
 
         if(selectPreviousLeagueEvents.loading) {

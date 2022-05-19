@@ -19,7 +19,7 @@ const NextLeagueEventsReducer = (state = DefaultState, action) => {
             return {
                 ...state,
                 loading: false,
-                errorMsg: "no upcoming League events found"
+                errorMsg: "API Endpoint changed: no upcoming League events found"
             }
 
         case GET_NEXT_LEAGUE_EVENTS_SUCCESS:

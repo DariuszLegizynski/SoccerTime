@@ -27,7 +27,7 @@ const LeagueReducer = (state = DefaultState, action) => {
             return {
                 ...state,
                 loading: false,
-                errorMsg: "league not found"
+                errorMsg: "API Endpoint changed: league not found"
             };
     default:
         return state

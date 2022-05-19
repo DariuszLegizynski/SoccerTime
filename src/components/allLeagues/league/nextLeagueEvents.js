@@ -86,7 +86,7 @@ const NextLeagueEvents = ({leagueId}) => {
 
         //red braces becouse of the "(" at the end of the line with <p></p>
         if(_.isEmpty(selectNextLeagueEvents.data.events)) {
-            return <p className="league__events__no-events p">no upcoming league events found</p>
+            return <p className="league__events__no-events p">API Endpoint changed: no upcoming league events found</p>
         }
 
         if(selectNextLeagueEvents.loading) {
