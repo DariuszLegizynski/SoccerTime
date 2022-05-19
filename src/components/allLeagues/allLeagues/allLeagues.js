@@ -23,9 +23,9 @@ import iconSprites from "../../../resources/icons/icomoon/sprite.svg";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-//the api provides 255 country names.
+//the api provides 257 country names.
 //TODO: Hardcoded till I find a better solution.
-const ALL_COUNTRIES_LENGTH = 254;
+const ALL_COUNTRIES_LENGTH = 256;
 
 const AllLeagues = () => {
 	const dispatch = useDispatch();
@@ -56,6 +56,7 @@ const AllLeagues = () => {
 	let getAllLeagues = [];
 
 	if (allCountriesArr.length > ALL_COUNTRIES_LENGTH) {
+		console.log("TESRT")
 		allLeaguesFiltered = allCountriesArr
 			.flat()
 			.filter((el) => el !== null);
@@ -66,18 +67,19 @@ const AllLeagues = () => {
 	let getAllFirstDivisionLeagues = [];
 	let getAllSecondDivisionLeagues = [];
 	let getAllThirdDivisionLeagues = [];
+
 	if (!_.isEmpty(getAllLeagues)) {
 		getAllZeroDivisionLeagues = getAllLeagues.filter(
-			(el) => el.strDivision === "0"
+			(el) => el.intDivision === "0"
 		);
 		getAllFirstDivisionLeagues = getAllLeagues.filter(
-			(el) => el.strDivision === "1"
+			(el) => el.intDivision === "1"
 		);
 		getAllSecondDivisionLeagues = getAllLeagues.filter(
-			(el) => el.strDivision === "2"
+			(el) => el.intDivision === "2"
 		);
 		getAllThirdDivisionLeagues = getAllLeagues.filter(
-			(el) => el.strDivision === "3"
+			(el) => el.intDivision === "3"
 		);
 	}
 

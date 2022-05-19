@@ -15,12 +15,13 @@ const AllLeaguesReducer = (state = DefaultState, action) => {
                 errorMsg: ""
             };
             case GET_ALL_LEAGUES_SUCCESS:
+
             return {
                 ...state,
                 loading: false,
                 data:{
                     ...state.data,
-                    [action.countryName]: action.payload.countrys
+                    [action.countryName]: action.payload.countries
                 },
                 errorMsg: ""
             };
