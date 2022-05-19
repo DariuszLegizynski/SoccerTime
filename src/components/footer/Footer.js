@@ -34,10 +34,10 @@ const Footer = () => {
 						Portfolio
 					</h3>
 					<a
-						href="/"
+						href="https://dariuszlegizynski.netlify.app/"
 						className="footer-top__link link"
 					>
-						www.myPage.com
+						Visit my page: dariuszlegizynski.app!
 					</a>
 				</div>
 				<div className="footer-top__item">
