@@ -1,5 +1,5 @@
 import { GET_SIGNUP_ERROR, GET_SIGNUP_SUCCESS } from "../index";
-import firebase from "firebase/app";
+import firebase from "firebase/compat/app";
 
 export const getSignup = (newUser) => async (dispatch) => {
     try {

@@ -1,5 +1,5 @@
 import { GET_SIGNIN_ANON_ERROR, GET_SIGNIN_ANON_SUCCESS } from "../index";
-import firebase from "firebase/app";
+import firebase from "firebase/compat/app";
 
 export const getSignInAnon = () => async (dispatch) => {
 

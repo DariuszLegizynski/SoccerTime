@@ -9,7 +9,7 @@ import "./index.css";
 import store from './store';
 import App from './components/App/App';
 
-import firebase from "firebase/app";
+import firebase from "firebase/compat/app";
 import 'firebase/firestore';
 import "firebase/auth";
 
