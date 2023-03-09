@@ -20,8 +20,6 @@ export const getTableLookup = (idLeague) => async (dispatch) => {
 	if (seasonChangeDate >= currentDate) {
 		nextYear = currentYear;
 		currentYear = currentYear - 1;
-		console.log(currentYear);
-		console.log(nextYear);
 	} else {
 		currentYear = new Date().getFullYear();
 		nextYear = currentYear + 1;

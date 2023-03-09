@@ -56,7 +56,6 @@ const AllLeagues = () => {
 	let getAllLeagues = [];
 
 	if (allCountriesArr.length > ALL_COUNTRIES_LENGTH) {
-		console.log("TESRT")
 		allLeaguesFiltered = allCountriesArr
 			.flat()
 			.filter((el) => el !== null);

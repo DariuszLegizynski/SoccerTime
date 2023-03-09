@@ -32,9 +32,6 @@ const League = (props) => {
 		(state) => state.leagueId.data.leagues
 	);
 
-	console.log(leagueId)
-	console.log(selectLeagueId)
-
 	useEffect(() => {
 		dispatch(getLeague(leagueId));
 		dispatch(getLeagueId(leagueId));

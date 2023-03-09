@@ -25,7 +25,7 @@ const AllCountries = () => {
     const showData = () => {
         if(!_.isEmpty(selectAllLeagues.data)) {
             Object.keys(selectAllLeagues.data).forEach((key) => (selectAllLeagues.data[key] == null) && delete selectAllLeagues.data[key]);
-            //console.log(selectAllLeagues.data);
+
             return selectAllCountries.data.countries.map(el => {
                 return (
                     <div>

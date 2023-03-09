@@ -9,7 +9,6 @@ export const getLeagueId = (leagueId) => async (dispatch) => {
         })
 
         const response = await theSportsDB.get(`lookupleague.php?id=${leagueId}`);
-        console.log(response)
 
         dispatch ({
             type: GET_LEAGUE_ID_SUCCESS,
